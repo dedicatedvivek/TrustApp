@@ -18,7 +18,12 @@ Route::middleware(['auth'])->group(function ()
 });
 });
 
-Route::get("newapplicant",'application@index');
+Route::get("newapplicant",function(){
+
+	return view ('new_applicant');
+});
+
+
 Route::post("store",'application@store');
 
 

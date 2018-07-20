@@ -23,7 +23,7 @@ class application extends Controller
      */
     public function create()
     {
-        return view("newapplicant");
+        return view("new_applicant");
     }
 
     /**

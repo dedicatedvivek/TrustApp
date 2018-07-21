@@ -13,12 +13,12 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
-                color: #636b6f;
+                background-image: url("back3.png");
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
                 height: 100vh;
                 margin: 0;
+
             }
 
             .full-height {
@@ -50,7 +50,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: #f5f5b2;
                 padding: 0 25px;
                 font-size: 12px;
                 font-weight: 600;
@@ -61,6 +61,18 @@
 
             .m-b-md {
                 margin-bottom: 30px;
+                color: #f5f5b2;
+                font-weight: lighter;
+                font-variant: normal;
+                font-family: cursive;
+            }
+
+            #footer {
+                color: #f5f5b2;
+                
+                size: 20%;
+                font-style: underline;
+                font-family: cursive;
             }
 
             
@@ -91,7 +103,17 @@
                     <a href="https://forge.laravel.com">HELP</a>
                     <a href="https://github.com/laravel/laravel">ABOUT THE APP</a>
                 </div>
+                <br><br><br>
+                <div id="footer">
+                   
+                    <br><br><br><br>
+                    ______________________________________<br>
+                    BAI MOTIBAI KASARA BAUG BORIVALI TRUST
+                </div>
             </div>
         </div>
+        <center>
+
+    </center>
     </body>
 </html>

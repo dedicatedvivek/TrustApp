@@ -26,6 +26,8 @@ Route::get("newapplicant",function(){
 
 Route::post("store",'application@store');
 
+Route::post("/insert","Controller@insert");
+
 
 Auth::routes();
 

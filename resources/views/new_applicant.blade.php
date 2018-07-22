@@ -46,7 +46,7 @@ table,th,td,input{
 
 <body>
 
-<h2 align="center">APPLICANT REGISTRATION</h2>
+<h2 align="center" style="color: fefe70">APPLICANT REGISTRATION</h2>
 
 <center>
 
@@ -76,7 +76,7 @@ table,th,td,input{
         <label for="Date Of Birth">Date Of Birth:</label> 
     </td>
     <td>    
-    	<input type="text" name="dob" id="one" />
+    	<input type="date" name="dob" id="one" />
     </td> 
 </tr>
 
@@ -183,7 +183,7 @@ table,th,td,input{
 
 
 
-<input type="button" value="CANCEL" /><br />
+<input type="button" value="BACK" onclick="window.location='/'" /><br />
 
 </form>
 </center>

@@ -93,12 +93,13 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    CharApp
+                    WELCOME !
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">APPLICANTS LIST</a>
                     <a href="{{ url('/newapplicant') }}">NEW APPLICANT</a>
+                    <a href="{{ url('/listapplicant') }}">APPLICANTS LIST</a>
+                    <a href="{{ url('/transaction') }}">TRANSACTIONS</a>
                     <a href="https://laravel-news.com">AVAILABLE FUNDS</a>
                     <a href="https://forge.laravel.com">HELP</a>
                     <a href="https://github.com/laravel/laravel">ABOUT THE APP</a>

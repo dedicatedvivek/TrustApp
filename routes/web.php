@@ -23,6 +23,17 @@ Route::get("newapplicant",function(){
 	return view ('new_applicant');
 });
 
+Route::get("listapplicant",function(){
+
+	return view ('list_applicant');
+});
+
+Route::get("transaction",function(){
+
+	return view ('transaction');
+});
+
+
 
 Route::post("store",'application@store');
 

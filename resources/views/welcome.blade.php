@@ -93,7 +93,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    WELCOME !
+                    CharApp
                 </div>
 
                 <div class="links">

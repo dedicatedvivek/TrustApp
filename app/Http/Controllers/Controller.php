@@ -25,19 +25,18 @@ class Controller extends BaseController
     	$city= $req->input('city');
     	$pincode= $req->input('pincode');
     	$category= $req->input('category');
-    	$status= $req->input('status');
     	$email= $req->input('email');
     	$phone=$req->input('phone');
     	$image=$req->input('image');
     	
     	
 
-        $data=$arrayName = array('firstname' =>$firstname ,'lastname' =>$lastname , 'dob' =>$dob , 'gender' =>$gender , 'nationality' =>$nationality , 'address' =>$address , 'city' =>$city , 'pincode' =>$pincode ,'category' =>$category ,'status' =>$status ,'email' =>$email,'phone' =>$phone,'image' =>$image);
+        $data=$arrayName = array('firstname' =>$firstname ,'lastname' =>$lastname , 'dob' =>$dob , 'gender' =>$gender , 'nationality' =>$nationality , 'address' =>$address , 'city' =>$city , 'pincode' =>$pincode ,'category' =>$category ,'email' =>$email,'phone' =>$phone,'image' =>$image);
 
         DB::table('applicants')->insert($data);
 
         
-        return view('success');
+        return view('list_applicant');
     }
 }
 

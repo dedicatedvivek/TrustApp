@@ -73,6 +73,7 @@
                 size: 20%;
                 font-style: underline;
                 font-family: cursive;
+                
             }
 
             
@@ -93,7 +94,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    CharApp
+                    TrustApp
                 </div>
 
                 <div class="links">

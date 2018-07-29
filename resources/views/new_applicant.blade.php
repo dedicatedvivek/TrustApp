@@ -56,6 +56,17 @@ table,th,td,input{
 <table id="formtable">
 <tr>
     <td>
+	    <label for="Form Number">Form Number:</label> 
+	</td>
+   
+    <td>    
+	    <input type="text" name="formnum" id="one" />
+    </td>
+</tr>
+<tr>
+
+<tr>
+    <td>
 	    <label for="First Name">First Name:</label> 
 	</td>
    
@@ -73,10 +84,10 @@ table,th,td,input{
 </tr>
 <tr>
 	<td>
-        <label for="Date Of Birth">Date Of Birth:</label> 
+        <label for="Age">Age:</label> 
     </td>
     <td>    
-    	<input type="date" name="dob" id="one" />
+    	<input type="number" name="age" id="one" />
     </td> 
 </tr>
 
@@ -383,6 +394,7 @@ table,th,td,input{
     	<select name="category" >
     		<option value="educational">Educational</option>
     		<option value="medical">Medical</option>
+    		<option value="Financial">Financial</option>
     		<option value="other">Other</option>
     	</select>
     </td>
@@ -414,6 +426,27 @@ table,th,td,input{
 
 	<td>
 		<input type="file" name="image" />
+	</td>
+</tr>
+
+<tr>
+	<td>
+		<label for="image">Document 1(Aadhar Card): </label>
+	</td>
+
+	<td>
+		<input type="file" name="doc1" />
+	</td>
+</tr>
+
+
+<tr>
+	<td>
+		<label for="image">Document 2(Salary Certificate/Letter): </label>
+	</td>
+
+	<td>
+		<input type="file" name="doc2" />
 	</td>
 </tr>
 

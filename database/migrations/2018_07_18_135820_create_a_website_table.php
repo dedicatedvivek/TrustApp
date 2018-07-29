@@ -18,7 +18,7 @@ class CreateAWebsiteTable extends Migration
             $table->string('last name');
             $table->string('date of birth');
             $table->string('gender');
-            $table->string('nationality');
+            $table->string('Nationality');
             $table->string('address');
             $table->string('city');
             $table->string('pincode');
@@ -26,7 +26,7 @@ class CreateAWebsiteTable extends Migration
             $table->string('status');
             $table->string('email address');
             $table->string('phone number');
-            $table->string('documents submitted');
+            $table->file('Add Document');
         });
     }
 

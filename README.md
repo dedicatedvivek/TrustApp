@@ -1,2 +1,1 @@
 "# CharAppNew" 
-# TrustApp

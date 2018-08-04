@@ -41,7 +41,69 @@ table,th,td,input{
 
 
 </style>
+<script type="text/javascript">
+	function validation(){
+		if (document.appl.firstname.value==""){
+			alert("Kindly Provide Valid First Name!!!");
+			document.appl.firstname.focus();  
+			return false;
 
+		}
+		if (document.appl.lastname.value=="") {
+			alert("Kindly Provide Valid Last Name!!!");
+			document.appl.lastname.focus();
+			return false;
+
+		}
+		if (document.appl.address.value=="") {
+			alert("Kindly Specify the Address!!!");    
+			document.appl.address.focus();
+			return false;
+
+		}
+		if (document.appl.city.value=="") {
+			alert("Kindly Specify Valid City Name!!!");
+			document.appl.city.focus();
+			return false;
+
+		}
+		if (document.appl.pincode.value=="" ||
+		isNaN(document.appl.pincode.value) ||
+		document.appl.pincode.value.length !=6) {
+			alert("Pincode is either empty or inappropriate!!!");
+			document.appl.pincode.focus();
+			return false;
+
+		}
+		if (document.appl.email.value=="") {
+			alert("Kindly Specify the Email ID!!!");
+			document.appl.email.focus();
+			return false;
+
+		}
+
+		if (document.appl.phone.value=="" ||
+			isNaN(document.appl.phone.value) ||
+		document.appl.phone.value.length !=10) {
+	alert("Please enter a valid 10 Digit Phone Number!!!");
+	document.appl.phone.focus();
+		return false;
+	}
+
+		if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(appl.email.value))
+  {
+    return (true);
+  }
+    alert("You have entered an invalid email address!");
+    return (false);
+
+    
+
+	}
+
+		
+
+</script>
 </head>
 
 <body>
@@ -50,7 +112,7 @@ table,th,td,input{
 
 <center>
 
-<form action="/insert" method="post">
+<form action="/insert" method="post" name="appl" onsubmit="return validation()"> 
 
 	{{ csrf_field() }}
 <table id="formtable">
@@ -60,7 +122,7 @@ table,th,td,input{
 	</td>
    
     <td>    
-	    <input type="text" name="formnum" id="one" />
+	    <input type="text" name="formnum"  />
     </td>
 </tr>
 <tr>
@@ -71,7 +133,7 @@ table,th,td,input{
 	</td>
    
     <td>    
-	    <input type="text" name="firstname" id="one" />
+	    <input type="text" name="firstname"  />
     </td>
 </tr>
 <tr>
@@ -79,7 +141,7 @@ table,th,td,input{
         <label for="Last Name">Last Name:</label>
     </td>
     <td>   
-    	<input type="text" name="lastname" id="one" />
+    	<input type="text" name="lastname"  />
     </td>
 </tr>
 <tr>
@@ -87,7 +149,7 @@ table,th,td,input{
         <label for="Age">Age:</label> 
     </td>
     <td>    
-    	<input type="number" name="age" id="one" />
+    	<input type="number" name="age"  />
     </td> 
 </tr>
 
@@ -363,7 +425,7 @@ table,th,td,input{
         <label for="Address">Address: </label> 
     </td>
     <td>   
-     <input type="text" name="address" id="one" />
+     <input type="text" name="address"  />
 
     </td>
 </tr>
@@ -374,7 +436,7 @@ table,th,td,input{
         <label for="City">City: </label> 
     </td>
     <td>   
-    	<input type="text" name="city" id="one" />
+    	<input type="text" name="city"  />
     </td>
 </tr>
 <tr>
@@ -383,7 +445,7 @@ table,th,td,input{
         <label for="Pincode">Pincode: </label>
     </td>
     <td>      
-    	<input type="text" name="pincode" id="one" /> 
+    	<input type="text" name="pincode"  /> 
     </td>
 </tr>
 <tr>
@@ -405,7 +467,7 @@ table,th,td,input{
         <label for="E-mail Address">E-mail Address: </label>  
     </td>
     <td>    
-    	<input type="text" name="email" id="one" />
+    	<input type="text" name="email"  />
     </td>
 </tr>
 
@@ -415,7 +477,7 @@ table,th,td,input{
         <label for="Phone Number">Phone Number: </label>  
     </td>
     <td>    
-    	<input type="text" name="phone" id="one" />
+    	<input type="text" name="phone"  />
     </td>
 </tr>
 
@@ -462,7 +524,7 @@ table,th,td,input{
 
 
 
-<input type="button" value="BACK" onclick="window.location='/'" /><br />
+<input type="button" value="BACK" onclick="window.location='/'" / ><br />
 
 </form>
 </center>

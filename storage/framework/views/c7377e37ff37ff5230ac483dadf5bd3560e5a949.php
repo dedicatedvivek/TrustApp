@@ -22,6 +22,13 @@ table, th, td {
 	font-style: unset;
 }
 </style>
+<script type="text/javascript">
+	function UpdateApplicant(appid){
+
+		window.alert(appid);
+
+	}
+</script>
 <h2 style="color: white" align="center">LIST OF APPLICANTS</h2>
 
 </head>
@@ -40,14 +47,15 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT formnum,firstname, lastname,age,gender,nationality,address,city,pincode,category,email,phone FROM applicants";
+$sql = "SELECT id,formnum,firstname, lastname,age,gender,nationality,address,city,pincode,category,email,phone FROM applicants";
 $result = $conn->query($sql);
 echo"<center>";
 if ($result->num_rows > 0) {
-    echo "<table><tr><th>Form Number</th><th>First Name</th><th>Last Name</th><th>Age</th><th>Gender</th><th>Nationality</th><th>Address</th><th>City</th><th>Pincode</th><th>Category</th><th>Email id</th><th>Phone Number</th></tr>";
+    echo "<table><tr><th>id</th><th>Form Number</th><th>First Name</th><th>Last Name</th><th>Age</th><th>Gender</th><th>Nationality</th><th>Address</th><th>City</th><th>Pincode</th><th>Category</th><th>Email id</th><th>Phone Number</th><th>EDIT</th></tr>";
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "<tr><td>".$row["formnum"]."</td><td>".$row["firstname"]."</td><td>".$row["lastname"]."</td><td>".$row["age"]."</td><td>".$row["gender"]."</td><td>".$row["nationality"]."</td><td>".$row["address"]."</td><td>".$row["city"]."</td><td>".$row["pincode"]."</td><td>".$row["category"]."</td><td>".$row["email"]."</td><td>".$row["phone"]."</td></tr>";
+        echo "<tr><td>".$row['id']."</td><td>".$row["formnum"]."</td><td>".$row["firstname"]."</td><td>".$row["lastname"]."</td><td>".$row["age"]."</td><td>".$row["gender"]."</td><td>".$row["nationality"]."</td><td>".$row["address"]."</td><td>".$row["city"]."</td><td>".$row["pincode"]."</td><td>".$row["category"]."</td><td>".$row["email"]."</td><td>".$row["phone"]."</td><td><input type='button' value='UPDATE' onclick='return UpdateApplicant($row[id])'/></td></tr>";
+
     }
     echo "</table>";
 } else {

@@ -97,11 +97,7 @@ table,th,td,input{
     alert("You have entered an invalid email address!");
     return (false);
 
-    if(isNaN(document.appl.firstname.value)){
-    	return (true);
-    }
-    alert("Name can't contain Number");
-    return(false);
+    
 
 	}
 

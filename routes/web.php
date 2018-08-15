@@ -39,7 +39,6 @@ Route::post("store",'application@store');
 
 Route::post("/insert","Controller@insert");
 
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

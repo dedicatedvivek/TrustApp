@@ -43,13 +43,15 @@ table,th,td,input{
 </style>
 <script type="text/javascript">
 	function validation(){
-		if (document.appl.firstname.value==""){
+		if (document.appl.firstname.value=="" ||
+			!isNaN(document.appl.firstname.value)){
 			alert("Kindly Provide Valid First Name!!!");
 			document.appl.firstname.focus();  
 			return false;
 
 		}
-		if (document.appl.lastname.value=="") {
+		if (document.appl.lastname.value=="" ||
+		!isNaN(document.appl.lastname.value)) {
 			alert("Kindly Provide Valid Last Name!!!");
 			document.appl.lastname.focus();
 			return false;
@@ -61,7 +63,8 @@ table,th,td,input{
 			return false;
 
 		}
-		if (document.appl.city.value=="") {
+		if (document.appl.city.value=="" ||
+		!isNaN(document.appl.city.value)) {
 			alert("Kindly Specify Valid City Name!!!");
 			document.appl.city.focus();
 			return false;

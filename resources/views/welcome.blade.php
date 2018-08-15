@@ -5,7 +5,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<<<<<<< HEAD
         <title>TRUST APP</title>
+=======
+        <title>TrustApp</title>
+>>>>>>> 8016e6081fc2542b279207159161a1ec4e51c6d2
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -100,6 +104,8 @@
                 <div class="links">
                     <a href="{{ url('/newapplicant') }}">NEW APPLICANT</a>
                     <a href="{{ url('/listapplicant') }}">APPLICANTS LIST</a>
+                    <a href="{{ url('/bank') }}">BANKS</a>
+                    <a href="{{ url('/saving') }}">SAVINGS</a>
                     <a href="{{ url('/transaction') }}">TRANSACTIONS</a>
                     <a href="https://laravel-news.com">AVAILABLE FUNDS</a>
                     <a href="https://forge.laravel.com">HELP</a>

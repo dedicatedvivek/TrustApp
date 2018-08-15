@@ -29,9 +29,9 @@ body{
 
  
 &nbsp &nbsp &nbsp &nbsp
-<button name="SAVINGS ACCOUNT" onclick="window.location='/'">SAVINGS ACCOUNT</button>	
+<button name="FIXED DEPOSITS" onclick="window.location='/new_fd'" style="width: 10%">FIXED DEPOSITS</button>	
 &nbsp &nbsp &nbsp &nbsp
-<button name="MISCELLANEOUS">MISCELLANEOUS</button>
+<button name="ADMININSTRATION EXPENSES" onclick="window.location='/expense'"">ADMININSTRATION EXPENSES</button>
 <br><br><br><br><br><br>
 <button name="BACK" onclick="window.location='/'" style="width: 10%">BACK</button>
 

@@ -38,9 +38,17 @@ class Controller extends BaseController
 
         DB::table('applicants')->insert($data);
 
+        echo "<script>
+        window.alert('RECORD SUBMITTED SUCCESSFULLY');
+        </script>";
+
         
         return view('list_applicant');
     }
+}
+
+function UpdateApplicant(){
+    return view('welcome');
 }
 
 

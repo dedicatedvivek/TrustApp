@@ -1,4 +1,3 @@
-
 <html>
 <head>
 <style>
@@ -23,8 +22,7 @@ table, th, td {
 	font-style: unset;
 }
 </style>
-<<<<<<< HEAD
-=======
+
 <script type="text/javascript">
 	function UpdateApplicant()
 	{
@@ -33,7 +31,7 @@ table, th, td {
 </script>
 
 
->>>>>>> 8016e6081fc2542b279207159161a1ec4e51c6d2
+
 
 <h2 style="color: white" align="center">LIST OF APPLICANTS</h2>
 
@@ -57,7 +55,7 @@ $sql = "SELECT id,formnum,firstname, lastname,age,gender,nationality,address,cit
 $result = $conn->query($sql);
 echo"<center>";
 if ($result->num_rows > 0) {
-<<<<<<< HEAD
+
 
     echo "<table><tr><th>id</th><th>Form Number</th><th>First Name</th><th>Last Name</th><th>Age</th><th>Gender</th><th>Nationality</th><th>Address</th><th>City</th><th>Pincode</th><th>Category</th><th>Email id</th><th>Phone Number</th></tr>";
     // output data of each row
@@ -66,18 +64,17 @@ if ($result->num_rows > 0) {
 
     // output data of each row
 
-=======
+
     echo "<table id='table1'><tr><th>id</th><th>Form Number</th><th>First Name</th><th>Last Name</th><th>Age</th><th>Gender</th><th>Nationality</th><th>Address</th><th>City</th><th>Pincode</th><th>Category</th><th>Email id</th><th>Phone Number</th></tr>";
     // output data of each row
     while($row = $result->fetch_assoc()) {
         echo "<tr><td>".$row['id']."</td><td>".$row["formnum"]."</td><td>".$row["firstname"]."</td><td>".$row["lastname"]."</td><td>".$row["age"]."</td><td>".$row["gender"]."</td><td>".$row["nationality"]."</td><td>".$row["address"]."</td><td>".$row["city"]."</td><td>".$row["pincode"]."</td><td>".$row["category"]."</td><td>".$row["email"]."</td><td>".$row["phone"]."</td></tr>";
->>>>>>> 8016e6081fc2542b279207159161a1ec4e51c6d2
+
 
     }
     echo "</table>";
-} else {
-    echo "0 results";
-}
+} 
+
 echo"</center>";
 $conn->close();
 ?>
@@ -159,11 +156,11 @@ $conn->close();
 </script>
 <br /><br />
 <center>
-<<<<<<< HEAD
+
 <input type="button" value="BACK" style="width: 270px" align="center" onclick="window.location='/'" /> 
-=======
+
 <input type="button" value="BACK" style="width: 5%" align="center" onclick="window.location='/'" />
->>>>>>> 8016e6081fc2542b279207159161a1ec4e51c6d2
+
 </center>
 </body>
 </html>

@@ -67,8 +67,7 @@ Route::post("store",'application@store');
 
 Route::post("/insert","Controller@insert");
 
-<<<<<<< HEAD
-=======
+
 Route::post("/update","UpdateController@update");
 
 Route::post("/insertbank","BanksController@insertbank");
@@ -81,7 +80,7 @@ Route::post("/insertfd","FDController@insertfd");
 
 Route::post("/insertexpense","ExpenseController@insertexpense");
 
->>>>>>> 8016e6081fc2542b279207159161a1ec4e51c6d2
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -29,16 +29,20 @@ class UpdateController extends Controller
     	$category= $req1->input('category');
     	$email= $req1->input('email');
     	$phone=$req1->input('phone');
+    	$image=$req1->input('image');
+    	$doc1=$req1->input('doc1');
+    	$doc2=$req1->input('doc2');
+    	
     	
     	
     	
 
-        $data1= array('id' =>$id ,'formnum' =>$formnum ,'firstname' =>$firstname ,'lastname' =>$lastname , 'age' =>$age , 'gender' =>$gender , 'nationality' =>$nationality , 'address' =>$address , 'city' =>$city , 'pincode' =>$pincode ,'category' =>$category ,'email' =>$email,'phone' =>$phone);
+        $data1= array('id' =>$id ,'formnum' =>$formnum ,'firstname' =>$firstname ,'lastname' =>$lastname , 'age' =>$age , 'gender' =>$gender , 'nationality' =>$nationality , 'address' =>$address , 'city' =>$city , 'pincode' =>$pincode ,'category' =>$category ,'email' =>$email,'phone' =>$phone,'image' =>$image,'doc1' =>$doc1,'doc2' =>$doc2);
 
 
         DB::table('applicants') //tableconnectivity
-        		->where('id',$id)
-        		->update($data1);
+        		->where('id',$data1['id'])
+        		->update(array('formnum' => $data1['formnum'],'firstname' => $data1['firstname'],'lastname' => $data1['lastname'],'age' => $data1['age'],'gender' => $data1['gender'],'nationality' => $data1['nationality'],'address' => $data1['address'],'city' => $data1['city'],'pincode' => $data1['pincode'],'category' => $data1['category'],'email' => $data1['email'],'phone' => $data1['phone']));
 
         echo "<script>
         window.alert('RECORD UPDATED SUCCESSFULLY');

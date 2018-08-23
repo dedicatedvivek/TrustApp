@@ -108,7 +108,6 @@
                     <a href="<?php echo e(url('/saving')); ?>">SAVINGS</a>
                     <a href="<?php echo e(url('/transaction')); ?>">TRANSACTIONS</a>
                     <a href="https://laravel-news.com">AVAILABLE FUNDS</a>
-                    <a href="https://forge.laravel.com">HELP</a>
                     <a href="https://github.com/laravel/laravel">ABOUT THE APP</a>
                 </div>
                 <br><br><br>

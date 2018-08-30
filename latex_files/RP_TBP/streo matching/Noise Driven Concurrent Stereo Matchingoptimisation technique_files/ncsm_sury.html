@@ -1,0 +1,2226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0073)https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!-- InstanceBegin template="/Templates/sms_template.dwt" codeOutsideHTMLIsLocked="false" -->
+  <title>Noise-driven Concurrent Stereo Matching (NCSM)</title>
+
+
+  
+
+<!-- CONFL-BEGIN standardHeader -->
+  <meta http-equiv="Pragma" content="no-cache">
+
+  <meta http-equiv="Expires" content="-1">
+
+  <link href="main-action.css" type="text/css" rel="stylesheet">
+
+  <link href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/images/favicon.ico" rel="shortcut icon">
+
+  <link href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/images/favicon.png" type="image/png" rel="icon">
+
+  <script src="effects.js">
+  </script>
+  <meta content="MSHTML 6.00.2800.1498" name="GENERATOR">
+
+  <style type="text/css">
+<!--
+.style4 {color: #3C78B5}
+-->
+  </style>
+</head>
+
+
+<body onload="placeFocus()">
+
+<div id="Content">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+  <tbody>
+
+    <tr>
+
+      <td class="logocell" rowspan="2" width="60%">
+      <div class="spacenametitle"><a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/index.html"><img src="mylogo.gif" align="bottom" border="0" height="35" width="35"></a> <a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/index.html" class="spacenametitle"><strong><span class="style4">&nbsp;&nbsp;&nbsp;N</span>oise-driven</strong>
+      <span class="style4">C</span>oncurrent <span class="style4">S</span>tereo <span class="style4">M</span>atching
+      </a></div>
+
+      </td>
+
+      <td align="right" valign="top" width="40%">
+      <table align="right" bgcolor="#ffffff" border="0" cellpadding="2" cellspacing="1">
+
+        <tbody>
+
+          <tr>
+
+            <td class="navItem" onmouseover="this.className=&#39;navItemOver&#39;" onclick="window.document.location=&#39;index.html&#39;" onmouseout="this.className=&#39;navItem&#39;" align="center" nowrap="nowrap" valign="center">&nbsp;&nbsp;<a title="Go to the homepage" accesskey="h" onclick="return true" href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/index.html"><u>H</u>OME</a>
+&nbsp;&nbsp;</td>
+
+          </tr>
+
+        </tbody>
+      </table>
+
+      </td>
+
+    </tr>
+
+    <tr>
+
+      <td align="right" valign="bottom">&nbsp;</td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<div class="breadcrumbs" width="100%">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+  <tbody>
+
+    <tr>
+
+      <td>&nbsp;<!-- InstanceBeginEditable name="EditRegion2" -->
+Location: <a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/index.html">NCSM</a>
+&gt;Concurrent Vs. Conventional<!-- InstanceEndEditable --></td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+</div>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+  <tbody>
+
+    <tr>
+
+      <td>
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+        <tbody>
+
+          <tr>
+
+            <td class="pagebody" valign="top">
+            <div style="padding-top: 5px;">
+            <ul id="foldertab">
+
+<!-- InstanceBeginEditable name="EditRegion3" --> <li><a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/index.html">Abstract</a></li>
+
+              <li><a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_intr.html">Introduction</a></li>
+
+              <li><a id="current" href="ncsm_sury.html">Concurrent
+Vs. Conventional</a></li>
+
+              <li><a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_ncsm.html">Noise-driven
+CSM</a></li>
+
+              <li><a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_expt.html">Experimental
+Results</a></li>
+
+              <li><a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_conl.html">Conclusions</a></li>
+
+              <li><a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html">Bibliography</a></li>
+
+              <li><a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_appx.html">Appendices</a></li>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li><a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_publ.html">Publications&amp;Thesis PDF</a></li>
+
+<!-- InstanceEndEditable -->
+            </ul>
+
+            </div>
+
+<!-- InstanceBeginEditable name="EditRegion1" -->
+            <table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+              <tbody>
+
+                <tr>
+
+                  <td valign="top">
+                  <div class="greybox" style="padding: 0px;"><a name="CHILD_LINKS"><strong>Subsections</strong></a>
+                  <ul>
+
+                    <li><a name="tex2html158" href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#SECTION00310000000000000000">Stereo
+Matching by Local Optimisation</a> </li>
+
+                    <li><a name="tex2html159" href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#SECTION00320000000000000000">Stereo
+Matching by Global Optimisation</a>
+                      <ul>
+
+                        <li><a name="tex2html160" href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#SECTION00321000000000000000">Dynamic
+Programming</a> </li>
+
+                        <li><a name="tex2html161" href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#SECTION00322000000000000000">Graph
+Minimum-cut Optimisation</a>
+                          <ul>
+
+                            <li><a name="tex2html162" href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#SECTION00322100000000000000">Large
+moves using min-cut / max-flow techniques</a>
+                              <ul>
+
+                                <li><a name="tex2html163" href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#SECTION00322110000000000000">The <img src="img59.png" alt="$ \alpha$" align="middle" border="0" height="26" width="12">-<img src="img78.png" alt="$ \beta$" align="middle" border="0" height="26" width="12">-swap</a>
+                                </li>
+
+                                <li><a name="tex2html164" href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#SECTION00322120000000000000">The <img src="img59.png" alt="$ \alpha$" align="middle" border="0" height="26" width="12">-expansion</a>
+                                </li>
+
+                                <li><a name="tex2html165" href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#SECTION00322130000000000000">Energy
+minimization algorithms</a> </li>
+
+                              </ul>
+
+                            </li>
+
+                            <li><a name="tex2html166" href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#SECTION00322200000000000000">Swap
+algorithm: finding the optimal move</a> </li>
+
+                            <li><a name="tex2html167" href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#SECTION00322300000000000000">Expansion
+algorithm: finding the optimal move</a> </li>
+
+                            <li><a name="tex2html168" href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#SECTION00322400000000000000">Optimality
+of large moves</a> </li>
+
+                          </ul>
+
+                        </li>
+
+                        <li><a name="tex2html169" href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#SECTION00323000000000000000">Belief
+Propagation&nbsp;(BP) Optimisation on Graphs</a> </li>
+
+                        <li><a name="tex2html170" href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#SECTION00324000000000000000">Other
+global optimisation techniques</a> </li>
+
+                      </ul>
+
+                      <br>
+
+                    </li>
+
+                    <li><a name="tex2html171" href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#SECTION00330000000000000000">Layered
+Algorithms</a> </li>
+
+                    <li><a name="tex2html172" href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#SECTION00340000000000000000">A New
+Proposal: Noise-driven Concurrent Stereo Matching</a>
+                      <ul>
+
+                        <li><a name="tex2html173" href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#SECTION00341000000000000000">Drawbacks
+of Conventional Algorithms</a> </li>
+
+                        <li><a name="tex2html174" href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#SECTION00342000000000000000">New Stereo
+Matching Framework</a> </li>
+
+                      </ul>
+
+                    </li>
+
+                  </ul>
+
+<!--End of Table of Child-Links-->
+                  <hr>
+                  <h1><a name="SECTION00300000000000000000"></a><a name="chapter:survey"></a></h1>
+
+                  <p>Two recent comprehensive overviews provide
+detailed comparisons of
+most of the known stereo matching algorithms&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#ss02">4</a>,<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#bbh03">19</a>]. A
+stereo test-bed, the Middlebury data set&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#ss02">4</a>], is widely
+accepted at present as an <em>ad hoc</em> standard for
+evaluating the
+accuracy of disparity maps obtained by different algorithms. A
+number of stereo matching algorithms have been also analysed in a
+few earlier
+surveys&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Barnard82">20</a>,<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Dhond89">21</a>,<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Grewe94">22</a>,<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Ozanian95">23</a>,<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Jones97">24</a>,<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Goulermas00">25</a>].
+Most stereo algorithms search for the ``best matches'' between areas
+to be selected as corresponding in the left and right images of a
+stereo pair. By the matching criteria and optimisation strategy, the
+algorithms can be placed into two main categories. The first
+category performs local constrained optimisation in order to
+individually match relatively small image areas whereas the second
+category performs global constrained optimisation in order to match
+entire scan-lines or whole images. This chapter analyses advantages
+and disadvantages of most popular stereo algorithms, and formulates
+a new approach to stereo matching which is tested in later chapters. </p>
+
+                  <p></p>
+
+                  <h1><a name="SECTION00310000000000000000">Stereo
+Matching by Local Optimisation</a> </h1>
+
+                  <p>These techniques are typically based on
+maximising cross-correlation
+between a relatively small window positioned in one image and a like
+window in another image placed to a set of possible positions. In
+the simplest case, assuming all the window points have likely the
+same or very close disparities, the windows in both images have the
+same fixed size. The correlation allows for contrast and offset
+deviations between the corresponding image intensities in the
+windows. However, the constant disparity assumption may not be valid
+for all the window points. Thus variations of actual disparities and
+partial occlusions, where one image has areas absent from another,
+may lead to accumulation of pixel-wise errors which eventually
+result in false matching. Unstable matching results are obtained on
+homogeneous image areas with almost constant intensities where
+correlation peaks reflect only image noise. </p>
+
+                  <p>Comparing to a more straightforward SSD or
+the sum of absolute
+differences&nbsp;(SAD) matching scores, the cross and correlation
+is
+effective for taking account of locally uniform contrasr-offset
+deviations between the corresponding intensities. However, the
+optimal choices for the window size and shape remain unsolved
+problems, because the choice depends not only on the known local
+intensity variations, i.e. the variations in texture, but also on
+the local variations of the unknown disparities and possible
+occlusions. Generally, the choice of small windows results in too
+noisy and unstable correlation values, and larger windows distort an
+actual disparity pattern. Although the correlation values for large
+windows are more stable, the search for true disparities becomes
+less accurate. </p>
+
+                  <p>To overcome this problem, the window sizes
+and shapes in both stereo
+images should vary in accord with expected surface changes. In
+digital photogrammetry, The least-square correlation&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Helava88">26</a>]
+was used to synchronously vary window sizes in both the images in
+accord with an expected slope of a 3D surface. A more recent
+sophisticated adaptive window matching iteratively varies both the
+window size and shape in accord with both the local intensity values
+and current depth estimates&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Kanade94">27</a>]. In
+experiments, such an
+adaptation improves results of correlation-based stereo matching in
+smooth and highly textured surface regions. Nonetheless the matching
+does not account for partial occlusions and therefore tends to
+smooth surface discontinuities excessively. </p>
+
+                  <p>Generally, due to accumulation of errors,
+algorithms based on local
+optimisation result in very large disparity errors for homogeneous
+or occluded areas as well as areas with rapidly changing disparity
+patterns. Also, since only local constraints are used, the
+reconstructed disparity map may violate physical constraints of
+surface visibility. Traditionally, such stereo matching is widely
+used in real-time applications due to its linear time complexity, <img src="img50.png" alt="$ O(MN)$" align="middle" border="0" height="39" width="64">,
+where <img src="img51.png" alt="$ N$" align="middle" border="0" height="36" width="18"> is the
+number of image pixels and <img src="img52.png" alt="$ M$" align="bottom" border="0" height="16" width="21">
+is the
+window size. </p>
+
+                  <p>Marr and Poggio provided a simple iterative
+stereo matching
+combining local optimisation with global constraints&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#marr76">7</a>].
+It takes account of neighbouring matching positions along each pair
+of corresponding epipolar scanlines in stereo images. For each pair,
+a 2D interconnected cross-section of the matching score volume in
+the disparity space is built. Initially, the volume is filled in
+with the local similarity scores-typically obtained by correlation
+with small windows. Then the scores are mutually adjusted using
+excitation and inhibition links between the neighbouring points in
+the disparity space, the links having enforced the uniqueness and
+continuity constraints. Weighting factors for the inhibitor links
+represent the likelihood of pairwise image correspondences. Zitnick
+and Kanade&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Zitnick00">28</a>]
+use instead a fixed 2D excitation region
+in the same disparity space. Zhang and Kambhamettu&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Zhang02">29</a>]
+take advantage of image segmentation in calculating the initial
+matching scores using a variable 3D excitation region. The link
+weights are updated by a simple propagation of the constraints
+across the neighboring matching points. This iterative adjustment
+pursues the goal of resolving ambiguities of multiple similar stereo
+matches. However, because the global constraints are involved to
+only improve the initialising results, the final accuracy heavily
+depends on how accurate is the initialisation by local stereo
+matching. </p>
+
+                  <p></p>
+
+                  <h1><a name="SECTION00320000000000000000">Stereo
+Matching by Global Optimisation</a> </h1>
+
+                  <p>The basic drawback of the local techniques
+is that global
+constraints imposed by stereo viewing geometry and 3D scene
+consistency cannot be taken into account directly during the
+matching process. Due to global uniqueness, continuity and
+visibility constraints, each ``best match'' restricts other matching
+possibilities. Typically, an optical surface observed by stereo
+cameras are described as samples of specific Markov random field (MRF)
+models such that the constrained local disparity variations are
+governed by potential functions of neighbouring pairs of disparities
+or corresponding image signals as well as variations of the
+corresponding signals under the uniqueness constraint. Assuming a
+parallel axis stereo geometry, the matching problem is then
+formulated as the minimisation of an additive energy function, e.g.
+<!-- MATH \begin{displaymath} \begin{array}{l} E(\mathbf{d}|\mathbf{g}_1,\mathbf{g}_2) = \sum\limits_{(x,y)\in L} \left[ V_1\left(g_1(x,y),g_2(x-d(x,y),y)\right)\right. + \sum\limits_{(\Delta_\mathrm{n},\Delta_\mathrm{n}^\prime)\in N} V\left(g_1(x,y),g_1(x_\mathrm{n},y_\mathrm{n}), \right.\\ \left.\left. \hspace*{10mm} g_2(x-d(x,y),y), g_2(x_\mathrm{n}-d(x+\Delta_\mathrm{n},y+\Delta_\mathrm{n}^\prime),y_\mathrm{n}), d(x,y), d(x+\Delta_{\mathrm{n}},y+\Delta_{\mathrm{n}^\prime})\right) \right] \end{array} \end{displaymath} --></p>
+
+                  <p></p>
+
+                  <div align="center"> <img src="img53.png" alt="\begin{displaymath} \begin{array}{l} E(\mathbf{d}\vert\mathbf{g}_1,\mathbf{g}_... ...n}},y+\Delta_{\mathrm{n}^\prime})\right) \right] \end{array} \end{displaymath}" border="0" height="83" width="642"></div>
+
+                  <p></p>
+
+where <img src="img35.png" alt="$ L$" align="bottom" border="0" height="16" width="15"> denotes an
+image-based planar arithmetic lattice
+supporting both a surface and stereo images represented by the
+disparity,<!-- MATH $\mathbf{d}=[d(x,y): (x,y)\in L]$ --> <img src="img54.png" alt="$ \mathbf{d}=[d(x,y): (x,y)\in L]$" align="middle" border="0" height="39" width="184">,
+and intensity functions,<!-- MATH $\mathbf{g}_1$ --> <img src="img55.png" alt="$ \mathbf{g}_1$" align="middle" border="0" height="36" width="22"> and
+<!-- MATH $\mathbf{g}_2$ --><img src="img56.png" alt="$ \mathbf{g}_2$" align="middle" border="0" height="36" width="22">, respectively,
+of the lattice coordinates <img src="img57.png" alt="$ (x,y)$" align="middle" border="0" height="39" width="44"> and <img src="img51.png" alt="$ N$" align="middle" border="0" height="36" width="18"> is a point (pixel) neighbourhood
+in terms of a
+set of the coordinate increments<!-- MATH $(\Delta_\mathrm{n},\Delta_\mathrm{n}^\prime)$ -->
+                  <img src="img58.png" alt="$ (\Delta_\mathrm{n},\Delta_\mathrm{n}^\prime)$" align="middle" border="0" height="38" width="66">.
+The like Markovian model can also govern the matching of a
+homogeneous texture with multiple positions of equally ``best
+matches'' and take account of partial occlusions where matching
+of some image areas is in principle impossible. For the most part, such
+a constrained
+energy minimisation is quite computationally expensive.
+                  <p></p>
+
+                  <h2><a name="SECTION00321000000000000000">Dynamic
+Programming</a> </h2>
+
+Dynamic programming&nbsp;(DP) is applied to solve a 2D optimisation
+problem with a goal function by splitting the problem into <i>N</i>
+1D optimisation subproblems dealing each with the goal function with
+the continuity constraints only along the epipolar lines (i.e. with
+only linear neighbourhoods <img src="img51.png" alt="$ N$" align="middle" border="0" height="36" width="18">).
+This considerably reduces the
+computational complexity.
+                  <p>Stereo matching by DP, proposed first by
+Gimel'farb et al. in
+1972&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Georgy72">8</a>]
+partitions a stereo pair into a set of
+corresponding epipolar scan-lines and finds the most likely epipolar
+profile in the disparity space under the linear ordering,
+uniqueness, and continuity constraints using the Viterbi algorithm.
+Afterwards, Baker and Binford&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Baker81">9</a>] and
+independently, many
+other researchers have developed different stereo matching
+algorithms exploiting the same or closely similar DP optimisation
+schemes. </p>
+
+                  <p>One of the key elements in dynamic
+programming is how to define
+pixel-wise signal dissimilarity measure under possible spatially
+variant contrast-offset distortions of stereo images. The symmetric
+dynamic programming stereo&nbsp;(SDPS) algorithm introduced by
+Gimel'farb in
+1979&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#6">30</a>]
+evaluated minimum estimates of most likely contrast and offset
+intensity distortions during the scanline-to-scanline DP matching.
+In 1981, Baker and Binford&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Baker81">9</a>]
+proposed an edge-based DP
+stereo matching to account implicitly for photometric distortions.
+The basic idea was to match the corresponding edges of two images of
+a stereo pair rather than original intensities. Then the disparities
+for the best edge matches were interpolated over the untextured
+regions. Unfortunately, such an interpolation cannot preserve sharp
+discontinuities. Also, the matching itself presumes that the edges
+are accurately found in both stereo images. A similar DP algorithm
+is described by Raju, Binford, and Shekar&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Raju87">31</a>]. </p>
+
+                  <p>Later, Ohta and Kanade&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Ohta85">32</a>] performed this
+algorithm with
+both the intra- and inter-scanline. They treated a path-finding DP
+problem as a search in a 2D plane where vertical and horizontal axes
+relate to the right and left scanlines, respectively. A similar
+algorithm was proposed also by Lloyd&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Lloyd86">33</a>]. Intille and
+Bobick&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Boick99">34</a>,<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#jiang40">35</a>] do not use the
+continuity constraint
+at all, relying upon ``ground control points'' to exclude the need
+for any external smoothness constraint. Geiger, Ladendorf, and
+Yuille&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Geiger95">36</a>]
+also treat scanlines independently, but
+suppose that disparities are piecewise constant along each scanline
+in order to symmetrically enforce strict correspondence between
+discontinuities and occlusions in stereo images. Cox&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#r99">37</a>] and
+Belhumeur and Mumford&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#jiang8">38</a>]
+impose 2D continuity constraints
+through inter-scanline constraints. Cox&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#r99">37</a>] counted and
+minimised the total number of depth discontinuities as a subordinate
+goal and used either one or two DP stages for efficient approximate
+minimisation. Belhumeur and Mumford&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#jiang8">38</a>] also minimise the
+number of pixels with discontinuities, but generalise the notion of
+discontinuity, counting both steps and edges. They introduced a
+symmetric energy functional incorporating this count and proposed to
+iteratively minimise it with stochastic DP. </p>
+
+                  <p>A novel variant of the SDPS&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#6">30</a>,<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Georgy99">39</a>] will be
+detailed in
+Chapter&nbsp;<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_ncsm.html"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a>
+as one of the approaches to estimating
+noise in stereo images. In this algorithm, regularisation with
+respect to partial occlusions is based on Markov chain models of
+both epipolar profiles and image intensities along each
+profile&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#jiang3">40</a>].
+The algorithm accounts for spatially variant
+contrast and offset distortions of stereo images by mutual
+adaptation of the corresponding signals. The adaptation sequentially
+estimates the ``ground" signals for each binocularly visible point
+along the profile from the corresponding image signals. The
+estimated signals are then adapted to each image by changing their
+increments to within an allowable range. </p>
+
+                  <p>The principal disadvantage of DP
+optimisation is that global
+constraints are applied only along each pair of the epipolar
+scan-lines; the inter-scanline constraints can be taken into account
+only approximately, e.g. by iterative alternate matching along and
+across the scanlines, respectively. The DP algorithms presume a
+single continuous surface due to the ordering constraint making the
+corresponding pixels appear in the same order in the left and right
+scanlines. Obviously, the constraint is not always met. Also, due to
+intrinsic directionality of DP optimisation, local pixel-wise errors
+tend to propagate along scanlines, thus corrupting potentially good
+nearby matches. As a result, the computed disparity maps may display
+horizontal streaks. </p>
+
+                  <p></p>
+
+                  <h2><a name="SECTION00322000000000000000">Graph
+Minimum-cut Optimisation</a> </h2>
+
+                  <p>Unlike the DP matching, graph optimisation
+techniques use global
+constraints over the entire 2D images. Matching is formulated as a
+maximum-flow/minimum-cut problem&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#ford:fulkerson:62">41</a>]. Both
+the
+stereo images and disparity map are described with a simple Markov
+random field&nbsp;(MRF) model taking into account the <img src="img9.png" alt="$ x$" align="middle" border="0" height="36" width="13">-disparity
+of
+and the difference between intensities in each pair of the
+corresponding points. The contrast and offset distortions are not
+considered assuming that the compatibility constraint holds.
+Typically, the MRF model results in the matching score being a 2D
+sum of data terms measuring the pixel-wise intensity dissimilarities
+and smoothness terms penalising large surface (disparity) changes
+over the neighbouring points. Because of multiple disparity values
+per point, the exact global minimisation of such goal functions is
+an NP-hard problem, apart from a few special cases with very
+restrictive conditions on the functions. In principle, the
+optimisation can be performed with pixel-wise iterative simulated
+annealing (SA)&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#geman:geman:84">42</a>,<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Starink95">43</a>]. It makes
+sequential
+small stochastic pixel-wise moves in the disparity space that tend
+to improve the goal function and have a specific ``cooling" schedule
+to ensure that the random improvement first can reach the global
+optimum and then stay within a gradually contracting neighbourhood
+of that optimum. But even in the simplest case of binary
+labelling&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#greig:porteous:seheult:89">44</a>]
+where the exact solution
+can be obtained by the network maximum flow / minimum cut
+techniques, the SA algorithm converges to a stable point which is
+too far from the global minimum. Although SA provably converges to
+the global minimum of energy&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#geman:geman:84">42</a>], this
+could be
+obtained only in exponential time; this is why no practical
+implementation can closely approach the
+optimum&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#greig:porteous:seheult:89">44</a>].
+                  </p>
+
+                  <p>The main drawback of these algorithms is
+that each iteration
+changes only one label in a single pixel in accord with the
+neighboring labels and therefore it results in
+an extremely small move in the space of possible labelings.
+Obviously, the convergence rate should become faster under
+larger moves that simultaneously change labels in a large number
+of pixels. </p>
+
+                  <p>Roy and Cox&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Roy98">45</a>] proposed a much
+faster approximate method
+based on the preflow-push lift-to-front optimisation algorithm for
+finding the maximum flow in a network<a name="tex2html4" href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#foot1811"><sup>2.1</sup></a>.
+Their method
+builds an undirected graph for a chosen reference image and finds
+exactly one disparity for each pixel therein. Ishikawa and
+Geiger&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#jiang41">46</a>]
+proposed an alternative optimisation method that
+involves the ordering constraint and furthermore distinguishes
+between ordinary, edge, and junction pixels. Their method uses a
+directed graph and symmetrically enforces the uniqueness constraint.
+Both methods smooth surface discontinuities because functional forms
+of penalties for discontinuities are heavily restricted (e.g. only
+the convex energy terms). </p>
+
+                  <p>Naturally, graph optimisation is
+computationally complex. Hence,
+Boykov, Veksler, and Zabih&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#jiang18">47</a>]
+proposed an approximate
+optimisation technique for a wide variety of non-convex energy
+terms. Boykov et al&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#jiang19">48</a>]
+subsequently developed a more
+theoretically justified optimisation technique. It is somewhat less
+widely applicable, but it produces results provably within a
+constant factor of the global optimum&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#jiang79">49</a>]. Boykov et
+al.&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#boykov:veksler:zabih:01">1</a>]
+applied these optimisation
+techniques to stereo matching with the goal energy functions
+allowing for large <img src="img59.png" alt="$ \alpha$" align="middle" border="0" height="36" width="18">-expansion
+and<!-- MATH $\alpha - \beta$ --> <img src="img60.png" alt="$ \alpha - \beta$" align="middle" border="0" height="37" width="51"> swap
+moves in the disparity space. The large moves considerably
+accelerate the optimisation. Kolmogorov and Zabih&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#jiang47">50</a>]
+proposed more complex graphs for stereo matching. The graph vertices
+not only represent pixel correspondences but also impose the
+uniqueness constraints to handle partial occlusions. Their algorithm
+enforces symmetric two-way uniqueness constraints, but it is limited
+to constant-disparity continuity. </p>
+
+                  <p></p>
+
+                  <h3><a name="SECTION00322100000000000000">Large
+moves using min-cut / max-flow techniques</a> </h3>
+
+                  <p>Two fast approximate algorithms for energy
+minimization developed by
+Boykov and Kolmogorov&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#boykov:veksler:zabih:01">1</a>]
+improve the
+poor convergence of simulated annealing by replacing extremely small
+pixel-wise moves with large moves involving a large number of pixels
+simultaneously. The resulting process converges to a solution that
+in some cases is provably within a known factor of the global energy
+minimum. </p>
+
+                  <p>The energy function to be minimized is </p>
+
+                  <p></p>
+
+                  <div align="center"><a name="eq:7:energy"></a><!-- MATH \begin{equation} E(x_1,\ldots,x_n) = \sum\limits_{i=1}^n V_i(x_i) + \sum\limits_{(i,j)\in\mathcal{N}}V_{ij}(x_i,x_j);\;\; x_i\in\mathbb{L};\; i=1,\ldots,n \end{equation} -->
+                  <table align="center" cellpadding="0" width="100%">
+
+                    <tbody>
+
+                      <tr valign="middle">
+
+                        <td align="center" nowrap="nowrap"><img src="img61.png" alt="$\displaystyle E(x_1,\ldots,x_n) = \sum\limits_{i=1}^n V_i(x_i) + \sum\limits_{(i,j)\in\mathcal{N}}V_{ij}(x_i,x_j);\;\; x_i\in\mathbb{L};\; i=1,\ldots,n$" align="middle" border="0" height="66" width="500"></td>
+
+                        <td align="right" nowrap="nowrap" width="10">(2.2.1)</td>
+
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+                  </div>
+
+                  <br clear="all">
+
+                  <p></p>
+
+where<!-- MATH $\mathbb{L}=\{1,2,\ldots,L\}$ --> <img src="img62.png" alt="$ \mathbb{L}=\{1,2,\ldots,L\}$" align="middle" border="0" height="37" width="134">
+is an arbitrary finite set of labels,
+<!-- MATH $\mathcal{N}\subset\{1,\ldots,n\}^2$ --><img src="img63.png" alt="$ \mathcal{N}\subset\{1,\ldots,n\}^2$" align="middle" border="0" height="42" width="135">denotes
+a set of
+neighboring, or interacting pairs of pixels,<!-- MATH $V_i:\mathbb{L}\rightarrow\R$ -->
+                  <img src="img64.png" alt="$ V_i:\mathbb{L}\rightarrow\R$" align="middle" border="0" height="35" width="87">
+is a pixel-wise potential function specifying pixel-wise
+energies in a pixel <img src="img65.png" alt="$ i$" align="middle" border="0" height="36" width="10">
+under different labels, and
+<!-- MATH $V_{ij}:\mathbb{L}^2\rightarrow\R$ --><img src="img66.png" alt="$ V_{ij}:\mathbb{L}^2\rightarrow\R$" align="middle" border="0" height="42" width="102">is
+a pairwise potential function specifying pairwise interaction
+energies
+for different labels in a
+pair <img src="img67.png" alt="$ (i,j)$" align="middle" border="0" height="39" width="41">
+of neighbors. The pixel-wise energies<!-- MATH $V_i(\ldots)$ -->
+                  <img src="img68.png" alt="$ V_i(\ldots)$" align="middle" border="0" height="39" width="54">
+can be
+arbitrary, but the pairwise interaction energies have to be
+either <em>semimetric</em>, i.e. satisfy the constraints
+<!-- MATH \begin{displaymath} V_{ij}(\alpha,\alpha)=0; \;\; V_{ij}(\alpha,\beta)=V_{ij}(\beta,\alpha)\geq 0\;\; \forall \; \alpha,\beta\in\mathbb{L} \end{displaymath} -->
+                  <p></p>
+
+                  <div align="center"> <img src="img69.png" alt="$\displaystyle V_{ij}(\alpha,\alpha)=0; \;\; V_{ij}(\alpha,\beta)=V_{ij}(\beta,\alpha)\geq 0\;\; \forall \; \alpha,\beta\in\mathbb{L} $" align="middle" border="0" height="39" width="410"></div>
+
+                  <p></p>
+
+or <em>metric</em>, i.e. satisfy the same constraints plus
+the triangle inequality
+<!-- MATH \begin{displaymath} V_{ij}(\alpha,\beta)\leq V_{ij}(\alpha,\gamma)+ V_{ij}(\gamma,\beta)\;\; \forall\; \alpha,\beta,\gamma\in\mathbb{L} \end{displaymath} -->
+                  <p></p>
+
+                  <div align="center"> <img src="img70.png" alt="$\displaystyle V_{ij}(\alpha,\beta)\leq V_{ij}(\alpha,\gamma)+ V_{ij}(\gamma,\beta)\;\; \forall\; \alpha,\beta,\gamma\in\mathbb{L} $" align="middle" border="0" height="39" width="358"></div>
+
+                  <p></p>
+
+Each pixel labeling,<!-- MATH $\mathbf{x}$ --> <img src="img71.png" alt="$ \mathbf{x}$" align="bottom" border="0" height="16" width="14">, with a
+finite set of indices
+<!-- MATH $\mathbb{L}=\{1,\ldots,L\}$ --><img src="img72.png" alt="$ \mathbb{L}=\{1,\ldots,L\}$" align="middle" border="0" height="37" width="117">partitions
+the set of pixels,
+<!-- MATH $\mathbf{R}=\{1,\ldots,n\}$ --><img src="img73.png" alt="$ \mathbf{R}=\{1,\ldots,n\}$" align="middle" border="0" height="37" width="117">,
+into <img src="img35.png" alt="$ L$" align="bottom" border="0" height="16" width="15"> disjoint
+subsets,
+<!-- MATH $\mathbf{R}_\lambda=\{i|i\in\mathbf{R};\;x_i=\lambda\in\mathbb{L}\}$ --><img src="img74.png" alt="$ \mathbf{R}_\lambda=\{i\vert i\in\mathbf{R};\;x_i=\lambda\in\mathbb{L}\}$" align="middle" border="0" height="37" width="217">(some
+of them may be empty), i.e. creates a partition<!-- MATH $\mathbf{P} =\{\mathbf{R}_\lambda : \lambda=1,\ldots,L\}$ -->
+                  <img src="img75.png" alt="$ \mathbf{P} =\{\mathbf{R}_\lambda : \lambda=1,\ldots,L\}$" align="middle" border="0" height="37" width="190">.
+Each change of a
+labeling,<!-- MATH $\mathbf{x}$ --> <img src="img71.png" alt="$ \mathbf{x}$" align="bottom" border="0" height="16" width="14">, changes
+the corresponding partition,
+<!-- MATH $\mathbf{P}$ --><img src="img76.png" alt="$ \mathbf{P}$" align="bottom" border="0" height="16" width="16">.
+                  <p>The approximate Boykov-Veksler-Zabih
+minimization algorithms work
+with any semimetric or metric, <img src="img77.png" alt="$ V_{ij}$" align="middle" border="0" height="36" width="25">, by using large <img src="img59.png" alt="$ \alpha$" align="middle" border="0" height="36" width="18">-<img src="img78.png" alt="$ \beta$" align="middle" border="0" height="37" width="17">-swap or <img src="img59.png" alt="$ \alpha$" align="middle" border="0" height="36" width="18">-expansion
+moves
+respectively. The conditionally optimal moves are found with a
+min-cut / max-flow technique. </p>
+
+                  <h4><a name="SECTION00322110000000000000">The
+                  <img src="img59.png" alt="$ \alpha$" align="middle" border="0" height="36" width="18">-<img src="img78.png" alt="$ \beta$" align="middle" border="0" height="37" width="17">-swap</a>
+                  </h4>
+
+for an arbitrary pair
+of labels,<!-- MATH $\alpha\beta\in\mathbb{L}$ --> <img src="img79.png" alt="$ \alpha\beta\in\mathbb{L}$" align="middle" border="0" height="37" width="65">,
+is a move from a partition,
+<!-- MATH $\mathbf{P}$ --><img src="img76.png" alt="$ \mathbf{P}$" align="bottom" border="0" height="16" width="16">, for a current labeling,<!-- MATH $\mathbf{x}$ -->
+                  <img src="img71.png" alt="$ \mathbf{x}$" align="bottom" border="0" height="16" width="14">,
+to a new
+partition,<!-- MATH $\mathbf{P}^\prime$ --> <img src="img80.png" alt="$ \mathbf{P}^\prime$" align="bottom" border="0" height="18" width="21">, for a new
+labeling,
+<!-- MATH $\mathbf{x}^\prime$ --><img src="img81.png" alt="$ \mathbf{x}^\prime$" align="bottom" border="0" height="18" width="19">, such that<!-- MATH $\mathbf{R}_\lambda = \mathbf{R}^\prime_\lambda$ -->
+                  <img src="img82.png" alt="$ \mathbf{R}_\lambda = \mathbf{R}^\prime_\lambda$" align="middle" border="0" height="38" width="76">
+for any label,<!-- MATH $\lambda \ne \alpha, \beta$ --> <img src="img83.png" alt="$ \lambda \ne \alpha, \beta$" align="middle" border="0" height="37" width="74">.
+In other words, this move changes only the labels <img src="img59.png" alt="$ \alpha$" align="middle" border="0" height="36" width="18">and <img src="img78.png" alt="$ \beta$" align="middle" border="0" height="37" width="17">
+in their
+current region,
+<!-- MATH $\mathbf{R}_{\alpha\beta}=\mathbf{R}_\alpha\cup\mathbf{R}_\beta$ --><img src="img84.png" alt="$ \mathbf{R}_{\alpha\beta}=\mathbf{R}_\alpha\cup\mathbf{R}_\beta$" align="middle" border="0" height="36" width="129">,
+whereas all the other labels in
+<!-- MATH $\mathbf{R}\backslash\mathbf{R}_{\alpha\beta}$ --><img src="img85.png" alt="$ \mathbf{R}\backslash\mathbf{R}_{\alpha\beta}$" align="middle" border="0" height="37" width="62">remain
+fixed. In
+the general case, after the <img src="img59.png" alt="$ \alpha$" align="middle" border="0" height="36" width="18">-<img src="img78.png" alt="$ \beta$" align="middle" border="0" height="37" width="17">-swap, some pixels
+change their labels from <img src="img59.png" alt="$ \alpha$" align="middle" border="0" height="36" width="18">
+to <img src="img78.png" alt="$ \beta$" align="middle" border="0" height="37" width="17"> and some
+others
+from <img src="img78.png" alt="$ \beta$" align="middle" border="0" height="37" width="17">
+to <img src="img59.png" alt="$ \alpha$" align="middle" border="0" height="36" width="18">. A special
+variant is when the label <img src="img59.png" alt="$ \alpha$" align="middle" border="0" height="36" width="18">is
+assigned to some pixels previously labeled <img src="img78.png" alt="$ \beta$" align="middle" border="0" height="37" width="17">.
+                  <p></p>
+
+                  <h4><a name="SECTION00322120000000000000">The
+                  <img src="img59.png" alt="$ \alpha$" align="middle" border="0" height="36" width="18">-expansion</a>
+                  </h4>
+
+of an arbitrary label, <img src="img59.png" alt="$ \alpha$" align="middle" border="0" height="36" width="18">,
+is a move from a partition,
+<!-- MATH $\mathbf{P}$ --><img src="img76.png" alt="$ \mathbf{P}$" align="bottom" border="0" height="16" width="16">, for a current labeling,<!-- MATH $\mathbf{x}$ -->
+                  <img src="img71.png" alt="$ \mathbf{x}$" align="bottom" border="0" height="16" width="14">,
+to a new
+partition,<!-- MATH $\mathbf{P}^\prime$ --> <img src="img80.png" alt="$ \mathbf{P}^\prime$" align="bottom" border="0" height="18" width="21">, for a new
+labeling,
+<!-- MATH $\mathbf{x}^\prime$ --><img src="img81.png" alt="$ \mathbf{x}^\prime$" align="bottom" border="0" height="18" width="19">, such that<!-- MATH $\mathbf{R}_\alpha \subset \mathbf{R}^\prime_\alpha$ -->
+                  <img src="img86.png" alt="$ \mathbf{R}_\alpha \subset \mathbf{R}^\prime_\alpha$" align="middle" border="0" height="38" width="78">
+and<!-- MATH $\mathbf{R}\backslash\mathbf{R}_\alpha^\prime= \cup_{\lambda\in\mathbb{L};\;\lambda\ne\alpha}\mathbf{R}_\lambda^\prime \subset \mathbf{R}\backslash\mathbf{R}_\alpha= \cup_{\lambda\in\mathbb{L};\;\lambda\ne\alpha}\mathbf{R}$ -->
+                  <img src="img87.png" alt="$ \mathbf{R}\backslash\mathbf{R}_\alpha^\prime= \cup_{\lambda\in\mathbb{L};\;\l... ...ash\mathbf{R}_\alpha= \cup_{\lambda\in\mathbb{L};\;\lambda\ne\alpha}\mathbf{R}$" align="middle" border="0" height="38" width="369">.
+In other
+words, after this move, any subset of pixels can change their labels
+to <img src="img59.png" alt="$ \alpha$" align="middle" border="0" height="36" width="18">.
+                  <p></p>
+
+                  <h4><a name="SECTION00322130000000000000">Energy
+minimization algorithms</a> </h4>
+
+The SA and ICM algorithms apply pixel by pixel relaxation moves
+changing one label each time.
+These moves are both <img src="img59.png" alt="$ \alpha$" align="middle" border="0" height="36" width="18">-<img src="img78.png" alt="$ \beta$" align="middle" border="0" height="37" width="17">-swap and <img src="img59.png" alt="$ \alpha$" align="middle" border="0" height="36" width="18">-expansion,
+so that they generalize the standard
+relaxation scheme. The algorithms based on these generalizations are
+sketched in Fig.&nbsp;<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#fig:bvz:algs"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a>.
+                  <p></p>
+
+                  <div align="center"><a name="fig:bvz:algs"></a><a name="1825"></a>
+                  <table>
+
+                    <caption align="bottom"><strong>Figure:</strong>
+                    <img src="img89.png" alt="$ \sf$" align="bottom" border="0" height="18" width="4">Block-diagrams
+of the approximate minimization
+algorithms proposed in&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#boykov:veksler:zabih:01">1</a>].</caption>
+                    <tbody>
+
+                      <tr>
+
+                        <td>
+                        <div align="center"><!-- MATH $\fbox{ \begin{minipage}{140mm} \centerline{~\\\textsc{\textbf{Swap algorithm for semimetric interaction potentials}}\\} \hrule depth 1pt \begin{description} \vspace*{-1mm} \item[1. Initialization:] an arbitrary labeling \(\mathbf{x}\) \vspace*{-3mm} \item[2. Iterative minimization:] For every pair of labels \((\alpha,\beta)\in\mathbb{L}^2\) in a fixed or random order, \begin{description} \vspace*{-3mm} \item[2.1.] Find \( \hat{\mathbf{x}}= {\displaystyle \arg\min\limits_{ \textrm{one }\alpha-\beta-\textrm{swap of }\mathbf{x}}} E(\mathbf{x})\) with a min-cut/max-flow technique \item[2.2.] If \(E(\hat{\mathbf{x}}) < E(\mathbf{x})\), then accept the lower-energy labeling: \(\mathbf{x}\leftarrow\hat{\mathbf{x}}\) \vspace*{-3mm} \end{description} \item [3. Stopping rule:] If a new labeling has been accepted for at least one pair of labels at step 2.1, continue the minimization process by returning to Step 2; otherwise terminate the process and output the final labeling \(\mathbf{x}\) \end{description} \vspace*{-3mm} \hrule depth 2pt \vspace*{1mm} \centerline{\textsc{\textbf{Expansion algorithm for metric interaction potentials}}\\} \hrule depth 1pt \begin{description} \vspace*{-3mm} \item[1. Initialization:] an arbitrary labeling \(\mathbf{x}\) \vspace*{-3mm} \item[2. Iterative minimization:] For every label \(\alpha\in\mathbb{L}\) in a fixed or random order, \begin{description} \vspace*{-3mm} \item[2.1.] Find \( \hat{\mathbf{x}}= {\displaystyle \arg\min\limits_{ \textrm{one }\alpha-\textrm{expansion of }\mathbf{x}}} E(\mathbf{x})\) with a min-cut/max-flow technique \item[2.2.] If \(E(\hat{\mathbf{x}}) < E(\mathbf{x})\), then accept the lower-energy labeling: \(\mathbf{x}\leftarrow\hat{\mathbf{x}}\) \end{description} \vspace*{-3mm} \item [3. Stopping rule:] If a new labeling has been accepted for at least one label at Step 2.1, continue the minimization process by returning to Step 2; otherwise terminate the process and output the final labeling \(\mathbf{x}\) \end{description} \end{minipage} }$ --><img src="img88.png" alt="% latex2html id marker 2766 \fbox{ \begin{minipage}{140mm} \centerline{~\\ \t... ...d output the final labeling \(\mathbf{x}\) \end{description} \end{minipage} }" align="middle" border="0" height="575" width="658"></div>
+
+                        </td>
+
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+                  </div>
+
+                  <p>An iteration at Step 2 performs <img src="img35.png" alt="$ L$" align="bottom" border="0" height="16" width="15"> individual <img src="img59.png" alt="$ \alpha$" align="middle" border="0" height="36" width="18">-expansion
+moves in the expansion algorithm and <img src="img90.png" alt="$ L^2$" align="bottom" border="0" height="20" width="23">
+individual <img src="img59.png" alt="$ \alpha$" align="middle" border="0" height="36" width="18">-<img src="img78.png" alt="$ \beta$" align="middle" border="0" height="37" width="17">-swap moves
+in the swap algorithm. It
+is possible to prove that the minimization terminates in a finite
+number of iterations being of order of the image size <img src="img91.png" alt="$ n$" align="middle" border="0" height="36" width="14">.
+Actually, image segmentation and stereo reconstruction
+experiments&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#boykov:kolmogorov:04">51</a>,<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#boykov:veksler:zabih:01">1</a>]
+have
+shown that these algorithms converge to the local energy minimum
+just in a few iterations. </p>
+
+                  <p>Given a current labeling<!-- MATH $\mathbf{x}$ -->
+                  <img src="img71.png" alt="$ \mathbf{x}$" align="bottom" border="0" height="16" width="14">
+(partition<!-- MATH $\mathbf{P}$ --> <img src="img76.png" alt="$ \mathbf{P}$" align="bottom" border="0" height="16" width="16">)
+and a pair of labels<!-- MATH $(\alpha,\beta)$ --> <img src="img92.png" alt="$ (\alpha,\beta)$" align="middle" border="0" height="39" width="53"> or a label <img src="img59.png" alt="$ \alpha$" align="middle" border="0" height="36" width="18">, the
+swap or expansion move, respectively, at Step 2.1 in
+Fig.&nbsp;<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#fig:bvz:algs"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a>
+uses the min-cut / max-flow optimization
+techique to find a better labeling,<!-- MATH $\hat{\mathbf{x}}$ -->
+                  <img src="img93.png" alt="$ \hat{\mathbf{x}}$" align="bottom" border="0" height="20" width="14">. The latter
+minimizes the energy over all labelings within one <img src="img59.png" alt="$ \alpha$" align="middle" border="0" height="36" width="18">-<img src="img78.png" alt="$ \beta$" align="middle" border="0" height="37" width="17">-swap (the
+swap algorithm) or one <img src="img59.png" alt="$ \alpha$" align="middle" border="0" height="36" width="18">-expansion
+(the expansion algorithm) of<!-- MATH $\mathbf{x}$ --> <img src="img71.png" alt="$ \mathbf{x}$" align="bottom" border="0" height="16" width="14"> and
+corresponds to a minimum cut of a specific graph. The swap and
+expansion graphs are different, and the exact number of their
+pixels, their topology and the edge weights vary from step to step
+in accord with the current partition. </p>
+
+                  <p></p>
+
+                  <h3><a name="SECTION00322200000000000000">Swap
+algorithm: finding the optimal move</a> </h3>
+
+                  <p>The graph,<!-- MATH $\mathbf{G}_{\alpha\beta} = [\mathbf{N}_{\alpha\beta};\mathbf{E}_{\alpha\beta}]$ -->
+                  <img src="img94.png" alt="$ \mathbf{G}_{\alpha\beta} = [\mathbf{N}_{\alpha\beta};\mathbf{E}_{\alpha\beta}]$" align="middle" border="0" height="39" width="149">,
+in
+Fig.&nbsp;<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#fig:ab:swap"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a>
+for finding an optimal swap-move is built
+only on the pixels,
+<!-- MATH $i\in\mathbf{R}_{\alpha\beta}=\mathbf{R}_\alpha\cup\mathbf{R}_\beta$ --><img src="img95.png" alt="$ i\in\mathbf{R}_{\alpha\beta}=\mathbf{R}_\alpha\cup\mathbf{R}_\beta$" align="middle" border="0" height="36" width="156">,
+having labels, <img src="img59.png" alt="$ \alpha$" align="middle" border="0" height="36" width="18">
+and <img src="img78.png" alt="$ \beta$" align="middle" border="0" height="37" width="17">, in the
+partition,
+<!-- MATH $\mathbf{P}$ --><img src="img76.png" alt="$ \mathbf{P}$" align="bottom" border="0" height="16" width="16">, corresponding to the current
+labeling,
+<!-- MATH $\mathbf{x}$ --><img src="img71.png" alt="$ \mathbf{x}$" align="bottom" border="0" height="16" width="14">. The set of nodes,<!-- MATH $\mathbf{N}_{\alpha\beta}$ -->
+                  <img src="img96.png" alt="$ \mathbf{N}_{\alpha\beta}$" align="middle" border="0" height="36" width="39">,
+includes the two terminals, denoted <img src="img59.png" alt="$ \alpha$" align="middle" border="0" height="36" width="18"> and <img src="img78.png" alt="$ \beta$" align="middle" border="0" height="37" width="17">, and
+all the pixels in<!-- MATH $\mathbf{R}_{\alpha\beta}$ --> <img src="img97.png" alt="$ \mathbf{R}_{\alpha\beta}$" align="middle" border="0" height="36" width="39">.
+Each pixel,
+<!-- MATH $i\in\mathbf{R}_{\alpha\beta}$ --><img src="img98.png" alt="$ i\in\mathbf{R}_{\alpha\beta}$" align="middle" border="0" height="36" width="66">,
+is connected to the terminals, <img src="img59.png" alt="$ \alpha$" align="middle" border="0" height="36" width="18">and <img src="img78.png" alt="$ \beta$" align="middle" border="0" height="37" width="17">,
+by edges<!-- MATH $t_{\alpha,i}$ --> <img src="img99.png" alt="$ t_{\alpha,i}$" align="middle" border="0" height="36" width="28"> and
+<!-- MATH $t_{\beta,i}$ --><img src="img100.png" alt="$ t_{\beta,i}$" align="middle" border="0" height="36" width="28">-called <img src="img101.png" alt="$ t$" align="middle" border="0" height="36" width="11">-links
+(terminal
+links)&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#boykov:veksler:zabih:01">1</a>].
+Each pair of nodes,
+<!-- MATH $(i,j)\subset\mathbf{R}_{\alpha\beta}$ --><img src="img102.png" alt="$ (i,j)\subset\mathbf{R}_{\alpha\beta}$" align="middle" border="0" height="39" width="99">,
+which are neighbors, i.e.
+<!-- MATH $(i,j)\in\mathbf{E}$ --><img src="img103.png" alt="$ (i,j)\in\mathbf{E}$" align="middle" border="0" height="39" width="75">,
+is connected with an edge, <img src="img104.png" alt="$ e_{i,j}$" align="middle" border="0" height="36" width="28">,
+called an <img src="img91.png" alt="$ n$" align="middle" border="0" height="36" width="14">-link
+(neighbor link)&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#boykov:veksler:zabih:01">1</a>].
+Therefore, the set of edges,<!-- MATH $\mathbf{E}_{\alpha\beta}$ -->
+                  <img src="img105.png" alt="$ \mathbf{E}_{\alpha\beta}$" align="middle" border="0" height="36" width="38">,
+consists
+of the <img src="img101.png" alt="$ t$" align="middle" border="0" height="36" width="11">- and <img src="img91.png" alt="$ n$" align="middle" border="0" height="36" width="14">-links. </p>
+
+                  <p></p>
+
+                  <div align="center"><a name="fig:ab:swap"></a><a name="1827"></a>
+                  <table>
+
+                    <caption align="bottom"><strong>Figure:</strong>
+                    <img src="img89.png" alt="$ \sf$" align="bottom" border="0" height="18" width="4">Example
+graph,<!-- MATH $( \mathbf{G}_{ \alpha\beta })$ --> <img src="img107.png" alt="$ ( \mathbf{G}_{ \alpha\beta })$" align="middle" border="0" height="39" width="55">,
+for
+finding the optimal swap move for the set of pixels,<!-- MATH $\mathbf{R}_{\alpha\beta}=\mathbf{R}_\alpha\cup\mathbf{R}_\beta$ -->
+                    <img src="img84.png" alt="$ \mathbf{R}_{\alpha\beta}=\mathbf{R}_\alpha\cup\mathbf{R}_\beta$" align="middle" border="0" height="36" width="129">,
+with the labels, <img src="img59.png" alt="$ \alpha$" align="middle" border="0" height="36" width="18">
+and <img src="img78.png" alt="$ \beta$" align="middle" border="0" height="37" width="17">.</caption>
+                    <tbody>
+
+                      <tr>
+
+                        <td>
+                        <div align="center"><img src="img106.png" alt="\includegraphics[width=90mm]{ab-swap.eps}" align="bottom" border="0" height="314" width="407"></div>
+
+                        </td>
+
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+                  </div>
+
+                  <p>If the edges have the following weights:
+<!-- MATH \begin{displaymath} \begin{array}{|c|c|c|}\hline \mathsf{Edge} & \mathsf{Weight} & \mathsf{Condition}\\\hline t_{\alpha,i} & V_i(\alpha)+ \sum\limits_{j\in\mathbf{N}_i;\;j\notin\mathbf{R}_{\alpha\beta}}V_{ij}(\alpha,x_j) & i\in\mathbf{R}_{\alpha\beta}\\ t_{\beta,i} & V_i(\beta)+ \sum\limits_{j\in\mathbf{N}_i;\;j\notin\mathbf{R}_{\alpha\beta}}V_{ij}(\beta,x_j) & i\in\mathbf{R}_{\alpha\beta}\\ e_{i,j} & V_{ij}(\alpha,\beta) & (i,j)\in\mathcal{N}\cap\mathbf{R}_{\alpha\beta}^2 \\\hline \end{array} \end{displaymath} --></p>
+
+                  <p></p>
+
+                  <div align="center"> <img src="img108.png" alt="\begin{displaymath} \begin{array}{\vert c\vert c\vert c\vert}\hline \mathsf{Ed... ...hcal{N}\cap\mathbf{R}_{\alpha\beta}^2 \\ \hline \end{array} \end{displaymath}" border="0" height="177" width="439"></div>
+
+                  <p></p>
+
+then each cut<!-- MATH $\mathcal{C}$ --> <img src="img109.png" alt="$ \mathcal{C}$" align="bottom" border="0" height="20" width="20"> on<!-- MATH $\mathbf{G}_{\alpha\beta}$ -->
+                  <img src="img110.png" alt="$ \mathbf{G}_{\alpha\beta}$" align="middle" border="0" height="35" width="40">
+must
+include exactly one <img src="img101.png" alt="$ t$" align="middle" border="0" height="36" width="11">-link
+for any pixel,
+<!-- MATH $i\in\mathbf{R}_{\alpha\beta}$ --><img src="img98.png" alt="$ i\in\mathbf{R}_{\alpha\beta}$" align="middle" border="0" height="36" width="66">:
+otherwise, either there will be a
+path between the terminals if both the links are included, or a
+proper subset of<!-- MATH $\mathcal{C}$ --> <img src="img109.png" alt="$ \mathcal{C}$" align="bottom" border="0" height="20" width="20"> will become
+a cut if both the links
+are excluded. Therefore, any cut,<!-- MATH $\mathcal{C}$ -->
+                  <img src="img109.png" alt="$ \mathcal{C}$" align="bottom" border="0" height="20" width="20">,
+provides a
+natural labeling,<!-- MATH $\mathbf{x}_{\mathcal{C}}$ --> <img src="img111.png" alt="$ \mathbf{x}_{\mathcal{C}}$" align="middle" border="0" height="36" width="27">,
+such that every
+pixel,<!-- MATH $i\in\mathbf{R}_{\alpha\beta}$ --> <img src="img98.png" alt="$ i\in\mathbf{R}_{\alpha\beta}$" align="middle" border="0" height="36" width="66">
+is labeled with <img src="img59.png" alt="$ \alpha$" align="middle" border="0" height="36" width="18">
+or <img src="img78.png" alt="$ \beta$" align="middle" border="0" height="37" width="17"> if the cut<!-- MATH $\mathcal{C}$ -->
+                  <img src="img109.png" alt="$ \mathcal{C}$" align="bottom" border="0" height="20" width="20">
+separates <img src="img65.png" alt="$ i$" align="middle" border="0" height="36" width="10">
+from the
+terminal <img src="img59.png" alt="$ \alpha$" align="middle" border="0" height="36" width="18">
+or <img src="img78.png" alt="$ \beta$" align="middle" border="0" height="37" width="17">,
+respectively, and the other pixels
+keep their initial labels (Fig.&nbsp;<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#fig:ab:cuts"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a>):
+<!-- MATH \begin{displaymath} x_{\mathcal{C},i} = \left\{ \begin{array}{lll} \alpha & \mathrm{if} & i\in\mathbf{R}_{\alpha\beta}\textrm{ and }t_{\alpha,i}\in\mathcal{C}\\ \beta & \mathrm{if} & i\in\mathbf{R}_{\alpha\beta}\textrm{ and }t_{\beta,i} \in\mathcal{C}\\ x_i & \mathrm{if} & i\notin\mathbf{R}_{\alpha\beta} \end{array} \right.;\; \forall i\in\mathbf{R} \end{displaymath} -->
+                  <p></p>
+
+                  <div align="center"> <img src="img112.png" alt="\begin{displaymath} x_{\mathcal{C},i} = \left\{ \begin{array}{lll} \alpha &amp; \... ...{\alpha\beta} \end{array} \right.;\; \forall i\in\mathbf{R} \end{displaymath}" border="0" height="112" width="369"></div>
+
+                  <p></p>
+
+Each labeling<!-- MATH $\mathbf{x}_\mathcal{C}$ --> <img src="img113.png" alt="$ \mathbf{x}_\mathcal{C}$" align="middle" border="0" height="36" width="27">
+corresponding to a cut,
+<!-- MATH $\mathcal{C}$ --><img src="img109.png" alt="$ \mathcal{C}$" align="bottom" border="0" height="20" width="20">, on the graph<!-- MATH $\mathbf{G}_{\alpha\beta}$ -->
+                  <img src="img110.png" alt="$ \mathbf{G}_{\alpha\beta}$" align="middle" border="0" height="35" width="40">
+is one <img src="img59.png" alt="$ \alpha$" align="middle" border="0" height="36" width="18">-<img src="img78.png" alt="$ \beta$" align="middle" border="0" height="37" width="17">-swap away
+from the initial labeling,
+<!-- MATH $\mathbf{x}$ --><img src="img71.png" alt="$ \mathbf{x}$" align="bottom" border="0" height="16" width="14">.
+                  <p></p>
+
+                  <div align="center"><a name="fig:ab:cuts"></a><a name="1832"></a>
+                  <table>
+
+                    <caption align="bottom"><strong>Figure:</strong>
+                    <img src="img89.png" alt="$ \sf$" align="bottom" border="0" height="18" width="4">A
+cut,<!-- MATH $\mathcal{C}$ --> <img src="img109.png" alt="$ \mathcal{C}$" align="bottom" border="0" height="20" width="20">, on<!-- MATH $\mathbf{G}_{\alpha\beta}$ -->
+                    <img src="img110.png" alt="$ \mathbf{G}_{\alpha\beta}$" align="middle" border="0" height="35" width="40">
+for two pixels,<!-- MATH $i,j\in\mathcal{N}$ --> <img src="img115.png" alt="$ i,j\in\mathcal{N}$" align="middle" border="0" height="37" width="71">,
+connected by an <img src="img91.png" alt="$ n$" align="middle" border="0" height="36" width="14">-link
+                    <img src="img116.png" alt="$ (e_{i,j})$" align="middle" border="0" height="39" width="43">:
+dashed edges are cut by<!-- MATH $(\mathcal{C}$ --> <img src="img117.png" alt="$ (\mathcal{C}$" align="middle" border="0" height="39" width="28">.</caption>
+                    <tbody>
+
+                      <tr>
+
+                        <td>
+                        <div align="center"><img src="img114.png" alt="\includegraphics[width=90mm]{ab-cuts.eps}" align="bottom" border="0" height="266" width="407"></div>
+
+                        </td>
+
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+                  </div>
+
+                  <p>Because a cut separates a subset of pixels
+in
+<!-- MATH $\mathbf{R}_{\alpha\beta}$ --><img src="img97.png" alt="$ \mathbf{R}_{\alpha\beta}$" align="middle" border="0" height="36" width="39">associated
+with one terminal from a
+complementary subset of pixels associated with another terminal, it
+includes (i.e. severs in the graph) an <img src="img91.png" alt="$ n$" align="middle" border="0" height="36" width="14">-link, <img src="img104.png" alt="$ e_{i,j}$" align="middle" border="0" height="36" width="28">,
+between the neighboring pixels in<!-- MATH $\mathbf{R}_{\alpha\beta}$ -->
+                  <img src="img97.png" alt="$ \mathbf{R}_{\alpha\beta}$" align="middle" border="0" height="36" width="39">
+if
+and only if the pixels <img src="img65.png" alt="$ i$" align="middle" border="0" height="36" width="10">
+and <img src="img118.png" alt="$ j$" align="middle" border="0" height="36" width="13"> are
+connected to different
+terminals under this cut:
+<!-- MATH \begin{displaymath} \begin{array}{llll} \mathrm{if}& (t_{\alpha,i}\in\mathcal{C}\textbf{ AND }t_{\alpha,j}\in\mathcal{C}) \textbf{ OR } (t_{\beta,i}\in\mathcal{C}\textbf{ AND }t_{\beta,j}\in\mathcal{C}) & \mathrm{then} & e_{i,j}\notin\mathcal{C}\\ \mathrm{if}& (t_{\beta,i}\in\mathcal{C}\textbf{ AND }t_{\alpha,j}\in\mathcal{C}) \textbf{ OR } (t_{\alpha,i}\in\mathcal{C}\textbf{ AND }t_{\beta,j}\in\mathcal{C}) & \mathrm{then} & e_{i,j}\in\mathcal{C} \end{array} \end{displaymath} --></p>
+
+                  <p></p>
+
+                  <div align="center"> <img src="img119.png" alt="\begin{displaymath} \begin{array}{llll} \mathrm{if}&amp; (t_{\alpha,i}\in\mathcal{... ...al{C}) &amp; \mathrm{then} &amp; e_{i,j}\in\mathcal{C} \end{array} \end{displaymath}" border="0" height="70" width="570"></div>
+
+                  <p></p>
+
+By taking into account that
+<!-- MATH $V_{ij}(x_{\mathcal{C},i},x_{\mathcal{C},j})$ --><img src="img120.png" alt="$ V_{ij}(x_{\mathcal{C},i},x_{\mathcal{C},j})$" align="middle" border="0" height="39" width="109">is
+a semimetric and
+by considering possible cuts involving <img src="img101.png" alt="$ t$" align="middle" border="0" height="36" width="11">-links of and <img src="img91.png" alt="$ n$" align="middle" border="0" height="36" width="14">-link
+between <img src="img65.png" alt="$ i$" align="middle" border="0" height="36" width="10"> and <img src="img118.png" alt="$ j$" align="middle" border="0" height="36" width="13"> and the
+corresponding labelings, it is
+possible to prove:
+                  <p></p>
+
+                  <div><b><b>T<small>HEOREM</small></b>
+2.1</b> (Boykov, Veksler, Zabih, 2001&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#boykov:veksler:zabih:01">1</a>])
+&nbsp; <i>There is an one-to-one correspondence between
+cuts,<!-- MATH $\mathcal{C}$ --> <img src="img109.png" alt="$ \mathcal{C}$" align="bottom" border="0" height="20" width="20">,
+on<!-- MATH $\mathbf{G}_{\alpha\beta}$ --> <img src="img110.png" alt="$ \mathbf{G}_{\alpha\beta}$" align="middle" border="0" height="35" width="40">
+and labelings,
+<!-- MATH $\mathbf{x}_\mathcal{C}$ --><img src="img113.png" alt="$ \mathbf{x}_\mathcal{C}$" align="middle" border="0" height="36" width="27">,
+that are one <img src="img59.png" alt="$ \alpha$" align="middle" border="0" height="36" width="18">-<img src="img78.png" alt="$ \beta$" align="middle" border="0" height="37" width="17"> swap
+from<!-- MATH $\mathbf{x}$ --> <img src="img71.png" alt="$ \mathbf{x}$" align="bottom" border="0" height="16" width="14">. The capacity of a cut<!-- MATH $\mathcal{C}$ -->
+                  <img src="img109.png" alt="$ \mathcal{C}$" align="bottom" border="0" height="20" width="20">
+on
+<!-- MATH $\mathbf{G}_{\alpha\beta}$ --><img src="img110.png" alt="$ \mathbf{G}_{\alpha\beta}$" align="middle" border="0" height="35" width="40">is
+<!-- MATH $c(\mathcal{C})=E(\mathbf{x}_\mathcal{C})$ --><img src="img121.png" alt="$ c(\mathcal{C})=E(\mathbf{x}_\mathcal{C})$" align="middle" border="0" height="39" width="117"> plus a
+constant where <img src="img122.png" alt="$ E(\ldots)$" align="middle" border="0" height="39" width="53">is
+the energy of Eq.&nbsp;(<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#eq:7:energy"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a>). </i></div>
+
+                  <p></p>
+
+                  <p> </p>
+
+                  <div><b><b>C<small>OROLLARY</small></b>
+2.1</b> (Boykov, Veksler, Zabih, 2001&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#boykov:veksler:zabih:01">1</a>])
+&nbsp; <i>The lowest energy labeling within a single <img src="img59.png" alt="$ \alpha$" align="middle" border="0" height="36" width="18">-<img src="img78.png" alt="$ \beta$" align="middle" border="0" height="37" width="17">-swap
+move from a current labeling,<!-- MATH $\mathbf{x}$ --> <img src="img71.png" alt="$ \mathbf{x}$" align="bottom" border="0" height="16" width="14">, is the
+labeling,
+<!-- MATH $\hat{\mathbf{x}}=\mathbf{x}_{\mathcal{C}^\circ}$ --><img src="img123.png" alt="$ \hat{\mathbf{x}}=\mathbf{x}_{\mathcal{C}^\circ}$" align="middle" border="0" height="35" width="66">,
+corresponding
+to the minimum cut,<!-- MATH $\mathcal{C}^\circ$ --> <img src="img124.png" alt="$ \mathcal{C}^\circ$" align="bottom" border="0" height="20" width="29">,
+on
+<!-- MATH $\mathbf{G}_{\alpha\beta}$ --><img src="img110.png" alt="$ \mathbf{G}_{\alpha\beta}$" align="middle" border="0" height="35" width="40">.
+                  </i></div>
+
+                  <p></p>
+
+                  <p> </p>
+
+                  <h3><a name="SECTION00322300000000000000">Expansion
+algorithm: finding the optimal move</a> </h3>
+
+                  <p>The set of nodes,<!-- MATH $\mathbf{N}_{\alpha}$ -->
+                  <img src="img125.png" alt="$ \mathbf{N}_{\alpha}$" align="middle" border="0" height="36" width="29">,
+of the graph,
+<!-- MATH $\mathbf{G}_{\alpha} = [\mathbf{N}_{\alpha};\mathbf{E}_{\alpha}]$ --><img src="img126.png" alt="$ \mathbf{G}_{\alpha} = [\mathbf{N}_{\alpha};\mathbf{E}_{\alpha}]$" align="middle" border="0" height="39" width="120">,
+for finding an optimal expansion-move (see a simple 1D example in
+Fig.&nbsp;<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#fig:a:expan"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a>)
+includes the two terminals, denoted <img src="img59.png" alt="$ \alpha$" align="middle" border="0" height="36" width="18">and<!-- MATH $\bar{\alpha}$ -->
+                  <img src="img127.png" alt="$ \bar{\alpha}$" align="middle" border="0" height="36" width="18">,
+all the
+pixels,<!-- MATH $i\in\mathbf{R}$ --> <img src="img128.png" alt="$ i\in\mathbf{R}$" align="middle" border="0" height="36" width="45">,
+and a set of <em>auxiliary nodes</em> for each pair of the
+neighboring
+nodes,<!-- MATH $(i,j)\in\mathcal{N}$ --> <img src="img129.png" alt="$ (i,j)\in\mathcal{N}$" align="middle" border="0" height="39" width="86">,
+that have different labels<!-- MATH $x_i\ne x_j$ --> <img src="img130.png" alt="$ x_i\ne x_j$" align="middle" border="0" height="37" width="57"> in the
+current partition,<!-- MATH $\mathbf{P}$ --> <img src="img76.png" alt="$ \mathbf{P}$" align="bottom" border="0" height="16" width="16">. The
+auxiliary nodes
+are on the boundaries between sets in the partition,
+<!-- MATH $\mathbf{R}_\lambda$ --><img src="img131.png" alt="$ \mathbf{R}_\lambda$" align="middle" border="0" height="36" width="29">;
+<!-- MATH $\lambda\in\mathbb{L}$ --><img src="img132.png" alt="$ \lambda\in\mathbb{L}$" align="middle" border="0" height="37" width="51">.
+Thus the set of
+nodes is
+<!-- MATH \begin{displaymath} \mathbf{N}_\alpha =\left\{ \alpha,\bar{\alpha},\mathbf{R}, \bigcup\limits_{ \{ (i,j)\in\mathcal{N} | x_i\ne x_j \}}a_{i,j} \right\} \end{displaymath} --></p>
+
+                  <p></p>
+
+                  <div align="center"> <img src="img133.png" alt="$\displaystyle \mathbf{N}_\alpha =\left\{ \alpha,\bar{\alpha},\mathbf{R}, \bigcup\limits_{ \{ (i,j)\in\mathcal{N} \vert x_i\ne x_j \}}a_{i,j} \right\} $" align="middle" border="0" height="87" width="282"></div>
+
+                  <p></p>
+
+                  <p> </p>
+
+                  <div align="center"><a name="fig:a:expan"></a><a name="1838"></a>
+                  <table>
+
+                    <caption align="bottom"><strong>Figure:</strong>
+                    <img src="img89.png" alt="$ \sf$" align="bottom" border="0" height="18" width="4">Example
+graph,<!-- MATH $\mathbf{G}_{ \alpha }$ --> <img src="img135.png" alt="$ \mathbf{G}_{ \alpha }$" align="middle" border="0" height="35" width="30">,
+for finding
+the optimal expansion move for the set of pixels in the image. Here,
+the set of pixels is<!-- MATH $\mathbf{R}=\{i,j,k,l,m\}$ -->
+                    <img src="img136.png" alt="$ \mathbf{R}=\{i,j,k,l,m\}$" align="middle" border="0" height="37" width="133">,
+and the current
+partition is<!-- MATH $\mathbf{P}=\{\mathbf{R}_\alpha$ -->
+                    <img src="img137.png" alt="$ \mathbf{P}=\{\mathbf{R}_\alpha$" align="middle" border="0" height="37" width="74">,
+<!-- MATH $\mathbf{R}_\beta,\mathbf{R}_\gamma\}$ --><img src="img138.png" alt="$ \mathbf{R}_\beta,\mathbf{R}_\gamma\}$" align="middle" border="0" height="37" width="67">where
+<!-- MATH $\mathbf{R}_\alpha=\{i\}$ --><img src="img139.png" alt="$ \mathbf{R}_\alpha=\{i\}$" align="middle" border="0" height="37" width="77">,
+<!-- MATH $\mathbf{R}_\beta=\{j,k\}$ --><img src="img140.png" alt="$ \mathbf{R}_\beta=\{j,k\}$" align="middle" border="0" height="37" width="96">,
+and
+<!-- MATH $\mathbf{R}_\gamma =\{l,m\}$ --><img src="img141.png" alt="$ \mathbf{R}_\gamma =\{l,m\}$" align="middle" border="0" height="37" width="96">.
+Two auxiliary nodes, <img src="img142.png" alt="$ a_{i,j}$" align="middle" border="0" height="36" width="29">
+and <img src="img143.png" alt="$ a_{k,l}$" align="middle" border="0" height="36" width="30">,
+are added between the neighboring pixels with different
+labels in the current partition, i.e. at the boundaries of the
+subsets,<!-- MATH $\mathbf{R}_\lambda$ --> <img src="img131.png" alt="$ \mathbf{R}_\lambda$" align="middle" border="0" height="36" width="29">.</caption>
+                    <tbody>
+
+                      <tr>
+
+                        <td>
+                        <div align="center"><img src="img134.png" alt="\includegraphics[width=90mm]{a-expan.eps}" align="bottom" border="0" height="289" width="407"></div>
+
+                        </td>
+
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+                  </div>
+
+                  <p>Each pixel,<!-- MATH $i\in\mathbf{R}$ -->
+                  <img src="img128.png" alt="$ i\in\mathbf{R}$" align="middle" border="0" height="36" width="45">, is
+connected to the terminals, <img src="img59.png" alt="$ \alpha$" align="middle" border="0" height="36" width="18">and<!-- MATH $\bar{\alpha}$ -->
+                  <img src="img127.png" alt="$ \bar{\alpha}$" align="middle" border="0" height="36" width="18">
+by <img src="img101.png" alt="$ t$" align="middle" border="0" height="36" width="11">-links<!-- MATH $t_{\alpha,i}$ -->
+                  <img src="img99.png" alt="$ t_{\alpha,i}$" align="middle" border="0" height="36" width="28">
+and
+<!-- MATH $t_{\bar{\alpha},i}$ --><img src="img144.png" alt="$ t_{\bar{\alpha},i}$" align="middle" border="0" height="36" width="28">,
+respectively. Each pair of neighboring
+nodes,<!-- MATH $(i,j)\subset\mathcal{N}$ --> <img src="img145.png" alt="$ (i,j)\subset\mathcal{N}$" align="middle" border="0" height="39" width="88">,
+that are not separated in the
+current partition, i.e. have the same labels <img src="img146.png" alt="$ x_i = x_j$" align="middle" border="0" height="36" width="57"> in the
+current labeling, is connected with an <img src="img91.png" alt="$ n$" align="middle" border="0" height="36" width="14">-link <img src="img104.png" alt="$ e_{i,j}$" align="middle" border="0" height="36" width="28">. For
+each pair of the separated neighboring pixels,
+<!-- MATH $(i,j)\in\mathcal{N}$ --><img src="img129.png" alt="$ (i,j)\in\mathcal{N}$" align="middle" border="0" height="39" width="86">,
+that<!-- MATH $x_i\ne x_j$ --> <img src="img130.png" alt="$ x_i\ne x_j$" align="middle" border="0" height="37" width="57">, the
+introduced
+auxiliary node, <img src="img142.png" alt="$ a_{i,j}$" align="middle" border="0" height="36" width="29">,
+results in three edges,
+<!-- MATH $\mathbf{E}_{i,j}=\{e_{i,a_{i,j}},e_{a_{i,j},j},t_{ \bar{\alpha}, a_{i,j} } \}$ --><img src="img147.png" alt="$ \mathbf{E}_{i,j}=\{e_{i,a_{i,j}},e_{a_{i,j},j},t_{ \bar{\alpha}, a_{i,j} } \}$" align="middle" border="0" height="37" width="204">,
+where the first pair of <img src="img91.png" alt="$ n$" align="middle" border="0" height="36" width="14">-links
+connects the
+pixels <img src="img65.png" alt="$ i$" align="middle" border="0" height="36" width="10"> and <img src="img118.png" alt="$ j$" align="middle" border="0" height="36" width="13"> to the
+auxiliary node <img src="img142.png" alt="$ a_{i,j}$" align="middle" border="0" height="36" width="29">,
+and the <img src="img101.png" alt="$ t$" align="middle" border="0" height="36" width="11">-link
+connects the auxiliary node, <img src="img142.png" alt="$ a_{i,j}$" align="middle" border="0" height="36" width="29">, to the
+terminal,<!-- MATH $\bar{\alpha}$ --> <img src="img127.png" alt="$ \bar{\alpha}$" align="middle" border="0" height="36" width="18">. Therefore,
+the set of all edges,
+<!-- MATH $\mathbf{E}_{\alpha}$ --><img src="img148.png" alt="$ \mathbf{E}_{\alpha}$" align="middle" border="0" height="36" width="28">,
+is
+<!-- MATH \begin{displaymath} \mathbf{E}_\alpha =\left\{ \bigcup\limits_{i\in\mathbf{R}}\left\{ t_{\alpha,i}, t_{\bar{\alpha},i} \right\}, \bigcup\limits_{ \{(i,j)\in\mathcal{N}| x_i\ne x_j\} }\mathbf{E}_{i,j}, \bigcup\limits_{ \{(i,j)\in\mathcal{N}|x_i = x_j\} }e_{i,j} \right\} \end{displaymath} --></p>
+
+                  <p></p>
+
+                  <div align="center"> <img src="img149.png" alt="$\displaystyle \mathbf{E}_\alpha =\left\{ \bigcup\limits_{i\in\mathbf{R}}\left\... ..., \bigcup\limits_{ \{(i,j)\in\mathcal{N}\vert x_i = x_j\} }e_{i,j} \right\} $" align="middle" border="0" height="87" width="468"></div>
+
+                  <p></p>
+
+                  <p>The edges have the following weights:
+<!-- MATH \begin{displaymath} \begin{array}{|c|c|c|}\hline \mathsf{Edge} & \mathsf{Weight} & \mathsf{Condition}\\\hline t_{\bar{\alpha},i} & \infty & i\in \mathbf{R}_{\alpha}\\ t_{\bar{\alpha},i} & V_i(x_i) & i\notin\mathbf{R}_{\alpha}\\ t_{\alpha,i} & V_i(\alpha) & i\in \mathbf{R}_{\alpha}\\\hline t_{\bar{\alpha},a_{i,j}} & V_{ij}(x_i,x_j) & \\ e_{i,a_{i,j}} & V_{ij}(x_i,\alpha) & (i,j)\in\mathcal{N};\;x_i\ne x_j \\ e_{a_{i,j},j} & V_{ij}(\alpha,x_j) & \\\hline e_{i,j} & V_{ij}(x_i,\alpha) & (i,j)\in\mathcal{N};\;x_i = x_j \\\hline \end{array} \end{displaymath} --></p>
+
+                  <p></p>
+
+                  <div align="center"> <img src="img150.png" alt="\begin{displaymath} \begin{array}{\vert c\vert c\vert c\vert}\hline \mathsf{Ed... ...ha) &amp; (i,j)\in\mathcal{N};\;x_i = x_j \\ \hline \end{array} \end{displaymath}" border="0" height="273" width="306"></div>
+
+                  <p></p>
+
+That any cut,<!-- MATH $\mathcal{C}$ --> <img src="img109.png" alt="$ \mathcal{C}$" align="bottom" border="0" height="20" width="20">, on<!-- MATH $\mathbf{G}_{\alpha}$ -->
+                  <img src="img135.png" alt="$ \mathbf{G}_{ \alpha }$" align="middle" border="0" height="35" width="30">
+must
+include exactly one <img src="img101.png" alt="$ t$" align="middle" border="0" height="36" width="11">-link
+for any pixel,<!-- MATH $i\in\mathbf{R}$ --> <img src="img128.png" alt="$ i\in\mathbf{R}$" align="middle" border="0" height="36" width="45">,
+provides a natural labeling,<!-- MATH $\mathbf{x}_{\mathcal{C}}$ -->
+                  <img src="img111.png" alt="$ \mathbf{x}_{\mathcal{C}}$" align="middle" border="0" height="36" width="27">,
+corresponding to the cut (Fig.&nbsp;<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#fig:aex:cuts"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a>):
+<!-- MATH \begin{displaymath} x_{\mathcal{C},i} = \left\{ \begin{array}{lll} \alpha & \mathrm{if} & t_{\alpha,i}\in\mathcal{C}\\ x_i & \mathrm{if} & t_{\bar{\alpha},i}\in\mathcal{C} \end{array} \right.;\; \forall i\in\mathbf{R} \end{displaymath} -->
+                  <p></p>
+
+                  <div align="center"> <img src="img151.png" alt="\begin{displaymath} x_{\mathcal{C},i} = \left\{ \begin{array}{lll} \alpha &amp; \... ...in\mathcal{C} \end{array} \right.;\; \forall i\in\mathbf{R} \end{displaymath}" border="0" height="80" width="270"></div>
+
+                  <p></p>
+
+Each labeling,<!-- MATH $\mathbf{x}_\mathcal{C}$ --> <img src="img113.png" alt="$ \mathbf{x}_\mathcal{C}$" align="middle" border="0" height="36" width="27">,
+corresponding to a cut,
+<!-- MATH $\mathcal{C}$ --><img src="img109.png" alt="$ \mathcal{C}$" align="bottom" border="0" height="20" width="20">, on the graph,<!-- MATH $\mathbf{G}_{\alpha}$ -->
+                  <img src="img135.png" alt="$ \mathbf{G}_{ \alpha }$" align="middle" border="0" height="35" width="30">,
+is one <img src="img59.png" alt="$ \alpha$" align="middle" border="0" height="36" width="18">-expansion
+away from the initial labeling<!-- MATH $\mathbf{x}$ --> <img src="img71.png" alt="$ \mathbf{x}$" align="bottom" border="0" height="16" width="14">.
+                  <p></p>
+
+                  <div align="center"><a name="fig:aex:cuts"></a><a name="1855"></a>
+                  <table>
+
+                    <caption align="bottom"><strong>Figure:</strong>
+                    <img src="img89.png" alt="$ \sf$" align="bottom" border="0" height="18" width="4">A
+minimum cut<!-- MATH $(\mathcal{C})$ --> <img src="img153.png" alt="$ (\mathcal{C})$" align="middle" border="0" height="39" width="35"> on<!-- MATH $(\mathbf{G}_{\alpha\beta})$ -->
+                    <img src="img107.png" alt="$ ( \mathbf{G}_{ \alpha\beta })$" align="middle" border="0" height="39" width="55">
+for two pixels
+<!-- MATH $(i,j\in\mathcal{N})$ --><img src="img154.png" alt="$ (i,j\in\mathcal{N})$" align="middle" border="0" height="39" width="86">such that<!-- MATH $(x_i\ne x_j)$ -->
+                    <img src="img155.png" alt="$ (x_i\ne x_j)$" align="middle" border="0" height="39" width="72"> (<!-- MATH $(a \equiv a_{i,j})$ -->
+                    <img src="img156.png" alt="$ (a \equiv a_{i,j})$" align="middle" border="0" height="39" width="77">
+is an auxiliary node between the neighboring
+pixels <img src="img157.png" alt="$ (i)$" align="middle" border="0" height="39" width="25">
+and <img src="img158.png" alt="$ (j)$" align="middle" border="0" height="39" width="28">; dashed
+edges are cut by<!-- MATH $(\mathcal{C})$ --> <img src="img153.png" alt="$ (\mathcal{C})$" align="middle" border="0" height="39" width="35">.</caption>
+                    <tbody>
+
+                      <tr>
+
+                        <td>
+                        <div align="center"><img src="img152.png" alt="\includegraphics[width=90mm]{aex-cuts.eps}" align="bottom" border="0" height="266" width="407"></div>
+
+                        </td>
+
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+                  </div>
+
+                  <p>Because a cut separates a subset of pixels in<!-- MATH $\mathbf{R}$ -->
+                  <img src="img159.png" alt="$ \mathbf{R}$" align="bottom" border="0" height="16" width="18">
+associated with one terminal from a complementary subset of pixels
+associated with another terminal, it severs an <img src="img91.png" alt="$ n$" align="middle" border="0" height="36" width="14">-link, <img src="img104.png" alt="$ e_{i,j}$" align="middle" border="0" height="36" width="28">,
+between the neighboring pixels,
+<!-- MATH $(i,j)\in\mathcal{N}$ --><img src="img129.png" alt="$ (i,j)\in\mathcal{N}$" align="middle" border="0" height="39" width="86">,
+if and only if the pixels <img src="img65.png" alt="$ i$" align="middle" border="0" height="36" width="10">
+and <img src="img118.png" alt="$ j$" align="middle" border="0" height="36" width="13">
+are connected to different terminals under this cut. Formally: </p>
+
+                  <p></p>
+
+                  <div align="center"><a name="eq:property:1"></a><!-- MATH \begin{equation} \begin{array}{llllll} \mathrm{if} & t_{\alpha,i},t_{\alpha,j}\in\mathcal{C} & \mathbf{OR} & t_{\bar{\alpha},i},t_{\bar{\alpha},j}\in\mathcal{C} & \mathrm{then} & e_{i,j}\notin\mathcal{C} \\ \mathrm{if} & t_{\bar{\alpha},i},t_{\alpha,j}\in\mathcal{C} & \mathbf{OR} & t_{\alpha,i},t_{\bar{\alpha},j}\in\mathcal{C} & \mathrm{then} & e_{i,j}\in\mathcal{C} \end{array} \end{equation} -->
+                  <table align="center" cellpadding="0" width="100%">
+
+                    <tbody>
+
+                      <tr valign="middle">
+
+                        <td align="center" nowrap="nowrap"><img src="img160.png" alt="\begin{displaymath}\begin{array}{llllll} \mathrm{if} &amp; t_{\alpha,i},t_{\alpha,j... ...athcal{C} &amp; \mathrm{then} &amp; e_{i,j}\in\mathcal{C} \end{array}\end{displaymath}" border="0" height="80" width="403"></td>
+
+                        <td align="right" nowrap="nowrap" width="10">(2.2.2)</td>
+
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+                  </div>
+
+                  <br clear="all">
+
+                  <p></p>
+
+The triplet of edges,<!-- MATH $\mathbf{E}_{i,j}$ --> <img src="img161.png" alt="$ \mathbf{E}_{i,j}$" align="middle" border="0" height="36" width="32">,
+corresponding to a pair
+of neighboring pixels,<!-- MATH $(i,j)\in\mathcal{N}$ --> <img src="img129.png" alt="$ (i,j)\in\mathcal{N}$" align="middle" border="0" height="39" width="86">,
+that<!-- MATH $x_i\ne x_j$ --> <img src="img130.png" alt="$ x_i\ne x_j$" align="middle" border="0" height="37" width="57">
+may be cut in different ways, even when the pair of severed <img src="img101.png" alt="$ t$" align="middle" border="0" height="36" width="11">-links
+at <img src="img65.png" alt="$ i$" align="middle" border="0" height="36" width="10"> and <img src="img118.png" alt="$ j$" align="middle" border="0" height="36" width="13"> are fixed.
+However, a minimum cut
+uniquely defines the edges to sever in<!-- MATH $\mathbf{E}_{i,j}$ -->
+                  <img src="img161.png" alt="$ \mathbf{E}_{i,j}$" align="middle" border="0" height="36" width="32"> in
+these cases due to the minimality of the cut and the metric
+properties of the potentials associated with the edges,
+<!-- MATH $\{e_{i,a_{i,j}},e_{a_{i,j},j},t_{\bar{\alpha},a_{i,j}}\}\in\mathbf{E}_{i,j}$ --><img src="img162.png" alt="$ \{e_{i,a_{i,j}},e_{a_{i,j},j},t_{\bar{\alpha},a_{i,j}}\}\in\mathbf{E}_{i,j}$" align="middle" border="0" height="37" width="202">.
+The triangle inequality suggests that it is always better to cut any
+one of them, rather than the other two together. This property of a
+minimum cut,<!-- MATH $\mathcal{C}$ --> <img src="img109.png" alt="$ \mathcal{C}$" align="bottom" border="0" height="20" width="20">, is
+illustrated in
+Fig.&nbsp;<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#fig:aex:cuts"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a>
+and has the following formal representation:
+if<!-- MATH $(i,j)\in\mathcal{C}$ --> <img src="img163.png" alt="$ (i,j)\in\mathcal{C}$" align="middle" border="0" height="39" width="78">
+and<!-- MATH $x_i\ne x_j$ --> <img src="img130.png" alt="$ x_i\ne x_j$" align="middle" border="0" height="37" width="57">, then<!-- MATH $\mathcal{C}$ -->
+                  <img src="img109.png" alt="$ \mathcal{C}$" align="bottom" border="0" height="20" width="20">
+satisfies the conditions
+                  <p></p>
+
+                  <div align="center"><a name="eq:property:2"></a><!-- MATH \begin{equation} \begin{array}{llll} \mathrm{if} & t_{\alpha,i},t_{\alpha,j}\in\mathcal{C} & \mathrm{then} & \mathcal{C}\cup\mathbf{E}_{i,j} = \emptyset \\ \mathrm{if} & t_{\bar{\alpha},i},t_{\bar{\alpha},j}\in\mathcal{C} & \mathrm{then} & \mathcal{C}\cup\mathbf{E}_{i,j} = t_{\bar{\alpha},a_{i,j}}\\ \mathrm{if} & t_{\bar{\alpha},i},t_{\alpha,j}\in\mathcal{C} & \mathrm{then} & \mathcal{C}\cup\mathbf{E}_{i,j} = e_{i,a_{i,j}} \\ \mathrm{if} & t_{\alpha,i},t_{\bar{\alpha},j}\in\mathcal{C} & \mathrm{then} & \mathcal{C}\cup\mathbf{E}_{i,j} = e_{a_{i,j},j} \end{array} \end{equation} -->
+                  <table align="center" cellpadding="0" width="100%">
+
+                    <tbody>
+
+                      <tr valign="middle">
+
+                        <td align="center" nowrap="nowrap"><img src="img164.png" alt="\begin{displaymath}\begin{array}{llll} \mathrm{if} &amp; t_{\alpha,i},t_{\alpha,j}\... ... &amp; \mathcal{C}\cup\mathbf{E}_{i,j} = e_{a_{i,j},j} \end{array}\end{displaymath}" border="0" height="144" width="310"></td>
+
+                        <td align="right" nowrap="nowrap" width="10">(2.2.3)</td>
+
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+                  </div>
+
+                  <br clear="all">
+
+                  <p></p>
+
+These properties may hold for non-minimal cuts, too. If an <em>elementary
+cut</em>
+is defined as a cut satisfying the conditions in
+Eqs.&nbsp;(<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#eq:property:1"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a>)
+and&nbsp;(<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#eq:property:2"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a>),
+then it is possible to prove
+                  <p></p>
+
+                  <div><b><b>T<small>HEOREM</small></b>
+2.2</b> (Boykov, Veksler, Zabih, 2001&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#boykov:veksler:zabih:01">1</a>])
+&nbsp; <i>Let a graph,<!-- MATH $\mathbf{G}_{\alpha}$ -->
+                  <img src="img135.png" alt="$ \mathbf{G}_{ \alpha }$" align="middle" border="0" height="35" width="30">,
+be constructed given a
+labeling<!-- MATH $\mathbf{x}$ --> <img src="img71.png" alt="$ \mathbf{x}$" align="bottom" border="0" height="16" width="14"> and <img src="img59.png" alt="$ \alpha$" align="middle" border="0" height="36" width="18">. Then,
+there is an
+one-to-one correspondence between elementary cuts on
+<!-- MATH $\mathbf{G}_{\alpha}$ --><img src="img135.png" alt="$ \mathbf{G}_{ \alpha }$" align="middle" border="0" height="35" width="30">and labelings within one <img src="img59.png" alt="$ \alpha$" align="middle" border="0" height="36" width="18">-expansion
+from<!-- MATH $\mathbf{x}$ --> <img src="img71.png" alt="$ \mathbf{x}$" align="bottom" border="0" height="16" width="14">. The capacity of any
+elementary cut<!-- MATH $\mathcal{C}$ --> <img src="img109.png" alt="$ \mathcal{C}$" align="bottom" border="0" height="20" width="20"> is
+<!-- MATH $c(\mathcal{C})=E(\mathbf{x}_\mathcal{C})$ --><img src="img121.png" alt="$ c(\mathcal{C})=E(\mathbf{x}_\mathcal{C})$" align="middle" border="0" height="39" width="117"> where <img src="img122.png" alt="$ E(\ldots)$" align="middle" border="0" height="39" width="53"> is
+the energy of Eq.&nbsp;<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#eq:7:energy"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a>. </i></div>
+
+                  <p></p>
+
+                  <p> </p>
+
+                  <div><b><b>C<small>OROLLARY</small></b>
+2.2</b> (Boykov, Veksler, Zabih, 2001&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#boykov:veksler:zabih:01">1</a>])
+&nbsp; <i>The lowest energy labeling within a single <img src="img59.png" alt="$ \alpha$" align="middle" border="0" height="36" width="18">-expansion
+move
+from<!-- MATH $\mathbf{x}$ --> <img src="img71.png" alt="$ \mathbf{x}$" align="bottom" border="0" height="16" width="14"> is the labeling,<!-- MATH $\hat{\mathbf{x}}=\mathbf{x}_{ \mathcal{C}^\circ }$ -->
+                  <img src="img123.png" alt="$ \hat{\mathbf{x}}=\mathbf{x}_{\mathcal{C}^\circ}$" align="middle" border="0" height="35" width="66">,
+corresponding to the minimum cut,
+<!-- MATH $\mathcal{C}^\circ$ --><img src="img124.png" alt="$ \mathcal{C}^\circ$" align="bottom" border="0" height="20" width="29">,
+on<!-- MATH $\mathbf{G}_{\alpha}$ --> <img src="img135.png" alt="$ \mathbf{G}_{ \alpha }$" align="middle" border="0" height="35" width="30">.
+                  </i></div>
+
+                  <p></p>
+
+                  <p> </p>
+
+                  <h3><a name="SECTION00322400000000000000">Optimality
+of large moves</a> </h3>
+
+                  <p>Although the swap move algorithm has a wider
+application, as it has
+only semimetric requirements on potentials<!-- MATH $V_{i,j}(\ldots)$ -->
+                  <img src="img165.png" alt="$ V_{i,j}(\ldots)$" align="middle" border="0" height="39" width="64">,
+generally it possesses no proven optimality properties. However, a
+local minimum obtained with the expansion move algorithm is within a
+fixed factor of the global minimum, according to </p>
+
+                  <p></p>
+
+                  <div><b><b>T<small>HEOREM</small></b>
+2.3</b> (Boykov, Veksler, Zabih, 2001&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#boykov:veksler:zabih:01">1</a>])
+&nbsp; <i>Let<!-- MATH $\hat{\mathbf{x}}$ --> <img src="img93.png" alt="$ \hat{\mathbf{x}}$" align="bottom" border="0" height="20" width="14"> be a
+labeling
+for a local energy minimum when with the expansion moves are allowed,
+and let<!-- MATH $\mathbf{x}^\ast$ --> <img src="img166.png" alt="$ \mathbf{x}^\ast$" align="bottom" border="0" height="17" width="22"> be the
+globally optimal solution.
+Then,<!-- MATH $E( \hat{\mathbf{x} } ) \leq 2 \gamma E ( \mathbf{x}^\ast )$ -->
+                  <img src="img167.png" alt="$ E( \hat{\mathbf{x} } ) \leq 2 \gamma E ( \mathbf{x}^\ast ) $" align="middle" border="0" height="39" width="130">
+where </i><!-- MATH \begin{displaymath} \gamma = \max\limits_{(i,j)\in\mathcal{N}} \left( \frac{ \max_{\alpha\ne\beta\in\mathbb{L}}V_{i,j}(\alpha,\beta) } { \min_{\alpha\ne\beta\in\mathbb{L}}V_{i,j}(\alpha,\beta) } \right) \end{displaymath} -->
+                  <p></p>
+
+                  <div align="center"> <img src="img168.png" alt="$\displaystyle \gamma = \max\limits_{(i,j)\in\mathcal{N}} \left( \frac{ \max_{\... ...beta) } { \min_{\alpha\ne\beta\in\mathbb{L}}V_{i,j}(\alpha,\beta) } \right) $" align="middle" border="0" height="67" width="284"></div>
+
+                  <p></p>
+
+                  </div>
+
+                  <p></p>
+
+                  <p></p>
+
+                  <div><i>Proof</i>.
+Let some<!-- MATH $\alpha\in\mathbb{L}$ --> <img src="img170.png" alt="$ \alpha\in\mathbb{L}$" align="middle" border="0" height="35" width="52">
+be fixed and let
+<!-- MATH $\mathbf{R}_\alpha^\ast =\left\{i\in\mathbf{R}|\mathbf{x}^\ast_i=\alpha\right\}$ --><img src="img171.png" alt="$ \mathbf{R}_\alpha^\ast =\left\{i\in\mathbf{R}\vert\mathbf{x}^\ast_i=\alpha\right\}$" align="middle" border="0" height="37" width="172">.
+Let
+<!-- MATH $\mathbf{x}_\alpha$ --><img src="img172.png" alt="$ \mathbf{x}_\alpha$" align="middle" border="0" height="36" width="25">be a labeling within one <img src="img59.png" alt="$ \alpha$" align="middle" border="0" height="36" width="18">-expansion
+move from<!-- MATH $\hat{\mathbf{x}}$ --> <img src="img93.png" alt="$ \hat{\mathbf{x}}$" align="bottom" border="0" height="20" width="14"> such that
+<!-- MATH \begin{displaymath} x_{\alpha,i} = \left\{ \begin{array}{lll} \alpha & \mathrm{if} & i\in\mathbf{R}_\alpha^\ast\\ \hat{x}_i & \multicolumn{2}{l}{\mathrm{otherwise}} \end{array} \right. \end{displaymath} -->
+                  <p></p>
+
+                  <div align="center"> <img src="img173.png" alt="\begin{displaymath} x_{\alpha,i} = \left\{ \begin{array}{lll} \alpha &amp; \mathr... ... \multicolumn{2}{l}{\mathrm{otherwise}} \end{array} \right. \end{displaymath}" border="0" height="80" width="183"></div>
+
+                  <p></p>
+
+Since<!-- MATH $\hat{\mathbf{x}}$ --> <img src="img93.png" alt="$ \hat{\mathbf{x}}$" align="bottom" border="0" height="20" width="14"> is a local
+minimum if expansion
+moves are allowed,
+                  <p></p>
+
+                  <div align="center"><a name="eq:locmin"></a><!-- MATH \begin{equation} E(\hat{\mathbf{x}}) \leq E(\mathbf{x}_\alpha) \end{equation} -->
+                  <table align="center" cellpadding="0" width="100%">
+
+                    <tbody>
+
+                      <tr valign="middle">
+
+                        <td align="center" nowrap="nowrap"><img src="img174.png" alt="$\displaystyle E(\hat{\mathbf{x}}) \leq E(\mathbf{x}_\alpha)$" align="middle" border="0" height="39" width="114"></td>
+
+                        <td align="right" nowrap="nowrap" width="10">(2.2.4)</td>
+
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+                  </div>
+
+                  <br clear="all">
+
+                  <p></p>
+
+                  <p>Let<!-- MATH $\mathbf{S} = \mathbf{S}_\mathrm{pix}\cup\mathbf{S}_\mathrm{pair}$ -->
+                  <img src="img175.png" alt="$ \mathbf{S} = \mathbf{S}_\mathrm{pix}\cup\mathbf{S}_\mathrm{pair}$" align="middle" border="0" height="35" width="120">
+be union of an
+arbitrary subset,<!-- MATH $\mathbf{S}_\mathrm{pix}$ --> <img src="img176.png" alt="$ \mathbf{S}_\mathrm{pix}$" align="middle" border="0" height="35" width="34">,
+of pixels in
+<!-- MATH $\mathbf{R}$ --><img src="img159.png" alt="$ \mathbf{R}$" align="bottom" border="0" height="16" width="18">;<!-- MATH $\mathbf{S}_\mathrm{pix}\subseteq\mathbf{R}$ -->
+                  <img src="img177.png" alt="$ \mathbf{S}_\mathrm{pix}\subseteq\mathbf{R}$" align="middle" border="0" height="35" width="71">,
+and
+of an arbitrary subset,<!-- MATH $\mathbf{S}_\mathrm{pair}$ -->
+                  <img src="img178.png" alt="$ \mathbf{S}_\mathrm{pair}$" align="middle" border="0" height="35" width="38">,
+of neighboring
+pixels in<!-- MATH $\mathcal{N}$ --> <img src="img179.png" alt="$ \mathcal{N}$" align="bottom" border="0" height="20" width="28">;
+<!-- MATH $\mathbf{S}_\mathrm{pair}\subseteq\mathcal{N}$ --><img src="img180.png" alt="$ \mathbf{S}_\mathrm{pair}\subseteq\mathcal{N}$" align="middle" border="0" height="37" width="86">.
+A restriction of
+the energy of labeling<!-- MATH $\mathbf{x}$ --> <img src="img71.png" alt="$ \mathbf{x}$" align="bottom" border="0" height="16" width="14"> to<!-- MATH $\mathbf{S}$ -->
+                  <img src="img181.png" alt="$ \mathbf{S}$" align="middle" border="0" height="35" width="15">
+is defined
+as
+<!-- MATH \begin{displaymath} E(\mathbf{x}|\mathbf{S}) = \sum\limits_{i\in\mathbf{S}_\mathrm{pix}}V_i(x_i)+ \sum\limits_{(i,j)\in\mathbf{S}_\mathrm{pair}}V_{i,j}(x_i,x_j) \end{displaymath} --></p>
+
+                  <p></p>
+
+                  <div align="center"> <img src="img182.png" alt="$\displaystyle E(\mathbf{x}\vert\mathbf{S}) = \sum\limits_{i\in\mathbf{S}_\mathrm{pix}}V_i(x_i)+ \sum\limits_{(i,j)\in\mathbf{S}_\mathrm{pair}}V_{i,j}(x_i,x_j) $" align="middle" border="0" height="66" width="322"></div>
+
+                  <p></p>
+
+Let<!-- MATH $\mathbf{I}_\alpha$ --> <img src="img183.png" alt="$ \mathbf{I}_\alpha$" align="middle" border="0" height="36" width="23">,
+<!-- MATH $\mathbf{B}_\alpha$ --><img src="img184.png" alt="$ \mathbf{B}_\alpha$" align="middle" border="0" height="36" width="28">,
+and
+<!-- MATH $\mathbf{O}_\alpha$ --><img src="img185.png" alt="$ \mathbf{O}_\alpha$" align="middle" border="0" height="35" width="30">denote the union of pixels and
+pairs of
+neighboring pixels contained <em>inside</em>, on the <em>boundary</em>
+and <em>outside</em> of<!-- MATH $\mathbf{R}_\alpha^\ast$ -->
+                  <img src="img186.png" alt="$ \mathbf{R}_\alpha^\ast$" align="middle" border="0" height="36" width="29">,
+respectively:
+<!-- MATH \begin{displaymath} \begin{array}{lllll} \mathbf{I}_\alpha^\ast & = & \mathbf{R}_\alpha^\ast & \cup & \left \{ (i,j)\in\mathcal{N} : i\in\mathbf{R}_\alpha^\ast; j\in\mathbf{R}_\alpha^\ast\right \}\\ \mathbf{B}_\alpha^\ast & = & & & \left \{ (i,j)\in\mathcal{N} : i\in\mathbf{R}_\alpha^\ast; j\notin\mathbf{R}_\alpha^\ast\right \}\\ \mathbf{O}_\alpha^\ast & = & \mathbf{R}\backslash\mathbf{R}_\alpha^\ast & \cup & \left \{ (i,j)\in\mathcal{N} : i\notin\mathbf{R}_\alpha^\ast; j\notin\mathbf{R}_\alpha^\ast\right \} \end{array} \end{displaymath} -->
+                  <p></p>
+
+                  <div align="center"> <img src="img187.png" alt="\begin{displaymath} \begin{array}{lllll} \mathbf{I}_\alpha^\ast &amp; = &amp; \mathbf{... ...a^\ast; j\notin\mathbf{R}_\alpha^\ast\right \} \end{array} \end{displaymath}" border="0" height="112" width="392"></div>
+
+                  <p></p>
+
+The following three relationships hold:
+<!-- MATH \begin{displaymath} \mathsf{(a):}\, E(\mathbf{x}_\alpha|\mathbf{I}_\alpha^\ast) = E(\mathbf{x}^\ast |\mathbf{I}^\ast_\alpha);\;~ \mathsf{(b):}\, E(\mathbf{x}_\alpha|\mathbf{B}_\alpha^\ast) \leq \gamma E(\mathbf{x}^\ast |\mathbf{B}^\ast_\alpha);\;~ \mathsf{(c):}\; E(\mathbf{x}_\alpha|\mathbf{O}_\alpha^\ast) = E(\hat{\mathbf{x}} |\mathbf{O}_\alpha^\ast) \end{displaymath} -->
+                  <p></p>
+
+                  <div align="center"> <img src="img188.png" alt="$\displaystyle \mathsf{(a):}\, E(\mathbf{x}_\alpha\vert\mathbf{I}_\alpha^\ast) =... ...ert\mathbf{O}_\alpha^\ast) = E(\hat{\mathbf{x}} \vert\mathbf{O}_\alpha^\ast) $" align="middle" border="0" height="38" width="663"></div>
+
+                  <p></p>
+
+The relationships <i>(a)</i> and <i>(c)</i>
+follow directly from the definitions
+of<!-- MATH $\mathbf{R}^\ast_\alpha$ --> <img src="img189.png" alt="$ \mathbf{R}^\ast_\alpha$" align="middle" border="0" height="36" width="29">
+and<!-- MATH $\mathbf{x}_\alpha$ --> <img src="img172.png" alt="$ \mathbf{x}_\alpha$" align="middle" border="0" height="36" width="25">.
+The relationship <i>(b)</i>
+holds because<!-- MATH $V_{i,j}(x_{\alpha,i},x_{\alpha,j})\leq \gamma V(x_i^\ast,y_i^\ast)\ne 0$ -->
+                  <img src="img190.png" alt="$ V_{i,j}(x_{\alpha,i},x_{\alpha,j})\leq \gamma V(x_i^\ast,y_i^\ast)\ne 0$" align="middle" border="0" height="39" width="243">
+for
+any<!-- MATH $(i,j)\in\mathbf{B}_\alpha^\ast$ --> <img src="img191.png" alt="$ (i,j)\in\mathbf{B}_\alpha^\ast$" align="middle" border="0" height="39" width="86">.
+                  <p>The union<!-- MATH $\mathbf{I}_\alpha^\ast \cup \mathbf{B}_\alpha^\ast \cup \mathbf{O}_\alpha^\ast$ -->
+                  <img src="img192.png" alt="$ \mathbf{I}_\alpha^\ast \cup \mathbf{B}_\alpha^\ast \cup \mathbf{O}_\alpha^\ast $" align="middle" border="0" height="36" width="109">
+includes all the pixels in<!-- MATH $\mathbf{R}$ --> <img src="img159.png" alt="$ \mathbf{R}$" align="bottom" border="0" height="16" width="18"> and all the
+neighboring pairs of pixels
+in<!-- MATH $\mathcal{N}$ --> <img src="img179.png" alt="$ \mathcal{N}$" align="bottom" border="0" height="20" width="28">. Therefore, Eq.&nbsp;(<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#eq:locmin"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a>) can be
+rewritten as
+<!-- MATH \begin{displaymath} E(\hat{\mathbf{x}}|\mathbf{I}_\alpha^\ast) + E(\hat{\mathbf{x}}|\mathbf{B}_\alpha^\ast) + E(\hat{\mathbf{x}}|\mathbf{O}_\alpha^\ast) \leq E(\mathbf{x}_\alpha|\mathbf{I}_\alpha^\ast) + E(\mathbf{x}_\alpha|\mathbf{B}_\alpha^\ast) + E(\mathbf{x}_\alpha|\mathbf{O}_\alpha^\ast) \end{displaymath} --></p>
+
+                  <p></p>
+
+                  <div align="center"> <img src="img193.png" alt="$\displaystyle E(\hat{\mathbf{x}}\vert\mathbf{I}_\alpha^\ast) + E(\hat{\mathbf{... ...ert\mathbf{B}_\alpha^\ast) + E(\mathbf{x}_\alpha\vert\mathbf{O}_\alpha^\ast) $" align="middle" border="0" height="38" width="534"></div>
+
+                  <p></p>
+
+By substituting the relationships <i>(a)</i>-<i>(c)</i>,
+one
+can obtain:
+                  <p></p>
+
+                  <div align="center"><a name="eq:ene:ineq"></a><!-- MATH \begin{equation} E(\hat{\mathbf{x}}|\mathbf{I}_\alpha^\ast) + E(\hat{\mathbf{x}}|\mathbf{B}_\alpha^\ast) \leq E(\mathbf{x}^\ast|\mathbf{I}_\alpha^\ast) + \gamma E(\mathbf{x}^\ast|\mathbf{B}_\alpha^\ast) \end{equation} -->
+                  <table align="center" cellpadding="0" width="100%">
+
+                    <tbody>
+
+                      <tr valign="middle">
+
+                        <td align="center" nowrap="nowrap"><img src="img194.png" alt="$\displaystyle E(\hat{\mathbf{x}}\vert\mathbf{I}_\alpha^\ast) + E(\hat{\mathbf{... ...\mathbf{I}_\alpha^\ast) + \gamma E(\mathbf{x}^\ast\vert\mathbf{B}_\alpha^\ast)$" align="middle" border="0" height="38" width="349"></td>
+
+                        <td align="right" nowrap="nowrap" width="10">(2.2.5)</td>
+
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+                  </div>
+
+                  <br clear="all">
+
+                  <p></p>
+
+To get the bound on the total energy, Eq.&nbsp;(<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#eq:ene:ineq"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a>)
+has to be summed over all the labels<!-- MATH $\alpha\in\mathbb{L}$ -->
+                  <img src="img170.png" alt="$ \alpha\in\mathbb{L}$" align="middle" border="0" height="35" width="52">:
+                  <p></p>
+
+                  <div align="center"><a name="eq:ene:sum"></a><!-- MATH \begin{equation} \sum\limits_{\alpha\in\mathbb{L}}\left( E(\hat{\mathbf{x}}|\mathbf{I}_\alpha^\ast) + E(\hat{\mathbf{x}}|\mathbf{B}_\alpha^\ast)\right) \leq \sum\limits_{\alpha\in\mathbb{L}}\left( E(\mathbf{x}^\ast|\mathbf{I}_\alpha^\ast) + \gamma E(\mathbf{x}^\ast|\mathbf{B}_\alpha^\ast)\right) \end{equation} -->
+                  <table align="center" cellpadding="0" width="100%">
+
+                    <tbody>
+
+                      <tr valign="middle">
+
+                        <td align="center" nowrap="nowrap"><img src="img195.png" alt="$\displaystyle \sum\limits_{\alpha\in\mathbb{L}}\left( E(\hat{\mathbf{x}}\vert\... ...{I}_\alpha^\ast) + \gamma E(\mathbf{x}^\ast\vert\mathbf{B}_\alpha^\ast)\right)$" align="middle" border="0" height="54" width="441"></td>
+
+                        <td align="right" nowrap="nowrap" width="10">(2.2.6)</td>
+
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+                  </div>
+
+                  <br clear="all">
+
+                  <p></p>
+
+For every
+<!-- MATH $(i,j)\in\mathbf{B}=\bigcup_{\alpha\in\mathbb{L}}\mathbf{B}_\alpha^\ast$ --><img src="img196.png" alt="$ (i,j)\in\mathbf{B}=\bigcup_{\alpha\in\mathbb{L}}\mathbf{B}_\alpha^\ast$" align="middle" border="0" height="39" width="168">,
+the term
+<!-- MATH $V_{i,j}(\hat{x}_i,\hat{x}_j)=E(\hat{\mathbf{x}}|\{(i,j)\})$ --><img src="img197.png" alt="$ V_{i,j}(\hat{x}_i,\hat{x}_j)=E(\hat{\mathbf{x}}\vert\{(i,j)\})$" align="middle" border="0" height="39" width="202">appears
+twice on the left side of Eq.&nbsp;(<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#eq:ene:sum"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a>): once in
+<!-- MATH $E(\hat{\mathbf{x}}|\mathbf{B}_\alpha^\ast)$ --><img src="img198.png" alt="$ E(\hat{\mathbf{x}}\vert\mathbf{B}_\alpha^\ast)$" align="middle" border="0" height="39" width="71">for<!-- MATH $\alpha = x^\ast_i$ -->
+                  <img src="img199.png" alt="$ \alpha = x^\ast_i$" align="middle" border="0" height="36" width="58">,
+and once in
+<!-- MATH $E(\hat{\mathbf{x}}|\mathbf{B}_\alpha^\ast)$ --><img src="img198.png" alt="$ E(\hat{\mathbf{x}}\vert\mathbf{B}_\alpha^\ast)$" align="middle" border="0" height="39" width="71">for
+<!-- MATH $\alpha=x^\ast_j$ --><img src="img200.png" alt="$ \alpha=x^\ast_j$" align="middle" border="0" height="36" width="58">. Similarly, every
+<!-- MATH $V(x^\ast_i,x^\ast_j)=E(\mathbf{x}^\ast|\{(i,j)\})$ --><img src="img201.png" alt="$ V(x^\ast_i,x^\ast_j)=E(\mathbf{x}^\ast\vert\{(i,j)\})$" align="middle" border="0" height="39" width="202">appears
+                  <img src="img202.png" alt="$ 2\gamma$" align="middle" border="0" height="36" width="24">times
+on the right side of Eq.&nbsp;(<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#eq:ene:sum"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a>).
+Therefore, Eq.&nbsp;(<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#eq:ene:sum"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a>) can be rewritten as
+<!-- MATH \begin{displaymath} E(\hat{\mathbf{x}})+E(\hat{\mathbf{x}}|\mathbf{B}) \leq E(\mathbf{x}^\ast)+(2\gamma -1)E(\mathbf{x}^\ast|\mathbf{B}) \leq 2\gamma E(\mathbf{x}^\ast) \end{displaymath} -->
+                  <p></p>
+
+                  <div align="center"> <img src="img203.png" alt="$\displaystyle E(\hat{\mathbf{x}})+E(\hat{\mathbf{x}}\vert\mathbf{B}) \leq E(\m... ...(2\gamma -1)E(\mathbf{x}^\ast\vert\mathbf{B}) \leq 2\gamma E(\mathbf{x}^\ast) $" align="middle" border="0" height="38" width="421"></div>
+
+                  <p></p>
+
+to give the bound of <img src="img202.png" alt="$ 2\gamma$" align="middle" border="0" height="36" width="24">
+for the factor of the global
+minimum. <img src="img169.png" alt="$ \qedsymbol$" align="bottom" border="0" height="17" width="19">
+                  </div>
+
+                  <p></p>
+
+                  <p> </p>
+
+                  <h2><a name="SECTION00323000000000000000">Belief
+Propagation&nbsp;(BP) Optimisation on Graphs</a> </h2>
+
+                  <p>Unlike the minimum-cut algorithms that find
+an approximate minimum
+of an energy function, belief propagation&nbsp;(BP) techniques pass
+messages and update belief values over the Markovian belief network
+in order to find an optimum labelling. The message from a node
+consists of its label (i.e. the disparity value) and the confidence
+about the state of the node. This confidence can be efficiently
+computed with the truncated linear model&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Pedro04">52</a>]. The
+messaging illustrated in Figure&nbsp;<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#fig:bp-message"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a> can be
+considered as an iterative action in which each node receives
+messages from its neighbours and then a new belief about each node
+is computed. Global constraints govern the propagation of
+information from each stable matching point to neighbouring unstable
+and likely occluded ones until the propagation process converges. In
+most cases, colour segments of a reference image constrain
+confidence propagation to each region. </p>
+
+                  <p></p>
+
+                  <div align="center"><a name="fig:bp-message"></a><a name="1675"></a>
+                  <table>
+
+                    <caption align="bottom"><strong>Figure:</strong>
+Local message passing in a graph with six neighbors X1, X2,
+X3, X4, Y1 and Y2</caption> <tbody>
+
+                      <tr>
+
+                        <td>
+                        <div align="center"><img src="img204.png" alt="\includegraphics[width=2.2in]{bp.eps}" align="bottom" border="0" height="259" width="253"></div>
+
+                        </td>
+
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+                  </div>
+
+                  <p> </p>
+
+                  <div align="center"><a name="fig:bp:algs"></a><a name="1707"></a>
+                  <table>
+
+                    <caption align="bottom"><strong>Figure:</strong>
+                    <img src="img89.png" alt="$ \sf$" align="bottom" border="0" height="18" width="4">The
+Belief Propagation
+algorithm.</caption> <tbody>
+
+                      <tr>
+
+                        <td>
+                        <div align="center"><!-- MATH $\fbox{ \begin{minipage}{140mm} \centerline{~\\\textsc{\textbf{Standard Belief Propagation algorithm}}\\} \hrule depth 1pt \begin{description} \vspace*{-1mm} \item[1. Initialization:] Create local correlation messages for each node of the disparity space.\vspace*{-3mm} \item[2. Iterative minimization:] For i=1 to T (the number of iterations) \begin{description} \vspace*{-3mm} \item[2.1.] Update messages $M_{N} \leftarrow \kappa \max\limits_{x_{i}} V_{i}(x_{i})V_{ij}(x_{i},x_{j})\prod\limits_{x_{k}\in N}M_{x_{k}}$ \par \item[2.2.] Compute new beliefs $B_{N} \leftarrow \kappa M_{N}\prod\limits_{x_{k}\in N}M_{x_{k}}$\ \vspace*{-3mm} \end{description} \item [3. Stopping rule:] Terminate the process and output the final labelling either after $T$\ iterations or reaching a stable energy value. \end{description} \vspace*{-3mm} \end{minipage} }$ --><img src="img205.png" alt="% latex2html id marker 2854 \fbox{ \begin{minipage}{140mm} \centerline{~\\ \t... ...ing a stable energy value. \end{description} \vspace*{-3mm} \end{minipage} }" align="middle" border="0" height="285" width="658"></div>
+
+                        </td>
+
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+                  </div>
+
+                  <p>Figure&nbsp;<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#fig:bp:algs"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a>
+summaries BP algorithm. Many BP
+implementations&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Pedro04">52</a>,<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#szs03">53</a>,<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#szs05">54</a>,<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Yang06">55</a>,<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Klaus06">56</a>] perform
+iterative global optimisation using the max-product BP algorithm. In
+experiments with the Middlebury stereo test-bed&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#ss02">4</a>], these
+optimisation techniques achieved the highest ranking . </p>
+
+                  <p></p>
+
+                  <h2><a name="SECTION00324000000000000000">Other
+global optimisation techniques</a> </h2>
+
+Apart from the powerful graph-cut algorithms, other approximate
+techniques have been used for stereo matching by global energy
+minimisation. In particular, Saito and Mori&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Saito95">57</a>] in 1995
+first applied a <b>genetic algorithm</b>&nbsp;(GA) to
+stereo vision.
+Different window sizes were used to find several candidate disparity
+values at each pixel location, and then the GA selected the
+disparity for each pixel from these candidates under the global
+continuity and uniqueness constraints and the assumption that the
+correct disparity must be among the candidates found. Gong and Yang
+extended this algorithm by considering both occlusions and false
+matches&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Gong02">58</a>].
+The improved algorithm could detect and
+remove occlusions and mismatches that violate the visibility
+constraints.
+                  <p></p>
+
+                  <h1><a name="SECTION00330000000000000000">Layered
+Algorithms</a> </h1>
+
+                  <p>Layered models provide a new avenue for
+stereo matching. They allow separate&nbsp;patches at different
+positions in a 3D
+scene rather than only a single surface and&nbsp;reconstruction of
+piecewise smooth surfaces. The
+primary advantage of this model is that each pixel being the minimum
+element in the previous methods can be placed semantically to image
+regions and each surface patch for the image region can get its own
+identification. Hence, it is possible to model hidden connections
+among visible surface patches or isolate occluding regions. </p>
+
+                  <p>Modelling of surface layers helps to avoid
+many incorrect decisions
+stemming from the ``best matching" by the signal correspondence.
+When combining layers, there need not be exactly one surface per
+pixel. Instead, the pixel correspondences are grouped into candidate
+volumes or labelled with no surface for an occluded region. By
+warping a reference left image according to an initial depth map,
+Baker, Szeliski, and Anandan&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Baker98">59</a>] developed a
+layered
+method for stereo matching that minimises the re-synthesis error
+between the warped right image and the real right view. The
+disparity of each surface patch is modelled as a plane with small
+local variations that is similar to the model for a window
+correlation. The surface continuity is enforced by spatial smoothing
+of the matching likelihood scores. </p>
+
+                  <p>Considering connected or slant surfaces,
+Birchfeld and
+Tomasi&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Birchfield99">60</a>]
+assigned pixels to surfaces using the
+graph-based techniques of Boykov-Veksler-Zabih&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#jiang18">47</a>].
+Boundaries along the intensity edges were constrained by assigning
+exactly one disparity value for each image location. Lin and
+Tomasi&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Lin03">61</a>]
+extended this work using the most significant
+symmetric differences between the input images and a spline model
+for the layers. Tao and Sawhney&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Tao00">62</a>,<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Tao01">63</a>] described a
+colour segment-based stereo framework for a layered model. They
+assume small disparity discontinuities inside homogeneous color
+segments if a disparity hypothesis is correct. As Baker et
+al.&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Baker98">59</a>],
+they also warp a reference image to another view
+in line with an initial depth map and render the image to match the
+real scene. Then, the minimisation of the global image similarity
+energy leads the final result. Segmentation reduces the dimensions
+of disparity space and ensures the disparity smoothness over
+homogeneous regions. The expensive warping and inference of
+reasonable disparities for unmatched regions can be avoided with a
+greedy local search based on a neighbouring disparity hypothesis.
+Bleyer and Gelautz&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Bleyer05">64</a>]
+extended this framework and
+applied a modified mean-shift algorithm&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#meanshift">65</a>,<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#DCOM97">66</a>]
+embedding planar dissimilarity measurements to extract clusters of
+similar disparity segments. Hence, the algorithm has the same
+limitation, namely, the input images have to be well approximated by
+a set of planes. In other words, the segmentation must accurately
+find real layers existing in an observed scene. Generally, this
+cannot be guaranteed if the scene contains objects with more complex
+surface structures. </p>
+
+                  <p></p>
+
+                  <h1><a name="SECTION00340000000000000000"></a><a name="section:problem"></a> <br>
+
+A New Proposal: Concurrent Stereo Matching </h1>
+
+                  <p> </p>
+
+                  <h2><a name="SECTION00341000000000000000">Drawbacks
+of Conventional Algorithms</a> </h2>
+
+The preceding brief overview highlights <b>what are the main
+disadvantages of published algorithms</b>. Almost all
+conventional
+stereo approaches other than the layered algorithms, search for a
+single optical surface that yields the best correspondence between
+the stereo images under constrained surface continuity, smoothness,
+and visibility. Most of the constraints are ``soft", i.e. limited
+deviations are allowed. The matching scores used are <em>ad hoc</em>
+linear combinations of individual terms measuring signal similarity,
+surface smoothness, surface visibility and occlusions with
+empirically chosen weights for each term.
+                  <p>The resulting NP-hard global optimisation
+problem is approximately
+solved with many different techniques, e.g. dynamic
+programming&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Georgy99">39</a>,<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#b84">67</a>,<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Ohta85">32</a>,<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#g91">68</a>], belief
+propagation&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#szs03">53</a>,<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#szs05">54</a>] or graph min-cut
+algorithms&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#r99">37</a>,<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#boykov:veksler:zabih:01">1</a>,<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#kkz03">69</a>]. However, the
+chosen values of the weights in the matching score strongly
+influence the reconstruction accuracy&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Liu01">11</a>]. In addition,
+most of the conventional matching scores take no account of
+spatially constant or variant contrast and offset deviations.
+Typical stereo pairs contain many admissible matches, so that the
+``best" matching may lead to many incorrect decisions. Moreover,
+real scenes very rarely consist of a single surface, so this
+assumption is also too restrictive. </p>
+
+                  <p>Figure&nbsp;<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#fig:profiles"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a> illustrates problems that can be
+encountered with single surface binocular stereo reconstruction as
+well as with regularisation of stereo matching for a multiple
+surface scene. A section through a set of surfaces along with the
+corresponding piecewise-constant intensity profiles in the left and
+right images is shown in Figure&nbsp;<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#fig:profiles"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a>(a). Grey areas in
+Figures&nbsp;<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#fig:profiles"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a>(b)-(d)
+show matching regions.
+Figure&nbsp;<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#fig:profiles"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a>(b)
+shows that an erroneous single surface
+profile may easily be constructed by applying smoothness and
+ordering constraints. Other reconstructions (from the many possible)
+are shown in Figures&nbsp;<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#fig:profiles"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a>(c) and (d). Moreover, the
+corresponding (precisely matching) areas do not reflect the actual
+scene unless occlusions are taken into account. Without additional
+constraints, it is impossible to discriminate between possible
+solutions. </p>
+
+                  <p></p>
+
+                  <div align="center"><a name="fig:profiles"></a><a name="1906"></a>
+                  <table>
+
+                    <caption align="bottom"><strong>Figure:</strong>
+Multiple and single profile reconstructions
+from a stereo pair with piecewise-constant signals for corresponding
+regions:
+(a) actual disjoint surface profiles;
+(b) signal-based corresponding areas within a single continuous
+profile,
+(c) one (extreme) disjoint variant, and
+(d) one restricted to a fixed disparity range.</caption> <tbody>
+
+                      <tr>
+
+                        <td>
+                        <div align="center">
+                        <table align="center" cellpadding="3">
+
+                          <tbody>
+
+                            <tr>
+
+                              <td align="center"><img src="img206.png" alt="\includegraphics[width=6cm]{new_st0}" align="bottom" border="0" height="239" width="271"></td>
+
+                              <td align="center"><img src="img207.png" alt="\includegraphics[width=6cm]{st-singlet}" align="bottom" border="0" height="239" width="272"></td>
+
+                            </tr>
+
+                            <tr>
+
+                              <td align="center">(a)</td>
+
+                              <td align="center">(b)</td>
+
+                            </tr>
+
+                            <tr>
+
+                              <td align="center"><img src="img208.png" alt="\includegraphics[width=6cm]{st-multip}" align="bottom" border="0" height="239" width="271"></td>
+
+                              <td align="center"><img src="img209.png" alt="\includegraphics[width=6cm]{st-multip-range-gs}" align="bottom" border="0" height="239" width="272"></td>
+
+                            </tr>
+
+                            <tr>
+
+                              <td align="center">(c)</td>
+
+                              <td align="center">(d)</td>
+
+                            </tr>
+
+                          </tbody>
+                        </table>
+
+                        </div>
+
+                        </td>
+
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+                  </div>
+
+                  <p>Furthermore, even low level signal noise
+that does not mask major
+signal changes in Fig.&nbsp;<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#fig:profiles"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a> hinders the conventional
+matching paradigm because it is based on the maximum similarity
+between the signals for a reasonably constrained surface. In this
+simple example, the closest similarity between the initially equal
+signals distorted with independent noise can lead to selection of a
+completely random surface from a set of admissible variants
+specified by both signal correspondences and surface constraints. </p>
+
+                  <p>Given a noise model, a more realistic stereo
+matching goal is to
+estimate signal noise and specify a plausible range of differences
+between corresponding signals. The noise estimates allow us to
+outline 3D volumes that contain all the surfaces ensuring a `good
+matching'. Then the desired surface or surfaces may be chosen using
+surface constraints only. </p>
+
+                  <p></p>
+
+                  <div align="center"><a name="fig:tsukuba:combined"></a><a name="1908"></a>
+                  <table>
+
+                    <caption align="bottom"> <strong>Figure:</strong>
+`Tsukuba' stereo pair: distribution of signal differences (top left), <img src="img214.png" alt="$ \delta I$" align="middle" border="0" height="37" width="24">, and
+grey-coded absolute signal differences (bottom right),<!-- MATH $\vert \delta I\vert$ -->
+                    <img src="img215.png" alt="$ \vert \delta I\vert$" align="middle" border="0" height="37" width="34">,
+for one pair of epipolar lines (<span style="font-weight: bold; font-size: 12px;">y=173</span>)
+vs. the actual profile. </caption><tbody>
+
+                      <tr>
+
+                        <td>
+                        <div align="center">
+                        <table align="center" cellpadding="3">
+
+                          <tbody>
+
+                            <tr>
+
+                              <td align="center"><img src="img210.png" alt="\includegraphics[width=4.32cm,height=4.32cm]{new_newnoisedistrub}" align="bottom" border="0" height="196" width="195"></td>
+
+                              <td align="center"><img src="img211.png" alt="\includegraphics[width=5.81cm]{tsukuba-r-173marked}" align="bottom" border="0" height="197" width="263"></td>
+
+                            </tr>
+
+                            <tr>
+
+                              <td align="center"><img src="img212.png" alt="\includegraphics[width=4.32cm]{tsukuba-l-173marked_rot90}" align="bottom" border="0" height="261" width="195"></td>
+
+                              <td align="center"><img src="img213.png" alt="\includegraphics[width=5.81cm]{color-173-err-cnt}" align="bottom" border="0" height="262" width="262"></td>
+
+                            </tr>
+
+                          </tbody>
+                        </table>
+
+                        </div>
+
+                        </td>
+
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+                  </div>
+
+                  <p>Generally, stereo matching presumes the
+availability
+of a signal similarity model that accounts for changes in surface
+reflection for any potential noise sources.
+However, most stereo matching scores in computer vision,
+including the best-performing graph minimum-cut or belief propagation
+ones,
+use very simple intensity dissimilarity terms
+such as the sum of absolute signal differences (SAD) or square
+differences (SSD) for all the binocularly visible surface points.
+The underlying signal model assumes equal corresponding signals
+distorted by an additive independent noise
+with the same zero-centred symmetric probability distribution.
+Such a simplification is justified for a few stereo pairs typically
+used for testing algorithms in
+today's computer vision, e.g., for the Middlebury
+data set&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#ss02">4</a>].
+However, this simplification is totally invalid in most practical
+applications, e.g. for
+aerial or ground stereo images of terrain collected at different times
+under changing illumination and image acquisition conditions.
+More realistic similarity models must take account of global or local
+offset and contrast signal distortions&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#b84">67</a>,<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#g91">68</a>]. </p>
+
+                  <p><br>
+
+                  </p>
+
+                  <p></p>
+
+                  <div align="center">
+                  <div align="center"><a name="1909"></a>
+                  <table border="1" cellpadding="3">
+
+                    <caption> <strong>Table 2.1:</strong>
+Distribution
+of intensity differences for corresponding points in the `Tsukuba'
+scene: % of the corresponding points with the absolute intensity
+difference <img src="img214.png" alt="$ \delta I$" align="middle" border="0" height="37" width="24">
+in the indicated range where x-disparities are
+derived from the ground truth (True) and the model reconstructed by
+SDPS, GMC and BP algorithms. The final column contains <span style="font-weight: bold; font-style: italic;">D</span>,
+the sum
+of square distances between the distributions for the ground truth
+and the reconstructed models. </caption> <tbody>
+
+                      <tr>
+
+                        <td align="left"><img style="width: 24px; height: 29px;" src="img214.png" alt="$ \delta I$" align="middle" border="0"></td>
+
+                        <td align="left" valign="top" width="20">0</td>
+
+                        <td align="left" valign="top" width="20">1</td>
+
+                        <td align="left" valign="top" width="20">2</td>
+
+                        <td align="left" valign="top" width="20">3-<br>
+
+5</td>
+
+                        <td align="left" valign="top" width="20">6-<br>
+
+10</td>
+
+                        <td align="left" valign="top" width="20">11-<br>
+
+20</td>
+
+                        <td align="left" valign="top" width="20">21-<br>
+
+30</td>
+
+                        <td align="left" valign="top" width="20">31-<br>
+
+60</td>
+
+                        <td align="left" valign="top" width="20">61-<br>
+
+125</td>
+
+                        <td align="left" valign="top" width="20">126-<br>
+
+255</td>
+
+                        <td align="left" valign="top" width="20"><span style="font-weight: bold; font-style: italic;">D</span><img style="width: 47px; height: 27px;" src="img218.png" alt="$ \times 10^{-4}$" align="middle" border="0"></td>
+
+                      </tr>
+
+                      <tr>
+
+                        <td align="left">True</td>
+
+                        <td align="left" valign="top" width="20">18.5</td>
+
+                        <td align="left" valign="top" width="20">29.6</td>
+
+                        <td align="left" valign="top" width="20">19.5</td>
+
+                        <td align="left" valign="top" width="20">19.1</td>
+
+                        <td align="left" valign="top" width="20">6.6</td>
+
+                        <td align="left" valign="top" width="20">3.7</td>
+
+                        <td align="left" valign="top" width="20">1.4</td>
+
+                        <td align="left" valign="top" width="20">1.2</td>
+
+                        <td align="left" valign="top" width="20">0.4</td>
+
+                        <td align="left" valign="top" width="20">0.0</td>
+
+                        <td align="left" valign="top" width="20">&nbsp;</td>
+
+                      </tr>
+
+                      <tr>
+
+                        <td align="left">SDPS</td>
+
+                        <td align="left" valign="top" width="20">20.9</td>
+
+                        <td align="left" valign="top" width="20">30.9</td>
+
+                        <td align="left" valign="top" width="20">18.1</td>
+
+                        <td align="left" valign="top" width="20">17.9</td>
+
+                        <td align="left" valign="top" width="20">6.7</td>
+
+                        <td align="left" valign="top" width="20">3.7</td>
+
+                        <td align="left" valign="top" width="20">1.2</td>
+
+                        <td align="left" valign="top" width="20">0.6</td>
+
+                        <td align="left" valign="top" width="20">0.0</td>
+
+                        <td align="left" valign="top" width="20">0.0</td>
+
+                        <td align="left" valign="top" width="20">8.5</td>
+
+                      </tr>
+
+                      <tr>
+
+                        <td align="left">GMC</td>
+
+                        <td align="left" valign="top" width="20">17.2</td>
+
+                        <td align="left" valign="top" width="20">25.3</td>
+
+                        <td align="left" valign="top" width="20">15.5</td>
+
+                        <td align="left" valign="top" width="20">17.3</td>
+
+                        <td align="left" valign="top" width="20">8.9</td>
+
+                        <td align="left" valign="top" width="20">6.9</td>
+
+                        <td align="left" valign="top" width="20">3.3</td>
+
+                        <td align="left" valign="top" width="20">2.2</td>
+
+                        <td align="left" valign="top" width="20">1.4</td>
+
+                        <td align="left" valign="top" width="20">0.0</td>
+
+                        <td align="left" valign="top" width="20">60.9</td>
+
+                      </tr>
+
+                      <tr>
+
+                        <td align="left">BP</td>
+
+                        <td align="left" valign="top" width="20">17.2</td>
+
+                        <td align="left" valign="top" width="20">30.4</td>
+
+                        <td align="left" valign="top" width="20">19.7</td>
+
+                        <td align="left" valign="top" width="20">21.5</td>
+
+                        <td align="left" valign="top" width="20">6.4</td>
+
+                        <td align="left" valign="top" width="20">3.6</td>
+
+                        <td align="left" valign="top" width="20">1.0</td>
+
+                        <td align="left" valign="top" width="20">0.8</td>
+
+                        <td align="left" valign="top" width="20">2.3</td>
+
+                        <td align="left" valign="top" width="20">1.2</td>
+
+                        <td align="left" valign="top" width="20">13.6</td>
+
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+                  </div>
+
+                  </div>
+
+                  <br>
+
+For the `Tsukuba' stereo pair from the Middlebury data
+set&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#ss02">4</a>],
+Table&nbsp;<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#tbl:difference"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a>
+shows empirical
+probability distributions of absolute pixel-wise signal differences,
+<!-- MATH $\delta I(x,y,d) = \vert I_\mathrm{L}(x,y) - I_\mathrm{R}(x-d,y) \vert $ --><img src="img219.png" alt="$ \delta I(x,y,d) = \vert I_\mathrm{L}(x,y) - I_\mathrm{R}(x-d,y) \vert $" align="middle" border="0" height="39" width="275">,
+for the corresponding points in the supplied "ground truth"
+and for three single-surface models reconstructed by symmetric
+dynamic programming stereo&nbsp;(SDPS), graph minimum cut (GMC),
+and
+belief propagation (BP) algorithms in a given <img src="img9.png" alt="$ x$" align="middle" border="0" height="36" width="13">-disparity range
+<!-- MATH $\Delta=[d_{\min}=0 , d_{\max}=14]$ --><img src="img220.png" alt="$ \Delta=[d_{\min}=0 , d_{\max}=14]$" align="middle" border="0" height="39" width="201">.
+Effectively, this
+distribution shows the discrepancy in a real image pair from the
+assumed simple signal model. Fig.&nbsp;<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html#fig:tsukuba:combined"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a>
+(top
+left) plots this distribution and shows grey-coded signal
+correspondences for one epipolar line (<span style="font-weight: bold; font-size: 14px;">y=173</span>)
+in terms of the
+pixel-wise absolute differences - black regions corresponding to
+<!-- MATH $\delta I = 0$ --><img src="img221.png" alt="$ \delta I = 0$" align="middle" border="0" height="37" width="56">. The multiplicity of possible
+matches is clearly
+seen<a name="tex2html15" href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#foot1790"><sup>2.2</sup></a>.
+The distribution obtained with the&nbsp;SDPS algorithm&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#g91">68</a>] is
+closest to the true one. The overlaid true surface profiles show
+that in this example, the single-surface approximation is close to
+the actual disjoint scene only due to a small <img src="img9.png" alt="$ x$" align="middle" border="0" height="36" width="13">-disparity range
+<!-- MATH $\Delta = [0,14]$ --><img src="img222.png" alt="$ \Delta = [0,14]$" align="middle" border="0" height="39" width="86">. SDPS and its use for
+estimating the image noise
+are further discussed in Chapter&nbsp;<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_ncsm.html"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a>.
+                  <p>To sum up, the disadvantages of the
+conventional stereo algorithms
+are: </p>
+
+                  <ol>
+
+                    <li>A vast majority of these algorithms takes
+no account of the intrinsic ill-posedness of stereo matching problems,
+hidden image noise and likely photometric&nbsp;image distortions
+(e.g. contrast and offset different). This problem will be discussed
+further in
+Chapter&nbsp;<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_ncsm.html"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a>.
+                    </li>
+
+                    <li>They search for a single surface giving
+the best correspondence between
+stereo images although the single surface assumption is too restrictive
+in practice. </li>
+
+                    <li>They rely upon <em>ad hoc</em>
+heuristic matching scores such as weighted linear combinations of
+individual terms measuring signal dissimilarity, surface curvature,
+surface visibility, and occlusions. </li>
+
+                    <li>Weights for the matching scores are
+empirical selected and dramatically effect the matching accuracy; no
+theoretical justify the selection of these weights or the matching
+score as a whole exist. </li>
+
+                    <li>Processing stereo pairs, with the large
+disparity ranges, is difficult because of the high computational
+complexity of the most effective global optimisation algorithms. </li>
+
+                  </ol>
+
+                  <p> </p>
+
+                  <h2><a name="SECTION00342000000000000000">New
+Stereo Matching Framework</a> </h2>
+
+                  <p>This thesis proposes and elaborates a new
+stereo matching framework
+based on the layered model of an observed 3D scene. The framework
+reduces the disadvantages of more conventional previous methods by
+including an original noise estimation mechanism and less
+restrictive statement of the matching goals. This new framework,
+named ``Noise-driven Concurrent Stereo Matching"&nbsp;(NCSM)
+in&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Liu02">12</a>,<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Liu05">15</a>,<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Liu06">16</a>], clearly separates
+stereo image matching
+from a subsequent search for 3D visible surfaces related to the
+images. First, a noise model which allows for mutual photometric
+distortions of images is used to guide the search for candidate 3D
+volumes in the disparity space. Then, concurrent stereo matching
+detects all the likely matching 3D volumes, by using image-to-image
+matching at a set of fixed depths, or disparity, values - abandoning
+the conventional assumption that a single best match can be found.
+The matching exploits an unconventional noise model that accounts
+for multiple possible outliers or large mismatches. Then a process
+of surface fitting or 3D surface reconstruction proceeds from
+foreground to background surfaces (with due account for occlusions),
+enlarging the corresponding background volumes into&nbsp;occluded
+regions and selecting mutually consistent optical surfaces that
+exhibit high point-wise signal similarity. </p>
+
+                  <p> </p>
+
+                  <div style="padding: 8px;"></div>
+
+                  </div>
+
+                  </td>
+
+                </tr>
+
+              </tbody>
+            </table>
+
+<!-- InstanceEndEditable --> </td>
+
+          </tr>
+
+        </tbody>
+      </table>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+</div>
+
+<div class="license-nonprofit"></div>
+
+<div class="bottomshadow">
+</div>
+
+<div class="smalltext" id="poweredby">@Copyright by
+Jiang Liu <a href="mailto:jliu001@ec.auckland.ac.nz">Contact
+Administrator </a><a class="smalltext" href="mailto:jliu001@ec.auckland.ac.nz">jliu001@gmail.com</a><br>
+
+</div>
+
+<!-- InstanceEnd -->
+
+
+</body></html>

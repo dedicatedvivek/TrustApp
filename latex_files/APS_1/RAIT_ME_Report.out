@@ -1,0 +1,24 @@
+\BOOKMARK [0][-]{chapter*.2}{Abstract}{}% 1
+\BOOKMARK [0][-]{chapter*.3}{List of Tables}{}% 2
+\BOOKMARK [0][-]{chapter*.4}{List of Figures}{}% 3
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 4
+\BOOKMARK [0][-]{chapter.2}{Visible light communication}{}% 5
+\BOOKMARK [1][-]{section.2.1}{Brief history of Visible Light Communication.}{chapter.2}% 6
+\BOOKMARK [1][-]{section.2.2}{Spectrum Analysis}{chapter.2}% 7
+\BOOKMARK [1][-]{section.2.3}{Characteristics of VLC}{chapter.2}% 8
+\BOOKMARK [0][-]{chapter.3}{Working Technology}{}% 9
+\BOOKMARK [0][-]{chapter.4}{VLC System Architechture}{}% 10
+\BOOKMARK [1][-]{section.4.1}{VLC Transmitter}{chapter.4}% 11
+\BOOKMARK [1][-]{section.4.2}{VLC Channel}{chapter.4}% 12
+\BOOKMARK [2][-]{subsection.4.2.1}{Interferences with other light sources}{section.4.2}% 13
+\BOOKMARK [1][-]{section.4.3}{VLC Receiver}{chapter.4}% 14
+\BOOKMARK [0][-]{chapter.5}{Challenges for VLC}{}% 15
+\BOOKMARK [1][-]{section.5.1}{Uplink Design}{chapter.5}% 16
+\BOOKMARK [1][-]{section.5.2}{Increasing data rate}{chapter.5}% 17
+\BOOKMARK [1][-]{section.5.3}{Interference from sunlight}{chapter.5}% 18
+\BOOKMARK [1][-]{section.5.4}{Dimming Control}{chapter.5}% 19
+\BOOKMARK [0][-]{chapter.6}{Modulation Technoque for VLC}{}% 20
+\BOOKMARK [0][-]{chapter.7}{Applications of VLC}{}% 21
+\BOOKMARK [0][-]{chapter.8}{IEEE 802.15.7 STANDARD}{}% 22
+\BOOKMARK [0][-]{chapter.9}{Conclusion}{}% 23
+\BOOKMARK [0][-]{chapter.9}{Bibliography}{}% 24

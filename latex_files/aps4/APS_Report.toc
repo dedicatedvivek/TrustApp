@@ -1,0 +1,12 @@
+\contentsline {chapter}{Abstract}{iii}
+\contentsline {chapter}{List of Figures}{iv}
+\contentsline {chapter}{\numberline {1}Introduction}{1}
+\contentsline {chapter}{\numberline {2}Literature Survey}{3}
+\contentsline {chapter}{\numberline {3}Overview of Global Stereo Algorithm}{5}
+\contentsline {chapter}{\numberline {4}Research Plan}{7}
+\contentsline {section}{\numberline {4.1}MRF formulation on stereo image:}{7}
+\contentsline {section}{\numberline {4.2} Applying BP to minimize energy functions:}{9}
+\contentsline {subsection}{\numberline {4.2.1}The problem statement:}{11}
+\contentsline {subsection}{\numberline {4.2.2}Expected Results:}{11}
+\contentsline {chapter}{\numberline {5}Conclusion}{13}
+\contentsline {chapter}{Bibliography}{14}

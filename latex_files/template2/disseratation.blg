@@ -1,0 +1,79 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: disseratation.aux
+The style file: plain.bst
+A level-1 auxiliary file: disser_prelude.aux
+A level-1 auxiliary file: chap1_1.aux
+White space in argument---line 2 of file chap1_1.aux
+ : \citation{Carlo
+ :                 satta}
+I'm skipping whatever remains of this command
+A level-1 auxiliary file: chap2_1.aux
+White space in argument---line 2 of file chap2_1.aux
+ : \citation{Anna
+ :                and Bob}
+I'm skipping whatever remains of this command
+White space in argument---line 3 of file chap2_1.aux
+ : \citation{Stephen
+ :                   Moffat}
+I'm skipping whatever remains of this command
+A level-1 auxiliary file: chap3_1.aux
+White space in argument---line 2 of file chap3_1.aux
+ : \citation{Shelley
+ :                   Fishel}
+I'm skipping whatever remains of this command
+White space in argument---line 3 of file chap3_1.aux
+ : \citation{Stephen
+ :                   Moffat}
+I'm skipping whatever remains of this command
+White space in argument---line 5 of file chap3_1.aux
+ : \citation{Anna
+ :                and Bob}
+I'm skipping whatever remains of this command
+White space in argument---line 6 of file chap3_1.aux
+ : \citation{Anna
+ :                and Bob}
+I'm skipping whatever remains of this command
+White space in argument---line 20 of file chap3_1.aux
+ : \citation{Stephen
+ :                   Moffat}
+I'm skipping whatever remains of this command
+White space in argument---line 25 of file chap3_1.aux
+ : \citation{Shelley
+ :                   Fishel}
+I'm skipping whatever remains of this command
+White space in argument---line 26 of file chap3_1.aux
+ : \citation{Codeman
+ :                   Lisa}
+I'm skipping whatever remains of this command
+White space in argument---line 27 of file chap3_1.aux
+ : \citation{Stephen
+ :                   Moffat}
+I'm skipping whatever remains of this command
+White space in argument---line 32 of file chap3_1.aux
+ : \citation{Stephen
+ :                   Moffat}
+I'm skipping whatever remains of this command
+White space in argument---line 33 of file chap3_1.aux
+ : \citation{Stephen
+ :                   Moffat}
+I'm skipping whatever remains of this command
+White space in argument---line 34 of file chap3_1.aux
+ : \citation{Stephen
+ :                   Moffat}
+I'm skipping whatever remains of this command
+White space in argument---line 35 of file chap3_1.aux
+ : \citation{Stephen
+ :                   Moffat}
+I'm skipping whatever remains of this command
+A level-1 auxiliary file: chap4_1.aux
+White space in argument---line 2 of file chap4_1.aux
+ : \citation{Codeman
+ :                   Lisa}
+I'm skipping whatever remains of this command
+White space in argument---line 6 of file chap4_1.aux
+ : \citation{Anna
+ :                willms web}
+I'm skipping whatever remains of this command
+A level-1 auxiliary file: chap5_1.aux
+I found no \bibdata command---while reading file disseratation.aux
+Warning--I didn't find a database entry for "Negriono"
+(There were 18 error messages)

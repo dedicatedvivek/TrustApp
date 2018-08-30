@@ -1,0 +1,132 @@
+\documentclass{beamer}
+%\mode<presentation>{\usepackage{beamerthemesplit}}
+
+%\usepackage{beamerthemebars}
+\usepackage{amsmath}
+\renewcommand{\baselinestretch}{1.2}
+\usepackage{cite}
+\usepackage{url}
+\usepackage{longtable}
+%\usepackage[dvips]{graphicx,color}
+%\usepackage{makeidx}
+\usepackage{nomencl}
+\usepackage{amssymb}
+%\usepackage{psfig}
+%\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage[bottom]{footmisc}
+\usepackage{subfigure}
+\usepackage[OT2,OT1]{fontenc}
+\newcommand{\imsize}{3in}
+
+\useinnertheme{rounded}
+\usecolortheme{whale}
+%\usecolortheme{orchid}
+\useoutertheme{infolines}
+%\useoutertheme{shadow}
+
+%change your title
+\title{Analysis using Belief Propagation Techniques}
+%\setbeamercolor{title}{fg=white,bg=black}
+
+\begin{document}
+
+\author[Chitra Suresh] {By \\ \vspace{0.05in} \textbf{Chitra Suresh } \\ \vspace{0.01in} {Under the Guidance of} \\ \textbf{Prof.Dr.Kushal.R.Tuckley . }\\
+\textcolor{black}{ \\ Department of Electronics Engineering} \\ \textcolor{black}{Ramrao Adik Institute of Technology,\\ Nerul, Navi Mumbai } \\}
+
+\begin{frame}
+\begin{center}
+\end{center}
+\ Analysis using Belief Propagation Techniques
+
+Under the Guidance of \\ \textbf{Prof.Dr.Kushal.R.Tuckley }
+
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{What is spintronics?}
+\begin{itemize}
+\item {The automatic synthesis of a SISO and MIMO QFT controllers is still
+an open problem.}
+\item {The most successful method for such a design takes
+into consideration the non-linear/non-convex QFT bounds without any
+approximation.}
+\item {It thereby ensures closed loop stability of the
+system, and becomes largely independent of the initial controller
+solution.}
+\item {Magnetic Levitation system is subjected to many external
+disturbances.}
+\item {It is highly nonlinear system.}
+\end{itemize}
+\end{frame}
+
+
+%Slide which includes bullated items having numerical no.
+\begin{frame}
+\frametitle{Outline}
+\begin{enumerate}
+\item {Introduction}
+\item {Brief of Magnetic Levitation setup}
+\item {Mathematical Modelling og Magnetic Levitation System}
+\item {Preliminaries- QFT and Constraint Solver}
+\item {QFT Controller Synthesis Problem}
+\item {Proposed QFT Controller Synthesis Method and Prefilter Design  for SISO case}
+\item {Proposed QFT Controller Synthesis Method and Prefilter Design  for MIMO case}
+\item {Discussion}
+\item {Conclusions and Future Work}
+\end{enumerate}
+\end{frame}
+
+%Slide which includes figure
+%\begin{frame}
+%\frametitle{Introduction to Magnetic Levitation Setup} Schematic of
+
+
+
+
+%Slide which includes table
+\begin{frame}
+\frametitle{Sensor Linearization for Lower Magnet and Coil}
+\begin{table}
+  \centering
+  \caption{Raw Sensor Data for Lower SISO case}
+  \begin{tabular}{|c|c|}
+\hline
+    \textbf{Magnet position (cm)} & \textbf{Raw Sensor Output $y_{1raw}$(counts)} \\ \hline
+    % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+    0 & 27900 \\ \hline
+    0.5 & 22700 \\ \hline
+    1 & 18300 \\ \hline
+    2 & 12000 \\ \hline
+    3 & 8200 \\ \hline
+    4 & 5800 \\ \hline
+    5 & 4100 \\ \hline
+    6 & 2800 \\ \hline
+  \end{tabular}
+\end{table}
+\end{frame}
+
+%Slide which includes equation
+\begin{frame}
+\frametitle{Sensor Nonlinearity}
+\begin{eqnarray*}
+% \nonumber to remove numbering (before each equation)
+  y_{ical}&=& \frac{e_{i}}{y_{iraw}}+\frac{f_{i}}{\sqrt{y_{iraw}}}+g_{i}+h_{i}y_{iraw}\\
+  e_{1} &=& -11347,f_{1}=713.5441,g_{1}=-2.9904,h_{1}=-2.5283*10^{-5} \\
+  e_{2} &=& 7109.4,f_{2}=-581.75,g_{2}=1.8355,h_{2}=4.1371*10^{-5}
+\end{eqnarray*}
+\end{frame}
+
+
+%Slide which includes last slides
+\begin{frame}
+\centerline{\textbf{\begin{Huge}Thank You...\end{Huge}}}
+\end{frame}
+
+\end{document}
+

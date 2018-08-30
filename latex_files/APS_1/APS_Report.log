@@ -1,0 +1,264 @@
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=latex 2014.12.5)  5 AUG 2018 12:42
+entering extended mode
+**C:/Users/anish/Desktop/latex_files/APS_1/APS_Report.tex
+(C:/Users/anish/Desktop/latex_files/APS_1/APS_Report.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+(C:\Users\anish\Desktop\latex_files\APS_1\final_raitreport.cls
+
+LaTeX Warning: You have requested document class `final_raitreport',
+               but the document class provides `iitbaps'.
+
+Document Class: iitbaps 2007/06/25 IIT Bombay Annual Preogress Report Format
+Document Class `iitbaps' v0.5beta <13 August 07>
+(C:\miketext\tex\latex\base\report.cls
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+(C:\miketext\tex\latex\base\size12.clo
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+Two side is false
+) (C:\miketext\tex\latex\graphics\graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\miketext\tex\latex\graphics\keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(C:\miketext\tex\latex\graphics\graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\miketext\tex\latex\graphics\trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(C:\miketext\tex\latex\00miktex\graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: dvips.def on input line 91.
+
+(C:\miketext\tex\latex\graphics\dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(C:\Users\anish\Desktop\latex_files\APS_1\APS_Report.aux
+(C:\Users\anish\Desktop\latex_files\APS_1\final_report_prelude.aux)
+(C:\Users\anish\Desktop\latex_files\APS_1\chap1.aux)
+(C:\Users\anish\Desktop\latex_files\APS_1\chap2.aux)
+(C:\Users\anish\Desktop\latex_files\APS_1\chap3.aux
+
+LaTeX Warning: Label `ChapterIntroduction' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+) (C:\Users\anish\Desktop\latex_files\APS_1\chap4.aux)
+(C:\Users\anish\Desktop\latex_files\APS_1\chap5.aux))
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+
+(C:\Users\anish\Desktop\latex_files\APS_1\final_report_prelude.tex
+File: raitlogo.eps Graphic file (type eps)
+
+<raitlogo.eps> [1
+
+
+
+]
+File: raitlogo.eps Graphic file (type eps)
+ <raitlogo.eps>
+File: university.eps Graphic file (type eps)
+ <university.eps>
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 63.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 63.
+
+Overfull \hbox (23.66826pt too wide) in paragraph at lines 63--72
+ [][][] 
+ []
+
+[1
+
+] [2
+
+
+] [3
+
+] (C:\Users\anish\Desktop\latex_files\APS_1\APS_Report.lof
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 5.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 5.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 5.
+)
+\tf@lof=\write3
+ [4
+
+]
+(C:\Users\anish\Desktop\latex_files\APS_1\APS_Report.toc)
+\tf@toc=\write4
+\c@theorem=\count88
+ [5
+
+])
+(C:\Users\anish\Desktop\latex_files\APS_1\chap1.tex
+Chapter 1.
+) [1
+
+
+
+
+] [2] (C:\Users\anish\Desktop\latex_files\APS_1\chap2.tex
+Chapter 2.
+[3
+
+
+
+]) [4] (C:\Users\anish\Desktop\latex_files\APS_1\chap3.tex
+Chapter 3.
+Missing character: There is no … in font cmr12!
+Missing character: There is no … in font cmr12!
+Missing character: There is no … in font cmr12!
+[5
+
+
+
+]
+Missing character: There is no … in font cmr12!
+Missing character: There is no … in font cmr12!
+Missing character: There is no … in font cmr12!
+Missing character: There is no … in font cmr12!
+Missing character: There is no … in font cmr12!
+Missing character: There is no … in font cmr12!
+
+Overfull \hbox (4.40254pt too wide) in paragraph at lines 53--59
+\OT1/cmr/m/n/12 The Be-lief prop-a-ga-tion al-go-rithm clas-si-fied as sum-prod
+uct al-go-rithm or max-product
+ []
+
+) [6] (C:\Users\anish\Desktop\latex_files\APS_1\chap4.tex
+Chapter 4.
+File: rp1.eps Graphic file (type eps)
+<rp1.eps>
+Overfull \hbox (159.05092pt too wide) in paragraph at lines 14--15
+[][][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 124.71078pt on input line 16.
+
+[7
+
+
+
+] [8]
+File: mrf.eps Graphic file (type eps)
+ <mrf.eps> [9]
+File: bp.eps Graphic file (type eps)
+ <bp.eps>
+File: msgsc.eps Graphic file (type eps)
+ <msgsc.eps>
+Overfull \hbox (50.64592pt too wide) in paragraph at lines 67--68
+ [][] 
+ []
+
+[10]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--83
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
+
+ []
+
+) [11] [12] (C:\Users\anish\Desktop\latex_files\APS_1\chap5.tex
+Chapter 5.
+) [13
+
+
+
+] (C:\Users\anish\Desktop\latex_files\APS_1\bibliography.tex
+Underfull \hbox (badness 10000) in paragraph at lines 24--26
+[][]\OT1/cmr/m/n/12 http://nghiaho.com/notes/Markov Ran-dom Field,Loopy Be-lief
+ Prop-a-ga-
+ []
+
+
+Underfull \hbox (badness 1137) in paragraph at lines 26--28
+[][]\OT1/cmr/m/n/12 Tappen,M.F. and Free-man,W.T., `` Com-par-i-sion of graph c
+uts with BP for
+ []
+
+[14
+
+
+
+]
+Underfull \hbox (badness 1137) in paragraph at lines 45--46
+[][]\OT1/cmr/m/n/12 Tappen,M.F. and Free-man,W.T., `` Com-par-i-sion of graph c
+uts with BP for
+ []
+
+) [15] (C:\Users\anish\Desktop\latex_files\APS_1\APS_Report.aux
+(C:\Users\anish\Desktop\latex_files\APS_1\final_report_prelude.aux)
+(C:\Users\anish\Desktop\latex_files\APS_1\chap1.aux)
+(C:\Users\anish\Desktop\latex_files\APS_1\chap2.aux)
+(C:\Users\anish\Desktop\latex_files\APS_1\chap3.aux)
+(C:\Users\anish\Desktop\latex_files\APS_1\chap4.aux)
+(C:\Users\anish\Desktop\latex_files\APS_1\chap5.aux))
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 753 strings out of 493922
+ 10432 string characters out of 3147305
+ 61587 words of memory out of 3000000
+ 4041 multiletter control sequences out of 15000+200000
+ 10377 words of font info for 36 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 28i,7n,21p,759b,283s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on APS_Report.dvi (21 pages, 43864 bytes).

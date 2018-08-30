@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)https://globlib4u.wordpress.com/2013/03/06/stereo-matching/ -->
+<html lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Stereo matching | Lib4U</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://globlib4u.wordpress.com/xmlrpc.php">
+<link rel="alternate" type="application/rss+xml" title="Lib4U » Feed" href="https://globlib4u.wordpress.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Lib4U » Comments Feed" href="https://globlib4u.wordpress.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Lib4U » Stereo matching Comments Feed" href="https://globlib4u.wordpress.com/2013/03/06/stereo-matching/feed/">
+<script type="text/javascript">
+/* <![CDATA[ */
+function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!='function'){window.onload=func;}else{window.onload=function(){oldonload();func();}}}
+/* ]]> */
+</script>
+<link rel="stylesheet" id="all-css-0" href="./Stereo matching   Lib4U_files/saved_resource" type="text/css" media="all">
+<link rel="stylesheet" id="print-css-0" href="./Stereo matching   Lib4U_files/global-print.css" type="text/css" media="print">
+<script type="text/javascript">
+/* <![CDATA[ */
+var LoggedOutFollow = {"invalid_email":"Your subscription did not succeed, please try again with a valid email address."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Stereo matching   Lib4U_files/saved_resource(1)"></script>
+<link rel="stylesheet" id="all-css-0" href="./Stereo matching   Lib4U_files/style.css" type="text/css" media="all">
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='highlander-comments-ie7-css'  href='https://s2.wp.com/wp-content/mu-plugins/highlander-comments/style-ie7.css?m=1351637563g&#038;ver=20110606' type='text/css' media='all' />
+<![endif]-->
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://globlib4u.wordpress.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://s1.wp.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="STEREOSCOPIC VISION AND PERSPECTIVE PROJECTION" href="https://globlib4u.wordpress.com/2013/03/03/stereoscopic-vision-and-perspective-projection/">
+<link rel="next" title="Geometric Operations" href="https://globlib4u.wordpress.com/2013/03/06/geometric-operations/">
+<meta name="generator" content="WordPress.com">
+<link rel="canonical" href="./Stereo matching   Lib4U_files/Stereo matching   Lib4U.html">
+<link rel="shortlink" href="http://wp.me/p32MGw-ho">
+<link rel="alternate" type="application/json+oembed" href="https://public-api.wordpress.com/oembed/1.0/?format=json&url=https%3A%2F%2Fgloblib4u.wordpress.com%2F2013%2F03%2F06%2Fstereo-matching%2F&for=wpcom-auto-discovery"><link rel="alternate" type="application/xml+oembed" href="https://public-api.wordpress.com/oembed/1.0/?format=xml&url=https%3A%2F%2Fgloblib4u.wordpress.com%2F2013%2F03%2F06%2Fstereo-matching%2F&for=wpcom-auto-discovery">
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Stereo matching">
+<meta property="og:url" content="https://globlib4u.wordpress.com/2013/03/06/stereo-matching/">
+<meta property="og:description" content="Approaches to the correspondence problem can be broadly classified into two categories: the intensity-based matching and the feature-based matching techniques. In the first category, the matching p...">
+<meta property="article:published_time" content="2013-03-06T16:19:46+00:00">
+<meta property="article:modified_time" content="2013-03-06T16:19:46+00:00">
+<meta property="article:author" content="https://globlib4u.wordpress.com/author/vietvo89/">
+<meta property="og:site_name" content="Lib4U">
+<meta property="og:image" content="https://globlib4u.files.wordpress.com/2013/03/img10.gif?w=106">
+<meta property="og:image" content="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/img10.gif">
+<meta property="og:image" content="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/img11.gif">
+<meta property="og:image" content="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/img12.gif">
+<meta property="og:image" content="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/img13.gif">
+<meta property="og:image" content="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/img14.gif">
+<meta property="og:image" content="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/cross_ref_motif.gif">
+<meta property="og:image" content="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/img15.gif">
+<meta property="og:image" content="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/img1.gif">
+<meta property="og:image" content="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/img2.gif">
+<meta property="og:image" content="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/img16.gif">
+<meta property="og:image" content="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/img17.gif">
+<meta property="og:image" content="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/img18.gif">
+<meta property="og:image" content="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/img6.gif">
+<meta property="og:image" content="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/img19.gif">
+<meta property="og:image" content="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/img20.gif">
+<meta property="og:image" content="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/img21.gif">
+<meta property="og:image" content="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/img22.gif">
+<meta property="og:image" content="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/img23.gif">
+<meta property="og:image" content="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/img24.gif">
+<meta property="og:image" content="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/img25.gif">
+<meta property="og:image" content="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/img26.gif">
+<meta property="og:image" content="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/img27.gif">
+<meta property="og:image" content="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/img28.gif">
+<meta property="og:image" content="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/img29.gif">
+<meta property="og:image" content="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/img30.gif">
+<meta property="og:image" content="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/img31.gif">
+<meta property="og:image" content="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/img32.gif">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:site" content="@wordpressdotcom">
+<meta name="twitter:image" content="https://globlib4u.files.wordpress.com/2013/03/img10.gif?w=240">
+<meta name="twitter:card" content="summary">
+<meta property="fb:app_id" content="249643311490">
+<meta property="article:publisher" content="https://www.facebook.com/WordPresscom">
+<link rel="shortcut icon" type="image/x-icon" href="https://secure.gravatar.com/blavatar/cd31ab59883d763b7c97061fdd338cff?s=16" sizes="16x16">
+<link rel="icon" type="image/x-icon" href="https://secure.gravatar.com/blavatar/cd31ab59883d763b7c97061fdd338cff?s=16" sizes="16x16">
+<link rel="apple-touch-icon-precomposed" href="https://secure.gravatar.com/blavatar/774dbeef535c686b21378ef184af2013?s=114">
+<link rel="openid.server" href="https://globlib4u.wordpress.com/?openidserver=1">
+<link rel="openid.delegate" href="https://globlib4u.wordpress.com/">
+<link rel="search" type="application/opensearchdescription+xml" href="https://globlib4u.wordpress.com/osd.xml" title="Lib4U">
+<link rel="search" type="application/opensearchdescription+xml" href="http://wordpress.com/opensearch.xml" title="WordPress.com">
+<meta name="application-name" content="Lib4U"><meta name="msapplication-window" content="width=device-width;height=device-height"><meta name="msapplication-tooltip" content="‎&quot;Behind every stack of books there is a flood of knowledge.&quot;"><meta name="msapplication-task" content="name=Subscribe;action-uri=https://globlib4u.wordpress.com/feed/;icon-uri=https://secure.gravatar.com/blavatar/cd31ab59883d763b7c97061fdd338cff?s=16"><meta name="msapplication-task" content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=https://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=https://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=WordPress.com Forums;action-uri=http://forums.wordpress.com/;icon-uri=https://s2.wp.com/i/favicon.ico"><meta name="title" content="Stereo matching | Lib4U on WordPress.com">
+<meta name="description" content="Approaches to the correspondence problem can be broadly classified into two categories: the intensity-based matching and the feature-based matching techniques. In the first category, the matching process is applied directly to the intensity profiles of the two images, while in the second, features are first extracted from the images and the matching process is applied…">
+	<style type="text/css">
+	#site-title a,
+	#site-description {
+		color: #dd3333 !important;
+	}
+	</style>
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #000000; background-image: url('https://globlib4u.files.wordpress.com/2013/05/2013-happy-new-year-wallpapers-9.jpg'); background-repeat: no-repeat; background-position: top center; background-attachment: fixed; }
+</style>
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+<link rel="stylesheet" type="text/css" id="gravatar-card-css" href="./Stereo matching   Lib4U_files/hovercard.css"><link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="./Stereo matching   Lib4U_files/services.css"><script type="text/javascript" async="" src="./Stereo matching   Lib4U_files/saved_resource(2)"></script></head>
+<body class="single single-post postid-1078 single-format-standard custom-background mp6 customizer-styles-applied highlander-enabled highlander-light">
+<div id="wrapper">
+	<div class="header clear">
+		<div class="space">
+							<a href="https://globlib4u.wordpress.com/" title="Lib4U" sl-processed="1">
+					<img src="./Stereo matching   Lib4U_files/cropped-603340_10151182120941293_1311130900_n.jpg" width="155" height="155" id="header-image" alt="">
+				</a>
+					</div><!-- #space -->
+
+		<h1 id="site-title"><a href="https://globlib4u.wordpress.com/" title="Lib4U" rel="home" sl-processed="1">Lib4U</a></h1>
+
+		<div class="desc">
+			<p id="site-description">‎"Behind every stack of books there is a flood of knowledge."</p>
+		</div><!-- #desc -->
+
+	</div><!-- #header -->
+
+	<div class="middle clear">
+		<div id="access">
+			<div class="logo-fix"></div>
+			
+			<div class="menu-categories-container"><ul id="menu-categories" class="menu"><li id="menu-item-1499" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1499"><a href="https://globlib4u.wordpress.com/category/ebook-journal/" sl-processed="1">Ebook &amp; Journal</a></li>
+<li id="menu-item-1003" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1003"><a href="https://globlib4u.wordpress.com/category/innovative-ideas-design/" sl-processed="1">Innovative Ideas &amp; Design</a>
+<ul class="sub-menu">
+	<li id="menu-item-1004" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1004"><a href="https://globlib4u.wordpress.com/category/innovative-ideas-design/media/" sl-processed="1">Media</a></li>
+	<li id="menu-item-1005" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1005"><a href="https://globlib4u.wordpress.com/category/innovative-ideas-design/technology-innovative-ideas-design/" sl-processed="1">Technology</a></li>
+</ul>
+</li>
+<li id="menu-item-152" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-152"><a href="https://globlib4u.wordpress.com/category/learning-english/" sl-processed="1">Learning English</a>
+<ul class="sub-menu">
+	<li id="menu-item-294" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-294"><a href="https://globlib4u.wordpress.com/category/learning-english/academic-english/" sl-processed="1">Academic English</a></li>
+	<li id="menu-item-295" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-295"><a href="https://globlib4u.wordpress.com/category/learning-english/general-english/" sl-processed="1">General English</a></li>
+	<li id="menu-item-253" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-253"><a href="https://globlib4u.wordpress.com/category/learning-english/ielts/" sl-processed="1">IELTS</a></li>
+	<li id="menu-item-254" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-254"><a href="https://globlib4u.wordpress.com/category/learning-english/toefl/" sl-processed="1">TOEFL</a></li>
+</ul>
+</li>
+<li id="menu-item-111" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-111"><a href="https://globlib4u.wordpress.com/category/online-courses/" sl-processed="1">Online Courses</a>
+<ul class="sub-menu">
+	<li id="menu-item-286" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-286"><a href="https://globlib4u.wordpress.com/category/online-courses/applied-science/" sl-processed="1">Applied Science</a>
+	<ul class="sub-menu">
+		<li id="menu-item-503" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-503"><a href="https://globlib4u.wordpress.com/category/online-courses/applied-science/computer-science/" sl-processed="1">Computer Science</a></li>
+		<li id="menu-item-287" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-287"><a href="https://globlib4u.wordpress.com/category/online-courses/applied-science/electric-electronic-engineering/" sl-processed="1">Electric &amp; Electronic Engineering</a></li>
+		<li id="menu-item-504" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-504"><a href="https://globlib4u.wordpress.com/category/online-courses/applied-science/nano-engineering/" sl-processed="1">Nano Engineering</a></li>
+		<li id="menu-item-505" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-505"><a href="https://globlib4u.wordpress.com/category/online-courses/applied-science/telecommunication/" sl-processed="1">Telecommunication</a></li>
+	</ul>
+</li>
+	<li id="menu-item-288" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-288"><a href="https://globlib4u.wordpress.com/category/online-courses/business/" sl-processed="1">Business</a>
+	<ul class="sub-menu">
+		<li id="menu-item-289" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-289"><a href="https://globlib4u.wordpress.com/category/online-courses/business/management/" sl-processed="1">Management</a></li>
+	</ul>
+</li>
+	<li id="menu-item-290" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-290"><a>Natural Science</a>
+	<ul class="sub-menu">
+		<li id="menu-item-575" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-575"><a href="https://globlib4u.wordpress.com/category/online-courses/natural-science/biology/" sl-processed="1">Biology</a></li>
+		<li id="menu-item-1512" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1512"><a href="https://globlib4u.wordpress.com/category/online-courses/natural-science/cosmology-astronomy/" sl-processed="1">Cosmology &amp; Astronomy</a></li>
+		<li id="menu-item-291" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-291"><a href="https://globlib4u.wordpress.com/category/online-courses/natural-science/mathematics/" sl-processed="1">Mathematics</a></li>
+	</ul>
+</li>
+	<li id="menu-item-292" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-292"><a href="https://globlib4u.wordpress.com/category/online-courses/social-science/" sl-processed="1">Social Science</a>
+	<ul class="sub-menu">
+		<li id="menu-item-293" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-293"><a href="https://globlib4u.wordpress.com/category/online-courses/social-science/history/" sl-processed="1">History</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-347" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-347"><a href="https://globlib4u.wordpress.com/category/research-life/" sl-processed="1">Research &amp; Life</a></li>
+<li id="menu-item-112" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-112"><a href="https://globlib4u.wordpress.com/category/scholarship-information/" sl-processed="1">Scholarship Information</a></li>
+<li id="menu-item-113" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-113"><a href="https://globlib4u.wordpress.com/category/science-technology/" sl-processed="1">Science &amp; Technology</a>
+<ul class="sub-menu">
+	<li id="menu-item-1513" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1513"><a href="https://globlib4u.wordpress.com/category/science-technology/astronomy/" sl-processed="1">Astronomy</a></li>
+	<li id="menu-item-1500" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1500"><a href="https://globlib4u.wordpress.com/category/science-technology/biology-medicine/" sl-processed="1">Biology &amp; Medicine</a></li>
+	<li id="menu-item-1434" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-1434"><a href="https://globlib4u.wordpress.com/category/science-technology/electronic-computer-engineering/" sl-processed="1">Electronic &amp; Computer Engineering</a>
+	<ul class="sub-menu">
+		<li id="menu-item-506" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-506"><a href="https://globlib4u.wordpress.com/category/science-technology/electronic-computer-engineering/automatic-robotic-electrical-electronic-engineering/" sl-processed="1">Automatic &amp; Robotic</a></li>
+		<li id="menu-item-584" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-584"><a href="https://globlib4u.wordpress.com/category/science-technology/electronic-computer-engineering/computer-science-electrical-electronic-engineering/" sl-processed="1">Computer Science</a></li>
+		<li id="menu-item-234" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-234"><a href="https://globlib4u.wordpress.com/category/science-technology/electronic-computer-engineering/digital-signal-process/" sl-processed="1">Digital Signal Process</a>
+		<ul class="sub-menu">
+			<li id="menu-item-507" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-507"><a href="https://globlib4u.wordpress.com/category/science-technology/electronic-computer-engineering/digital-signal-process/pattern-recognition/" sl-processed="1">Pattern Recognition</a></li>
+		</ul>
+</li>
+		<li id="menu-item-155" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-155"><a href="https://globlib4u.wordpress.com/category/science-technology/electronic-computer-engineering/embedded-system/" sl-processed="1">Embedded System</a></li>
+		<li id="menu-item-115" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-115"><a href="https://globlib4u.wordpress.com/category/science-technology/electronic-computer-engineering/ic-design-fabrication/" sl-processed="1">IC Design &amp; Fabrication</a>
+		<ul class="sub-menu">
+			<li id="menu-item-348" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-348"><a href="https://globlib4u.wordpress.com/category/science-technology/electronic-computer-engineering/ic-design-fabrication/analog-design/" sl-processed="1">Analog Design</a></li>
+			<li id="menu-item-356" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-356"><a href="https://globlib4u.wordpress.com/category/science-technology/electronic-computer-engineering/ic-design-fabrication/courses/" sl-processed="1">Courses</a></li>
+			<li id="menu-item-350" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-350"><a href="https://globlib4u.wordpress.com/category/science-technology/electronic-computer-engineering/ic-design-fabrication/digital-design/" sl-processed="1">Digital Design</a></li>
+		</ul>
+</li>
+		<li id="menu-item-508" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-508"><a href="https://globlib4u.wordpress.com/category/science-technology/electronic-computer-engineering/mems-design/" sl-processed="1">MEMS Design</a></li>
+	</ul>
+</li>
+	<li id="menu-item-1430" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1430"><a href="https://globlib4u.wordpress.com/category/science-technology/mathematics-science-technology/" sl-processed="1">Mathematics</a>
+	<ul class="sub-menu">
+		<li id="menu-item-1431" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1431"><a href="https://globlib4u.wordpress.com/category/science-technology/mathematics-science-technology/statistics/" sl-processed="1">Statistics</a></li>
+	</ul>
+</li>
+	<li id="menu-item-219" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-219"><a href="https://globlib4u.wordpress.com/category/science-technology/nano-technology/" sl-processed="1">Nano Technology</a></li>
+</ul>
+</li>
+<li id="menu-item-116" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-116"><a href="https://globlib4u.wordpress.com/category/ted-ideas-worth-spreading/" sl-processed="1">TED Ideas Worth Spreading</a></li>
+</ul></div>		</div>
+	<div id="post-1078" class="post-1078 post type-post status-publish format-standard hentry category-automatic-robotic-electrical-electronic-engineering category-computer-science-electrical-electronic-engineering category-digital-signal-process category-electronic-computer-engineering category-science-technology">
+		<div id="single">
+			<h1 class="entry-title">Stereo matching</h1>
+			<p><a href="https://globlib4u.files.wordpress.com/2013/03/img10.gif" sl-processed="1"><img class="aligncenter size-thumbnail wp-image-1079" alt="img10" src="./Stereo matching   Lib4U_files/img10.gif" width="106" height="150"></a></p>
+<p>Approaches to the correspondence problem can be broadly classified into two categories: the intensity-based matching and the feature-based matching techniques. In the first category, the matching process is applied directly to the intensity profiles of the two images, while in the second, features are first extracted from the images and the matching process is applied to the features.</p>
+<p>&nbsp;</p>
+<h2><a name="SECTION00051000000000000000"></a>Intensity-based stereo matching</h2>
+<p><a name="sec:inten-match"></a>&nbsp;As shown in the previous section, the epipolar lines coincide with the horizontal scanlines if the cameras are parallel, the corresponding points in both images must therefore lie on the same horizontal scanline. Such stereo configurations reduce the search for correspondences from two-dimensions (the entire image) to one-dimension. In fact, a close look at the intensity profiles from the corresponding row of the image pair reveals that the two intensity profiles differ only by a horizontal shift and a local foreshortening. Fig.&nbsp;<a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node5.html#fig:inten-prof" sl-processed="1">5</a>(a) and&nbsp;(b) depict the images taken with a camera that undergoes a displacement in the horizontal direction, the image pair therefore corresponds to a parallel camera set up. Two black lines are marked at rows 80 and 230 in both images. Fig.&nbsp;<a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node5.html#fig:inten-prof" sl-processed="1">5</a>(c) and&nbsp;(d), (e) and&nbsp;(f), respectively show the intensity profiles of row 80 and row 230 of the two images.</p>
+<p>&nbsp;</p>
+<div align="CENTER"><a name="fig:inten-prof"></a>&nbsp;<a name="108"></a><p></p>
+<table>
+<caption><strong>Figure 5:</strong>&nbsp;A comparison of the intensity profiles of two images from a parallel stereo configuration. The image pair shown above is retrieved via ftp from the Calibrated Imaging Laboratory of CMU.</caption>
+<tbody>
+<tr>
+<td><img alt="\begin{figure}&lt;br /&gt;
+\begin{center}&lt;br /&gt;
+\&lt;br /&gt;
+\begin{minipage}&lt;br /&gt;
+{5cm}&lt;br /&gt;
+(a) left image \\&lt;br /&gt;
+\psfig...&lt;br /&gt;
+ ...igure=inten_prof/plotrig230.ps,width=5cm}&lt;br /&gt;
+\end{minipage}\end{center}\end{figure}" src="./Stereo matching   Lib4U_files/img10(1).gif" width="487" height="689"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>&nbsp;</p>
+<p>The similarity between the one-dimensional intensity profiles of the two images suggests an optimization process would be suitable. Indeed, Barn in 1987 attempted matching the parallel stereo images using simulated annealing. He defined an energy function&nbsp;<i>E</i><sub><i>ij</i></sub>&nbsp;as:</p>
+<p align="CENTER"><img alt="\begin{displaymath}&lt;br /&gt;
+E_{ij} = \vert I_L\left(i,j\right)-I_R\left(i,j+D(i,j)\right) \vert&lt;br /&gt;
+ + \lambda \vert\bigtriangledown D(i,j)\vert\end{displaymath}" src="./Stereo matching   Lib4U_files/img11.gif" width="405" height="32"></p>
+<p>where&nbsp;<img alt="$I_L\left(i,j\right)$" src="./Stereo matching   Lib4U_files/img12.gif" width="62" height="33" align="MIDDLE" border="0">&nbsp;denotes the intensity value of the left image at the&nbsp;<i>i</i>-th row and&nbsp;<i>j</i>-th column and&nbsp;<img alt="$I_R\left(i,k\right)$" src="./Stereo matching   Lib4U_files/img13.gif" width="65" height="33" align="MIDDLE" border="0">&nbsp;denotes the intensity value of the right image at the same row but at the&nbsp;<i>k</i>-th column;&nbsp;<i>D</i>(<i>i</i>,<i>j</i>) is the disparity value (or&nbsp;<em>horizontal shift</em>&nbsp;in this case) at the&nbsp;<i>ij</i>-position of the left image.</p>
+<p>The above is clearly a constrained optimization problem in which the only constraint being used is a minimum change of disparity values&nbsp;<img alt="$D(i,j), \,\forall i, j$" src="./Stereo matching   Lib4U_files/img14.gif" width="102" height="33" align="MIDDLE" border="0">. This constraint is commonly known as the&nbsp;<em>continuity constraint</em>&nbsp;(see Section&nbsp;<a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node5.html#sec:constraints" sl-processed="1"><img alt="[*]" src="./Stereo matching   Lib4U_files/cross_ref_motif.gif" align="BOTTOM" border="1"></a>).</p>
+<p>Robe later incorporated the use of a multiresolution scheme (see Section&nbsp;<a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node5.html#sec:c-to-f" sl-processed="1"><img alt="[*]" src="./Stereo matching   Lib4U_files/cross_ref_motif.gif" align="BOTTOM" border="1"></a>) together with a smoothness constraint similar to that of Barn into the constrained optimization process. In addition to the horizontal shift of corresponding pixels, they also allowed the corresponding pixels to undergo vertical shift (i.e. disparity in the vertical direction), so their matching method is not restricted to only parallel stereo images. The energy function to be minimized, as expected, is more complicated than the one given above.</p>
+<p>The advantage of this intensity profile matching is that a dense disparity map and, consequently a dense depth (or range) map, is output. Unfortunately, like all constrained optimization problems, whether the system would converge to the global minima is still an open problem, although, as reported by Robe92, the multiresolution scheme, to a certain extent, helped speed up convergence and avoid local minima.</p>
+<p>An alternative approach in intensity-based stereo matching, commonly known as the&nbsp;<em>window-based method</em>, is to only match those regions in the images that are “interesting”, for instance, regions that contain high variation of intensity values in the horizontal, vertical, and diagonal directions. The simple Moravec’s interest operator (1979) detects such regions (correspond to regions that have grey-level corners) from the image pair, and it has been widely used in many stereo matching systems (e.g. the SRI STEREOSYS system (Hann, 1985)). After the interesting regions are detected, a simple correlation scheme is applied in the matching process; a match is assigned to regions that are highly correlated in the two images.</p>
+<p>The problem associated with this window-based approach is that the size of the correlation windows must be carefully chosen. If the correlation windows are too small, the intensity variation in the windows will not be distinctive enough, and many false matches may result. If they are too large, resolution is lost, since neighbouring image regions with different disparities will be combined in the measurement. Worse, the two windows may not correlate unless the disparity within the windows is constant, which suggests that the multiresolution scheme is again appropriate. Unfortunately, the most serious shortcoming of the window-based approach — its sensitivity to the differences in foreshortening — may sometimes render the approach useless. Fig.&nbsp;<a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node5.html#fig:foreshorten" sl-processed="1">6</a>&nbsp;shows a segment&nbsp;<i>MN</i>&nbsp;in the scene</p>
+<div align="CENTER"><a name="fig:foreshorten"></a>&nbsp;<a name="122"></a><p></p>
+<table>
+<caption><strong>Figure 6:</strong>&nbsp;Foreshortening due to the change of viewing position and direction.</caption>
+<tbody>
+<tr>
+<td><img alt="\begin{figure}&lt;br /&gt;
+\begin{center}&lt;br /&gt;
+\&lt;/p&gt;
+&lt;p&gt;\psfig {figure=foreshorten.xfigps,height=5cm}&lt;br /&gt;
+\end{center}\end{figure}" src="./Stereo matching   Lib4U_files/img15.gif" width="281" height="224"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>projecting onto&nbsp;<img alt="$\Pi$" src="./Stereo matching   Lib4U_files/img1.gif" width="16" height="16" align="BOTTOM" border="0">&nbsp;and&nbsp;<img alt="$\Pi&#39;$" src="./Stereo matching   Lib4U_files/img2.gif" width="21" height="16" align="BOTTOM" border="0">&nbsp;at segments&nbsp;<img alt="$\overline{mn}$" src="./Stereo matching   Lib4U_files/img16.gif" width="30" height="15" align="BOTTOM" border="0">and&nbsp;<img alt="$\overline{m&#39;n&#39;}$" src="./Stereo matching   Lib4U_files/img17.gif" width="39" height="18" align="BOTTOM" border="0">, respectively. Because of the large difference between the orientations of the retinal planes and the scene plane, segment&nbsp;<img alt="$\overline{mn}$" src="./Stereo matching   Lib4U_files/img16.gif" width="30" height="15" align="BOTTOM" border="0">&nbsp;is much longer than segment&nbsp;<img alt="$\overline{m&#39;n&#39;}$" src="./Stereo matching   Lib4U_files/img17.gif" width="39" height="18" align="BOTTOM" border="0">.The windows in the two images would only give the best correlation measure if the window used in&nbsp;<img alt="$\Pi$" src="./Stereo matching   Lib4U_files/img1.gif" width="16" height="16" align="BOTTOM" border="0">&nbsp;has the size of&nbsp;<img alt="$\overline{mn}$" src="./Stereo matching   Lib4U_files/img16.gif" width="30" height="15" align="BOTTOM" border="0">and the window used in&nbsp;<img alt="$\Pi&#39;$" src="./Stereo matching   Lib4U_files/img2.gif" width="21" height="16" align="BOTTOM" border="0">&nbsp;has the size of&nbsp;<img alt="$\overline{m&#39;n&#39;}$" src="./Stereo matching   Lib4U_files/img17.gif" width="39" height="18" align="BOTTOM" border="0">.Such variation of window size to compensate foreshortening is not possible without the knowledge of the scene. This appears to pose a chicken-and-egg problem, since the whole point is to recover shape using correlation matching.</p>
+<p>&nbsp;</p>
+<h2><a name="SECTION00052000000000000000"></a>Feature-based stereo matching</h2>
+<p><a name="sec:feat-match"></a>&nbsp;In the feature-based approach, the image pair is first&nbsp;<em>preprocessed</em>&nbsp;by an operator so as to extract the&nbsp;<em>features</em>&nbsp;that are stable under the change of viewpoint, the matching process is then applied to the<em>attributes</em>&nbsp;associated with the detected features. The obvious question here is what type of features that one should use? Edge elements, corners, line segments, and curve segments are features that are robust against the change of perspective, and they have been widely used in many stereo vision work. Edge elements and corners are easy to detect, but may suffer from occlusion; line and curve segments require extra computation time, but are more robust against occlusion (they are longer and so are less likely to be completely occluded). Higher level image features such as circles, ellipses, and polygonal regions have also been used as features for stereo matching, these features are, however, restricted to images of indoor scenes.</p>
+<p>Most feature-based stereo matching systems are not restricted to using only a specific type of features, instead, a collection of feature types is incorporated. For instance, the system proposed by Weng in 1988 combines intensity, edges, and corners to form multiple attributes for matching; Lim and Binford (1987), on the other hand, used a hierarchy of features varying from edges, curves, to surfaces and bodies (2-D regions) for high-level attribute matching.</p>
+<p>&nbsp;</p>
+<h3><a name="SECTION00052100000000000000"></a>Types of features</h3>
+<p><a name="sec:feat-type"></a></p>
+<ul>
+<li><b>edge elements:</b>&nbsp;There exist many edge operators for finding edge elements from an image. For example, the&nbsp;<img alt="$\bigtriangledown^2 G$" src="./Stereo matching   Lib4U_files/img18.gif" width="42" height="34" align="MIDDLE" border="0"> operator followed by a detection of zero-crossings; the Canny edge detector (1986).The attributes of edge elements used for matching can be: coordinates (location in the image), local orientations (or directions), local intensity profile on either side of the edge elements (e.g. from dark to light, or from light to dark).</li>
+<li><b>corners:</b>&nbsp;The earliest corner detector is probably Beaudet’s (1978) rotationally invariant operator called&nbsp;<em>DET</em>; corner detectors reported in the 80s include Dreschler and Nagel (1982), Kitchen and Rosenfeld (1982), Zuniga and Haralick (1983), etc. The Harris corner detector (1988) is one of the popular corner detectors that are widely used today in Oxford and INRIA.Attributes of corners that can be used for matching: coordinates of corners, type of junctions that the corners correspond to (e.g. Y-junction, L-function, A-junction, etc.).</li>
+<li><b>line segments:</b>&nbsp;To extract line segments from an image, an edge operator must first be applied. Line segments are then formed by a linking and merging operation on the detected edge elements based on some criteria such as distance, similarity, and collinearity measures. Line segment extraction algorithms that have been reported include: Nevatia and Babu (1980), Fischler and Bolles (1983), Weiss and Boldt (1986).Attributes of line segments that can be used for matching: coordinates of end-points, mid-points, orientation of line segments.
+<p>It should be noted that, due to image noise, the end-points (and thus the mid-points also) of line segments are normally not reliably detected, stereo matching process that relies on the coordinates of these points do not produce good reconstruction of 3-D coordinates. In fact, for a pair of matching line segments, any point on the first line segment can correspond to every other point on the second line segment, and this ambiguity can only be resolved if the end-points of the two line segments are known exactly. Using line segments as features for matching also has the following drawbacks:</p>
+<ul>
+<li>only those line segments that have a significant difference in direction with the epipolar lines can be matched. For line segments whose directions are close to those of the epipolar lines, any translation of the line segments along the line segments’ directions does not cause a significant change to the epipolar geometry, yet the subsequent reconstruction process would be greatly affected.</li>
+<li>for a given line segment in one image, its corresponding line segment is likely to be broken into two or more shorter line segments, thus the uniqueness constraint (see Section&nbsp;<a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node5.html#sec:constraints" sl-processed="1"><img alt="[*]" src="./Stereo matching   Lib4U_files/cross_ref_motif.gif" align="BOTTOM" border="1"></a>) may not be applicable.</li>
+<li>the reconstruction of 3-D lines from corresponding 2-D line segments is not well-defined if the end-points of the 2-D line segments are not reliable. This problem can be partially overcome by incorporating an uncertainty measure to the 2-D line segments’ end-points as suggested by Zhang (1995).</li>
+</ul>
+</li>
+<li><b>curve segments:</b>&nbsp;The matching of curve segments has not been widely attempted, the reason is probably due to the ambiguity involved — every point on a curve is likely to be matchable with every other point on another curve. Deriche and Faugeras’ work (1990) is one of the very few that has been reported. They proposed to match the turning points of curves.</li>
+<li><b>circles, ellipses:</b>&nbsp;These features are present mainly in indoor scenes and applicable to detection of defects on industrial parts.Attributes that can be used for matching: areas in pixel units, coordinates of the centre of the geometric figures.</li>
+<li><b>regions:</b>&nbsp;Regions can be either defined as blobs (e.g. detected by a region growing algorithm) in the image or defined as polygonal regions bounded by line segments. Regions in the form of blobs have irregular boundary and may not match perfectly with regions from another <span class="skimlinks-unlinked">image.For</span> polygonal regions, attributes that can be used for matching include: areas of regions, bounding line segments of regions, locations of regions’ centroids.
+<p>Polygonal regions are very high-level features and could be costly to extract.</p></li>
+</ul>
+<h2><a name="SECTION00053000000000000000"></a>Matching constraints</h2>
+<p><a name="sec:constraints"></a>&nbsp;Stereo matching process is a very difficult search procedure. In order to minimum false matches, some matching constraints must be imposed. Below is a list of the commonly used constraints.</p>
+<ul>
+<li><b>Similarity</b>&nbsp;(or&nbsp;<b>compatibility</b>&nbsp;Grimson, 1981). For the intensity-based approach, the matching pixels must have similar intensity values (i.e. differ lower than a specified threshold) or the matching windows must be highly correlated. For the feature-based approach, the matching features must have similar attribute values.</li>
+<li><b>Uniqueness</b>&nbsp;Marr and Poggio, 1979. Almost always, a given pixel or feature from one image can match&nbsp;<em>no more than one</em>&nbsp;pixel or feature from the other <span class="skimlinks-unlinked">image.As</span> noted earlier, the uniqueness constraint may not be applicable to the line segment-based approach. This constraint can also fail if transparent objects are present in the scene. Furthermore, given a pixel or feature&nbsp;<i>m</i>&nbsp;in one image, its “corresponding” pixel or feature may be occluded in the other image. In this case, no match should be assigned to&nbsp;<i>m</i>.</li>
+<li><b>Continuity</b>&nbsp;Marr and Poggio, 1979. The cohesiveness of matters suggests that the disparity of the matches should vary smoothly almost everywhere over the <span class="skimlinks-unlinked">image.This</span> constraint fails at discontinuities of depth, for depth discontinuities cause an abrupt change in disparity.</li>
+<li><b>Ordering</b>&nbsp;Baker and Binford, 1981. If&nbsp;<img alt="$m \leftrightarrow m&#39;$" src="./Stereo matching   Lib4U_files/img6.gif" width="69" height="16" align="BOTTOM" border="0">&nbsp;and&nbsp;<img alt="$n \leftrightarrow n&#39;$" src="./Stereo matching   Lib4U_files/img19.gif" width="59" height="16" align="BOTTOM" border="0">&nbsp;and if&nbsp;<i>m</i>&nbsp;is&nbsp;<em>to the left</em>&nbsp;of&nbsp;<i>n</i>&nbsp;then&nbsp;<i>m</i>‘ should also be&nbsp;<em>to the left</em>&nbsp;of&nbsp;<i>n</i>‘ and vice versa. That is, the ordering of features is preserved across <span class="skimlinks-unlinked">images.The</span> ordering constraint fails at regions known as&nbsp;<em>the forbidden zone</em>&nbsp;(Fig.&nbsp;<a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node5.html#fig:forbidden" sl-processed="1">7</a>).
+<div align="CENTER"><a name="fig:forbidden"></a>&nbsp;<a name="172"></a><p></p>
+<table>
+<caption><strong>Figure 7:</strong>&nbsp;The ordering constraint fails if a given 3-D point (<i>N</i>&nbsp;here) falls onto the forbidden zone of another 3-D point (<i>M</i>). In the left image (<img alt="$\Pi$" src="./Stereo matching   Lib4U_files/img1.gif" width="16" height="16" align="BOTTOM" border="0">),&nbsp;<i>m</i>&nbsp;is to the right of&nbsp;<i>n</i>, but in the right image (<img alt="$\Pi&#39;$" src="./Stereo matching   Lib4U_files/img2.gif" width="21" height="16" align="BOTTOM" border="0">), this ordering is reversed.</caption>
+<tbody>
+<tr>
+<td><img alt="\begin{figure}&lt;br /&gt;
+\begin{center}&lt;br /&gt;
+\&lt;/p&gt;
+&lt;p&gt;\psfig {figure=forbidden.xfigps,height=6cm}&lt;br /&gt;
+\end{center}\end{figure}" src="./Stereo matching   Lib4U_files/img20.gif" width="260" height="270"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li><b>Epipolar</b>. Given a feature point&nbsp;<i>m</i>&nbsp;in the left image, the corresponding feature point&nbsp;<i>m</i>‘ must lie on the corresponding epipolar <span class="skimlinks-unlinked">line.This</span> constraint reduces the search space from two-dimensions to one-dimension. Unlike all the other constraints, the epipolar constraint would never fail and could be applied reliably once the epipolar geometry is known (this is possible after the fundamental matrix is estimated, see Appendix&nbsp;<a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node12.html#app:eplines" sl-processed="1">B</a>).
+<p>By introducing one more camera into the system, the ambiguity involved in matching can be further reduced: Given a feature point&nbsp;<img alt="$m \in \Pi$" src="./Stereo matching   Lib4U_files/img21.gif" width="56" height="30" align="MIDDLE" border="0"> and potential matches&nbsp;<img alt="$m&#39; \in \Pi&#39;$" src="./Stereo matching   Lib4U_files/img22.gif" width="65" height="32" align="MIDDLE" border="0">&nbsp;and&nbsp;<img alt="$m&#39;&#39; \in \Pi&#39;&#39;$" src="./Stereo matching   Lib4U_files/img23.gif" width="72" height="32" align="MIDDLE" border="0">, an epipolar line&nbsp;<img alt="${\bf l}_{13} \in \Pi&#39;&#39;$" src="./Stereo matching   Lib4U_files/img24.gif" width="68" height="32" align="MIDDLE" border="0">&nbsp;can be constructed using&nbsp;<i>m</i>&nbsp;and the epipolar geometry between&nbsp;<img alt="$\Pi$" src="./Stereo matching   Lib4U_files/img1.gif" width="16" height="16" align="BOTTOM" border="0">&nbsp;and&nbsp;<img alt="$\Pi&#39;&#39;$" src="./Stereo matching   Lib4U_files/img25.gif" width="25" height="16" align="BOTTOM" border="0">, another epipolar line&nbsp;<img alt="${\bf l}_{23} \in \Pi&#39;&#39;$" src="./Stereo matching   Lib4U_files/img26.gif" width="68" height="32" align="MIDDLE" border="0"> can also be constructed using&nbsp;<i>m</i>‘ and the epipolar geometry between&nbsp;<img alt="$\Pi&#39;$" src="./Stereo matching   Lib4U_files/img2.gif" width="21" height="16" align="BOTTOM" border="0">&nbsp;and&nbsp;<img alt="$\Pi&#39;&#39;$" src="./Stereo matching   Lib4U_files/img25.gif" width="25" height="16" align="BOTTOM" border="0">. The two epipolar lines&nbsp;<img alt="${\bf l}_{13}$" src="./Stereo matching   Lib4U_files/img27.gif" width="23" height="30" align="MIDDLE" border="0">&nbsp;and&nbsp;<img alt="${\bf l}_{23}$" src="./Stereo matching   Lib4U_files/img28.gif" width="23" height="30" align="MIDDLE" border="0"> must intersect at&nbsp;<i>m</i>” if&nbsp;<img alt="$m \leftrightarrow m&#39; \leftrightarrow m&#39;&#39;$" src="./Stereo matching   Lib4U_files/img29.gif" width="124" height="16" align="BOTTOM" border="0">.</p></li>
+<li><b>Relaxation</b>. A global matching constraint to eliminate false <span class="skimlinks-unlinked">matches.An</span> example (Barnard and Thompson, (1980)) of applying relaxation to stereo matching: assign to each candidate match a probability value based on some criteria on the “goodness of match”; iteratively update this probability value for each candidate match; finally, delete those matches whose probability value is below a certain threshold. The update process in each iteration is as follows: increase probability of a given candidate match&nbsp;<img alt="$m \leftrightarrow m&#39;$" src="./Stereo matching   Lib4U_files/img6.gif" width="69" height="16" align="BOTTOM" border="0">&nbsp;by a value that is proportional to the number of neighbouring matches that have consistent disparity values with&nbsp;<img alt="$m \leftrightarrow m&#39;$" src="./Stereo matching   Lib4U_files/img6.gif" width="69" height="16" align="BOTTOM" border="0">.
+<p>Other criteria may also be used in the update process, e.g. the geometric support as proposed by Ayache and Faverjon (1987).</p></li>
+</ul>
+<h2><a name="SECTION00054000000000000000"></a>Coarse-to-fine multiresolution matching scheme</h2>
+<p><a name="sec:c-to-f"></a>&nbsp;The coarse-to-fine multiresolution matching scheme works as follows:</p>
+<ul>
+<li>generate a pair of image pyramids (a hierarchy of images) from the original image pair so that only few and prominent features are present at the coarse levels. The original images are at the finest level of the image pyramids.</li>
+<li>start the matching process at the coarsest level.</li>
+<li>use the matches obtained at the coarser level to guide the matching process gradually up to the finest level.</li>
+</ul>
+<p>&nbsp;</p>
+<div align="CENTER"><a name="fig:zc"></a>&nbsp;<a name="209"></a><p></p>
+<table>
+<caption><strong>Figure 8:</strong>&nbsp;By applying to an image Laplacian of Gaussian filters of different&nbsp;<img alt="$\sigma$" src="./Stereo matching   Lib4U_files/img30.gif" width="14" height="15" align="BOTTOM" border="0">values followed by a detection of zero-crossings, a hierarchy of edge map from coarse to fine levels can be obtained.</caption>
+<tbody>
+<tr>
+<td><img alt="\begin{figure}&lt;br /&gt;
+\begin{center}&lt;br /&gt;
+\&lt;br /&gt;
+\begin{minipage}&lt;br /&gt;
+{5cm}&lt;br /&gt;
+(a) original image \\&lt;br /&gt;
+\p...&lt;br /&gt;
+ ...{figure=lapgauss/cameraman6.ps,width=5cm}&lt;br /&gt;
+\end{minipage}\end{center}\end{figure}" src="./Stereo matching   Lib4U_files/img31.gif" width="470" height="516"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>&nbsp;</p>
+<p>An image pyramid of edges can be obtained by convolving the images with a Laplacian of Gaussian filter of different widths (<img alt="$\sigma$" src="./Stereo matching   Lib4U_files/img30.gif" width="14" height="15" align="BOTTOM" border="0">)followed by a detection of zero-crossings (Fig.&nbsp;<a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node5.html#fig:zc" sl-processed="1">8</a>). An image pyramid of grey level images can be obtained by applying a smoothing operation followed by sub-sampling (i.e. reducing the image resolution by a factor of 2). Such image pyramid is sometimes referred to as the&nbsp;<em>processing cone</em>&nbsp;(Fig.&nbsp;<a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node5.html#fig:proc-cone" sl-processed="1">9</a>). The SRI STEREOSYS system described later used this smooth and sub-sample scheme.</p>
+<p>&nbsp;</p>
+<div align="CENTER"><a name="fig:proc-cone"></a>&nbsp;<a name="217"></a><p></p>
+<table>
+<caption><strong>Figure 9:</strong>&nbsp;Processing cone.</caption>
+<tbody>
+<tr>
+<td><img alt="\begin{figure}&lt;br /&gt;
+\begin{center}&lt;br /&gt;
+\&lt;/p&gt;
+&lt;p&gt;\psfig {figure=proc-cone.xfigps,height=7.5cm}&lt;br /&gt;
+\end{center}\end{figure}" src="./Stereo matching   Lib4U_files/img32.gif" width="441" height="338"></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align:left;"><strong>Source:</strong></p>
+<p style="text-align:left;"><a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node5.html#SECTION00050000000000000000" rel="nofollow" sl-processed="1">http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node5.html#SECTION00050000000000000000</a></p>
+<p style="text-align:left;"><strong>Content:</strong></p>
+<ul>
+<li style="text-align:left;"><a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node2.html#SECTION00020000000000000000" name="tex2html17" sl-processed="1">Stereo</a></li>
+<li style="text-align:left;"><a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node3.html#SECTION00030000000000000000" name="tex2html18" sl-processed="1">Motivation</a></li>
+<li style="text-align:left;"><a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node4.html#SECTION00040000000000000000" name="tex2html19" sl-processed="1">Problem definition</a>
+<ul>
+<li><a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node4.html#SECTION00041000000000000000" name="tex2html20" sl-processed="1">The correspondence problem and reconstruction problem</a></li>
+<li><a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node4.html#SECTION00042000000000000000" name="tex2html21" sl-processed="1">Disparity and depth</a>
+<ul>
+<li><a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node4.html#SECTION00042100000000000000" name="tex2html22" sl-processed="1">The parallel camera case</a></li>
+<li><a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node4.html#SECTION00042200000000000000" name="tex2html23" sl-processed="1">The general case</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li style="text-align:left;"><a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node5.html#SECTION00050000000000000000" name="tex2html24" sl-processed="1">Stereo matching</a>
+<ul>
+<li><a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node5.html#SECTION00051000000000000000" name="tex2html25" sl-processed="1">Intensity-based stereo matching</a></li>
+<li><a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node5.html#SECTION00052000000000000000" name="tex2html26" sl-processed="1">Feature-based stereo matching</a>
+<ul>
+<li><a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node5.html#SECTION00052100000000000000" name="tex2html27" sl-processed="1">Types of features</a></li>
+</ul>
+</li>
+<li><a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node5.html#SECTION00053000000000000000" name="tex2html28" sl-processed="1">Matching constraints</a></li>
+<li><a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node5.html#SECTION00054000000000000000" name="tex2html29" sl-processed="1">Coarse-to-fine multiresolution matching scheme</a></li>
+</ul>
+</li>
+<li style="text-align:left;"><a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node6.html#SECTION00060000000000000000" name="tex2html30" sl-processed="1">Some existing matching algorithms</a>
+<ul>
+<li><a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node6.html#SECTION00061000000000000000" name="tex2html31" sl-processed="1">Marr and Poggio’s matching algorithm (1979)</a></li>
+<li><a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node6.html#SECTION00062000000000000000" name="tex2html32" sl-processed="1">Grimson’s matching algorithm on random dot stereograms (1981)</a></li>
+<li><a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node6.html#SECTION00063000000000000000" name="tex2html33" sl-processed="1">Ohta and Kanade’s dynamic programming approach (1985)</a></li>
+<li><a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node6.html#SECTION00064000000000000000" name="tex2html34" sl-processed="1">The SRI STEREOSYS system (Hannah, 1985)</a></li>
+<li><a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node6.html#SECTION00065000000000000000" name="tex2html35" sl-processed="1">The PMF system (Pollard, Mayhew, and Frisby, 1985)</a></li>
+<li><a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node6.html#SECTION00066000000000000000" name="tex2html36" sl-processed="1">The trinocular system of INRIA</a></li>
+</ul>
+</li>
+<li style="text-align:left;"><a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node7.html#SECTION00070000000000000000" name="tex2html37" sl-processed="1">Open problems</a></li>
+<li style="text-align:left;"><a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node8.html#SECTION00080000000000000000" name="tex2html38" sl-processed="1">Reconstruction of 3-D coordinates</a></li>
+<li style="text-align:left;"><a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node9.html#SECTION00090000000000000000" name="tex2html39" sl-processed="1">Active stereo</a>
+<ul>
+<li><a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node9.html#SECTION00091000000000000000" name="tex2html40" sl-processed="1">Calibration</a></li>
+<li><a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node9.html#SECTION00092000000000000000" name="tex2html41" sl-processed="1">Advantages and disadvantages</a></li>
+</ul>
+</li>
+<li style="text-align:left;"><a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node10.html#SECTION000100000000000000000" name="tex2html42" sl-processed="1">References</a></li>
+<li style="text-align:left;"><a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node11.html#SECTION000110000000000000000" name="tex2html43" sl-processed="1">Image rectification</a></li>
+<li style="text-align:left;"><a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node12.html#SECTION000120000000000000000" name="tex2html44" sl-processed="1">Computing the epipolar lines</a></li>
+</ul>
+<p style="text-align:left;"><strong>Source:</strong></p>
+<p style="text-align:left;"><a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/lect11.html" rel="nofollow" sl-processed="1">http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/lect11.html</a></p>
+</div>
+<div id="jp-post-flair" class="sharedaddy sd-like-enabled sd-sharing-enabled"><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-twitter"><a rel="nofollow" class="share-twitter sd-button share-icon no-text" href="https://globlib4u.wordpress.com/2013/03/06/stereo-matching/?share=twitter&nb=1" title="Click to share on Twitter" id="sharing-twitter-1078" sl-processed="1"><span></span><span class="sharing-screen-reader-text">Click to share on Twitter</span></a></li><li class="share-facebook"><a rel="nofollow" class="share-facebook sd-button share-icon no-text" href="https://globlib4u.wordpress.com/2013/03/06/stereo-matching/?share=facebook&nb=1" title="Share on Facebook" id="sharing-facebook-1078" sl-processed="1"><span></span><span class="sharing-screen-reader-text">Share on Facebook</span></a></li><li class="share-google-plus-1"><a rel="nofollow" class="share-google-plus-1 sd-button share-icon no-text" href="https://globlib4u.wordpress.com/2013/03/06/stereo-matching/?share=google-plus-1&nb=1" title="Click to share on Google+" id="sharing-google-1078" sl-processed="1"><span></span><span class="sharing-screen-reader-text">Click to share on Google+</span></a></li><li class="share-linkedin"><a rel="nofollow" class="share-linkedin sd-button share-icon no-text" href="https://globlib4u.wordpress.com/2013/03/06/stereo-matching/?share=linkedin&nb=1" title="Click to share on LinkedIn" id="sharing-linkedin-1078" sl-processed="1"><span></span><span class="sharing-screen-reader-text">Click to share on LinkedIn</span></a></li><li class="share-pinterest"><a rel="nofollow" class="share-pinterest sd-button share-icon no-text" href="https://globlib4u.wordpress.com/2013/03/06/stereo-matching/?share=pinterest&nb=1" title="Click to share on Pinterest" sl-processed="1"><span></span><span class="sharing-screen-reader-text">Click to share on Pinterest</span></a></li><li class="share-end"></li></ul></div></div></div><div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-loaded" id="like-post-wrapper-44992812-1078-550d4a6542f42" data-src="//widgets.wp.com/likes/#blog_id=44992812&amp;post_id=1078&amp;origin=globlib4u.wordpress.com&amp;obj_id=44992812-1078-550d4a6542f42" data-name="like-post-frame-44992812-1078-550d4a6542f42"><h3 class="sd-title">Like this:</h3><div class="likes-widget-placeholder post-likes-widget-placeholder" style="height: 55px; display: none;"><span class="button"><span>Like</span></span> <span class="loading">Loading...</span></div><iframe class="post-likes-widget jetpack-likes-widget" name="like-post-frame-44992812-1078-550d4a6542f42" height="55px" width="100%" frameborder="0" src="./Stereo matching   Lib4U_files/saved_resource(8).html"></iframe><span class="sd-text-color"></span><a class="sd-link-color"></a></div>
+<div id="jp-relatedposts" class="jp-relatedposts" style="display: block;">
+	<h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+<div class="jp-relatedposts-items jp-relatedposts-items-minimal"><p class="jp-relatedposts-post jp-relatedposts-post0" data-post-id="1068" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://globlib4u.wordpress.com/2013/03/03/basics-of-computational-stereo-vision/" title="Basics of Computational Stereo Vision
+
+These notes are under continuous revision. Most of presented materials are taken from textbooks and other sources indicated in references. Lectures will generally follow topics enumerated in CONTENTS, but not necessarily cover all the topics. Additional information and examples will be presented during lectures. Some useful Internet links: Visual 3D…" rel="nofollow" data-origin="1078" data-position="0" sl-processed="1">Basics of Computational Stereo Vision</a></span><span class="jp-relatedposts-post-context">In "Automatic &amp; Robotic"</span></p><p class="jp-relatedposts-post jp-relatedposts-post1" data-post-id="1058" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://globlib4u.wordpress.com/2013/03/03/visual-3d-modeling-from-images/" title="Visual 3D Modeling from Images
+
+Overview The presented system gradually retrieves more information about the scene and the camera setup. Images contain a huge amount of information (e.g.  color pixels). However, a lot of it is redundant (which explains the success of image compression algorithms). The structure recovery approaches require correspondences between the different images (i.e.…" rel="nofollow" data-origin="1078" data-position="1" sl-processed="1">Visual 3D Modeling from Images</a></span><span class="jp-relatedposts-post-context">In "Automatic &amp; Robotic"</span></p><p class="jp-relatedposts-post jp-relatedposts-post2" data-post-id="983" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://globlib4u.wordpress.com/2013/03/01/structure-from-motion-and-3d-reconstruction-on-the-easy-in-opencv-2-3-w-code/" title="Structure from Motion and 3D reconstruction on the easy in OpenCV 2.3+ [w/ code]
+
+Getting a motion map The basic thing when doing reconstruction from pairs of images, is that you know the motion: How much “a pixel has moved” from one image to the other. This gives you the ability to reconstruct it’s distance from the camera(s). So our first goal is to…" rel="nofollow" data-origin="1078" data-position="2" sl-processed="1">Structure from Motion and 3D reconstruction on the easy in OpenCV 2.3+ [w/ code]</a></span><span class="jp-relatedposts-post-context">In "Computer Science"</span></p></div></div></div>									<div id="comments">
+	
+	
+	
+									<div id="respond" class="comment-respond js">
+				<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://globlib4u.wordpress.com/2013/03/06/stereo-matching/#respond" style="display:none;" sl-processed="1">Cancel reply</a></small></h3>
+									<form action="https://globlib4u.wordpress.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+																										
+
+
+												<input type="hidden" id="highlander_comment_nonce" name="highlander_comment_nonce" value="2f2cb5c52f"><input type="hidden" name="_wp_http_referer" value="/2013/03/06/stereo-matching/">
+<input type="hidden" name="hc_post_as" id="hc_post_as" value="guest">
+
+<div class="comment-form-field comment-textarea">
+	
+	<div id="comment-form-comment"><textarea tabindex="-1" style="position: absolute; top: -999px; left: 0px; right: auto; bottom: auto; border: 0px; padding: 0px; box-sizing: content-box; word-wrap: break-word; overflow: hidden; -webkit-transition: none; transition: none; height: 0px !important; min-height: 0px !important; font-family: Arial, Helvetica, Tahoma, Verdana, sans-serif; font-size: 14px; font-weight: 400; font-style: normal; letter-spacing: 0px; text-transform: none; text-decoration: none; word-spacing: 0px; text-indent: 0px; line-height: normal; width: 525px;" class="autosizejs "></textarea><textarea id="comment" name="comment" title="Enter your comment here..." placeholder="Enter your comment here..." style="height: 36px; overflow: hidden; word-wrap: break-word; resize: none;"></textarea></div>
+</div>
+
+<div id="comment-form-identity" style="display: none;">
+
+	<div id="comment-form-nascar">
+		<p>Fill in your details below or click an icon to log in:</p>
+		<ul>
+			<li class="selected" style="display:none;">
+				<a href="https://globlib4u.wordpress.com/2013/03/06/stereo-matching/#comment-form-guest" id="postas-guest" title="Guest" sl-processed="1">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="https://globlib4u.wordpress.com/2013/03/06/stereo-matching/#comment-form-load-service:WordPress.com" id="postas-wordpress" title="WordPress.com" sl-processed="1">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="https://globlib4u.wordpress.com/2013/03/06/stereo-matching/#comment-form-load-service:Twitter" id="postas-twitter" title="Twitter" sl-processed="1">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="https://globlib4u.wordpress.com/2013/03/06/stereo-matching/#comment-form-load-service:Facebook" id="postas-facebook" title="Facebook" sl-processed="1">
+					<span></span>
+				</a>
+			</li>
+			<li>
+			<iframe id="googleplus-sign-in" name="googleplus-sign-in" src="./Stereo matching   Lib4U_files/saved_resource.html" width="24" height="24" scrolling="no" allowtransparency="true" seamless="seamless" frameborder="0"></iframe>
+			</li>
+		</ul>
+	</div>
+
+	<div id="comment-form-guest" class="comment-form-service selected">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+<a href="https://gravatar.com/site/signup/" target="_blank" sl-processed="1">				<img src="./Stereo matching   Lib4U_files/ad516503a11cd5ca435acc9bb6523536" alt="Gravatar" width="25" class="no-grav">
+</a>			</div>
+
+				<div class="comment-form-fields">
+				<div class="comment-form-field comment-form-email">
+					<label for="email">Email <span class="required">(required)</span> <span class="nopublish">(Address never made public)</span></label>
+					<div class="comment-form-input"><input id="email" name="email" type="email" value=""></div>
+				</div>
+				<div class="comment-form-field comment-form-author">
+					<label for="author">Name <span class="required">(required)</span></label>
+					<div class="comment-form-input"><input id="author" name="author" type="text" value=""></div>
+				</div>
+				<div class="comment-form-field comment-form-url">
+					<label for="url">Website</label>
+					<div class="comment-form-input"><input id="url" name="url" type="text" value=""></div>
+				</div>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-wordpress" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./Stereo matching   Lib4U_files/wplogo.png" alt="WordPress.com Logo" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="wp_avatar" id="wordpress-avatar" class="comment-meta-wordpress" value="">
+				<input type="hidden" name="wp_user_id" id="wordpress-user_id" class="comment-meta-wordpress" value="">
+				<input type="hidden" name="wp_access_token" id="wordpress-access_token" class="comment-meta-wordpress" value="">
+				<p class="comment-form-posting-as pa-wordpress"><strong></strong> You are commenting using your <span class="skimlinks-unlinked">WordPress.com</span> account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'wordpress' );" sl-processed="1">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="https://globlib4u.wordpress.com/2013/03/06/stereo-matching/#" onclick="javascript:HighlanderComments.switchAccount();return false;" sl-processed="1">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-twitter" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./Stereo matching   Lib4U_files/ad516503a11cd5ca435acc9bb6523536" alt="Twitter picture" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="twitter_avatar" id="twitter-avatar" class="comment-meta-twitter" value="">
+				<input type="hidden" name="twitter_user_id" id="twitter-user_id" class="comment-meta-twitter" value="">
+				<input type="hidden" name="twitter_access_token" id="twitter-access_token" class="comment-meta-twitter" value="">
+				<p class="comment-form-posting-as pa-twitter"><strong></strong> You are commenting using your Twitter account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'twitter' );" sl-processed="1">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="https://globlib4u.wordpress.com/2013/03/06/stereo-matching/#" onclick="javascript:HighlanderComments.switchAccount();return false;" sl-processed="1">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-facebook" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./Stereo matching   Lib4U_files/ad516503a11cd5ca435acc9bb6523536" alt="Facebook photo" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="fb_avatar" id="facebook-avatar" class="comment-meta-facebook" value="">
+				<input type="hidden" name="fb_user_id" id="facebook-user_id" class="comment-meta-facebook" value="">
+				<input type="hidden" name="fb_access_token" id="facebook-access_token" class="comment-meta-facebook" value="">
+				<p class="comment-form-posting-as pa-facebook"><strong></strong> You are commenting using your Facebook account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'facebook' );" sl-processed="1">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="https://globlib4u.wordpress.com/2013/03/06/stereo-matching/#" onclick="javascript:HighlanderComments.switchAccount();return false;" sl-processed="1">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-googleplus" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./Stereo matching   Lib4U_files/ad516503a11cd5ca435acc9bb6523536" alt="Google+ photo" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="googleplus_avatar" id="googleplus-avatar" class="comment-meta-googleplus" value="">
+				<input type="hidden" name="googleplus_user_id" id="googleplus-user_id" class="comment-meta-googleplus" value="">
+				<input type="hidden" name="googleplus_access_token" id="googleplus-access_token" class="comment-meta-googleplus" value="">
+				<p class="comment-form-posting-as pa-googleplus"><strong></strong> You are commenting using your Google+ account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'googleplus' );" sl-processed="1">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="https://globlib4u.wordpress.com/2013/03/06/stereo-matching/#" onclick="javascript:HighlanderComments.switchAccount();return false;" sl-processed="1">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+
+	<div id="comment-form-load-service" class="comment-form-service">
+		<div class="comment-form-posting-as-cancel"><a href="javascript:HighlanderComments.cancelExternalWindow();" sl-processed="1">Cancel</a></div>
+		<p>Connecting to %s</p>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+var highlander_expando_javascript = function(){
+	var input = document.createElement( 'input' ),
+	    comment = jQuery( '#comment' );
+
+	if ( 'placeholder' in input ) {
+		comment.attr( 'placeholder', jQuery( '.comment-textarea label' ).remove().text() );
+	}
+
+	// Expando Mode: start small, then auto-resize on first click + text length
+	jQuery( '#comment-form-identity' ).hide();
+	jQuery( '#comment-form-subscribe' ).hide();
+	jQuery( '#commentform .form-submit' ).hide();
+
+	comment.css( { 'height':'10px' } ).one( 'focus', function() {
+		var timer = setInterval( HighlanderComments.resizeCallback, 10 )
+		jQuery( this ).animate( { 'height': HighlanderComments.initialHeight } ).delay( 100 ).queue( function(n) { clearInterval( timer ); HighlanderComments.resizeCallback(); n(); } );
+		jQuery( '#comment-form-identity' ).slideDown();
+		jQuery( '#comment-form-subscribe' ).slideDown();
+		jQuery( '#commentform .form-submit' ).slideDown();
+	});
+}
+jQuery(document).ready( highlander_expando_javascript );
+</script>
+
+<div id="comment-form-subscribe" style="display: none;">
+	<p class="comment-subscription-form"><input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;" tabindex="6"> <label class="subscribe-label" id="subscribe-label" for="subscribe" style="display: inline;">Notify me of new comments via email.</label></p></div>
+
+												<p class="form-submit" style="display: none;">
+							<input name="submit" type="submit" id="comment-submit" class="submit" value="Post Comment">
+							<input type="hidden" name="comment_post_ID" value="1078" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+						</p>
+						<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="d0a97d0f98"></p>
+<input type="hidden" name="genseq" value="1426934373">
+<p style="display: none;"></p>					<input type="hidden" id="ak_js" name="ak_js" value="1426934384684"></form>
+							</div><!-- #respond -->
+			<div style="clear: both"></div>
+</div><!-- #comments -->		</div><!-- #single -->
+	</div><!-- #post-1078 -->
+
+	<div class="meta">
+		<div class="meta-information">
+			<h3>Information</h3>
+			This entry was posted on March 6, 2013 by <a href="https://globlib4u.wordpress.com/author/vietvo89/" title="View all posts by vietvo89" rel="author" sl-processed="1">vietvo89</a> in <a href="https://globlib4u.wordpress.com/category/science-technology/electronic-computer-engineering/automatic-robotic-electrical-electronic-engineering/" rel="category tag" sl-processed="1">Automatic &amp; Robotic</a>, <a href="https://globlib4u.wordpress.com/category/science-technology/electronic-computer-engineering/computer-science-electrical-electronic-engineering/" rel="category tag" sl-processed="1">Computer Science</a>, <a href="https://globlib4u.wordpress.com/category/science-technology/electronic-computer-engineering/digital-signal-process/" rel="category tag" sl-processed="1">Digital Signal Process</a>, <a href="https://globlib4u.wordpress.com/category/science-technology/electronic-computer-engineering/" rel="category tag" sl-processed="1">Electronic &amp; Computer Engineering</a>, <a href="https://globlib4u.wordpress.com/category/science-technology/" rel="category tag" sl-processed="1">Science &amp; Technology</a>.		</div><!-- .meta-information -->
+
+		<div class="meta-shortlink">
+			<h3>Shortlink</h3>
+			<a href="http://wp.me/p32MGw-ho" class="stiff" sl-processed="1">http://wp.me/p32MGw-ho</a>
+		</div><!-- .meta-shortlink -->
+
+		<div class="meta-navigation">
+			<h3>Navigation</h3>
+			<div class="nav-previous"><a href="https://globlib4u.wordpress.com/2013/03/03/stereoscopic-vision-and-perspective-projection/" rel="prev" sl-processed="1">Previous post</a></div>
+			<div class="nav-next"><a href="https://globlib4u.wordpress.com/2013/03/06/geometric-operations/" rel="next" sl-processed="1">Next post</a></div>
+		</div><!-- .meta-navigation -->
+
+			</div><!-- .meta -->
+
+
+	<div class="sidebar widget-area">
+		<div id="archives-3" class="widget widget_archive"><h3 class="widget-title">Archive</h3>		<select name="archive-dropdown" onchange="document.location.href=this.options[this.selectedIndex].value;">
+			<option value="">Select Month</option>
+
+				<option value="https://globlib4u.wordpress.com/2014/02/"> February 2014 &nbsp;(1)</option>
+	<option value="https://globlib4u.wordpress.com/2014/01/"> January 2014 &nbsp;(2)</option>
+	<option value="https://globlib4u.wordpress.com/2013/10/"> October 2013 &nbsp;(12)</option>
+	<option value="https://globlib4u.wordpress.com/2013/09/"> September 2013 &nbsp;(4)</option>
+	<option value="https://globlib4u.wordpress.com/2013/07/"> July 2013 &nbsp;(8)</option>
+	<option value="https://globlib4u.wordpress.com/2013/06/"> June 2013 &nbsp;(26)</option>
+	<option value="https://globlib4u.wordpress.com/2013/05/"> May 2013 &nbsp;(40)</option>
+	<option value="https://globlib4u.wordpress.com/2013/04/"> April 2013 &nbsp;(18)</option>
+	<option value="https://globlib4u.wordpress.com/2013/03/"> March 2013 &nbsp;(47)</option>
+	<option value="https://globlib4u.wordpress.com/2013/02/"> February 2013 &nbsp;(67)</option>
+	<option value="https://globlib4u.wordpress.com/2013/01/"> January 2013 &nbsp;(101)</option>
+		</select>
+</div><div id="rss_links-3" class="widget widget_rss_links"><h3 class="widget-title">RSS Links</h3><p class="size-small"><a class="feed-image-link" href="https://globlib4u.wordpress.com/feed/" title="Subscribe to Posts" sl-processed="1"><img src="./Stereo matching   Lib4U_files/red-small.png" alt="RSS Feed"></a></p>
+</div><div id="facebook-likebox-3" class="widget widget_facebook_likebox"><h3 class="widget-title"><a href="https://www.facebook.com/Lib4U" sl-processed="1">Lib4U on FaceBook</a></h3><iframe src="./Stereo matching   Lib4U_files/likebox(1).html" scrolling="no" frameborder="0" style="border: none; overflow: hidden; width: 200px;  height: 432px; background: #fff"></iframe></div><div id="facebook-likebox-4" class="widget widget_facebook_likebox"><h3 class="widget-title"><a href="https://www.facebook.com/LearnEnglishAN" sl-processed="1">Learning English with Australia Network</a></h3><iframe src="./Stereo matching   Lib4U_files/likebox.html" scrolling="no" frameborder="0" style="border: none; overflow: hidden; width: 200px;  height: 432px; background: #fff"></iframe></div><div id="facebook-likebox-5" class="widget widget_facebook_likebox"><h3 class="widget-title"><a href="https://www.facebook.com/VietnameseIELTSCommunity" sl-processed="1">Hội các sĩ tử luyện thi IELTS</a></h3><iframe src="./Stereo matching   Lib4U_files/likebox(2).html" scrolling="no" frameborder="0" style="border: none; overflow: hidden; width: 200px;  height: 432px; background: #fff"></iframe></div><div id="jp_blogs_i_follow-3" class="widget widget_jp_blogs_i_follow"><h3 class="widget-title">Blogs I Follow</h3><div class="widgets-grid-layout no-grav"><div class="widget-grid-view-image wpcom-follow-gravatar"><a href="http://fashiontech.wordpress.com/" title="Virtual Fashion Technology" data-id="wpcom-bubble-jp_blogs_i_follow-3-1" class="bump-view" data-bump-view="bif" sl-processed="1"><img alt="" src="./Stereo matching   Lib4U_files/b7a827af8aaa519e84d838f805a64f94" class="avatar avatar-200" height="200" width="200"></a></div><div class="widget-grid-view-image wpcom-follow-gravatar"><a href="http://toitocuaanhem.wordpress.com/" title="toitocuaanhem" data-id="wpcom-bubble-jp_blogs_i_follow-3-2" class="bump-view" data-bump-view="bif" sl-processed="1"><img alt="" src="./Stereo matching   Lib4U_files/e9899c79680434255b6c7b5a4193390e" class="avatar avatar-200" height="200" width="200"></a></div><div class="widget-grid-view-image wpcom-follow-gravatar"><a href="http://hienphap.wordpress.com/" title="Cùng Viết Hiến Pháp" data-id="wpcom-bubble-jp_blogs_i_follow-3-3" class="bump-view" data-bump-view="bif" sl-processed="1"><img alt="" src="./Stereo matching   Lib4U_files/70ce825328651c5320eb8380a73bcdbe" class="avatar avatar-200" height="200" width="200"></a></div><div class="widget-grid-view-image wpcom-follow-gravatar"><a href="http://venturebeat.wpengine.com/" title="VentureBeat" data-id="wpcom-bubble-jp_blogs_i_follow-3-4" class="bump-view" data-bump-view="bif" sl-processed="1"><img alt="" src="./Stereo matching   Lib4U_files/8e08fbce0e7c091cb7aeeaa50bb3e2fa" class="avatar avatar-200" height="200" width="200"></a></div><div class="widget-grid-view-image wpcom-follow-gravatar"><a href="http://digitalerr0r.wordpress.com/" title="digitalerr0r" data-id="wpcom-bubble-jp_blogs_i_follow-3-5" class="bump-view" data-bump-view="bif" sl-processed="1"><img alt="" src="./Stereo matching   Lib4U_files/ae142c9015a7dd01506596b91003322c" class="avatar avatar-200" height="200" width="200"></a></div><div class="widget-grid-view-image wpcom-follow-gravatar"><a href="http://theme.wordpress.com/" title="Theme Showcase" data-id="wpcom-bubble-jp_blogs_i_follow-3-6" class="bump-view" data-bump-view="bif" sl-processed="1"><img alt="" src="./Stereo matching   Lib4U_files/287dd4d7d2e174b5e7ffccaefd03da6c" class="avatar avatar-200" height="200" width="200"></a></div><div class="widget-grid-view-image wpcom-follow-gravatar"><a href="http://ielts-academic.com/" title="IELTS Academic" data-id="wpcom-bubble-jp_blogs_i_follow-3-7" class="bump-view" data-bump-view="bif" sl-processed="1"><img alt="" src="./Stereo matching   Lib4U_files/5cff7c83bf4dee5f1e8e84611e063b81" class="avatar avatar-200" height="200" width="200"></a></div><div class="widget-grid-view-image wpcom-follow-gravatar"><a href="http://lsuvietnam.wordpress.com/" title="lsuvietnam" data-id="wpcom-bubble-jp_blogs_i_follow-3-8" class="bump-view" data-bump-view="bif" sl-processed="1"><img alt="" src="./Stereo matching   Lib4U_files/c03e9365da45e9c5a2a11b53f6004ff8" class="avatar avatar-200" height="200" width="200"></a></div><div class="widget-grid-view-image wpcom-follow-gravatar"><a href="http://gocomay.wordpress.com/" title="Gocomay&#39;s Blog" data-id="wpcom-bubble-jp_blogs_i_follow-3-9" class="bump-view" data-bump-view="bif" sl-processed="1"><img alt="" src="./Stereo matching   Lib4U_files/4d54a50c018e793c68d3c1c92becbbd0" class="avatar avatar-200" height="200" width="200"></a></div><div class="widget-grid-view-image wpcom-follow-gravatar"><a href="http://thichhoctoan.net/" title="Thích Học Toán" data-id="wpcom-bubble-jp_blogs_i_follow-3-10" class="bump-view" data-bump-view="bif" sl-processed="1"><img alt="" src="./Stereo matching   Lib4U_files/205d443331a1a4d2b398df50cfb55ed6" class="avatar avatar-200" height="200" width="200"></a></div><div class="widget-grid-view-image wpcom-follow-gravatar"><a href="http://toanchovatly.wordpress.com/" title="Toán cho Vật lý" data-id="wpcom-bubble-jp_blogs_i_follow-3-11" class="bump-view" data-bump-view="bif" sl-processed="1"><img alt="" src="./Stereo matching   Lib4U_files/48806657bce04f75212775a2a84949c0" class="avatar avatar-200" height="200" width="200"></a></div><div class="widget-grid-view-image wpcom-follow-gravatar"><a href="http://thunhan.wordpress.com/" title="Maths 4 Physics &amp; more..." data-id="wpcom-bubble-jp_blogs_i_follow-3-12" class="bump-view" data-bump-view="bif" sl-processed="1"><img alt="" src="./Stereo matching   Lib4U_files/31b44bd26b3ad2533a24d0b38d878e93" class="avatar avatar-200" height="200" width="200"></a></div><div class="widget-grid-view-image wpcom-follow-gravatar"><a href="http://bucketlistpublications.org/" title="Bucket List Publications" data-id="wpcom-bubble-jp_blogs_i_follow-3-13" class="bump-view" data-bump-view="bif" sl-processed="1"><img alt="" src="./Stereo matching   Lib4U_files/869da02d3465505960d1c41e0274ded2" class="avatar avatar-200" height="200" width="200"></a></div><div class="widget-grid-view-image wpcom-follow-gravatar"><a href="https://globlib4u.wordpress.com/" title="Lib4U" data-id="wpcom-bubble-jp_blogs_i_follow-3-14" class="bump-view" data-bump-view="bif" sl-processed="1"><img alt="" src="./Stereo matching   Lib4U_files/774dbeef535c686b21378ef184af2013" class="avatar avatar-200" height="200" width="200"></a></div><div class="widget-grid-view-image wpcom-follow-gravatar"><a href="http://en.blog.wordpress.com/" title="WordPress.com News" data-id="wpcom-bubble-jp_blogs_i_follow-3-15" class="bump-view" data-bump-view="bif" sl-processed="1"><img alt="" src="./Stereo matching   Lib4U_files/e6392390e3bcfadff3671c5a5653d95b" class="avatar avatar-200" height="200" width="200"></a></div></div><div style="clear: both;"></div></div>	</div><!-- .sidebar .widget-area -->
+
+<div id="bottom-wrapper" class="clear">
+	
+<div class="bottom">
+	</div><!-- .bottom .navigation -->
+
+
+	<div class="bottom widget-area">
+		<div id="top-posts-2" class="widget widget_top-posts"><h3 class="widget-title">Top Posts &amp; Pages</h3><ul class="widgets-list-layout no-grav">
+					<li>
+						<img src="./Stereo matching   Lib4U_files/small_doom_raspberry.jpg" class="widgets-list-layout-blavatar">
+						<div class="widgets-list-layout-links"><a href="https://globlib4u.wordpress.com/2013/06/09/raspberry-pi-arch-linux-arm-tutorial/" class="bump-view" data-bump-view="tp" sl-processed="1">Raspberry Pi Arch Linux ARM Tutorial</a></div>
+					</li>
+									<li>
+						<img src="./Stereo matching   Lib4U_files/screen-shot-2012-02-06-at-6-44-42-pm-300x71.png" class="widgets-list-layout-blavatar">
+						<div class="widgets-list-layout-links"><a href="https://globlib4u.wordpress.com/2013/03/01/structure-from-motion-and-3d-reconstruction-on-the-easy-in-opencv-2-3-w-code/" class="bump-view" data-bump-view="tp" sl-processed="1">Structure from Motion and 3D reconstruction on the easy in OpenCV 2.3+ [w/ code]</a></div>
+					</li>
+									<li>
+						<img src="./Stereo matching   Lib4U_files/ieltspractice.jpg" class="widgets-list-layout-blavatar">
+						<div class="widgets-list-layout-links"><a href="https://globlib4u.wordpress.com/2013/02/09/download-tai-lieu-hoc-tieng-anh-mien-phi/" class="bump-view" data-bump-view="tp" sl-processed="1">DOWNLOAD TÀI LIỆU HỌC TIẾNG ANH MIỄN PHÍ </a></div>
+					</li>
+									<li>
+						<img src="./Stereo matching   Lib4U_files/t-test.gif" class="widgets-list-layout-blavatar">
+						<div class="widgets-list-layout-links"><a href="https://globlib4u.wordpress.com/2013/05/23/kiem-dinh-t-t-test/" class="bump-view" data-bump-view="tp" sl-processed="1">Kiểm định t (t-test)</a></div>
+					</li>
+									<li>
+						<img src="./Stereo matching   Lib4U_files/objectname.png" class="widgets-list-layout-blavatar">
+						<div class="widgets-list-layout-links"><a href="https://globlib4u.wordpress.com/2013/06/14/creating-a-guiinterface-using-visual-studio-2010-and-qt/" class="bump-view" data-bump-view="tp" sl-processed="1">Creating a GUI/Interface: Using Visual Studio 2010 and QT</a></div>
+					</li>
+									<li>
+						<img src="./Stereo matching   Lib4U_files/sketchfluid.jpg" class="widgets-list-layout-blavatar">
+						<div class="widgets-list-layout-links"><a href="https://globlib4u.wordpress.com/2013/05/20/nobuyuki-umetani/" class="bump-view" data-bump-view="tp" sl-processed="1">Nobuyuki Umetani</a></div>
+					</li>
+									<li>
+						<img src="./Stereo matching   Lib4U_files/figure_03.gif" class="widgets-list-layout-blavatar">
+						<div class="widgets-list-layout-links"><a href="https://globlib4u.wordpress.com/2013/01/10/design-of-an-8x8-modified-booth-multiplier-2/" class="bump-view" data-bump-view="tp" sl-processed="1">Design of an 8x8 Modified Booth Multiplier</a></div>
+					</li>
+									<li>
+						<img src="./Stereo matching   Lib4U_files/r-programming-300x227.png" class="widgets-list-layout-blavatar">
+						<div class="widgets-list-layout-links"><a href="https://globlib4u.wordpress.com/2013/05/23/rstudio-lam-viec-de-hon-voi-r-bai-1/" class="bump-view" data-bump-view="tp" sl-processed="1">RStudio: Làm việc dễ hơn với R (Bài 1)</a></div>
+					</li>
+									<li>
+						<img src="./Stereo matching   Lib4U_files/14_04.gif" class="widgets-list-layout-blavatar">
+						<div class="widgets-list-layout-links"><a href="https://globlib4u.wordpress.com/2013/07/21/1543/" class="bump-view" data-bump-view="tp" sl-processed="1">Stick diagrams</a></div>
+					</li>
+									<li>
+						<img src="./Stereo matching   Lib4U_files/kinect.jpg" class="widgets-list-layout-blavatar">
+						<div class="widgets-list-layout-links"><a href="https://globlib4u.wordpress.com/2013/03/02/kinect-tutorial-1-first-steps/" class="bump-view" data-bump-view="tp" sl-processed="1">Kinect tutorial 1: First steps</a></div>
+					</li>
+				</ul>
+</div><div id="image-2" class="widget widget_image"><h3 class="widget-title">Image</h3><div style="overflow:hidden;"><a href="./Stereo matching   Lib4U_files/Very-Large-Scale-Integration.jpg" sl-processed="1"><img src="./Stereo matching   Lib4U_files/Very-Large-Scale-Integration.jpg" title="VLSI system" class="aligncenter" width="400" height="300"></a></div>
+</div><div id="image-4" class="widget widget_image"><div style="overflow:hidden;"><a href="./Stereo matching   Lib4U_files/saved_resource(3)" sl-processed="1"><img src="./Stereo matching   Lib4U_files/saved_resource(3)" class="alignnone" width="275" height="73"></a></div>
+</div><div id="rss_links-2" class="widget widget_rss_links"><h3 class="widget-title">RSS</h3><p class="size-small"><a class="feed-image-link" href="https://globlib4u.wordpress.com/feed/" title="Subscribe to Posts" sl-processed="1"><img src="./Stereo matching   Lib4U_files/green-small.png" alt="RSS Feed"></a></p><p class="size-small"><a class="feed-image-link" href="https://globlib4u.wordpress.com/comments/feed/" title="Subscribe to Comments" sl-processed="1"><img src="./Stereo matching   Lib4U_files/green-small.png" alt="RSS Feed"></a></p>
+</div>	</div><!-- .bottom .widget-area -->
+
+	<div class="bottom widget-area">
+		<div id="linkcat-10688" class="widget widget_links"><h3 class="widget-title">Embedded System</h3>
+	<ul class="xoxo blogroll">
+<li><a href="http://hocdelam.org/site1/" sl-processed="1"><img src="http://hocdelam.org/site1/images/ykien1.png" alt="Học Để Làm"> Học Để Làm</a></li>
+<li><a href="http://www.romela.org/main/Robotics_and_Mechanisms_Laboratory" sl-processed="1"><img src="./Stereo matching   Lib4U_files/img16.png" alt="RoMeLa"> RoMeLa</a></li>
+<li><a href="http://www.hocavr.com/" sl-processed="1"><img src="./Stereo matching   Lib4U_files/AVRBoard.jpg" alt="Học AVR"> Học AVR</a></li>
+
+	</ul>
+</div>
+<div id="linkcat-136206229" class="widget widget_links"><h3 class="widget-title">IC Design &amp; Manufacturing</h3>
+	<ul class="xoxo blogroll">
+<li><a href="http://siliconrun.com/" sl-processed="1"><img src="./Stereo matching   Lib4U_files/dvds_nov09_300w.jpg" alt="siliconrun"> siliconrun</a></li>
+
+	</ul>
+</div>
+<div id="linkcat-136209985" class="widget widget_links"><h3 class="widget-title">Scholarship Infomation</h3>
+	<ul class="xoxo blogroll">
+<li><a href="http://scholarshipplanet.info/vi/" target="_top" sl-processed="1"><img src="./Stereo matching   Lib4U_files/logo.png" alt="Scholarship Planet"> Scholarship Planet</a></li>
+
+	</ul>
+</div>
+	</div><!-- .bottom .widget-area -->
+
+	<div class="bottom widget-area">
+		<div id="linkcat-501953" class="widget widget_links"><h3 class="widget-title">Nano Technology</h3>
+	<ul class="xoxo blogroll">
+<li><a href="http://nanohub.org/groups/u" sl-processed="1"><img src="./Stereo matching   Lib4U_files/supriyodatta.jpg" alt="Nano Hub University"> Nano Hub University</a></li>
+<li><a href="http://nanohub.org/" target="_top" sl-processed="1"><img src="./Stereo matching   Lib4U_files/nanoHub.jpg" alt="Nano Hub Project"> Nano Hub Project</a></li>
+
+	</ul>
+</div>
+<div id="linkcat-136212849" class="widget widget_links"><h3 class="widget-title">Global University</h3>
+	<ul class="xoxo blogroll">
+<li><a href="http://nanohub.org/groups/u" sl-processed="1"><img src="./Stereo matching   Lib4U_files/supriyodatta.jpg" alt="Nano Hub University"> Nano Hub University</a></li>
+<li><a href="http://www.open.edu/itunes/" sl-processed="1"><img src="./Stereo matching   Lib4U_files/flat-OUiTu(1).jpg" alt="Open Uni"> Open Uni</a></li>
+<li><a href="http://itunes.ox.ac.uk/" sl-processed="1"><img src="./Stereo matching   Lib4U_files/10882_newitunes_side.jpg" alt="Uni of Oxford"> Uni of Oxford</a></li>
+
+	</ul>
+</div>
+	</div><!-- .bottom .widget-area -->
+
+	<div class="bottom widget-area">
+		<div id="meta-2" class="widget widget_meta"><h3 class="widget-title">Sign in</h3>			<ul>
+			<li><a href="https://en.wordpress.com/signup/?ref=wplogin" sl-processed="1">Register</a></li>			<li><a href="https://globlib4u.wordpress.com/wp-login.php" sl-processed="1">Log in</a></li>
+			<li><a href="https://globlib4u.wordpress.com/feed/" sl-processed="1">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://globlib4u.wordpress.com/comments/feed/" sl-processed="1">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+<li><a href="http://wordpress.com/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform." sl-processed="1">WordPress.com</a></li>			</ul>
+</div><div id="search-2" class="widget widget_search"><h3 class="widget-title">Search</h3><form role="search" method="get" id="searchform" class="searchform" action="https://globlib4u.wordpress.com/">
+				<div>
+					<label class="screen-reader-text" for="s">Search for:</label>
+					<input type="text" value="" name="s" id="s">
+					<input type="submit" id="searchsubmit" value="Search">
+				</div>
+			</form></div><div id="calendar-2" class="widget widget_calendar"><h3 class="widget-title">Calendar </h3><div id="calendar_wrap"><table id="wp-calendar">
+	<caption>March 2013</caption>
+	<thead>
+	<tr>
+		<th scope="col" title="Monday">M</th>
+		<th scope="col" title="Tuesday">T</th>
+		<th scope="col" title="Wednesday">W</th>
+		<th scope="col" title="Thursday">T</th>
+		<th scope="col" title="Friday">F</th>
+		<th scope="col" title="Saturday">S</th>
+		<th scope="col" title="Sunday">S</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td colspan="3" id="prev"><a href="https://globlib4u.wordpress.com/2013/02/" sl-processed="1">« Feb</a></td>
+		<td class="pad">&nbsp;</td>
+		<td colspan="3" id="next"><a href="https://globlib4u.wordpress.com/2013/04/" sl-processed="1">Apr »</a></td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr>
+		<td colspan="4" class="pad">&nbsp;</td><td><a href="https://globlib4u.wordpress.com/2013/03/01/" title="Structure from Motion and 3D reconstruction on the easy in OpenCV 2.3+ [w/ code]
+International Journal of Advanced Robotic Systems" sl-processed="1">1</a></td><td><a href="https://globlib4u.wordpress.com/2013/03/02/" title="Robot Vision
+Scene Reconstruction Pose Estimation and Tracking
+Affective Computing
+Optoelectronic Devices and Properties
+Nanomaterials and Nanotechnology
+Nanotechnology: The Basics
+Kinect tutorial 1: First steps
+Kinect Fundamentals #3: Getting distance-data from the Depth Sensor
+Body in motion
+FPGALink: Easy USB to FPGA Communication
+Technical description of Kinect calibration" sl-processed="1">2</a></td><td><a href="https://globlib4u.wordpress.com/2013/03/03/" title="Projective Geometry  for Image Analysis
+Geometrical image analysis
+Sylvain Paris – Researcher (Reconstruction from image sequences and recovery of the 3D geometry)
+Senior Design @ UIUC (ECE Illinois)
+How 3D Features work in PCL
+Visual 3D Modeling from Images
+Elements of Geometric Computer Vision
+Basics of Computational Stereo Vision
+Intelligent Vision Systems
+STEREOSCOPIC VISION AND PERSPECTIVE PROJECTION" sl-processed="1">3</a></td>
+	</tr>
+	<tr>
+		<td>4</td><td>5</td><td><a href="https://globlib4u.wordpress.com/2013/03/06/" title="Stereo matching
+Geometric Operations
+Spatial Frequency Domain
+Morphological Image Processing" sl-processed="1">6</a></td><td>7</td><td><a href="https://globlib4u.wordpress.com/2013/03/08/" title="Computational Photography (CS 498) – Fall 2011
+Computer Vision: Algorithms and Applications
+Advances in Computer Vision – Spring 2010
+CS 143 Introduction to Computer Vision
+Learning-Based Methods in Vision Spring 2009
+Computer Vision-Wisconsin University
+Computational Photography – Carnegie Mellon University
+Shape Grammars
+Computer Vision" sl-processed="1">8</a></td><td><a href="https://globlib4u.wordpress.com/2013/03/09/" title="Affordance Detection, Context in Object Detection and Tracking, Exploiting Temporal Structure in Image Sequences,Boosting based Trackers,Event Detection / Abnormal Behavior Analysis,Object Detection,Scene Understanding &amp; On-line Learning" sl-processed="1">9</a></td><td>10</td>
+	</tr>
+	<tr>
+		<td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td>
+	</tr>
+	<tr>
+		<td>18</td><td>19</td><td>20</td><td><a href="https://globlib4u.wordpress.com/2013/03/21/" title="RGB-D Object Dataset" sl-processed="1">21</a></td><td><a href="https://globlib4u.wordpress.com/2013/03/22/" title="KiCAD Tutorial – PCB Layout
+CSEE 4840  Embedded System Design Spring 2011
+CS441 – Architecture &amp; CS 301 – Assembly Language" sl-processed="1">22</a></td><td>23</td><td>24</td>
+	</tr>
+	<tr>
+		<td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td><a href="https://globlib4u.wordpress.com/2013/03/30/" title="Unique Approach to Verification of Complex SoC Designs
+EECS 4340: COMPUTER HARDWARE DESIGN
+Design of SystemVerilog Assertion IP
+E 382V-ICS, System-on-a-Chip (SoC) Design,
+ECE 411  Introduction to the fundamentals of computer architecture
+Structure Type in SystemVerilog" sl-processed="1">30</a></td><td>31</td>
+	</tr>
+	</tbody>
+	</table></div></div><div id="pages-2" class="widget widget_pages"><h3 class="widget-title">Pages</h3>		<ul>
+			<li class="page_item page-item-1"><a href="https://globlib4u.wordpress.com/about/" sl-processed="1">About</a></li>
+<li class="page_item page-item-77"><a href="https://globlib4u.wordpress.com/couresera/" sl-processed="1">Couresera</a></li>
+<li class="page_item page-item-74"><a href="https://globlib4u.wordpress.com/intech-journals/" sl-processed="1">INTECH JOURNALS</a></li>
+<li class="page_item page-item-37"><a href="https://globlib4u.wordpress.com/phong-quan-he-doi-ngoai-dhbk/" sl-processed="1">Phòng Quan Hệ Đối Ngoại&nbsp;ĐHBK</a></li>
+<li class="page_item page-item-60"><a href="https://globlib4u.wordpress.com/60-2/" sl-processed="1">Scholarship Planet</a></li>
+<li class="page_item page-item-71"><a href="https://globlib4u.wordpress.com/ted-ideas-worth-spreading/" sl-processed="1">TED Ideas Worth&nbsp;Spreading</a></li>
+		</ul>
+		</div>		<div id="recent-posts-2" class="widget widget_recent_entries">		<h3 class="widget-title">Posts</h3>		<ul>
+					<li>
+				<a href="https://globlib4u.wordpress.com/2014/02/05/online-courses/" sl-processed="1">Online courses</a>
+						</li>
+					<li>
+				<a href="https://globlib4u.wordpress.com/2014/01/22/thesis-internship-and-post-doc-opportunities/" sl-processed="1">Thesis, internship, and post-doc&nbsp;opportunities</a>
+						</li>
+					<li>
+				<a href="https://globlib4u.wordpress.com/2014/01/22/berkeleyx-colwri2-1x-college-writing-2x-principles-of-written-english/" sl-processed="1">BerkeleyX: ColWri2.1x College Writing 2x: Principles of Written&nbsp;English</a>
+						</li>
+					<li>
+				<a href="https://globlib4u.wordpress.com/2013/10/23/using-normal-distributions-for-continuous-probability-distributions/" sl-processed="1">Using Normal Distributions for Continuous Probability&nbsp;Distributions</a>
+						</li>
+					<li>
+				<a href="https://globlib4u.wordpress.com/2013/10/21/the-simulation-of-physical-systems/" sl-processed="1">The Simulation of Physical&nbsp;Systems</a>
+						</li>
+				</ul>
+		</div><div id="rss-2" class="widget widget_rss"><h3 class="widget-title"><a class="rsswidget" href="http://d32ffatx74qnju.cloudfront.net/themes/cleanPeppermint/style.css" title="Syndicate this content" sl-processed="1"><img style="background: orange; color: white; border: none;" width="14" height="14" src="./Stereo matching   Lib4U_files/rss.png" alt="RSS"></a> <a class="rsswidget" href="" title="" sl-processed="1">FPGA</a></h3><ul><li>An error has occurred; the feed is probably down. Try again later.</li></ul></div>	</div><!-- .bottom .widget-area -->
+</div>
+
+	</div><!-- #middle -->
+	<div class="footer clear">
+		<p><a href="https://wordpress.com/?ref=footer_blog" sl-processed="1">Blog at WordPress.com</a>.
+		<a href="https://wordpress.com/themes/suburbia/" title="Learn more about this theme" sl-processed="1">The Suburbia Theme</a>.</p>
+	</div><!-- #footer -->
+</div><!-- #wrapper -->
+<!-- wpcom_wp_footer -->
+<div id="wpcom-follow-bubbles-jp_blogs_i_follow-3" class="wpcom-follow-bubbles"><div id="wpcom-bubble-jp_blogs_i_follow-3-1" class="wpcom-bubble wpcom-follow-bubble"><div class="bubble-txt"><a href="http://fashiontech.wordpress.com/" class="bump-view" data-bump-view="bif" sl-processed="1">Virtual Fashion Technology</a><p><small>Virtual Fashion Education</small></p></div></div><div id="wpcom-bubble-jp_blogs_i_follow-3-2" class="wpcom-bubble wpcom-follow-bubble"><div class="bubble-txt"><a href="http://toitocuaanhem.wordpress.com/" class="bump-view" data-bump-view="bif" sl-processed="1">toitocuaanhem</a><p><small>"chúng tôi chỉ là tôi tớ của anh em, vì Đức Kitô" (2Cr 4,5b)</small></p></div></div><div id="wpcom-bubble-jp_blogs_i_follow-3-3" class="wpcom-bubble wpcom-follow-bubble"><div class="bubble-txt"><a href="http://hienphap.wordpress.com/" class="bump-view" data-bump-view="bif" sl-processed="1">Cùng Viết Hiến Pháp</a><p></p></div></div><div id="wpcom-bubble-jp_blogs_i_follow-3-4" class="wpcom-bubble wpcom-follow-bubble"><div class="bubble-txt"><a href="http://venturebeat.wpengine.com/" class="bump-view" data-bump-view="bif" sl-processed="1">VentureBeat</a><p><small>News About Tech, Money and Innovation</small></p></div></div><div id="wpcom-bubble-jp_blogs_i_follow-3-5" class="wpcom-bubble wpcom-follow-bubble"><div class="bubble-txt"><a href="http://digitalerr0r.wordpress.com/" class="bump-view" data-bump-view="bif" sl-processed="1">digitalerr0r</a><p><small>Modern art using the GPU</small></p></div></div><div id="wpcom-bubble-jp_blogs_i_follow-3-6" class="wpcom-bubble wpcom-follow-bubble"><div class="bubble-txt"><a href="http://theme.wordpress.com/" class="bump-view" data-bump-view="bif" sl-processed="1">Theme Showcase</a><p><small>Find the perfect theme for your blog.</small></p></div></div><div id="wpcom-bubble-jp_blogs_i_follow-3-7" class="wpcom-bubble wpcom-follow-bubble"><div class="bubble-txt"><a href="http://ielts-academic.com/" class="bump-view" data-bump-view="bif" sl-processed="1">IELTS Academic</a><p><small>Practice tests, sample answers and skills training for IELTS, the gateway to global education</small></p></div></div><div id="wpcom-bubble-jp_blogs_i_follow-3-8" class="wpcom-bubble wpcom-follow-bubble"><div class="bubble-txt"><a href="http://lsuvietnam.wordpress.com/" class="bump-view" data-bump-view="bif" sl-processed="1">lsuvietnam</a><p><small>Learn to Learn</small></p></div></div><div id="wpcom-bubble-jp_blogs_i_follow-3-9" class="wpcom-bubble wpcom-follow-bubble"><div class="bubble-txt"><a href="http://gocomay.wordpress.com/" class="bump-view" data-bump-view="bif" sl-processed="1">Gocomay's Blog</a><p><small>Con tằm đến thác vẫn còn vương tơ</small></p></div></div><div id="wpcom-bubble-jp_blogs_i_follow-3-10" class="wpcom-bubble wpcom-follow-bubble"><div class="bubble-txt"><a href="http://thichhoctoan.net/" class="bump-view" data-bump-view="bif" sl-processed="1">Thích Học Toán</a><p></p></div></div><div id="wpcom-bubble-jp_blogs_i_follow-3-11" class="wpcom-bubble wpcom-follow-bubble"><div class="bubble-txt"><a href="http://toanchovatly.wordpress.com/" class="bump-view" data-bump-view="bif" sl-processed="1">Toán cho Vật lý</a><p><small>Khoa Vật lý, Đại học Sư phạm <span class="skimlinks-unlinked">Tp.HCM</span> - ĐT :(08)-38352020 - 109</small></p></div></div><div id="wpcom-bubble-jp_blogs_i_follow-3-12" class="wpcom-bubble wpcom-follow-bubble"><div class="bubble-txt"><a href="http://thunhan.wordpress.com/" class="bump-view" data-bump-view="bif" sl-processed="1">Maths 4 Physics &amp; more...</a><p><small>Blog Toán Cao Cấp (M4Ps)</small></p></div></div><div id="wpcom-bubble-jp_blogs_i_follow-3-13" class="wpcom-bubble wpcom-follow-bubble"><div class="bubble-txt"><a href="http://bucketlistpublications.org/" class="bump-view" data-bump-view="bif" sl-processed="1">Bucket List Publications</a><p><small>Indulge- Travel, Adventure, &amp; New Experiences</small></p></div></div><div id="wpcom-bubble-jp_blogs_i_follow-3-14" class="wpcom-bubble wpcom-follow-bubble"><div class="bubble-txt"><a href="https://globlib4u.wordpress.com/" class="bump-view" data-bump-view="bif" sl-processed="1">Lib4U</a><p><small>‎"Behind every stack of books there is a flood of knowledge."</small></p></div></div><div id="wpcom-bubble-jp_blogs_i_follow-3-15" class="wpcom-bubble wpcom-follow-bubble"><div class="bubble-txt"><a href="http://en.blog.wordpress.com/" class="bump-view" data-bump-view="bif" sl-processed="1">WordPress.com News</a><p><small>The latest news on <span class="skimlinks-unlinked">WordPress.com</span> and the WordPress community.</small></p></div></div></div><script type="text/javascript" src="./Stereo matching   Lib4U_files/gprofiles.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Stereo matching   Lib4U_files/wpgroho.js"></script>
+
+	<script>
+		//initialize and attach hovercards to all gravatars
+		jQuery( document ).ready( function( $ ) {
+
+			if (typeof Gravatar === "undefined"){
+				return;
+			}
+
+			if ( typeof Gravatar.init !== "function" ) {
+				return;
+			}			
+
+			Gravatar.profile_cb = function( hash, id ) {
+				WPGroHo.syncProfileData( hash, id );
+			};
+			Gravatar.my_hash = WPGroHo.my_hash;
+			Gravatar.init( 'body', '#wp-admin-bar-my-account' );
+		});
+	</script>
+
+		<div style="display:none">
+	</div>
+<script type="text/javascript">
+/* <![CDATA[ */
+var HighlanderComments = {"loggingInText":"Logging In\u2026","submittingText":"Posting Comment\u2026","postCommentText":"Post Comment","connectingToText":"Connecting to %s","commentingAsText":"%1$s: You are commenting using your %2$s account.","logoutText":"Log Out","loginText":"Log In","connectURL":"https:\/\/globlib4u.wordpress.com\/public.api\/connect\/?action=request","logoutURL":"https:\/\/globlib4u.wordpress.com\/wp-login.php?action=logout&_wpnonce=8bffa3db91","homeURL":"https:\/\/globlib4u.wordpress.com\/","postID":"1078","gravDefault":"identicon","enterACommentError":"Please enter a comment","enterEmailError":"Please enter your email address here","invalidEmailError":"Invalid email address","enterAuthorError":"Please enter your name here","gravatarFromEmail":"This picture will show whenever you leave a comment. Click to customize it.","logInToExternalAccount":"Log in to use details from one of these accounts.","change":"Change","changeAccount":"Change Account","comment_registration":"0","userIsLoggedIn":"","isJetpack":"0","text_direction":"ltr"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Stereo matching   Lib4U_files/saved_resource(4)"></script>
+
+	<div id="bit" class="loggedout-follow-normal" style="bottom: -227px;">
+		<a class="bsub" href="javascript:void(0)" sl-processed="1"><span id="bsub-text">Follow</span></a>
+		<div id="bitsubscribe">
+
+					<h3><label for="loggedout-follow-field">Follow “Lib4U”</label></h3>
+
+			<form action="https://subscribe.wordpress.com/" method="post" accept-charset="utf-8" id="loggedout-follow">
+			<p>Get every new post delivered to your Inbox.</p>
+
+			<p id="loggedout-follow-error" style="display: none;"></p>
+
+			
+			<p><input type="email" name="email" value="Enter your email address" onfocus="this.value=(this.value==&quot;Enter your email address&quot;) ? &quot;&quot; : this.value;" onblur="this.value=(this.value==&quot;&quot;) ? &quot;Enter your email address&quot; : this.value;" id="loggedout-follow-field"></p>
+
+			<input type="hidden" name="action" value="subscribe">
+			<input type="hidden" name="blog_id" value="44992812">
+			<input type="hidden" name="source" value="https://globlib4u.wordpress.com/2013/03/06/stereo-matching/">
+			<input type="hidden" name="sub-type" value="loggedout-follow">
+
+			<input type="hidden" id="_wpnonce" name="_wpnonce" value="f35b213cbb"><input type="hidden" name="_wp_http_referer" value="/2013/03/06/stereo-matching/">
+			<p id="bsub-subscribe-button"><input type="submit" value="Sign me up"></p>
+			</form>
+					<div id="bsub-credit"><a href="https://wordpress.com/?ref=lof" sl-processed="1">Build a website with WordPress.com</a></div>
+		</div><!-- #bitsubscribe -->
+	</div><!-- #bit -->
+
+	<script type="text/javascript">
+		WPCOM_sharing_counts = {"https:\/\/globlib4u.wordpress.com\/2013\/03\/06\/stereo-matching\/":1078}	</script>
+		<script type="text/javascript">
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-twitter' ).on( 'click', function() {
+				window.open( jQuery(this).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-facebook' ).on( 'click', function() {
+				window.open( jQuery(this).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-google-plus-1' ).on( 'click', function() {
+				window.open( jQuery(this).attr( 'href' ), 'wpcomgoogle-plus-1', 'menubar=1,resizable=1,width=480,height=550' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-linkedin' ).on( 'click', function() {
+				window.open( jQuery(this).attr( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
+				return false;
+			});
+		});
+		</script>
+							<script type="text/javascript">
+			jQuery(document).on('ready', function(){
+				jQuery('body').on('click', 'a.share-pinterest', function(e){
+					e.preventDefault();
+
+					// Load Pinterest Bookmarklet code
+					var s = document.createElement("script");
+					s.type = "text/javascript";
+					s.src = window.location.protocol + "//assets.pinterest.com/js/pinmarklet.js?r=" + ( Math.random() * 99999999 );
+					var x = document.getElementsByTagName("script")[0];
+					x.parentNode.insertBefore(s, x);
+
+					// Trigger Stats
+					var s = document.createElement("script");
+					s.type = "text/javascript";
+					s.src = this + ( this.toString().indexOf( '?' ) ? '&' : '?' ) + 'js_only=1';
+					var x = document.getElementsByTagName("script")[0];
+					x.parentNode.insertBefore(s, x);
+				});
+			});
+			</script>
+				<iframe src="./Stereo matching   Lib4U_files/master.html" scrolling="no" id="likes-master" name="likes-master" style="display:none;"></iframe>
+		<div id="likes-other-gravatars"><div class="likes-text"><span>%d</span> bloggers like this:</div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
+		<script type="text/javascript">
+		//<![CDATA[
+			var jetpackLikesWidgetQueue = [];
+			var jetpackLikesWidgetBatch = [];
+			var jetpackLikesMasterReady = false;
+
+			function JetpackLikespostMessage( message, target ) {
+				if ( "string" === typeof message ){
+					try{
+						message = JSON.parse( message );
+					}
+					catch(e) {
+						return;
+					}
+				}
+
+				pm( {
+					target: target,
+					type: 'likesMessage',
+					data: message,
+					origin: '*'
+				} );
+			}
+
+			function JetpackLikesBatchHandler() {
+				var requests = [];
+				jQuery( 'div.jetpack-likes-widget-unloaded' ).each( function( i ) {
+					if ( jetpackLikesWidgetBatch.indexOf( this.id ) > -1 )
+						return;
+					jetpackLikesWidgetBatch.push( this.id );
+					var regex = /like-(post|comment)-wrapper-(\d+)-(\d+)-(\w+)/;
+					var match = regex.exec( this.id );
+					if ( ! match || match.length != 5 )
+						return;
+
+					var info = {
+						blog_id: match[2],
+						width:   this.width
+					};
+
+					if ( 'post' == match[1] ) {
+						info.post_id = match[3];
+					} else if ( 'comment' == match[1] ) {
+						info.comment_id = match[3];
+					}
+
+					info.obj_id = match[4];
+
+					requests.push( info );
+				});
+
+				if ( requests.length > 0 ) {
+					JetpackLikespostMessage( { event: 'initialBatch', requests: requests }, window.frames['likes-master'] );
+				}
+			}
+
+			function JetpackLikesMessageListener( event ) {
+				if ( "undefined" == typeof event.event )
+					return;
+
+				if ( 'masterReady' == event.event ) {
+					jQuery( document ).ready( function() {
+						jetpackLikesMasterReady = true;
+
+						var stylesData = {
+								event: 'injectStyles'
+						};
+
+						if ( jQuery( 'iframe.admin-bar-likes-widget' ).length > 0 ) {
+							JetpackLikespostMessage( { event: 'adminBarEnabled' }, window.frames[ 'likes-master' ] );
+
+							stylesData.adminBarStyles = {
+								background: jQuery( '#wpadminbar .quicklinks li#wp-admin-bar-wpl-like > a' ).css( 'background' ),
+								isRtl: ( 'rtl' == jQuery( '#wpadminbar' ).css( 'direction' ) )
+							};
+						}
+
+						if ( !window.addEventListener )
+							jQuery( '#wp-admin-bar-admin-bar-likes-widget' ).hide();
+
+						stylesData.textStyles = {
+							color: jQuery( '.sd-text-color').css( 'color' ),
+							fontFamily: jQuery( '.sd-text-color' ).css( 'font-family' ),
+							fontSize: jQuery( '.sd-text-color' ).css( 'font-size' ),
+							direction: jQuery( '.sd-text-color' ).css( 'direction' ),
+							fontWeight: jQuery( '.sd-text-color' ).css( 'font-weight' ),
+							fontStyle: jQuery( '.sd-text-color' ).css( 'font-style' ),
+							textDecoration: jQuery( '.sd-text-color' ).css('text-decoration')
+						};
+
+						stylesData.linkStyles = {
+							color: jQuery( '.sd-link-color' ).css('color'),
+							fontFamily: jQuery( '.sd-link-color' ).css('font-family'),
+							fontSize: jQuery( '.sd-link-color' ).css('font-size'),
+							textDecoration: jQuery( '.sd-link-color' ).css('text-decoration'),
+							fontWeight: jQuery( '.sd-link-color' ).css( 'font-weight' ),
+							fontStyle: jQuery( '.sd-link-color' ).css( 'font-style' )
+						};
+
+						JetpackLikespostMessage( stylesData, window.frames[ 'likes-master' ] );
+
+						JetpackLikesBatchHandler();
+
+						jQuery( document ).on( 'inview', 'div.jetpack-likes-widget-unloaded', function() {
+							jetpackLikesWidgetQueue.push( this.id );
+						});
+					});
+				}
+
+				if ( 'showLikeWidget' == event.event ) {
+					jQuery( '#' + event.id + ' .post-likes-widget-placeholder'  ).fadeOut( 'fast', function() {
+						jQuery( '#' + event.id + ' .post-likes-widget' ).fadeIn( 'fast', function() {
+							JetpackLikespostMessage( { event: 'likeWidgetDisplayed', blog_id: event.blog_id, post_id: event.post_id, obj_id: event.obj_id }, window.frames['likes-master'] );
+						});
+					});
+				}
+
+				if ( 'clickReblogFlair' == event.event ) {
+					wpcom_reblog.toggle_reblog_box_flair( event.obj_id );
+				}
+
+				if ( 'showOtherGravatars' == event.event ) {
+					var $container = jQuery( '#likes-other-gravatars' );
+					var $list = $container.find( 'ul' );
+
+					$container.hide();
+					$list.html( '' );
+
+					$container.find( '.likes-text span' ).text( event.total );
+
+					jQuery.each( event.likers, function( i, liker ) {
+						$list.append( '<li class="' + liker.css_class + '"><a href="' + liker.profile_URL + '" class="wpl-liker" rel="nofollow" target="_parent"><img src="' + liker.avatar_URL + '" alt="' + liker.name + '" width="30" height="30" style="padding-right: 3px;" /></a></li>');
+					} );
+
+					var offset = jQuery( "[name='" + event.parent + "']" ).offset();
+
+					$container.css( 'left', offset.left + event.position.left - 10 + 'px' );
+					$container.css( 'top', offset.top + event.position.top - 33 + 'px' );
+
+					var rowLength = Math.floor( event.width / 37 );
+					var height = ( Math.ceil( event.likers.length / rowLength ) * 37 ) + 13;
+					if ( height > 204 ) {
+						height = 204;
+					}
+
+					$container.css( 'height', height + 'px' );
+					$container.css( 'width', rowLength * 37 - 7 + 'px' );
+
+					$list.css( 'width', rowLength * 37 + 'px' );
+
+					$container.fadeIn( 'slow' );
+
+					var scrollbarWidth = $list[0].offsetWidth - $list[0].clientWidth;
+					if ( scrollbarWidth > 0 ) {
+						$container.width( $container.width() + scrollbarWidth );
+						$list.width( $list.width() + scrollbarWidth );
+					}
+				}
+			}
+
+			pm.bind( 'likesMessage', function(e) { JetpackLikesMessageListener(e); } );
+
+			jQuery( document ).click( function( e ) {
+				var $container = jQuery( '#likes-other-gravatars' );
+
+				if ( $container.has( e.target ).length === 0 ) {
+					$container.fadeOut( 'slow' );
+				}
+			});
+
+			function JetpackLikesWidgetQueueHandler() {
+				var wrapperID;
+				if ( ! jetpackLikesMasterReady ) {
+					setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+					return;
+				}
+
+				if ( jetpackLikesWidgetQueue.length > 0 ) {
+					// We may have a widget that needs creating now
+					var found = false;
+					while( jetpackLikesWidgetQueue.length > 0 ) {
+						// Grab the first member of the queue that isn't already loading.
+						wrapperID = jetpackLikesWidgetQueue.splice( 0, 1 )[0];
+						if ( jQuery( '#' + wrapperID ).hasClass( 'jetpack-likes-widget-unloaded' ) ) {
+							found = true;
+							break;
+						}
+					}
+					if ( ! found ) {
+						setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+						return;
+					}
+				} else if ( jQuery( 'div.jetpack-likes-widget-unloaded' ).length > 0 ) {
+					// Grab any unloaded widgets for a batch request
+					JetpackLikesBatchHandler();
+
+					// Get the next unloaded widget
+					wrapperID = jQuery( 'div.jetpack-likes-widget-unloaded' ).first()[0].id;
+					if ( ! wrapperID ) {
+						// Everything is currently loaded
+						setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+						return;
+					}
+				}
+
+				if ( 'undefined' === typeof wrapperID ) {
+					setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+					return;
+				}
+
+				var $wrapper = jQuery( '#' + wrapperID );
+				$wrapper.find( 'iframe' ).remove();
+
+				if ( $wrapper.hasClass( 'slim-likes-widget' ) ) {
+					$wrapper.find( '.post-likes-widget-placeholder' ).after( "<iframe class='post-likes-widget jetpack-likes-widget' name='" + $wrapper.data( 'name' ) + "' height='22px' width='68px' frameBorder='0' scrolling='no' src='" + $wrapper.data( 'src' ) + "'></iframe>" );
+				} else {
+					$wrapper.find( '.post-likes-widget-placeholder' ).after( "<iframe class='post-likes-widget jetpack-likes-widget' name='" + $wrapper.data( 'name' ) + "' height='55px' width='100%' frameBorder='0' src='" + $wrapper.data( 'src' ) + "'></iframe>" );
+				}
+
+				$wrapper.removeClass( 'jetpack-likes-widget-unloaded' ).addClass( 'jetpack-likes-widget-loading' );
+
+				$wrapper.find( 'iframe' ).load( function( e ) {
+					var $iframe = jQuery( e.target );
+					$wrapper.removeClass( 'jetpack-likes-widget-loading' ).addClass( 'jetpack-likes-widget-loaded' );
+
+					JetpackLikespostMessage( { event: 'loadLikeWidget', name: $iframe.attr( 'name' ), width: $iframe.width() }, window.frames[ 'likes-master' ] );
+
+					if ( $wrapper.hasClass( 'slim-likes-widget' ) ) {
+						$wrapper.find( 'iframe' ).Jetpack( 'resizeable' );
+					}
+				});
+				setTimeout( JetpackLikesWidgetQueueHandler, 250 );
+			}
+			JetpackLikesWidgetQueueHandler();
+		//]]>
+		</script>
+<script type="text/javascript" src="./Stereo matching   Lib4U_files/form.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var JetpackEmojiSettings = {"base_url":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/emoji\/twemoji\/"};
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Stereo matching   Lib4U_files/saved_resource(5)"></script>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script>	<script type="text/javascript">
+	var skimlinks_pub_id = "725X584219"
+	var skimlinks_sitename = "globlib4u.wordpress.com";
+	</script>
+	<script type="text/javascript" src="./Stereo matching   Lib4U_files/725X1342.skimlinks.js"></script><script src="./Stereo matching   Lib4U_files/w.js" type="text/javascript" async="" defer=""></script>
+<script type="text/javascript">
+_tkq = window._tkq || [];
+_stq = window._stq || [];
+_tkq.push(['storeContext', {'blog_id':'44992812','blog_tz':'0','user_lang':'en','blog_lang':'en','user_id':'0'}]);
+_stq.push(['view', {'blog':'44992812','v':'wpcom','tz':'0','user_id':'0','post':'1078','subd':'globlib4u'}]);
+_stq.push(['extra', {'crypt':'UE40eW5QN0p8M2Y/RE1lYixwbDJzRzZYckplWEU4TnJmM2VdWTQsMi9FOG1PVVlfdEphOGJVbWRMY08yfEVJL09lOFIxSFpIQVtdcTlDZz8/R2FPfnVZVmRVa1I9M3EuUGYrNmdNRGNPNWpuWXZBRzNGWStZUll3Si1nWF9pNj9QMlBoNFhnMWRaW1d8TTgmbCw9UUdLTGZGdGd1M34tVXVRMVZRWjdaRjQxcUNaZlc/YlNYS19Taks2V3JuUWhqRzZLam5pOUlVWURmSFpoJm9sRiVbRVJbSV1qXVFybi9ncXo0TmhKY3pwQjhdJUg0NVt5YU5tTWFDJTdOOWl4ZVlybS8sZmNlWVl0dUNhTyVzU08yQ0NbZ3BdU0dXXTlXYzdRZU1mMF85Wi9kPWp0UE0ydGhmMSxVbHAwdSZnL3ZKTi5DSVMxZks2OVBqSy5WM0c1djVyS3l1TENiZ1F4LzRBZ1g='}]);
+_stq.push([ 'clickTrackerInit', '44992812', '1078' ]);
+	</script>
+<noscript>&lt;img src="https://pixel.wp.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /&gt;</noscript>
+<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+</script>
+<img src="./Stereo matching   Lib4U_files/g.gif" id="wpstats"></body></html>

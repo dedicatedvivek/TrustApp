@@ -1,0 +1,672 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0073)https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_intr.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!-- InstanceBegin template="/Templates/sms_template.dwt" codeOutsideHTMLIsLocked="false" -->
+  <title>Noise-driven Concurrent Stereo Matching (NCSM)</title>
+
+
+  
+
+<!-- CONFL-BEGIN standardHeader -->
+  <meta http-equiv="Pragma" content="no-cache">
+
+  <meta http-equiv="Expires" content="-1">
+
+  <link href="main-action.css" type="text/css" rel="stylesheet">
+
+  <link href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/images/favicon.ico" rel="shortcut icon">
+
+  <link href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/images/favicon.png" type="image/png" rel="icon">
+
+  <script src="effects.js">
+  </script>
+  <meta content="MSHTML 6.00.2800.1498" name="GENERATOR">
+
+  <style type="text/css">
+<!--
+.style4 {color: #3C78B5}
+-->
+  </style>
+</head>
+
+
+<body onload="placeFocus()">
+
+<div id="Content">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+  <tbody>
+
+    <tr>
+
+      <td class="logocell" rowspan="2" width="60%">
+      <div class="spacenametitle"><a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/index.html"><img src="mylogo.gif" align="bottom" border="0" height="35" width="35"></a> <a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/index.html" class="spacenametitle"><strong><span class="style4">&nbsp;&nbsp;&nbsp;N</span>oise-driven</strong>
+      <span class="style4">C</span>oncurrent <span class="style4">S</span>tereo <span class="style4">M</span>atching
+      </a></div>
+
+      </td>
+
+      <td align="right" valign="top" width="40%">
+      <table align="right" bgcolor="#ffffff" border="0" cellpadding="2" cellspacing="1">
+
+        <tbody>
+
+          <tr>
+
+            <td class="navItem" onmouseover="this.className=&#39;navItemOver&#39;" onclick="window.document.location=&#39;index.html&#39;" onmouseout="this.className=&#39;navItem&#39;" align="center" nowrap="nowrap" valign="center">&nbsp;&nbsp;<a title="Go to the homepage" accesskey="h" onclick="return true" href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/index.html"><u>H</u>OME</a>
+&nbsp;&nbsp;</td>
+
+          </tr>
+
+        </tbody>
+      </table>
+
+      </td>
+
+    </tr>
+
+    <tr>
+
+      <td align="right" valign="bottom">&nbsp;</td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<div class="breadcrumbs" width="100%">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+  <tbody>
+
+    <tr>
+
+      <td>&nbsp;<!-- InstanceBeginEditable name="EditRegion2" -->
+Location: <a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/index.html">NCSM</a>
+&gt;Introduction<!-- InstanceEndEditable --></td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+</div>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+  <tbody>
+
+    <tr>
+
+      <td>
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+        <tbody>
+
+          <tr>
+
+            <td class="pagebody" valign="top">
+            <div style="padding-top: 5px;">
+            <ul id="foldertab">
+
+<!-- InstanceBeginEditable name="EditRegion3" --> <li><a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/index.html">Abstract</a></li>
+
+              <li><a id="current" href="ncsm_intr.html">Introduction</a></li>
+
+              <li><a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html">Concurrent
+Vs. Conventional</a></li>
+
+              <li><a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_ncsm.html">Noise-driven
+CSM</a></li>
+
+              <li><a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_expt.html">Experimental
+Results</a></li>
+
+              <li><a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_conl.html">Conclusions</a></li>
+
+              <li><a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html">Bibliography</a></li>
+
+              <li><a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_appx.html">Appendices</a></li>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li><a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_publ.html">Publications&amp;Thesis PDF</a></li>
+
+<!-- InstanceEndEditable -->
+            </ul>
+
+            </div>
+
+<!-- InstanceBeginEditable name="EditRegion1" -->
+            <table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+              <tbody>
+
+                <tr>
+
+                  <td valign="top">
+                  <div class="greybox" style="padding: 0px;"><a name="CHILD_LINKS"><strong>Subsections</strong></a>
+                  <ul>
+
+                    <li><a name="tex2html145" href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_intr.html#SECTION00210000000000000000">Basics of
+Computational Binocular Stereo</a> </li>
+
+                    <li><a name="tex2html146" href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_intr.html#SECTION00220000000000000000">Stereo
+Correspondence Problem</a> </li>
+
+                    <li><a name="tex2html147" href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_intr.html#SECTION00230000000000000000">Thesis
+Outline </a> </li>
+
+                  </ul>
+
+<!--End of Table of Child-Links-->
+                  <hr>
+                  <h1><a name="SECTION00200000000000000000"></a><a name="chapter:introduction"></a>Introduction </h1>
+
+                  <p>This chapter outlines the basics of
+computational stereo including
+the geometry of stereo systems, discusses the ill-posedness of
+stereo matching problems, and considers the most popular constraints
+used to regularise the problem. </p>
+
+                  <p>Computational stereo vision is an active
+research domain in computer
+vision. A large number of important applications such as surveying
+and mapping, engineering, architecture, autonomous navigation or
+vision-guided robotics involve quantitative measurements of
+coordinates of 3D points from a stereopair or multiple images of a
+3D scene obtained from different
+viewpoints&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#wei1998">2</a>,<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Han1988">3</a>,<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#ss02">4</a>]. Stereo vision is
+used also
+in geology, forensics, biology (e.g. growth monitoring), biometrics
+(e.g. 3D facial models), bioengineering and many other application
+areas. </p>
+
+                  <p>These 3D measurements are based on stereo
+matching that pursues the
+goal of finding points in stereo images depicting the same observed
+scene points. The corresponding image points are searched for by
+estimating similarity between image signals (grey values or colours)
+under admissible geometric and photometric distortions of stereo
+images. Generally, reconstruction from stereo pairs is an ill-posed
+inverse optical problem because the same stereo pair can be produced
+by many different optical surfaces due to homogeneous (uniform or
+repetitive) textures, partial occlusions and signal distortions.
+Occlusions result in image areas with no stereo correspondence in
+another images, and texture homogeneity yields multiple equivalent
+correspondences. </p>
+
+                  <p>In principle, an ill-posed vision problem
+has to be regularised in
+order to obtain a solution; in the case of computational stereo
+vision the regularisation has to bring the solution close to human
+visual perception&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#ptk85">5</a>,<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#mmp87">6</a>]. However, at
+present, the best
+strategies for regularising stereo algorithms with respect to all
+the sources of ill-posedness is still not clear. </p>
+
+                  <p></p>
+
+                  <h1><a name="SECTION00210000000000000000"></a><a name="section:computational"></a> <br>
+
+Basics of Computational Binocular Stereo </h1>
+
+                  <p>Binocular stereo vision reconstructs a 3D
+model of an observed scene
+from a pair of 2D images capturing the scene from different
+directions. The reconstruction consists of determining 3D
+coordinates of all binocularly visible scene points using
+back-projection or triangulation. All the 3D (spatial) points along
+a ray through the camera's centre of projection to a particular
+image point are projected to that image point. Triangulation
+exploits the fact that each location observed by the two cameras
+produces a unique pair of image points in these cameras.
+Figure&nbsp;<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_intr.html#fig:b2"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a>
+illustrates triangulation geometry. Let <b>O<img src="img4.png" alt="$ _{L}$" align="middle" border="0" height="36" width="13"></b>
+and <b>O<img src="img5.png" alt="$ _{R}$" align="middle" border="0" height="36" width="14"></b>
+be the centres of projection
+of two pinhole cameras. Let <b>P<img src="img4.png" alt="$ _{L}$" align="middle" border="0" height="36" width="13"></b> and <b>P<img src="img5.png" alt="$ _{R}$" align="middle" border="0" height="36" width="14"></b>
+denote positions of the two points in the image planes that
+represent the same point, <b>P</b>. <b>P</b>
+is the intersection
+of the back projected rays
+<!-- MATH $\overrightarrow{\mathbf{O}_{L}\mathbf{P}}$ --><img src="img6.png" alt="$ \overrightarrow{\mathbf{O}_{L}\mathbf{P}}$" align="middle" border="0" height="49" width="40">and
+<!-- MATH $\overrightarrow{\mathbf{O}_{R}\mathbf{P}}$ --><img src="img7.png" alt="$ \overrightarrow{\mathbf{O}_{R}\mathbf{P}}$" align="middle" border="0" height="49" width="40">.
+This triangulation
+localises each binocularly visible point represented by the two
+corresponding image points in a stereopair, provided the
+corresponding image points <b>P<img src="img4.png" alt="$ _{L}$" align="middle" border="0" height="36" width="13"></b> and <b>P<img src="img5.png" alt="$ _{R}$" align="middle" border="0" height="36" width="14"></b>
+associated with the same point <b>P</b> can be determined.
+However, to establish correct correspondences between two (or more)
+stereo images is a very difficult task. Computational stereo
+matching aims to find the correspondences under constraints on
+expected 3D scenes and assumptions about admissible geometric and
+photometric deviations of stereo images. </p>
+
+                  <p>For example, an epipolar geometry in
+Figure&nbsp;<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_intr.html#fig:b2"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a>
+constrains
+and thus accelerates the search for corresponding image points.
+Given a point, <b>P<img src="img4.png" alt="$ _{L}$" align="middle" border="0" height="36" width="13"></b>,
+in the left image, the search area
+for the corresponding point, <b>P<img src="img5.png" alt="$ _{R}$" align="middle" border="0" height="36" width="14"></b>, in the right image
+is
+significantly reduced by the epipolar constraint. Instead of the
+whole right image, this area is restricted to the intersection of
+the right image plane with the epipolar
+plane&nbsp;(<b>O<img src="img4.png" alt="$ _{L}$" align="middle" border="0" height="36" width="13"></b><b>O<img src="img5.png" alt="$ _{R}$" align="middle" border="0" height="36" width="14"></b><b>P</b>).
+The epipolar
+plane contains the baseline passing through the projection centres, <b>O<img src="img4.png" alt="$ _{L}$" align="middle" border="0" height="36" width="13"></b>
+and <b>O<img src="img5.png" alt="$ _{R}$" align="middle" border="0" height="36" width="14"></b>,
+and intersecting each image
+plane in a point called the epipole. Each epipole represents the
+projection centre of another image. If the image plane is parallel
+to the baseline, the corresponding epipole is located at infinity
+along that line. Each epipolar plane intersects both images along
+epipolar lines, and corresponding image points are located along the
+associated epipolar lines. </p>
+
+                  <p></p>
+
+                  <div align="center"><a name="fig:b2"></a><a name="504"></a>
+                  <table>
+
+                    <caption align="bottom"><strong>Figure:</strong>
+Epipolar geometry of a stereo pair.</caption> <tbody>
+
+                      <tr>
+
+                        <td>
+                        <div align="center"><img src="img8.png" alt="\includegraphics{b2_new.eps}" align="bottom" border="0" height="270" width="521">
+                        </div>
+
+                        </td>
+
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+                  </div>
+
+                  <p>Generally, each pair of corresponding image
+points has different 2D <img src="img9.png" alt="$ x$" align="middle" border="0" height="36" width="13">-
+and <img src="img10.png" alt="$ y$" align="middle" border="0" height="36" width="13">-coordinates
+in the left and right images,
+<!-- MATH $\textbf{p}_{L} = (x_{L},y_{L})$ --><img src="img11.png" alt="$ \textbf{p}_{L} = (x_{L},y_{L})$" align="middle" border="0" height="39" width="104">and<!-- MATH $\textbf{p}_{R} = (x_{R},y_{R})$ -->
+                  <img src="img12.png" alt="$ \textbf{p}_{R} = (x_{R},y_{R})$" align="middle" border="0" height="39" width="106">.
+In the most common binocular stereo geometry, the
+associated epipolar lines are image rows with the same <img src="img10.png" alt="$ y$" align="middle" border="0" height="36" width="13">-coordinate,
+                  <img src="img13.png" alt="$ y_R = y_L$" align="middle" border="0" height="36" width="63">.
+This geometry assumes two identical
+cameras with the same focal length, parallel optical axes and a
+baseline parallel to the image planes. Given the geometry of a
+stereo system (the projection centres and relationships between the
+3D and 2D image coordinates), all the binocularly visible points
+with known corresponding image locations
+<!-- MATH $(\textbf{p}_{L},\textbf{p}_{R})$ --><img src="img14.png" alt="$ (\textbf{p}_{L},\textbf{p}_{R})$" align="middle" border="0" height="39" width="66">may
+be reconstructed by
+triangulation. Stereo correspondence is typically specified for each
+location,<!-- MATH $\textbf{p}_{L}$ --> <img src="img15.png" alt="$ \textbf{p}_{L}$" align="middle" border="0" height="36" width="24">, in the
+left image as the coordinate
+differences, called disparities, or parallaxes, of the corresponding
+point in the right image,<!-- MATH $\textbf{p}_{r}$ --> <img src="img16.png" alt="$ \textbf{p}_{r}$" align="middle" border="0" height="36" width="22">. Generally,
+the
+disparity is a vector<!-- MATH $\mathbf{d}(\mathbf{p}_{L}) = [x_{l} - x_{r},y_{l}- y_{r}]^{\mathsf{T}}$ -->
+                  <img src="img17.png" alt="$ \mathbf{d}(\mathbf{p}_{L}) = [x_{l} - x_{r},y_{l}- y_{r}]^{\mathsf{T}}$" align="middle" border="0" height="44" width="200">
+of <img src="img9.png" alt="$ x$" align="middle" border="0" height="36" width="13">- and <img src="img10.png" alt="$ y$" align="middle" border="0" height="36" width="13">-disparities.
+                  </p>
+
+                  <p>A disparity map, <b>d</b>,
+contains the disparity vectors for all
+the left image points having corresponding points in the right
+image. For the parallel stereo geometry, the <img src="img10.png" alt="$ y$" align="middle" border="0" height="36" width="13">-disparity is always
+zero, and a disparity map may contain only the scalar <img src="img9.png" alt="$ x$" align="middle" border="0" height="36" width="13">-disparities
+<!-- MATH $d(\mathbf{p}_{L}) =x_{l}-x_{r}$ --><img src="img18.png" alt="$ d(\mathbf{p}_{L}) =x_{l}-x_{r}$" align="middle" border="0" height="39" width="122">.
+Figure&nbsp;<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_intr.html#fig:b3"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a>
+illustrates a simple binocular stereo system
+with parallel optical axes. The baseline of length, <img src="img19.png" alt="$ b$" align="middle" border="0" height="35" width="14">, is
+perpendicular to the optical axes, coincides with the 3D <img src="img20.png" alt="$ X$" align="bottom" border="0" height="16" width="18">-axis
+and is parallel to the <img src="img9.png" alt="$ x$" align="middle" border="0" height="36" width="13">-axis
+in the images. The focal lengths of
+the cameras are equal to <img src="img21.png" alt="$ f$" align="middle" border="0" height="36" width="15">.
+The world <img src="img22.png" alt="$ Z$" align="bottom" border="0" height="16" width="16">-axis
+coincides with the
+optical axis of the left camera. In order to reconstruct the world
+coordinates,<!-- MATH $\mathbf{P}=[X,Y,Z]^\mathsf{T}$ --> <img src="img23.png" alt="$ \mathbf{P}=[X,Y,Z]^\mathsf{T}$" align="middle" border="0" height="44" width="111">,
+from the disparity map
+<!-- MATH $d(x_{L},y_{L})$ --><img src="img24.png" alt="$ d(x_{L},y_{L})$" align="middle" border="0" height="39" width="72">, the camera geometry
+parameters, the focal length <img src="img21.png" alt="$ f$" align="middle" border="0" height="36" width="15">
+and the baseline <img src="img19.png" alt="$ b$" align="middle" border="0" height="35" width="14">,
+must be exactly known. Then, the 3D
+coordinates for the corresponding pair<!-- MATH $\mathbf{p}_{L}=[x_{L}, y_{L}]$ -->
+                  <img src="img25.png" alt="$ \mathbf{p}_{L}=[x_{L}, y_{L}]$" align="middle" border="0" height="39" width="100">
+and<!-- MATH $\mathbf{p}_{R}=[x_{R}, y_{R}]$ --> <img src="img26.png" alt="$ \mathbf{p}_{R}=[x_{R}, y_{R}]$" align="middle" border="0" height="39" width="102">
+are: </p>
+
+                  <p></p>
+
+                  <div align="center"><!-- MATH \begin{equation} \textbf{$X= \frac{b\cdot x_{L}}{x_{L}-x_{R}}$}; \hspace*{5mm} \textbf{$Y= \frac{b\cdot y_{L}}{x_{L}-x_{R}}$}; \hspace*{5mm} \textbf{$Z= \frac{b\cdot f}{x_{L}-x_{R}}$} \end{equation} -->
+                  <table align="center" cellpadding="0" width="100%">
+
+                    <tbody>
+
+                      <tr valign="middle">
+
+                        <td align="center" nowrap="nowrap"><img src="img27.png" alt="$\displaystyle \textbf{$X= \frac{b\cdot x_{L}}{x_{L}-x_{R}}$}; \hspace*{5mm} \t... ..._{L}}{x_{L}-x_{R}}$}; \hspace*{5mm} \textbf{$Z= \frac{b\cdot f}{x_{L}-x_{R}}$}$" align="middle" border="0" height="61" width="349"></td>
+
+                        <td align="right" nowrap="nowrap" width="10">(1.1.1)</td>
+
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+                  </div>
+
+                  <br clear="all">
+
+                  <p></p>
+
+                  <p> </p>
+
+                  <div align="center"><a name="fig:b3"></a><a name="564"></a>
+                  <table>
+
+                    <caption align="bottom"><strong>Figure:</strong>
+Standard
+geometry of a binocular stereo system.</caption> <tbody>
+
+                      <tr>
+
+                        <td>
+                        <div align="center"><img src="img28.png" alt="\includegraphics{b3_new.eps}" align="bottom" border="0" height="500" width="511">
+                        </div>
+
+                        </td>
+
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+                  </div>
+
+                  <p>According to the configuration in
+Figure&nbsp;<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_intr.html#fig:b3"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a>,
+all the
+observed 3D points can be specified with a vector-valued function,
+<!-- MATH $\mathbf{S}(X,Y) = [Z(X,Y), I(X,Y)]$ --><img src="img29.png" alt="$ \mathbf{S}(X,Y) = [Z(X,Y), I(X,Y)]$" align="middle" border="0" height="39" width="219">,
+of the planar scene
+coordinates <img src="img30.png" alt="$ X,Y$" align="middle" border="0" height="36" width="38">.
+The first component represents the depth value, <img src="img22.png" alt="$ Z$" align="bottom" border="0" height="16" width="16">,
+of the 3D point with planar position, <img src="img31.png" alt="$ (X,Y)$" align="middle" border="0" height="39" width="52">, and the second
+component represents the optical signal (intensity or colour)
+attributed to the point <img src="img32.png" alt="$ (X,Y,Z)$" align="middle" border="0" height="39" width="70">.
+The stereo images are specified
+with functions<!-- MATH $g_{L}(x_{L},y_{L})$ --> <img src="img33.png" alt="$ g_{L}(x_{L},y_{L})$" align="middle" border="0" height="39" width="80">
+and<!-- MATH $g_{R}(x_{R},y_{R})$ --> <img src="img34.png" alt="$ g_{R}(x_{R},y_{R})$" align="middle" border="0" height="39" width="82">
+representing intensities or colours in the image points. Although
+most typical stereo systems are horizontal, with the left and right
+cameras displaced along the <img src="img20.png" alt="$ X$" align="bottom" border="0" height="16" width="18">-axis,
+in the general case the
+baseline can be oriented arbitrarily with respect to the 3D
+coordinate frame. Thus below, the numerical indices 1 and 2 instead
+of the letters <img src="img35.png" alt="$ L$" align="bottom" border="0" height="16" width="15">
+and <img src="img36.png" alt="$ R$" align="bottom" border="0" height="16" width="16"> are used to
+distinguish between the
+stereo channels. </p>
+
+                  <p></p>
+
+                  <h1><a name="SECTION00220000000000000000"></a><a name="section:correspondence"></a> <br>
+
+Stereo Correspondence Problem </h1>
+
+                  <p>Accurate stereo matching to solve the stereo
+correspondence problem
+is a key step towards the accurate 3D reconstruction. However, this
+matching problem is ill-posed and has to be properly regularised to
+resolve ambiguous solutions&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#ptk85">5</a>,<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#mmp87">6</a>]. The ambiguities
+have
+various sources. Even if the scene was a single continuous and
+visible everywhere surface, matching would remain ambiguous due to
+image noise caused by cameras and imaging conditions in particular,
+low signal-to-noise ratio in poorly textured regions, spatially
+variant and different signal transfer factors in the two stereo
+channels, and structural ambiguity. Some of these ambiguities could
+be resolved by using many different views of the same 3D point. This
+research focuses on only binocular stereo matching and does not
+consider multiple view stereo problems. In the binocular case,
+stereo matching is much less capable for reducing structural
+ambiguity in homogeneous areas yielding many equivalent ``best"
+correspondences between the images. Here, homogeneity means either
+uniform (i.e. very small signal deviations) or repetitive of closely
+similar signal groups. In addition, photometric distortions make
+each projected intensity, <img src="img37.png" alt="$ I(X,Y)$" align="middle" border="0" height="39" width="60"> of a point, differ in the
+corresponding points, i.e.<!-- MATH $g_{1}(x_{1},y_{1})$ -->
+                  <img src="img38.png" alt="$ g_{1}(x_{1},y_{1})$" align="middle" border="0" height="39" width="77">
+and
+<!-- MATH $g_{2}(x_{2},y_{2})$ --><img src="img39.png" alt="$ g_{2}(x_{2},y_{2})$" align="middle" border="0" height="39" width="77">may differ due to mutual
+spatially variant
+contrast and offset deviations between the corresponding areas.
+Simultaneously, these areas have geometrical distortions - due to
+projective distortions depending on the surface variations <img src="img40.png" alt="$ Z(X,Y)$" align="middle" border="0" height="39" width="64">
+- and stereo matching has to take account of these differences. </p>
+
+                  <p>Also, viewing the same scene by the two
+mutually displaced cameras
+results in different visibility conditions: while most of the 3D
+points are visible to the both cameras -&nbsp;binocularly visible
+points (BVP) -, some points are occluded by other parts of a scene
+from one. These monocularly visible points (MVP) appear only in one
+image of a pair, and therefore have no stereo correspondence at all.
+A few examples of occlusions are presented in Figure&nbsp;<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_intr.html#fig:b4"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a>.
+Two kinds of surface discontinuities in a scene result in large
+disparity ``jumps", when a thin foreground object appears in front
+of distant background or conversely a small hole existing at the
+foreground surface allows us to see the distant background.
+Detection and accurate recognition of occlusions is very important
+because incidental correspondences found for such regions may
+completely compromise the 3D reconstruction. </p>
+
+                  <p></p>
+
+                  <div align="center"><a name="fig:b4"></a><a name="592"></a>
+                  <table>
+
+                    <caption align="bottom"><strong>Figure:</strong>
+Variants of partial occlusions
+(Red Colour Regions): (a)&nbsp;due to a thin foreground object;
+(b)&nbsp;due
+to small foreground hole; (c)&nbsp;due to surface
+discontinuity.</caption> <tbody>
+
+                      <tr>
+
+                        <td>
+                        <div align="center">
+                        <table align="center" cellpadding="3">
+
+                          <tbody>
+
+                            <tr>
+
+                              <td align="center"><img src="img41.png" alt="\includegraphics[width=4.5cm]{b4-1.bmp.eps}" align="bottom" border="0" height="106" width="202"></td>
+
+                              <td align="center"><img src="img42.png" alt="\includegraphics[width=4.5cm]{b4-2.bmp.eps}" align="bottom" border="0" height="106" width="203"></td>
+
+                              <td align="center"><img src="img43.png" alt="\includegraphics[width=4.7cm]{b4-3.bmp.eps}" align="bottom" border="0" height="105" width="212"></td>
+
+                            </tr>
+
+                            <tr>
+
+                              <td align="center">(a)</td>
+
+                              <td align="center">(b)</td>
+
+                              <td align="center">(c)</td>
+
+                            </tr>
+
+                          </tbody>
+                        </table>
+
+                        </div>
+
+                        </td>
+
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+                  </div>
+
+                  <p>Regularisation of stereo matching involves
+not only detection of
+likely occlusions, but also a number of physically justified
+constraints on observed 3D surfaces and image correspondences. The
+constraints can reduce false matches and guide the matching process.
+In particular, the <b>epipolar </b>
+constraint&nbsp;(see
+Section&nbsp;<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_intr.html#section:computational"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a>) reduces a 2D search space to 1D
+search along epipolar lines because for any point <b>P<img src="img44.png" alt="$ _{1}$" align="middle" border="0" height="36" width="13"></b>
+in one stereo image, the corresponding point <b>P<img src="img45.png" alt="$ _{2}$" align="middle" border="0" height="36" width="12"></b>
+lies
+on the associated epipolar line. The epipolar constraint can be
+reliably applied only after the geometry of the system is known and
+a series of corresponding epipolar lines in both stereo images is
+estimated. </p>
+
+                  <p>Two other constraints, <b>uniqueness</b>
+and <b>continuity</b>,
+first pointed out by Marr and Poggio in 1976&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#marr76">7</a>] restrict
+the matching conditions. Uniqueness means that a pixel from one
+image has only one corresponding pixel in another image. This
+constraint holds for opaque surfaces, but fails if partially
+transparent surfaces are present in the scene. The continuity
+constraint follows from an assumption that a visible surface, and
+therefore the disparity of corresponding points, varies smoothly
+almost everywhere over the scene. In the presence of multiple
+visible surfaces with discontinuities caused by abrupt disparity
+jumps, this constraint is invalid. </p>
+
+                  <p>The <b>ordering</b> constraint
+holds for a single opaque surface
+and states that the corresponding points along each pair of the
+associated epipolar lines have the same order. In other words, if a
+point, <img src="img46.png" alt="$ p_m$" align="middle" border="0" height="36" width="27">,
+is to the left of the point, <img src="img47.png" alt="$ p_n$" align="middle" border="0" height="36" width="23">, in an epipolar
+line across one image, then the corresponding point,<!-- MATH $p_{m}^\prime$ -->
+                  <img src="img48.png" alt="$ p_{m}^\prime$" align="middle" border="0" height="38" width="27">,
+is to the left of the point,<!-- MATH $p_{n}^\prime$ --> <img src="img49.png" alt="$ p_{n}^\prime$" align="middle" border="0" height="38" width="23">,
+respectively, in the
+associated epipolar line across the second image. This constraint
+well-known in conventional photogrammetry led to dynamic programming
+based approaches to stereo matching, by Gimel'farb in
+1972&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Georgy72">8</a>]
+and Baker and Binford in 1981&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Baker81">9</a>].
+The ordering constraint fails for multiple discontinuous surfaces,
+e.g. for thin foreground objects in front of a distant background (
+see e.g. Figure&nbsp;<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_intr.html#fig:b4"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a>,a). </p>
+
+                  <p>The <b>compatibility</b>
+constraint&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Grimson86">10</a>]
+used in the
+majority of known approaches to intensity-based stereo matching
+states that either the corresponding pixels have closely similar
+intensity values or the corresponding image windows have high
+cross-correlation values. The former assumption fails under
+photometric distortions of stereo images, e.g. under spatially
+variant or invariant contrast and offset deviations. The latter
+assumption fails under spatially varying pixel disparities, partial
+occlusions, and spatially variant contrast and offset deviations. </p>
+
+                  <p></p>
+
+                  <h1><a name="SECTION00230000000000000000">Thesis
+Outline </a> </h1>
+
+                  <p>After discussing commonly used stereo
+matching approaches, this
+thesis proposes an alternative approach called Noise-driven Concurrent
+Stereo
+Matching (NCSM) that overcomes, to some extent, the drawbacks of the
+more conventional algorithms. Chapter&nbsp;<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a>
+presents
+an overview of the conventional algorithms and formulates a new NCSM
+framework based on accurate modelling and estimation of image noise.
+Chapter&nbsp;<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_ncsm.html"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a>
+considers the main sources of noise in
+stereo images and discusses in detail the proposed noise-driven
+NCSM, including different ways of noise estimation, noise-based image
+segmentation, selection of candidate 3D volumes of admissible stereo
+matching, and fitting 2D surfaces to the volumes.
+Chapter&nbsp;<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_expt.html"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a>
+presents experimental results
+obtained for several stereo pairs with known ground truths using NCSM
+and more conventional stereo matching techniques including the best
+performing at present graph minimum-cut and belief propagation based
+algorithms. Finally, Chapter&nbsp;<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_conl.html"><img alt="[*]" src="crossref.png" align="bottom" border="1"></a> summarises
+results presented in the thesis and discusses directions of future
+research. </p>
+
+                  <p>The work presented in this thesis has been
+reported in
+publications&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Liu01">11</a>,<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Liu02">12</a>,<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Liu03">13</a>,<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Liu04">14</a>,<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Liu05">15</a>,<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Liu06">16</a>,<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Liu07">17</a>,<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Liu08">18</a>].
+One paper&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Liu05">15</a>]
+received the <span style="color: rgb(255, 0, 0);"><b><i>Second
+Best Paper
+Award</i></b></span> of the Fourth Mexican
+International Conference on Artificial
+Intelligence (MICAI). Monterrey, Mexico Novermber 14-18, 2005, and
+another&nbsp;[<a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html#Liu07">17</a>]
+received the <span style="color: rgb(255, 0, 0);"><b><i>Best
+Paper Award</i></b></span>
+of Image and Vision Computing New Zealand (IVCNZ) 2005 conference. </p>
+
+                  <p> </p>
+
+                  <div style="padding: 8px;"></div>
+
+                  </div>
+
+                  </td>
+
+                </tr>
+
+              </tbody>
+            </table>
+
+<!-- InstanceEndEditable --> </td>
+
+          </tr>
+
+        </tbody>
+      </table>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+</div>
+
+<div class="license-nonprofit"></div>
+
+<div class="bottomshadow">
+</div>
+
+<div class="smalltext" id="poweredby">@Copyright by
+Jiang Liu <a href="mailto:jliu001@ec.auckland.ac.nz">Contact
+Administrator </a><a class="smalltext" href="mailto:jliu001@ec.auckland.ac.nz">jliu001@gmail.com</a><br>
+
+</div>
+
+<!-- InstanceEnd -->
+
+
+</body></html>

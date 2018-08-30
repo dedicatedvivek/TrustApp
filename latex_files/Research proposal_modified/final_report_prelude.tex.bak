@@ -1,0 +1,220 @@
+%============================================================================
+% prelude.tex
+%   - titlepage
+%   - table of contents, list of tables and list of figures
+%   - abstract
+%============================================================================
+\clearpage%
+\pagenumbering{roman}  % This makes the page numbers Roman (i, ii, etc)
+%--------------------------------------------------------------------%
+\begin{center}
+{\Huge \bf Video Summarization} \\
+%\vspace{0.1in}
+%{\large \bf for Survivable Multicasting}\\
+\vspace{0.4in}
+\textbf {\large Topic Seminar Report} \\
+\vspace{0.3in}
+\large Submitted in partial fulfillment of the requirement of University of Mumbai\\
+For the Degree of\\
+\vspace{0.5in}
+\textbf {PhD}\\
+%\vspace{0.2in}
+%{\bf in}\\
+%\vspace{0.2in}
+\large(Computer Engineering)\\
+\vspace{0.4in}
+\large by\\
+\vspace{0.2in}
+{\large \bf Mrs. Dipti Jadhav}\\
+\vspace{0.3in}
+\large Under the guidance of\\
+\vspace{0.2in}
+{\large \bf Dr. Udhav Bhosle}\\
+%\&\\
+%{\large \bf Prof. Tushar Ghorpade}\\
+%\vspace{0.4in}
+%\begin{figure*}[h]
+%\centerline{\psfig{figure=./raitlogo.eps, width=1in, height=0.8in}}
+%\end{figure*}
+\vspace{0.6in}
+\includegraphics{raitlogo.eps}\\
+\vspace{0.6in}
+\small Dr. D. Y. Patil Group's \\
+\vspace{0.1in}
+\textbf {RAMRAO ADIK INSTITUTE OF TECHNOLOGY}\\
+\vspace{0.1in}
+\small Nerul, Navi Mumbai - 400706\\
+\vspace{0.1in}
+\small (Affiliated to University of Mumbai)\\
+\vspace{0.1in}
+\small  \textbf {Jan 2015}
+\end{center}
+
+
+
+
+% TITLE PAGE
+%   - define \title{} \author{} \date{}
+
+%\title{Video Summarization}
+%\author{Dipti Jadhav}
+
+%\date{Jan 2015}
+
+%\department{Department of Computer Engineering}
+
+%    - Set the guide's name
+%\setguide{Dr. Udhav Bhosle}
+%    - Set the coguide's name (if you have one)
+%\setcoguide{Prof. Name of the Guide}
+
+%   - once the above are defined, use \maketitle to generate the titlepage
+%\maketitle
+
+%--------------------------------------------------------------------
+\cleardoublepage \nonumber
+\begin{center}
+\includegraphics{raitlogo.eps}\\
+Ramrao Adik Education Society's\\
+\large {\textbf{Ramrao Adik Institute of Technology}}\\
+\small(Affiliated to the University of Mumbai)\\
+Dr. D. Y. Patil Vidyanagar,Sector 7, Nerul, Navi Mumbai 400
+706.\\\vspace{0.3in}
+\textbf{\begin{Huge}Certificate\end{Huge}}
+\end{center}
+\vspace{0.1in}
+\begin{center}
+\large This is to certify that, the topic seminar report titled
+\vspace{0.15in}\\\textbf {\lq\lq Video Summarization \rq\rq} \\
+\vspace{0.1in}is a bonafide work done by\vspace{0.15in}
+\\\textbf {Dipti Jadhav } \\
+\vspace{0.1in} and is submitted in the partial
+fulfillment of
+the requirement for the degree of \vspace{0.15in} \\\textbf{Phd}\\
+in \\\textbf{Computer Engineering} \\to the \\\textbf{University
+of Mumbai}.
+
+
+\includegraphics{university.eps}
+
+ \vspace{0.2in}
+%
+%\begin{tabular}{cccc}
+%      \rule{5cm}{1sp}
+%      \\
+%       Guide \\\\
+%      \rule{5cm}{1sp}  & \rule{5cm}{1sp}   & \rule{5cm}{1sp} \\
+%      Project Coordinator      & Head of Department         & Principal \\
+%
+%
+%    \end{tabular}
+%\vspace{1in}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tabular}{ccc}
+
+      \rule{4.0cm}{1sp} & \hspace{0.7in}                & \hspace{0.3in} \rule{4.0cm}{1sp} \\ \vspace{0.65in}
+       Examiner & \hspace{1in}             & \hspace{0.3in} Supervisor \\
+      \rule{4.0cm}{1sp} & \hspace{0.5in} \rule{4.0cm}{1sp}                  &\hspace{0.45in} \rule{4.0cm}{1sp} \\
+      Project Coordinator & \hspace{0.5in} Head of Department                &\hspace{0.65in} Principal \\\\
+        %&\rule{5cm}{1sp}& \\
+%       &Principal&
+    \end{tabular}
+\end{center}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{tabular}{ccc}
+%
+%      \rule{5cm}{1sp}                && \rule{5cm}{1sp} \\ \vspace{0.65in}
+%       Guide             && Project Coordinator \\
+%      \rule{5cm}{1sp}                && \rule{5cm}{1sp} \\
+%      Head of Department                && Principal \\\\
+%        %&\rule{5cm}{1sp}& \\
+%%       &Principal&
+%    \end{tabular}
+%\end{center}
+%-----------------------------------------------------------------
+\cleardoublepage
+%--------------------------------------------------------------------%
+
+%\centerline{\textbf{\begin{Huge}Certificate of Approval by
+%Examiners\end{Huge}}}
+%
+%\vspace{1.5in}
+%
+% This is to certify that the Stage-1 report entitled
+%"\textbf{Title of the project}" is a bonafide work done by
+%\textbf{Name of the student} under the guidance of \textbf{Name of
+%the guide}. This dissertation has been approved for the award of
+%\textbf{Master's Degree in Electronics  Engineering}, University of
+%Mumbai.
+%
+%\vspace{1.5in} \textbf{Examiners:}\vspace{1in}\\
+%
+%\begin{tabular}{ccc}
+%
+%      \rule{5cm}{1sp} &\rule{30mm}{0pt} & \rule{5cm}{1sp}
+%      \\\vspace{0.1in}
+%       Name:                && Name:  \\
+%
+%    \end{tabular}
+%
+
+
+
+\begin{acknowledgments}
+MY ACKGHGJHGXJSGJXG\\
+
+FGFGG
+
+With great pleasure, I avail this opportunity to express my deep
+sense of gratitude to my guide, Prof. xyv, for her spirited guidance
+and inspiration.I have deep sense of admiration for their innate
+goodness and inexhaustible enthusiasm.it helped me to work in right
+direction to attain desired objective.
+
+I am also thankful to our Project Coordinator, xdf who devoted their
+valuable time and helped me in all possible ways towards successful
+completion of this work.I thank all those who have contributed
+directly or indirectly to this work.
+
+I am thankful to our Principal Dr. XYZ for their support and
+encouragement. I extend thanks to my friends who have done lots of
+nice things for me.I cannot end without thanking my lovely family
+for their encouragement.
+\end{acknowledgments}
+
+% ABSTRACT
+\begin{abstract}
+
+write abstract of the your report here
+
+
+\end{abstract}
+
+%--------------------------------------------------------------------%
+% CONTENTS, TABLES, FIGURES
+ \listoftables
+ \listoffigures
+ \tableofcontents
+
+%--------------------------------------------------------------------%
+%  Single counter for theorems and theorem-like environments:
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{assertion}[theorem]{Assertion}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{figger}[theorem]{Figure}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+
+%--------------------------------------------------------------------%
+% Make the page numbers Arabic (1, 2, etc)
+\cleardoublepage%
+\pagenumbering{arabic}

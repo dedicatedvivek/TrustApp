@@ -1,0 +1,64 @@
+/*
+Theme Name:     Twenty Eleven Child
+Theme URI:      http://nghiaho.com
+Description:    Child theme for the Twenty Eleven theme 
+Author:         Nghia Ho
+Author URI:     http://example.com/about/
+Template:       twentyeleven
+Version:        0.1.0
+*/
+
+@import url("../twentyeleven/style.css");
+
+#site-title {
+    margin-right: 270px;
+    padding: 1em 0 0;
+}
+
+#access a {
+    color: #EEEEEE;
+    display: block;
+    line-height: 3.333em;
+    padding: 0 0.8em;
+    text-decoration: none;
+}
+
+#access ul ul a {
+    padding: 8px;
+    font-size: 12px;
+}
+
+.widget ul li {
+    color: #777777;
+    font-size: 11px;
+}
+
+#site-description {
+    color: #7A7A7A;
+    font-size: 14px;
+    margin: 0 270px 1.65625em 0;
+}
+
+body, input, textarea {
+    color: #373737;
+    font: 300 12px/1.3 "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+BODY, DIV, TABLE, THEAD, TBODY, TFOOT, TR, TH, TD, P {
+    font-family: "Arial";
+    font-size: small !important ;
+}
+
+#content h1 { font-size:180%;}
+#content h2 { font-size:130%;}
+
+.commentlist .children li.comment .fn {
+    display: inline;
+}
+
+.hentry, .no-results {
+    border-bottom: 2px solid #DDDDDD;
+    margin: 0;
+    padding: 0 0 1.625em;
+    position: relative;
+}

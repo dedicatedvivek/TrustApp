@@ -1,0 +1,209 @@
+
+%=====================================================================
+% Document Style
+%=====================================================================
+% APS format: There is no prescribed format by IIT Bo\emph{}mbay
+\documentclass{raitdisser}
+% To include optional packages, use the \usepackage command.
+% For e.g.:
+\usepackage{graphicx}
+%=======================================================================
+% End of Preamble, start of document
+%
+
+\begin{document}
+
+% Choose your bibliography style
+% plain is the basic style, others include ieeetr, siam, asm, etc
+\bibliographystyle{plain}
+
+%\include{defs}                   % Common definitions used throughout the thesis
+%\include{disser_prelude}
+              % Title page, abstract, table of contents, etc
+\include{chap1}            % Chapter 1: Introduction
+%\include{chap2}                   % Other chapters as required
+%\include {Referencce}
+%\include{chap3}
+%\include{chap_conclusions}      % Finally the summary & conclusions
+
+%--------------------------------------------------------------------%
+% APPENDIX
+%  Appendices, if any, must precede the cited literatures.
+%  Appendices shall be numbered in Roman Capitals (e.g. Appendix IV)
+\appendix
+%\include{appendix_1}        % Appendices if any..
+
+%--------------------------------------------------------------------%
+% LITERATURE CITED
+%   This should follow the appendices, if any, otherwise summary and
+%   conclusions chapter.
+%\reference              % Make the bibliography
+%\begin{thebibliography}{9}
+%
+%\bibitem{Felzen}
+%P. Felzenszwalb and D. Huttenlocher.
+%\textit{Efficient belief propagation for early vision}
+%Int.J.Computer Vision, vol. 70, no. 1, pp. 41-54, Oct. 2006.
+%
+%\bibitem{Li Zhoue}
+%Li Zhou, Tao Sun, Yuanzhi Zhan and Jia Wang.
+%\textit{Software and Hardware Implementations of Stereo Matching}
+%International Journal of Signal Processing, Image Processing and Pattern Recognition Vol.7, No.4 (2014), pp.37-56 http://dx.doi.org/10.14257/ijsip.2014.7.4.04
+%\bibitem{Young}
+%Young-kyu Choi, Williem, and In Kyu Park
+%\textit{Memory-Efficient Belief Propagation in Stereo Matching on GPU }
+%\bibitem{Chi-Hua Lai}
+%Chi-Hua Lai,  Kun-Yuan Hsieh,  Shang-Hon Lai,  and  Jenq Kuen Lee
+%\textit{Parallelization of Belief Propagation Method on Embedded Multicore Processors for Stereo Vision}
+%\bibitem{Ed}
+%Edurdo Magdaleno,Jonas philipp luke,Manuel Rodriguez and Jse Manuel Rodriguez
+%\textit{Design of BP based on FPGA for the multistereo CAFADIS camera}
+%open acess sensors ISSN 1424-8220
+%\bibitem{yuchang}
+%Yu-Chang Andnelson Chang
+%\textit{Low Memory Cost Block-Based Belief Propagation For Stereo Correspondence},
+%1-4244-1017-7187,IEEE Transisition
+%\bibitem{Radu}
+%Radu Timofte,Lucvan Gool
+%\texttt{Efficient Loopy Belief Propagation Using The Four Color Theorem}
+%Isics,Esat-Psi/Iminds V,Belgium,Computer Vision Lab,Zurich,Switzerland
+%\bibitem{Nam Ma}
+%Nam Ma,Yinglong Xia,Viktorprasanna
+%\texttt{Task Parallel Implementation Of Belief Propagation In Factor Graphs}
+%This Research Was Suppored By U.S.National Foundation Under Grant No.Cns-101880
+%\bibitem{Mathias}Mathias J.P.M.Lemons
+%\textit{A Survey on stereo Matching Techniques}
+%
+%\bibitem{Jain}	
+%Jain Sun, Nan-Ning Zheng, and Heung-Ywung Shum.
+%\texttt{Stereo matching using belief propagation. }
+%IEEE Tansaction on Pattern Analysis and Machine Intelli-gence, 25(7):787-800, 203
+%\bibitem{Mu}
+%Mu chun su,Yi Zing Hsieh and Yu-Xiang Zhao
+%\textit{A Simple Approach to stereo matching and its application in developing a travel kid for blind}
+%
+%
+%\bibitem{J.sun}
+%J. Sun, H. Shum, and N. Zheng,
+%\textit{Stereo matching using beli ef propaga-tion,}
+%IEEE Trans. Pattern Analysis and Machine Intelligence, vol. 25, no. 7, pp. 787-800, July 2003.
+%\bibitem{M.Tappen }	
+%M.Tappen and W. Freeman
+%\textit{Comparison of graph cuts with belief propagation for stereo using identical MRF parameters }
+%in Proc. IEEE Int. Conf. Computer Vision, vol. 2, pp. 900-906, Oct. 2003.
+%\bibitem{Alan}
+%Alan Brunton, Chang Shu, and Gerhard Roth
+%\textit{Belief propagation on the GPU for stereo vision.}
+%In Proceedings of the 3rd Canadian Conference on Computer and Robot Vision, pages 76-81, June 2006.
+%\bibitem{Y.C.}
+%Y. C. Tseng and T. S. Chang
+%\textit{Architecture Design of Belief Propagation for Real-Time Disparity Estimation}
+%IEEE Transactions on Circuits and Systems for Video Technology, vol. 11, no. 20, (2010), pp. 1555-1565.
+%\bibitem{Y. C. Tseng }	
+%Y. C. Tseng and T. S. Chang
+%\textit{Architecture Design of Belief Propagation for Real-Time Disparity Estimation}
+%IEEE Transactions on Circuits and Systems for Video Technology, vol. 11, no. 20, (2010), pp. 1555-1564.
+%\bibitem{ Sun}J. Sun, N. N. Zheng and H. Y. Shum
+%\textit{Stereo Matching Using Belief Propagation}
+%IEEE Trans. Pattern Analysis and Machine Intelligence, vol. 7, no. 25, (2003), pp. 787-800.
+%\bibitem{R. Szeliski}
+%R. Szeliski, R. Zabih, D. Scharstein, O. Veksler, V. Kolmogorov, A. Agarwala, M. F. Tappen and C. Rother
+%\textit{A Comparative Study of Energy Minimization Methods for Markov Random Fields}
+%IEEE Trans. Pattern Anal. Mach. Intell., vol. 6, no. 30, (2008), pp. 1068-1080.
+%
+%\bibitem{}
+%J. Sun, N. N. Zheng and H. Y. Shum,  .
+%\textit{Stereo Matching Using Belief Propagation}
+%IEEE Trans. Pattern Analysis and Machine Intelligence, vol. 7, no. 25, (2003), pp. 787-800
+%\bibitem{Q.}	Q. Yang, L. Wang, R. Yang, S. Wang, M. Liao and D. Nister
+%\textit{Real-time Global Stereo Matching Using Hierarchical Belief Propagation}
+%In Proc. British Machine Vision Conference, (2006) September 4-7, pp. 989-998, Edinburgh, UK.
+%\bibitem{Chia-Kailiang}
+%Chia-Kai Liang,Chao-Chung Cheng,Yen-Cheieh Lai
+%\texttt{Hardware-Efficient Belief Propagation}
+%IEEE Transactions On Circuits And Systems For Video Technology Vol;21,No.5,May 2011
+%\bibitem{Dan Yuan}
+%Dan Yuan
+%\texttt{Understanding Belief Propagation And Its Applicatons}
+%Department Of Computer Engineering,University Of California
+%\bibitem{Erik.B.Sudderth,William T.Freeman}
+%Erik.B.Sudderth And William T.Freeman
+%\texttt{Signal And Image Processing With Belief Propagation}
+%Accepted To Appear In IEEE Signal Processing Magazine
+%\bibitem{Hans Andrea Loeliger}
+%Hans Andrea Loeliger
+%\texttt{An Introduction To Factor Graphs}
+%IEEE Signal Processing Magazine,2004
+%\bibitem{Jianguo Ding}
+%Jianguo Ding
+%\texttt{Probabilistic Inferences In Bayesian Networks}
+%International Journal Of Computer Science,Arxiv:1011.0935V2,5 November 2010
+%\bibitem{Frank R.Kschischang,Brendan J.Frey,Hans Andrea Loeliger}
+%Frank R.Kschischang,Brendan J.Frey,Hans Andrea Loeliger
+%\texttt{Factor Graph and The Sum Product Algorithm}
+%IEEE Transcations On Information Theory,Vol47.No.2,Feb,2001
+%\bibitem{Judea Pearl}
+%Judea Pearl
+%\texttt{Reverend Bayes On Inference Engines:A Distributed Hierarchical Approach}
+%Aaai-B2 Proceedings 1982
+%
+%\bibitem{Heckerman.D.}
+%Heckerman.D.
+%\texttt{A Tutorial On Learning With Bayesian Networks}
+%Technical Report Mst-Tr-95-96,Microsoft Corporation ,Redmond,Wa
+%\bibitem{}Mendiburu A., Santana R., Lozano J. A., and E. Bengoetxea
+%\textit{A parallel frame-work for loopy belief propagation.}
+%In Proceedings of the 2007 GECCO Confer-ence Companion on Genetic and Evolutionary Computation, pages 2843-2850, July 2007.
+%\bibitem{}Michael Gschwind
+%\textit{The cell broadband engine: Exploiting multiple levels of parallelism in a chip multiprocessor.}
+%International Journal of Parallel Process-ing, 35(3):233-262, 2007.
+%\bibitem{}A.Celebi, O. Urhan, I. Hamzao and S. Erturk
+%\textit{Efficient Hardware Implementations of Low Bit Depth Motion Estimation Algorithms}
+%IEEE Signal Processing Letters, vol. 6, no. 16, (2009), pp. 513-516.
+%\bibitem{Pearl}
+%Judea Pearl
+%\texttt{Probabilistic Reasoning in Intelligent Systems}
+%Kaufmann Morgann Publishers, Second Revised And updated Edition,San Francisco, California, 1998.
+%\end{thebibliography}
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

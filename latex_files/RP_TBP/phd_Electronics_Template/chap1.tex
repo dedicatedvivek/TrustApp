@@ -1,0 +1,95 @@
+
+\textbf{\textbf{Stereo matching technique using Belief Propagation}}
+
+%\label{ChapterIntroduction}
+%\renewcommand{\baselinestretch}{1.5}\normalsize
+%
+
+\section{Introduction}
+Stereo vision is an imaging technique that can provide full field of view 3D measurements in an unstructured and dynamic environment. The basic of stereo vision are similar to 3D perception in a human vision and is based on triangulation of rays from multiple viewpoints. Each pixel in a digital camera collects the light that reaches the camera along a 3D ray. If feature in the world can be identified as a pixel location in an image then this feature lies on the 3D ray associated with that pixel. If multiple cameras are used multiple rays are obtained. The intersection of these rays is the 3D location of the feature.\\
+The key problem to solve stereo vision are to identify which pixel in multiple images match the same world feature .This problem is known as stereo matching or stereo correspondence. Stereo Matching is for a given two or more images of the same scene or object, compute a representation of its shape. Stereo Matching is process of finding disparity or depth information.\\
+The tracing of corresponding phenomena i.e. stereo matching is necessary key funtionality in many applications like image sequence analysis in entertainment, information transfer and automated systems. Stereo matching is highly important in fields such as robotics to extract information about the relative position of 3D objects in the vicinity of autonomous systems. Other applications for robotics include object recognition, where depth information allows for the system to separate occluding image components, such as one chair in front of another, which the robot may not be able to distinguish as a separate object by any other criteria.\\
+Scientific applications for digital stereo vision include the extraction of information from aerial surveys, for calculation of contour maps or even geometry extraction for 3D building mapping, or calculation of 3D heliographic information such as obtained by the remote sensing projects of the ISRO .
+
+There are many algorithms for stereo matching have been proposed, the computation of disparity still remains challenging in texture less regions, depth discontinuities and occluded areas. The stereo algorithms can be roughly categorized into three classes.\\
+The first class is the area-based algorithms. These algorithms attempt to correlate the gray levels of pixels within a finite neighboring window. A central problem of the area- based algorithms is to find the optimal size of the window. While the window size must be large enough to include enough intensity variation for matching, it must be small enough to avoid the effects of projective distortion.\\
+The second class is the feature- based algorithms. They extract features of interest from the image, such as edges, and match the features. The disadvantage of the feature-based algorithms is that they usually yield sparse disparity maps.\\
+The third class global algorithms such as dynamic programming, graph cuts and belief propagation use global constrains over the entire image. Global algorithms can deal with the texture fewer regions and occluded regions well they performed over the whole images.\\
+In spite of having advantages of global algorithm, there have been few real time stereo matching implementations due to their high complexity. Among global algorithm, dynamic programming can be used to implement real time systems but is not robust since it doesn't consider vertical consistency\\
+The stereo matching problems can formulate in terms of Markov Random Field as minimum energy function, to find energy minimization function is NP-hard. This means a general solution to this problem will take an unthinkably long time to reach a solution.\\
+Belief propagation algorithm is an approach which find the approximate solution for minimum energy functions used for stereo matching.
+Belief propagation algorithm considers both vertical and horizontal consistency is most robust method in the presence of texture less regions and occlusion .\\
+However,Even  Belief propagation is computationally complex and often it implementation in real time is not possible.
+Current research is directed towards optimizing the BP algorithms and associated hardware for fast implementation.
+
+
+
+
+
+\section{\textbf{Research Problem}}
+To optimize Belief Propagation algorithm  for reducing  computation complexity and increase calculation efficiency.
+
+\section{\textbf{Research aim and objective}}
+To develop Belief Propagation algorithm  to reduce run time and bandwidth for real time applications
+\section{\textbf{Operational definition of terms and concepts.}}
+Some of the Concepts are given  below:
+
+Belief Propagation Techniques approach uses the degree of a person's belief that an event will occur ,rather than the actual probability  of the event will occur.
+Belief Propagation Technique is used to perform inference on graphical  model  such as factor graphs which calculates marginal distribution for each unobserved node
+conditional on observed node.
+Belief Propagation Techniques  are used for performing inference on graphical models such as Bayesian Network and Markov Random Field. In Markov Random  Fields (MRF) the network topology was presumed to be given and problem was to characterize the probabilistic  behavior  of a system complying with dependencies prescribed by network.
+
+Stereo  vision system is three-dimensional (3D) model to give 3D objects using depth information. Stereo matching is concerning on the depth information processing capability. Stereo Matching used to find representation of its shape for a given two or more images of the same scene or object
+
+\section{\textbf{Literature Surey}}
+Some of the major contributions in the optimization of BP stereo matching are as follows:
+Chia-Kai et.al[1] used Tile based belief Propagation scheme which reduces memory
+ and bandwidth and used another technique fast message construction which reduces the complexity of message construction from quadratic to linear.so it can easily parallelized.
+Termination Criteria for Tile based BP are dependent on application and data so it can be possible to apply for some applications like stereo matching
+
+Pedro F.Felzenszwalb and Daniel P.Huttenlocher [2] methods used are first distance transform technique to find new message by using cost function ,other method used are grid graph technique to update the messages.
+The third technique used are multi scale algorithm to perform BP in a coarse to fine manner.These techniques are used for solving early vision problems such as stereo ,optical flow and image restoration
+
+Li Zhou et. [3] present a general comparison survey about software and hardware processing algorithms based on algorithm inherent characteristic, implementations, and architectures
+
+optimization potential of an Belief Propagation algorithm measured  in terms of
+of speed, parallelism, data bandwidth, memory storage, etc. implemented either for  software or  for hardware
+ GPU, FPGA and ASIC designs are  implemented in real-time embedded stereo vision application systems because of their high parallel processing capabilities and specific powerful calculation supporting components.
+Implementing GPU has more programming flexible and powerful computational capability than FPGA and ASIC but FPGA and ASIC  have high performance, lower power consumption and cost
+Stereo matching system could be enhanced along with software and hardware technology development.
+
+
+Young-kyu Choi et [4] used novel memory efficient algorithm for BP in which data size and transfer bandwidth is reduced significantly by storing only part of the whole image.
+In order to maintain the accuracy, the local messages are reconstructed by Graphic Processing Units (GPU) which is having advantage of available of shared memory.
+
+
+
+Chi-Hua Lai e.tc [5] used  method of  parallelization of a belief propagation algorithm on the multicore processors  to optimize the BP  to implement on Graphic Processing Units (GPU).One of the most advanced paradigms is to apply this  technique in inferring the 3-D position of an object for stereo matching .
+
+
+ Eduardo.M et.all [6] developed a FPGA implementation for depth map estimation using Belief Propagation algorithm for CAFADIS. CAFADIS IS A 3D video camera  patented  by the university of Laguna that performs depth reconstruction in real time.
+The main contribution of this work is the use of FPGA technology for processing the huge amount of data
+
+
+
+Yu-Cheng Tseng et.a[7]  worked on  a method which is  used  for stereo matching is that by partitioning an image into block and optimize with Belief Propagation. This method reduces the memory storage size with good performance.
+
+
+
+
+
+Radu  Timofte et.al[8] studied Four-Color Theorem  on Max-product Belief propagation technique. It is used in early computer vision for solving MRF problems where energy is to be minimized
+
+Nama et.al [9]  method used is task parallelism for Belief Propagation in acyclic graphs .The approach for task parallelism consists of constructing a task dependency graph for the input factor graph and then using a task scheduler to allocate tasks to the cores for parallel l execution,
+
+
+\section{\textbf{Research Design}}
+
+\begin{enumerate}
+\item Study the implementation of stereo matching using Belief Propagation and understands the issues in implementation. Study different techniques to optimize belief in different approaches
+\item  Try to evolve a new approach considering hardware and software implementation in Belief Propagation
+\end{enumerate}
+\section{\textbf{Scope and Limitations}} By using different message passing schemes in belief propagation algorithm can greatly reduces memory, bandwidth and computational time of belief propagation and enable parallel processing while implementing.\\
+The execution time of belief propagation reduces after certain stability or convergence criteria met ,but termination criteria is application data dependent.
+\section{\textbf{Tentative Scheme }}The performance of BP algorithm is compared  using data of  Middlebury library and other sources.
+\section{Expected Results} Development of a new/modify Belief Propagation optimization method for stereo matching application/cases of stereo matching. Comparative study of the new method with existing methods.

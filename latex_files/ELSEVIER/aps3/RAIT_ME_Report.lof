@@ -1,0 +1,20 @@
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces 3D Image formation}}{1}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Principle of Binocular vision\cite {r7}.}}{3}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Principle of stereovision\cite {r7}.}}{4}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces 3D Image formation}}{5}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Projectile concept(Epipolar geometry)\cite {r7}}}{6}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Principle of Rectification\cite {r22}}}{6}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Camera images before and after rectification\cite {r7}}}{6}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces 2D camera image and Depth map belonging to the image\cite {r7}}}{7}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Solution for stereo matching problem}}{7}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Block diagram for stereo algorithm}}{11}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Message passing in BP\cite {r6}.}}{13}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Message passing in max product LBP\cite {r8}.}}{13}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces For tedy stereo pair and its disparity using MRF energy functions}}{16}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces For Tsukuba stereo pair and its disparity using MRF energy functions }}{16}
+\addvspace {10\p@ }

@@ -1,0 +1,67 @@
+\chapter{Operational Terms and Concepts}
+\label{ChapterIntroduction}
+Stereo matching means The images are taken at slightly different view similar to our eyes  ie. parallax effect that the object closer to us will appear to move quicker than those further away. The concept applies to stereo matching expect that the pixels on the near image to have a larger disparity than those in far away.
+\\The MRF and BP are used to solve the Stereo matching problem
+
+\section{MRF model} The  advantage of  MRF model is that to recover the disparity map by not only looking at each individual pixel but also considering the  neighboring  information to find best match
+There are four steps in stereo algorithm
+\begin{enumerate}
+  \item Match cost computation
+  \item Cost Aggregation
+  \item Disparity Optimization
+  \item Disparity refinement
+
+\end{enumerate}
+
+\begin{enumerate}
+  \item \textbf{Step1:Match cost computation}
+
+  The cost is for every disparity value ,the cost function is intensity differences between two pixels. In   probability term , the disparity value of each pixel is random variable it takes N discrete values.
+The cost function is defined as {$\Phi(x_{p},y_{p})$}
+  \item \textbf{Step2:Cost Aggregation}
+  
+A MRF approaches uses second compatibility function which expresses compatibility between neighboring variables. This is known as pair wise random field The compatibility function is $\Psi (x_{i},y_{j})$
+      The  joint probability of these two functions are:
+
+  \begin{equation}\label{}
+    P(x_{1},x_{2},…….x_{N},y_{1},y_{2},…..y_{N})=\prod_{ij}\Psi(x_{i},y_{j})\prod_{p}\Phi(x_{p},y_{p})
+  \end{equation}
+
+  Where N is number of nodes
+ (i ,j) pair of neighboring nodes
+
+
+    \item \textbf{Step3:Disparity Optimization}
+
+  Maximum  A Posteriori  (MAP) estimator  is used to optimize the disparity for stereo images. The  Maximum  A Posteriori  (MAP) estimator  is used to find labeling of
+  $x_{1},x_{2},x_{3}$
+By maximizing the probability ,ie. by taking the log of above equation (1)
+\\To maximize the probability which is minimizing above function in the form of
+  \begin{equation}\label{}
+    P(x_{1},x_{2},…….x_{N},y_{1},y_{2},…..y_{N})=\sum_{i,j}-\log\Psi(x_{i},y_{j})+\sum_{p}-\log\Phi(x_{p},y_{p})
+  \end{equation}
+It can be expressed as 
+
+  \begin{equation}\label{}
+    P(x_{1},x_{2},…….x_{N},y_{1},y_{2},…..y_{N})=\sum_{i,j}V(x_{i}x_{j})+\sum_{p}D(x_{p},y_{p}))
+  \end{equation}
+These functions are energy functions.
+The function used for datacost is the sum  of  absolute  difference  between label value $x_{p}$ to data value $y_{p}$
+
+\item \textbf{Step4:Disparity refinement}
+
+The loopy Belief propagation algorithm is used to find the solution for data and smoothness cost functions.
+\\ The  Belief propagation algorithm  classified as sum-product algorithm or max-product algorithm.
+\\The sum-product algorithm finds the marginal distributions of node while max-product algorithm finds MAP estimate of whole image.
+\\For stereo algorithm mostly max-product algorithm is used. The max-product algorithm
+ find best label as whole MRF.
+\\To use belief cost functions are converted into exponential functions
+
+
+
+ %These functions are energy functions.
+  %The function used for datacost is the sum  of  absolute  difference  between label value $x_{p}$ to data value $y_{p}$
+
+
+
+\end{enumerate}

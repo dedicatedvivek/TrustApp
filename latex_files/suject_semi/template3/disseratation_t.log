@@ -1,0 +1,206 @@
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=latex 2014.12.5)  21 DEC 2014 17:25
+entering extended mode
+**C:/Users/anish/Desktop/template3/disseratation_t.tex
+(C:/Users/anish/Desktop/template3/disseratation_t.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+(C:\Users\anish\Desktop\template3\raitdisser.cls
+
+LaTeX Warning: You have requested document class `raitdisser',
+               but the document class provides `iitbaps'.
+
+Document Class: iitbaps 2007/06/25 IIT Bombay Annual Preogress Report Format
+Document Class `iitbaps' v0.5beta <13 August 07>
+(C:\miketext\tex\latex\base\report.cls
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+(C:\miketext\tex\latex\base\size12.clo
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+Two side is false
+) (C:\miketext\tex\latex\graphics\graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\miketext\tex\latex\graphics\keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(C:\miketext\tex\latex\graphics\graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\miketext\tex\latex\graphics\trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(C:\miketext\tex\latex\00miktex\graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: dvips.def on input line 91.
+
+(C:\miketext\tex\latex\graphics\dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+No file disseratation_t.aux.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+(C:\Users\anish\Desktop\template3\disser_prelude.tex
+File: raitlogo.eps Graphic file (type eps)
+ <raitlogo.eps> [1
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 79--85
+
+ []
+
+
+Overfull \hbox (0.39008pt too wide) in paragraph at lines 79--85
+\OT1/cmr/m/n/12 els.The graph-i-cal rep-re-sen-ta-tion used for be-lief prop-a-
+ga-tion Tech-niques are two types.They
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--85
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--85
+
+ []
+
+[1
+
+
+
+]
+No file disseratation_t.toc.
+\tf@toc=\write3
+[2
+
+]
+No file disseratation_t.lof.
+\tf@lof=\write4
+\c@theorem=\count88
+[3
+
+]) (C:\Users\anish\Desktop\template3\chap1_1.tex
+Chapter 1.
+
+LaTeX Warning: Citation `Hans Andrea Loeliger' on page 1 undefined on input lin
+e 8.
+
+
+LaTeX Warning: Citation `Judea Pearl' on page 1 undefined on input line 9.
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 16.
+(C:\miketext\tex\latex\base\omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 16.
+
+
+LaTeX Warning: Citation `Pedro' on page 1 undefined on input line 16.
+
+
+LaTeX Warning: Citation `Wonjun' on page 1 undefined on input line 17.
+
+
+LaTeX Warning: Citation `Radu' on page 1 undefined on input line 18.
+
+
+LaTeX Warning: Citation `Nikos' on page 1 undefined on input line 19.
+
+
+Overfull \hbox (7.08066pt too wide) in paragraph at lines 19--20
+[][]\OT1/cmr/bx/n/12 Image Com-ple-tion Us-ing Ef-fi-cient Be-lief Prop-a-ga-ti
+on Via Pri-or-ity Schedul-
+ []
+
+
+LaTeX Warning: Citation `yuchang' on page 1 undefined on input line 22.
+
+[1
+
+
+
+
+]
+
+LaTeX Warning: Citation `Nam Ma' on page 2 undefined on input line 24.
+
+
+LaTeX Warning: Citation `Chia-KaiLiang' on page 2 undefined on input line 25.
+
+
+LaTeX Warning: Citation `F.BESSE' on page 2 undefined on input line 27.
+
+
+LaTeX Warning: Citation `Daniele' on page 2 undefined on input line 28.
+
+) [2] (C:\Users\anish\Desktop\template3\chap2_1.tex
+Chapter 2.
+
+! LaTeX Error: Environment equation* undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9 \begin{equation*}
+                     
+? 
+! Emergency stop.
+ ...                                              
+                                                  
+l.9 \begin{equation*}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+ 
+Here is how much of TeX's memory you used:
+ 669 strings out of 493922
+ 8096 string characters out of 3147305
+ 58911 words of memory out of 3000000
+ 4009 multiletter control sequences out of 15000+200000
+ 6626 words of font info for 24 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 28i,4n,21p,464b,216s stack positions out of 5000i,500n,10000p,200000b,50000s
+Output written on disseratation_t.dvi (6 pages, 8436 bytes).

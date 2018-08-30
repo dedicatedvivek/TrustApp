@@ -1,0 +1,185 @@
+%============================================================================
+% prelude.tex
+%   - titlepage
+%   - table of contents, list of tables and list of figures
+%   - abstract
+%============================================================================
+\clearpage%
+\pagenumbering{roman}  % This makes the page numbers Roman (i, ii, etc)
+%--------------------------------------------------------------------%
+% TITLE PAGE
+%   - define \title{} \author{} \date{}
+
+\title{FPGA Implementation of Efficient Signed Multiplier Using Vedic Mathematics}
+\author{Khushboo Pichhode (13EL1001)}
+
+\date{June 2015}
+
+\department{Department of Electronics Engineering}
+
+%    - Set the guide's name
+\setguide{Dr. Mukesh D. Patil}
+   % - Set the coguide's name (if you have one)
+\setcoguide{Prof. Divya Shah}
+
+%   - once the above are defined, use \maketitle to generate the titlepage
+\maketitle
+
+%--------------------------------------------------------------------
+\cleardoublepage \nonumber
+\begin{center}
+\includegraphics{raitlogo.eps}\\
+Ramrao Adik Education Society's\\
+\large {\textbf{Ramrao Adik Institute of Technology}}\\
+\small(Affiliated to the University of Mumbai)\\
+Dr. D. Y. Patil Vidyanagar,Sector 7, Nerul, Navi Mumbai 400
+706.\\\vspace{0.3in}
+\textbf{\begin{Huge}Certificate\end{Huge}}
+\end{center}
+\vspace{0.1in}
+\begin{center}
+\large This is to certify that Dissertation Seminar-I entitled
+\vspace{0.15in}\\\textbf {\lq\lq FPGA Implementation of Efficient Signed Multiplier Using Vedic Mathematics\rq\rq} \\
+\vspace{0.1in}is submitted by\vspace{0.15in}
+\\\textbf {Khushboo Pichhode} \\
+(Roll No. 13EL1001)\\\vspace{0.1in} is approved for the degree of \vspace{0.15in} \\\textbf{Master of Engineering}\\
+in \\\textbf{Electronics \& Telecommunication Engineering} \\to the \\\textbf{University
+of Mumbai}.
+
+
+\includegraphics{university.eps}
+
+ \vspace{0.2in}
+%
+%\begin{tabular}{cccc}
+%      \rule{5cm}{1sp}
+%      \\
+%       Guide \\\\
+%      \rule{5cm}{1sp}  & \rule{5cm}{1sp}   & \rule{5cm}{1sp} \\
+%      Project Coordinator      & Head of Department         & Principal \\
+%
+%
+%    \end{tabular}
+%\vspace{1in}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tabular}{ccc}
+
+      \rule{4.0cm}{1sp} & \hspace{0.7in}                & \hspace{0.3in} \rule{4.0cm}{1sp} \\ \vspace{0.6in}
+       Examiner & \hspace{1in}             & \hspace{0.3in} Co-Supervisor \\
+      \rule{4.0cm}{1sp} & \hspace{0.5in} \rule{4.0cm}{1sp}                  &\hspace{0.45in} \rule{4.0cm}{1sp} \\
+     Supervisor & \hspace{0.5in} Head of Department                &\hspace{0.65in} Principal \\\vspace{0.01in}
+      & \hspace{0.5in} \&               &\hspace{0.65in}\\\vspace{0.01in}
+        & \hspace{0.5in} M.E. Coordinator                &\hspace{0.65in}
+        %&\rule{5cm}{1sp}& \\
+%       &Principal&
+    \end{tabular}
+\end{center}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{tabular}{ccc}
+%
+%      \rule{5cm}{1sp}                && \rule{5cm}{1sp} \\ \vspace{0.65in}
+%       Guide             && Project Coordinator \\
+%      \rule{5cm}{1sp}                && \rule{5cm}{1sp} \\
+%      Head of Department                && Principal \\\\
+%        %&\rule{5cm}{1sp}& \\
+%%       &Principal&
+%    \end{tabular}
+%\end{center}
+%-----------------------------------------------------------------
+\cleardoublepage
+%--------------------------------------------------------------------%
+
+%\centerline{\textbf{\begin{Huge}Certificate of Approval by
+%Examiners\end{Huge}}}
+%
+%\vspace{1.5in}
+%
+% This is to certify that the Stage-1 report entitled
+%"\textbf{Title of the project}" is a bonafide work done by
+%\textbf{Name of the student} under the guidance of \textbf{Name of
+%the guide}. This dissertation has been approved for the award of
+%\textbf{Master's Degree in Electronics  Engineering}, University of
+%Mumbai.
+%
+%\vspace{1.5in} \textbf{Examiners:}\vspace{1in}\\
+%
+%\begin{tabular}{ccc}
+%
+%      \rule{5cm}{1sp} &\rule{30mm}{0pt} & \rule{5cm}{1sp}
+%      \\\vspace{0.1in}
+%       Name:                && Name:  \\
+%
+%    \end{tabular}
+%
+
+
+
+\begin{acknowledgments}
+I would like to express my deepest gratitude to my guide, Dr. Mukesh D. Patil, for giving me an opportunity to work on a very interesting area of digital circuit design and for his excellent guidance and support.
+%his excellent guidance caring, patience, and providing me with an excellent atmosphere which helped me in successful completion of this special topic.
+%for doing this .
+%With great pleasure, I avail this opportunity to express my deep
+%sense of gratitude to my guide, Dr. Mukesh D. Patil, for his spirited guidance
+%and inspiration.I have deep sense of admiration for their innate
+%goodness and inexhaustible enthusiasm.it helped me to work in right
+%direction to attain desired objective.
+
+I am also thankful to our Project Coordinator, Dr. Vishwesh Vyawahare  who devoted their valuable time and helped me in all possible ways towards successful completion of this work. Also a special thanks to Prof. Divya Shah for helping me to get through much of the difficulties faced in
+VHDL.%I am also grateful to all those who have contributed directly or indirectly to this work.
+
+I am thankful to our Principal Dr. Ramesh Vasappanavara  for their support and encouragement.
+%I extend thanks to my friends who have done lots of
+%nice things for me. I cannot end without thanking my lovely family
+%for their encouragement.
+
+I would also like to express my deepest thanks to all my friends and my colleagues, who provided a perfect environment for my studies.
+
+Last but not least, I would like to express my heartily gratitudes to my family for their unconditional support and love.
+\end{acknowledgments}
+
+% ABSTRACT
+\begin{abstract}
+Multipliers plays an important role in today’s digital signal processing and various other applications. Multiplication is most fundamental and frequently used operation in DSP applications. This operation also form the basis for other complex operations. With ever increasing need for faster clock frequency it becomes imperative to have faster arithmetic unit. This work proposes the design of high speed Multiplier based on the techniques of Ancient Indian Vedic Mathematics that have been modified to improve performance.
+%In this work a new system of Mathematics – Vedic Mathematics is used to implement multiplier operation.
+Vedic Mathematics is based on 16 formulas with the purpose of simplification of lengthy and cumbersome mathematics. Vedic mathematics contains multiple algorithms for one operation. For arithmetic multiplication various Vedic multiplication techniques like Urdhva tiryakbhyam, Nikhilam and Anurupye is used. It has been found that Urdhva tiryakbhyam Sutra is most efficient Sutra (Algorithm), giving minimum delay for multiplication of binary numbers, either small or large. In this work Urdhva triyakbhyam sutra is used for signed binary multiplication, and carry select adder is used for handling partial products due to which the combinational path delay reduces.
+
+%Low power consumption and smaller area are some of the most important criteria for the fabrication of DSP systems and high performance systems. Optimizing the speed and area of the multiplier is a major design issue. However, area and speed are usually conflicting constraints so that improving speed results mostly in larger areas. In our project we try to determine the best solution to this problem by comparing a few
+%multipliers.
+
+Further, the VHDL coding of Urdhva tiryakbhyam Sutra for 32x32 bits multiplication is done in Xilinx Synthesis  Tool (v14.1) and simulation result for same is obtained in Modelsim simulator.
+% and their FPGA implementation by Xilinx Synthesis Tool on Spartan 6 kit have been done and output has been displayed on LCD of Spartan 6 kit. The synthesis results show that the computation time for calculating multiplication operation is very less as comapre to exisisting multipliers.
+
+%Suitable algorithms are implemented for Multiplication, Squaring and Division in Verilog. Multiplication and Squaring are further used in design of Sine and Cosine function implementations.
+%Visible light communications (VLC) is a technology for wireless communication using light that can be perceived by the naked eye. VLC uses frequencies other than radio, and they are unrestricted and licence free. The urgent need of VLC is to overcome the problems faced in RF communication. Unlike existing methods of wireless communication, the visible light portion of the electromagnetic frequency spectrum is used in VLC  to transmit information. VLC refers to the communication technology which utilizes the visible light source as a signal transmitter, the air as a transmission medium, and the appropriate photodiode as a signal receiving component. This report provides  an overview of applications and design challenges for VLC, compare it with other existing communication technologies and presents the modulation techniques used.
+
+
+\end{abstract}
+
+%--------------------------------------------------------------------%
+% CONTENTS, TABLES, FIGURES
+ \listoftables
+ \listoffigures
+ \tableofcontents
+
+%--------------------------------------------------------------------%
+%  Single counter for theorems and theorem-like environments:
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{assertion}[theorem]{Assertion}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{figger}[theorem]{Figure}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+
+%--------------------------------------------------------------------%
+% Make the page numbers Arabic (1, 2, etc)
+\cleardoublepage%
+\pagenumbering{arabic} 

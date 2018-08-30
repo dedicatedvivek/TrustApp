@@ -1,0 +1,11 @@
+This is pdfTeX, Version 3.1415926-1.40.8-alpha-20080323 (MiKTeX 2.7) (preloaded format=latex 2009.11.26)  1 OCT 2010 19:57
+entering extended mode
+**E:/ME_Electronics_Template/disser_prelude.tex
+(E:/ME_Electronics_Template/disser_prelude.tex
+LaTeX2e <2005/12/01>
+Babel <v3.8j> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman, ngerman, french, loaded.
+! Undefined control sequence.
+l.18 \department
+                {Department of Electronics Engineering}
+? 

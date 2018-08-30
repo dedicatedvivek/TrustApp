@@ -1,0 +1,1328 @@
+\documentclass{beamer}
+%\mode<presentation>{\usepackage{beamerthemesplit}}
+
+%\usepackage{beamerthemebars}
+\usepackage{amsmath}
+\renewcommand{\baselinestretch}{1.2}
+\usepackage{cite}
+\usepackage{url}
+\usepackage{longtable}
+%\usepackage[dvips]{graphicx,color}
+%\usepackage{makeidx}
+\usepackage{nomencl}
+\usepackage{amssymb}
+%\usepackage{psfig}
+%\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage[bottom]{footmisc}
+\usepackage{subfigure}
+\usepackage[OT2,OT1]{fontenc}
+\newcommand{\imsize}{3in}
+
+\useinnertheme{rounded}
+\usecolortheme{whale}
+%\usecolortheme{orchid}
+\useoutertheme{infolines}
+%\useoutertheme{shadow}
+
+\title{Automated Synthesis of QFT Controllers and Prefilters for SISO and MIMO Magnetic Levitation system using ICST }
+\subtitle{ Ph.D. Third Progress Seminar}
+%\institute{\normalsize{IIT Bombay}}
+%\setbeamercolor{title}{fg=white,bg=black}
+
+\begin{document}
+\author[SysCon] {By \\ \vspace{0.05in} \textbf{Mukesh D. Patil } \\ \vspace{0.1in} {Under the Guidance of} \\ \textbf{Prof. P. S. V. Nataraj }\\
+\textcolor{black}{ \\ IDP in Systems and Control Engineering} \\ \textcolor{black}{Indian Institute Of Technology, Bombay} \\
+}
+
+\begin{frame}
+\begin{center}
+\end{center}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Motivation}
+\begin{itemize}
+\item {The automatic synthesis of a SISO and MIMO QFT controllers is still
+an open problem.}
+\item {The most successful method for such a design takes
+into consideration the non-linear/non-convex QFT bounds without any
+approximation.}
+\item {It thereby ensures closed loop stability of the
+system, and becomes largely independent of the initial controller
+solution.}
+\item {Magnetic Levitation system is subjected to many external
+disturbances.}
+\item {It is highly nonlinear system.}
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Outline}
+\begin{enumerate}
+\item {Introduction}
+\item {Brief of Magnetic Levitation setup}
+\item {Mathematical Modelling og Magnetic Levitation System}
+\item {Preliminaries- QFT and Constraint Solver}
+\item {QFT Controller Synthesis Problem}
+\item {Proposed QFT Controller Synthesis Method and Prefilter Design  for SISO case}
+\item {Proposed QFT Controller Synthesis Method and Prefilter Design  for MIMO case}
+\item {Discussion}
+\item {Conclusions and Future Work}
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Introduction to Magnetic Levitation Setup} The Magnetic
+Levitation (Maglev) setup consists of three subsystems:
+\begin{enumerate}
+\item {Magnetic Levitation Plant or Apparatus}
+\item {Real Time Controller}
+\item {PC with User Interface software}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Introduction to Magnetic Levitation Setup} Schematic of
+Magnetic Levitation Experimental Setup
+\begin{figure}[tbh]
+\begin{center}
+\includegraphics[width= 3.4 in]{maglevsubsystem.pdf}
+\end{center}
+%\caption{The two degree-of-freedom structure in QFT} \label{tdof}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Introduction to Magnetic Levitation Setup}  Magnetic
+Levitation Plant consists of:
+\begin{itemize}
+\item {Magnetic Levitation Apparatus along with sensors and actuators.}
+\item {The electromagnetic coil is the actuator which is used to levitate the permanent magnet.}
+\item {The height (displacement) of magnet is measured using a Laser based optical sensor.}
+\item {The plant can be operated in various combinations like SISO,
+SIMO, MISO and MIMO.}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle {Introduction to Magnetic Levitation Setup}  Magnetic
+Levitation Plant
+\begin{figure}[tbh]
+\begin{center}
+\includegraphics[width= 2.8in]{maglev.pdf}
+\end{center}
+%\caption{The two degree-of-freedom structure in QFT} \label{tdof}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Introduction to Magnetic Levitation Setup} Front and
+Side View of Magnetic Levitation Setup
+\begin{figure}[tbh]
+\begin{center}
+\includegraphics[width= 5 in]{setup_model1.pdf}
+\end{center}
+%\caption{The two degree-of-freedom structure in QFT} \label{tdof}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Introduction to Magnetic Levitation Setup} \textbf{Real
+Time Controller}
+\begin{itemize}
+\item {The Motorola DSP M56000 processor executes control laws at minimum sampling period of 0.000884 sec.}
+\item {The drive electronics box is the interface between DSP and Maglev plant.}
+\item {The drive electronics box consists of power supply,
+amplifiers for actuators and signal conditioning circuit for Laser
+sensors.}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Nonlinear Models}
+\begin{itemize}
+\item {The actuators and sensors for this setup are nonlinear.}
+\item {They can be represented using a static nonlinear model.}
+\item {Then, the overall plant may be represented as a combination
+of the static nonlinearity and a linear dynamical system.}
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Nonlinear Models}
+\begin{itemize}
+\item {A good model for a linear plant with a nonlinear actuator is
+shown in fig a. The nonlinearity is before the linear part. This
+model is called a Hammerstein model.}
+\item {For a linear plant with nonlinear sensor, the nonlinearity can be
+placed after the linear dynamical system. This model is called
+Wiener model which is shown in fig b.}
+\end{itemize}
+\begin{figure}[tbh]
+\begin{center}
+\includegraphics[width=2.5in]{hammer.pdf}
+\end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{The Equivalent Block Diagram Of Closed Loop System}
+
+The Equivalent Block Diagram Of Closed Loop System Including
+Nonlinear And Gravity Compensation Elements For Lower Magnet And
+Coil.
+\begin{figure}[tbh]
+\begin{center}
+\includegraphics[width=4in]{equi_BD.pdf}
+\end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Sensor Linearization for Lower Magnet and Coil}
+\begin{table}
+  \centering
+  \caption{Raw Sensor Data for Lower SISO case}
+  \begin{tabular}{|c|c|}
+\hline
+    \textbf{Magnet position (cm)} & \textbf{Raw Sensor Output $y_{1raw}$(counts)} \\ \hline
+    % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+    0 & 27900 \\ \hline
+    0.5 & 22700 \\ \hline
+    1 & 18300 \\ \hline
+    2 & 12000 \\ \hline
+    3 & 8200 \\ \hline
+    4 & 5800 \\ \hline
+    5 & 4100 \\ \hline
+    6 & 2800 \\ \hline
+  \end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}
+\frametitle{Sensor Linearization for Lower Magnet and Coil}
+\begin{figure}[tbh]
+\begin{center}
+\includegraphics[width=2.8 in]{sensor1cal.pdf}
+\end{center}
+%\caption{The two degree-of-freedom structure in QFT} \label{tdof}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Sensor Nonlinearity}
+\begin{equation}
+    y_{ical}=\frac{e_{i}}{y_{iraw}}+\frac{f_{i}}{\sqrt{y_{iraw}}}+g_{i}+h_{i}y_{iraw}
+\end{equation}
+The constants for the sensor 1 are as follows:
+\begin{equation}
+    e_{1}=-11347,f_{1}=713.5441,g_{1}=-2.9904,h_{1}=-2.5283*10^{-5}
+\end{equation}
+Similarly, the constants for the sensor 2 are as follows:
+\begin{equation}
+    e_{2}=7109.4,f_{2}=-581.75,g_{2}=1.8355,h_{2}=4.1371*10^{-5}
+\end{equation}
+\end{frame}
+
+\begin{frame}
+\frametitle{Actuator Compensation for Lower Magnet and Coil}
+\begin{table}
+  \centering
+  \caption{Raw Control Effort Data for Lower Actuator}
+  \begin{tabular}{|c|c|}
+\hline
+    \textbf{Magnet position (cm)} & \textbf{Raw Control Effort $ u_{1raw} $ (counts)} \\ \hline
+    % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+    0.1 & 2000\\ \hline
+    1.2 & 3000\\ \hline
+    1.35 & 4000 \\ \hline
+    2.1 & 5000 \\ \hline
+    2.6 & 6000 \\ \hline
+    3.0 & 8000 \\ \hline
+    3.7 & 10000 \\ \hline
+    3.96 & 12000 \\ \hline
+ \end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}
+\frametitle{Actuator Compensation for Lower Magnet and Coil}
+\begin{figure}[tbh]
+\begin{center}
+\includegraphics[width=2.8 in]{actu1.pdf}
+\end{center}
+%\caption{The two degree-of-freedom structure in QFT} \label{tdof}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Actuator Compensation for Lower Magnet and Coil}
+\begin{equation}\label{a1}
+    Fu_{ii}=\frac{u_{i}}{a_{i}(y_{i}+b_{i})^4}
+\end{equation}
+The values of the constants for lower actuator are as follows,
+\begin{equation}
+Fu_{11}=1.187 N,~~~a_{1}=0.96,~~~b_{1}=6.2
+\end{equation}
+Similarly values of the constants for upper actuator are as follows,
+\begin{equation}
+Fu_{22}=1.187 N,~~~a_{2}=0.96,~~~b_{2}=-6.2 \nonumber
+\end{equation}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Free Body Diagram and Dynamic Configuration of Maglev
+Setup}
+
+\begin{figure}[tbh]
+\begin{center}
+\includegraphics[width= 4.5 in]{freebodydia.pdf}
+\end{center}
+%\caption{The two degree-of-freedom structure in QFT} \label{tdof}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Mathematical Model of Magnetic Levitation System} The
+force balance equation for the lower magnet and coil
+\begin{equation}\label{m1}
+  m\ddot{y_{1}}+c_{1}\dot{y_{1}}+Fm_{12}= F_{u11}-F_{u21}-mg
+\end{equation}
+Similarly for the upper magnet and coil
+\begin{equation}\label{m2}
+  m\ddot{y_{2}}+c_{2}\dot{y_{1}}-F_{m12}= F_{u22}-F_{u12}-mg
+\end{equation}
+
+where,
+\begin{eqnarray*}
+% \nonumber to remove numbering (before each equation)
+F_{u11}=\frac{u_{1}}{a_{1}(y_{1}+b_{1})^4} \\
+F_{u12}=\frac{u_{1}}{a_{1}(y_{c}+ y_{2}+b_{1})^4} \\
+F_{u21}=\frac{u_{2}}{a_{2}(y_{c}- y_{1}+b_{2})^4} \\
+F_{u22}=\frac{u_{2}}{a_{2}(-y_{2}+b_{2})^4} \\
+F_{m12}=\frac{c}{(y_{12}+d)^4}\\
+y_{12}=y_{c} + y_{2} - y_{1}
+\end{eqnarray*}
+\end{frame}
+
+\begin{frame}
+\frametitle{Mathematical Model of Magnetic Levitation System}
+\begin{enumerate}
+\item {The frictional forces are negligible for the setup}
+\item {For SISO case, the interacting forces are zero}
+\item {Linearize about equilibrium point}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Mathematical Model of Magnetic Levitation System}
+
+\begin{equation}\label{ss}
+    \dot{x}=Ax+Bu ~~~~~~~~~~
+  y = Cx
+\end{equation}
+
+where,
+
+\begin{eqnarray}
+x=\left[
+  \begin{array}{c}
+    y_{1}^{*} \\
+    \dot{y}_{1}^{*} \\
+    y_{2}^{*} \\
+    \dot{y}_{2}^{*} \\
+  \end{array}
+\right],~~~A= \left[
+                \begin{array}{cccc}
+                  0 & 1 & 0 & 0 \\
+                  \frac{-k_{1}^{,} + k_{12}^{,}}{m} & 0 & \frac{k_{12}^{,}}{m} & 0 \\
+                  0 & 0 & 0 & 1 \\
+                  \frac{k_{12}^{,}}{m} & 0 & \frac{k_{2}^{,} + k_{12}^{,}}{m} & 0
+                \end{array}
+              \right] \nonumber
+\end{eqnarray}
+\begin{eqnarray}
+B=\left[
+    \begin{array}{cc}
+      0 & 0 \\
+      \frac{k_{u1}^{,}}{m} & 0\\
+      0 & 0 \\
+      0 & \frac{k_{u2}^{,}}{m}
+
+    \end{array}
+  \right],~~~C=\left[
+                 \begin{array}{cccc}
+                   1 & 0 & 0 & 0 \\
+                   0 & 1 & 0 & 0 \\
+                   0 & 0 & 1 & 0 \\
+                   0 & 0 & 0 & 1 \\
+                 \end{array}
+               \right],~~~U=\left[
+                            \begin{array}{c}
+                              u_{1}^* \\
+                              u_{2}^*
+                            \end{array}
+                          \right]\nonumber
+\end{eqnarray}
+\end{frame}
+
+\begin{frame}
+\frametitle{Mathematical Model of Magnetic Levitation System} where,
+\begin{eqnarray*}
+% \nonumber to remove numbering (before each equation)
+  y_{i}^{*} &=& y_{i}-y_{i0}, i=1,2 \\
+  u_{i}^{*} &=& u_{i}-u_{i0}, i=1,2 \\
+  k_{1}^{,} &=& \frac{4u_{10}}{a_{1}(y_{10}+b_{1})^5} \\
+  k_{2}^{,} &=& \frac{4u_{20}}{a_{2}(-y_{20}+b_{2})^5} \\
+  k_{12}^{,} &=& \frac{4c}{(y_{120}+d)^5} \\
+  ku_{1}^{,} &=& \frac{1}{a_{1}(y_{10}+b_{1})^5}\\
+  ku_{2}^{,} &=& \frac{1}{a_{2}(-y_{20}+b_{2})^5}
+\end{eqnarray*}
+\end{frame}
+
+\begin{frame}
+\frametitle{Why Controller is needed for Maglev setup?} The open
+loop test is conducted for Maglev setup.
+
+It is observed that same characteristics are not achieved for
+different trials.
+
+\begin{figure}[tbh]
+\begin{center}
+\includegraphics[width=2.8 in]{needofcont.pdf}
+\end{center}
+%\caption{The two degree-of-freedom structure in QFT} \label{tdof}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Automated Synthesis of Robust Controllers}
+\begin{itemize}
+  \item Selection of the robust control methodology.
+  \item Formulation of the synthesis problem:
+  \begin{itemize}
+    \item Conversion of the control synthesis problem into Interval Constraint Satisfaction Problem
+    (ICSP)
+    \item Choice of the controller structure.
+    \item Specification of the controller parameter search space.
+  \end{itemize}
+  \item Choice of the ICSP solver for the above problem.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{The robust control methodology-QFT } Why QFT?
+
+In contrast to other robust control techniques, QFT provides:
+\begin{itemize}
+   \item Design transparency.
+   \item Enables the user to assess quantitatively the cost of feedback.
+   \item Uses the phase information in the design process.
+ \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{2 DOF Structure Design Steps using QFT}
+\begin{enumerate}
+\item \textbf{Generating templates}: For a given uncertain plant $P(s)\in%
+\mathcal{P}$, at each design frequency $\omega_i\in\Omega$,
+calculate the value set of the plant $P(j\omega_i)$ in the complex
+plane.
+\item \textbf{Computation of QFT bounds}: At each design frequency $\omega_i$%
+, combines the stability and performance specifications with the
+plant templates which results in the stability margin and
+performance bounds. The bound at $\omega_{i}$ is denoted as
+$B_{i}(\angle{L_0(j\omega),\omega_{i}})$ or simply $B_i$
+\item \textbf{Design of Controller }: Design a controller $G(s)$ such that
+\begin{itemize}
+\item The bound constraints at each design frequency $\omega_i$ are
+satisfied.
+\item The nominal closed loop system is stable.
+\end{itemize}
+\item \textbf{Design of Prefilter}: Design a prefilter $F(s)$ such that the
+robust tracking specifications are satisfied.
+
+\item \textbf{Implementation on Experimental Setup}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Quadratic Inequalities}
+\begin{itemize}
+\item Robust stability specification,
+\begin{equation}\label{p_con_s}
+g^{2}p^{2}+2gp\cos(\phi+\theta)+1\geq0
+\end{equation}
+\item Robust stability margin specification,
+\begin{equation}\label{p_con_gpm}
+g^{2}p^{2}\left(1-\frac{1}{w_{s}^{2}}\right)+2gp\cos(\phi+\theta)+1\geq0
+\end{equation}
+\item Robust sensitivity or (output disturbance rejection)
+  specification,
+\begin{equation}\label{p_con_odr}
+g^{2}p^{2}+2gp\cos(\phi+\theta)+\left(1-\frac{1}{w_{do}^{2}(\omega)}\right)\geq0
+\end{equation}
+\item Tracking  specification,
+\begin{equation}\label{p_con_tr}
+g^{2}p^{2}_{k}p^{2}_{i}\left(1-\frac{1}{\delta^{2}(\omega)}\right)+2gp_{k}p_{i}\left[p_{k}\cos(\phi+\theta_{i})-\frac{p_{i}}{\delta^{2}(\omega)}\cos(\phi+\theta_{k})\right]+\left(p^{2}_{k}-\frac{p^{2}_{i}}{\delta^{2}(\omega)}\right)
+\geq0
+\end{equation}
+where \[ \delta(\omega)=\frac{|T_U(j\omega)|}{|T_L(j\omega)|}
+\]
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Constraint solver }
+\begin{itemize}
+  \item A constraint is a relation between the unknowns of a problem, i.e.,
+the variables.
+  \item In Constraint Programming, the search of solutions,
+which is done by solvers, consists in eliminating inconsistent
+values.
+  \item The solvers implement domain
+reductions by means of consistency techniques and domain splitting
+in order to separate the solutions.
+  \item There are variety of constraint solvers available based on language
+and  operating systems.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Introduction to Proposed Methods}
+\begin{itemize}
+  \item An efficient method is proposed for automatic QFT
+  controllers synthesis (loop shaping ) and prefilters design for SISO and MIMO case.
+\item A fixed structure QFT controller and prefilter are been synthesized by
+solving QFT quadratic inequalities of robust stability and
+performance specifications by constraint solver - RealPaver.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Proposed Algorithm for Controller Design}
+\begin{itemize}
+  \item Fix the controller structure and give initial search domain
+  for controller parameter.
+  \item Use robust stability and Gain-phase Quadratic inequality as
+  constraints
+  \item Use other performance specifications quadratic inequalities
+  \item  Input the search domain of controller parameter and
+  constraints to constraint solver-RealPaver and execute.
+  \item If no solution is available then change the controller
+  structure and/or search domain
+  \item Construct the controller and test on experimental setup.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Proposed Algorithm for Prefilter Design}
+\begin{enumerate}
+
+\item Construct an initial search box of prefilter parameters,
+such that the designed prefilter is assumed to be stable and
+minimum-phase.
+
+\item At each design frequency, calculate the magnitude of $T_{R}(s)$
+over all $\mathcal{P}$ and magnitude of $T_{L}(s)$, $T_{U}(s)$.
+
+\item Find the values of the prefilter parameters lying
+in the given initial search region, which satisfy constraints at
+each design frequency.
+\begin{equation}
+  |T_{L}(j\omega)|-|F(j\omega)||T(j\omega)|\leq0,
+  |F(j\omega)||T(j\omega)|-|T_{U}(j\omega)|\leq0
+\end{equation}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\centerline{\textbf{\begin{Huge}Open Loop Stable
+\end{Huge}}}
+ \centerline{\textbf{\begin{Huge}Configuration of Maglev System\end{Huge}}}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Controller Design for Lower Magnet and Coil}
+
+The transfer function of lower magnet and coil is given by:
+\begin{equation}
+    P(s)=\frac{y_{1}^{*}}{u_{1}^*}=\frac{\frac{ku_{1}^{,}*k_{sen1}}{m}}{s^2+\frac{k_{1}^{'}}{m}}
+\end{equation}
+where,
+\begin{eqnarray}
+% \nonumber to remove numbering (before each equation)
+ ku_{1}^{,} &=& \frac{1}{a_{1}(y_{10}+b_{1})^5}\\
+ k_{sen1} &=& \frac{1}{(-e_{1}*y_{raw10})^{-2}}-\frac{f_1}{2}(y_{raw10})^{-1.5}+
+ h_{1}*100\\
+ k_{1}^{,} &=& \frac{4u_{10}}{a_{1}(y_{10}+b_{1})^5} \\
+ u_{10} &=& m*9.81*(y_{10}+b_{1})^4
+ \end{eqnarray}
+\end{frame}
+
+\begin{frame}
+\frametitle{Controller Design for Lower Magnet and Coil}
+
+The nominal transfer function for lower magnet and coil is:
+\begin{equation}
+    P(s)=\frac{y_{1}^{*}}{u_{1}^*}=\frac{-944}{s^2+478.5}
+\end{equation}
+The uncertain plant sets are:
+\begin{equation}
+% \nonumber to remove numbering (before each equation)
+  P(s)= \frac{k}{s^2+a}
+\end{equation}
+where,
+\begin{equation}
+    k=[-811, -944],~~~~a=[382,478.5]
+\end{equation}
+\end{frame}
+
+\begin{frame}
+\frametitle{Controller Design for Lower Magnet and Coil}
+
+The closed loop design specifications are
+\begin{itemize}
+\item Robust Stability
+  \[
+\left|\frac{P(j\omega)G(j\omega)}{1+P(j\omega)G(j\omega)}
+\right|<\infty \hspace{0.1in}\mbox{for all}\hspace{0.1in}\omega
+  \]
+\item Stability margins:  gain margin $\geq 6$ dB, phase margin
+$\geq45^{0}$
+  \[
+\left|\frac{P(j\omega)G(j\omega)}{1+P(j\omega)G(j\omega)}\right|\leq1.2
+\hspace{0.1in}\mbox{for all}\hspace{0.1in}\omega\geq0
+  \]
+\item Robust tracking specification: rise time
+ $0.4 \leq t_r \leq 0.6 $ seconds, no offset, no overshoot.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Controller Design for Lower Magnet and Coil}
+
+The design frequency set is
+\[
+\Omega=\left[0.1, 1, 3.66, 5.5, 7, 9, 15, 20, 30, 40, 50\right].
+\]
+The initial search box $\mbox{\textbf{x}}=\left(\mathbf{K_p},
+\mathbf{T_d}, \mathbf{T_i}\right) $ is constructed as
+\[
+\mbox{\textbf{x}}=\left([0,5], [0,20],[0,20]\right)
+\]
+Among all these feasible controllers, the controller having the
+minimum high frequency gain is chosen as
+\begin{equation}\label{lc}
+    G(s)=\frac{4.75}{s}(\frac{s}{5.85}+1)(\frac{s}{13.5}+1)
+\end{equation}
+The Parallel form of PID controller structure is as follows
+\begin{equation}
+    G(s)=1.1637(1+ 0.0517*s + \frac{1}{0.245*s} )
+\end{equation}
+\end{frame}
+
+\begin{frame}
+\frametitle{Controller Design for Lower Magnet and Coil}
+
+The nominal loop transmission function for lower magnet with the
+synthesized controller having integrator and two
+zeros
+\begin{figure}[tbp]
+\begin{center}
+\includegraphics[width=3in]{lp1.pdf}
+\end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Prefilter Design for Lower Magnet and Coil}
+
+To satisfy the tracking specifications, a pre-filter is designed
+using ICST based algorithm The  initial search box
+$\mbox{\textbf{x}}=\left(\mathbf{ze}, \mathbf{w_{n}}\right)$ is
+constructed as
+\[
+\mbox{\textbf{x}}=\left([0,2], [0,50]\right)
+\]
+\begin{equation}\label{f1}
+    F(s) =\frac{1}{\frac{s^2}{7.6^2}+\frac{(2*0.81)s}{7.6}+1}
+\end{equation}
+\end{frame}
+
+\begin{frame}
+\frametitle{Experimental Testing For Lower Coil And Magnet}
+\begin{itemize}
+  \item Build and execute the real time model using Real Time Workshop
+  Target(RTWT) to convert the control algorithm in C++ code. Download
+  this code onto the DSP board via RTWT.
+  \item Start the real-time implementation from RTWT  environment for desired length of time.
+  \item After the experiment is over, make the appropriate conversions and plot the data.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Closed Loop Response of Lower Magnet and Coil }
+\begin{figure}[tbp]
+\begin{center}
+\includegraphics[width=3.8in]{lower_response.pdf}
+\end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Control Effort required for Lower Magnet and Coil}
+\begin{figure}[tbp]
+\begin{center}
+\includegraphics[width=3.8in]{lower_response_controleffort.pdf}
+\end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Closed Loop Response of Lower Magnet and Coil with
+Disturbance}
+\begin{figure}[tbp]
+\begin{center}
+\includegraphics[width=3.5in]{lower_withdisturbance.pdf}
+\end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Closed Loop Response of Lower Magnet and Coil with
+uncertainty}
+\begin{figure}[tbp]
+\begin{center}
+\includegraphics[width=3.5in]{lower_response_withload.pdf}
+\end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Discussion}
+\begin{itemize}
+  \item {The proposed
+algorithm solves the QFT quadratic inequalities arising from robust
+stability and tracking specifications.}
+\item {The issues of  absolute and relative robust stability are all taken into consideration in the
+proposed method.}
+ \item {The proposed algorithm uses box and hull consistency techniques for solving the
+QFT constraints.}
+ \item {The proposed algorithm deals directly with the numerical values of the possibly non-convex, nonlinear QFT
+bounds, thereby avoiding the overdesign arising from approximation
+in QFT bound representation.}
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Discussion}
+\begin{itemize}
+\item {For a given structure of the controller and
+a given initial search domain, if no feasible controller exists,
+then the proposed algorithm is guaranteed to computationally verify
+this fact.}
+\item {The results shows that the system can handle external disturbance.}
+\item {Robustness of controller is verified by putting extra weight
+  on the magnet.}
+  \item {The designed controller and prefilter are successfully
+  tested on the experimental setup.}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\centerline{\textbf{\begin{Huge}Open Loop Unstable
+\end{Huge}}}
+ \centerline{\textbf{\begin{Huge}Configuration of Maglev System\end{Huge}}}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Controller Design for Upper Magnet and Coil}
+
+The nominal transfer function for lower magnet and coil is:
+\begin{equation}\label{tf1}
+    P(s)=\frac{y_{2}^{*}}{u_{2}^*}=\frac{1105.8}{s^2-478.5}
+\end{equation}
+The uncertain plant sets are:
+\begin{eqnarray*}
+% \nonumber to remove numbering (before each equation)
+  P(s)&=& \frac{k}{s^2-a}
+\end{eqnarray*}
+where,
+\begin{equation}
+    k=[1021, 1106],~~~~a=[382,478.5]
+\end{equation}
+\end{frame}
+
+\begin{frame}
+\frametitle{Controller Design for Upper Magnet and Coil} The closed
+loop design specifications are
+\begin{itemize}
+\item Robust Stability
+  \[
+\left|\frac{P(j\omega)G(j\omega)}{1+P(j\omega)G(j\omega)}
+\right|<\infty \hspace{0.1in}\mbox{for all}\hspace{0.1in}\omega
+  \]
+\item Stability margins:  gain margin $\geq 6$ dB, phase margin
+$\geq45^{0}$
+  \[
+\left|\frac{P(j\omega)G(j\omega)}{1+P(j\omega)G(j\omega)}\right|\leq1.2
+\hspace{0.1in}\mbox{for all}\hspace{0.1in}\omega\geq0
+  \]
+\item Robust tracking specification: rise time
+ $0.4 \leq t_r \leq 0.6 $ seconds, no offset, no overshoot.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Controller Design for Upper Magnet and Coil}
+
+The design frequency set is
+\[
+\Omega=\left[0.1, 1, 3.66, 5.5, 7, 9, 15, 20, 30, 40, 50\right].
+\]
+The initial search box $\mbox{\textbf{x}}=\left(\mathbf{K_p},
+\mathbf{T_d}, \mathbf{T_i}\right) $ is constructed as
+\[
+\mbox{\textbf{x}}=\left([0,10], [0,20],[0,30]\right)
+\]
+Among all these feasible controllers, the controller having the
+minimum high frequency gain is chosen as
+\begin{equation}
+    G(s)=\frac{6.75}{s}(\frac{s}{1.9}+1)(\frac{s}{20.3}+1)
+\end{equation}
+The Parallel form of PID controller structure is as follows
+\begin{equation}
+    G(s)=3.9832(1+ 0.045*s + \frac{1}{0.5756*s} )
+\end{equation}
+\end{frame}
+
+\begin{frame}
+\frametitle{Controller Design for Upper Magnet and Coil} The nominal
+loop transmission function for upper magnet with the synthesized
+controller having integrator and two zeros
+\begin{figure}[tbp]
+\begin{center}
+\includegraphics[width=3in]{lp2.pdf}
+\end{center}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Prefilter Design for Upper Magnet and Coil}
+
+To satisfy the tracking specifications, a pre-filter is designed
+using ICST based algorithm The  initial search box
+$\mbox{\textbf{x}}=\left(\mathbf{ze}, \mathbf{w_{n}}\right)$ is
+constructed as
+\[
+\mbox{\textbf{x}}=\left([0,2], [0,100]\right)
+\]
+\begin{equation}
+    F(s) =\frac{1}{\frac{s^2}{4.85^2}+\frac{(2*0.84)s}{4.85}+1}
+\end{equation}
+\end{frame}
+
+\begin{frame}
+\frametitle{Closed Loop Response of Upper Magnet and Coil }
+\begin{figure}[tbp]
+\begin{center}
+\includegraphics[width=3.8in]{upper_response.pdf}
+\end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Control Effort required for Upper Magnet and Coil}
+\begin{figure}[tbp]
+\begin{center}
+\includegraphics[width=3.8in]{upper_response_controleffort.pdf}
+\end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Closed Loop Response of Upper Magnet and Coil with
+Disturbance}
+\begin{figure}[tbp]
+\begin{center}
+\includegraphics[width=3.5in]{upper_response_withdisturbance.pdf}
+\end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Closed Loop Response of Upper Magnet and Coil with
+uncertainty}
+\begin{figure}[tbp]
+\begin{center}
+\includegraphics[width=3.5in]{upper_response_withload.pdf}
+\end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Discussion}
+\begin{itemize}
+  \item {The proposed
+algorithm solves the QFT quadratic inequalities arising from robust
+stability and tracking specifications.}
+\item {The issues of  absolute and relative robust stability are all taken into consideration in the
+proposed method.}
+ \item {The proposed algorithm uses box and hull consistency techniques for solving the
+QFT constraints.}
+ \item {The proposed algorithm deals directly with the numerical values of the possibly non-convex, nonlinear QFT
+bounds, thereby avoiding the overdesign arising from approximation
+in QFT bound representation.}
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Discussion}
+\begin{itemize}
+\item {For a given structure of the controller and
+a given initial search domain, if no feasible controller exists,
+then the proposed algorithm is guaranteed to computationally verify
+this fact.}
+\item {The results shows that the system can handle external disturbance.}
+\item {Robustness of controller is verified by putting extra weight
+  on the magnet.}
+  \item {The designed controller and prefilter are successfully
+  tested on the experimental setup.}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\centerline{\textbf{\begin{Huge}Multivariable Control
+\end{Huge}}}
+ \centerline{\textbf{\begin{Huge}Design for Maglev\end{Huge}}}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Basic $2 x 2$ MIMO structure }
+\begin{figure}[t]
+\begin{center}
+\includegraphics[width=4in]{2x2system.pdf}
+\end{center}
+%\caption{The Schematic diagram of Quadruple Tank Process.}
+%\label{quadraple}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Equivalent Disturbance Attenuation (EDA) Method }
+\begin{itemize}
+  \item {Used for Controller synthesis for MIMO system.}
+  \item {Tracking specifications are transferred as output disturbance specifications.}
+  \begin{equation}
+    \left|\frac{1}{1+l_{ii0}}\right|_{dB}\leq
+    min(|t_{iiv}|_{dB}-|p_{iiv}|_{dBmax},
+    |t_{ijv}|_{dB}-|p_{iiv}|_{dBmax})
+\end{equation}\nonumber
+  \item {The QFT methodology is applied for stability and equivalent disturbance specifications.}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Design of MIMO Control System for a Magnetic Levitation
+System }
+%\textbf{Plant:}
+\begin{eqnarray}
+% \nonumber to remove numbering (before each equation)
+  P_{11}(s) &=& \frac{y_{1}^{*}}{u_{1}^*} = \frac{-as^2 - b}{s^4 + cs^2 + d}\\ \nonumber
+  P_{12}(s) &=& \frac{y_{1}^{*}}{u_{2}^*} = \frac{-e}{s^4 + cs^2 + d} \\ \nonumber
+  P_{21}(s) &=& \frac{y_{2}^{*}}{u_{1}^*} = \frac{f}{s^4 + cs^2 + d} \\   \nonumber
+  P_{22}(s) &=& \frac{y_{2}^{*}}{u_{2}^*} =\frac{gs^2 + h}{s^4 + cs^2 + d}
+\end{eqnarray}
+%where,
+\begin{eqnarray*}
+ a=[1445,1565], ~~~ b=[944000, 1036000], ~~~ c=[1271,1289],\\
+ d=[391800,401200],~~~ e=[205600, 241000], ~~~f=[214100,251000],\\
+ g=[2604, 2819], ~~~ h=[1608000,1767000]
+\end{eqnarray*}
+\end{frame}
+
+\begin{frame}
+\frametitle{Design of MIMO Control System for a Magnetic Levitation
+System } \textbf{Control Loop 1 and 2:}
+
+The  controller $G_{11}(s)$ is to be designed for the channel1 such
+that the following specs are met:
+\begin{itemize}
+
+\item Robust tracking specification: rise time
+ $0.4\leq t_r \leq0.6 $ seconds, no offset, no overshoot.
+\item Interaction of $10\%$  between the channel outputs is
+ allowed, i.e., $\left|\frac{t_{12}}{t_{22}}\right|\leq 0.1, \left|\frac{t_{21}}{t_{11}}\right|\leq 0.1, \forall \hspace{0.1in} \omega$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Design of MIMO Control System for a Magnetic Levitation
+System }
+\begin{itemize}
+  \item Robust stability
+  \begin{eqnarray*}
+             % \nonumber to remove numbering (before each equation)
+              \left|\frac{P(j\omega)G(j\omega)}{1+P(j\omega)G(j\omega)}
+              \right|<\infty \hspace{0.1in}\mbox{for
+              all}\hspace{0.1in}\omega
+             \end{eqnarray*}
+  \item Robust stability margins: gain margin $\geq6$ dB, phase margin
+$\geq45^{0}$.
+  \begin{eqnarray*}
+             % \nonumber to remove numbering (before each equation)
+              \left|\frac{P(j\omega)G(j\omega)}{1+P(j\omega)G(j\omega)}
+              \right|\leq1.2 \hspace{0.1in}\mbox{for
+              all}\hspace{0.1in}\omega
+             \end{eqnarray*}
+  \item Robust tracking
+   \begin{eqnarray*}
+             % \nonumber to remove numbering (before each equation)
+           |T_L(j\omega)| \leq \left|F(j\omega)\frac{P(j\omega)G(j\omega)}{1+P(j\omega)G(j\omega)}
+              \right|\leq |T_U(j\omega)|
+             \end{eqnarray*}
+             %where
+%             \[
+%               |T_{L11}(j\omega)|=\left|\frac{916.3}{s^3 + 39.76 s^2 + 354.9 s + 916.3}\right|
+%             \]
+%             \[
+%              |T_{U11}(j\omega)|=\left|\frac{1.722 s + 68.89}{s^2 + 16.6 s + 68.89}\right|
+%             \]
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Design of MIMO Control System for a Magnetic Levitation
+System }
+\textbf{Control Loop 1:}
+The design frequency set is
+\[
+\Omega=\left[0.5, 1, 3.66, 5.5, 7, 9, 15, 20, 30, 40, 50\right].
+\]
+
+The initial search box $\mbox{\textbf{x}}=\left(\mathbf{K_p},
+\mathbf{T_d}, \mathbf{T_i}\right) $ is constructed as
+\[
+\mbox{\textbf{x}}=\left([0,10], [0,20],[0,30]\right)
+\]
+Among all these feasible controllers, the controller having the
+minimum high frequency gain is chosen as
+\begin{equation}
+    G_{11}(s)=\frac{5.75}{s}(\frac{s}{8.17}+1)(\frac{s}{22.2}+1)
+\end{equation}
+ The Parallel form of PID
+controller structure is as follows
+\begin{equation}
+    G_{11}(s)=0.96(1+ 0.033s + \frac{1}{0.1674s} )
+\end{equation}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Design of MIMO Control System for a Magnetic Levitation
+System} The nominal loop transmission function for Lower Magnet and
+coil (Control loop 1) with the synthesized controller having
+integrator and two zeros
+\begin{figure}[tbp]
+\begin{center}
+\includegraphics[width=2.5in]{ls11.pdf}
+\end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Prefilter Design for Control Loop 2 of MIMO System for a
+Magnetic Levitation System}
+
+To satisfy the tracking specifications of control loop 1, a
+pre-filter is designed using ICST based algorithm.
+
+The  initial search box $\mbox{\textbf{x}}=\left(\mathbf{ze},
+\mathbf{w_{n}}\right)$ is constructed as
+\[
+\mbox{\textbf{x}}=\left([0,2], [0,100]\right)
+\]
+\begin{equation}
+    F_{11}(s) =\frac{1}{\frac{s^2}{9.27^2}+\frac{(2*1.17)s}{9.27}+1}
+\end{equation}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Design of MIMO Control System for a Magnetic Levitation
+System } \textbf{Control Loop 2:} The design frequency set is
+\[
+\Omega=\left[0.5, 1, 3.66, 5.5, 7, 9, 15, 20, 30, 40, 50\right].
+\]
+
+The initial search box $\mbox{\textbf{x}}=\left(\mathbf{K_p},
+\mathbf{T_d}, \mathbf{T_i}\right) $ is constructed as
+\[
+\mbox{\textbf{x}}=\left([0,10], [0,20],[0,30]\right)
+\]
+Among all these feasible controllers, the controller having the
+minimum high frequency gain is chosen as
+\begin{equation}\label{lc3}
+    G_{22}(s)=\frac{5}{s}(\frac{s}{8.75}+1)(\frac{s}{21}+1)
+\end{equation}
+ The Parallel form of PID
+controller structure is as follows
+\begin{equation}
+    G_{22}(s)=0.81(1+ 0.036s + \frac{1}{0.162s} )
+\end{equation}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Design of MIMO Control System for a Magnetic Levitation
+System} The nominal loop transmission function for Upper Magnet and
+coil (Control loop 2) with the synthesized controller having
+integrator and two zeros
+\begin{figure}[tbp]
+\begin{center}
+\includegraphics[width=2.5in]{ls22.pdf}
+\end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Prefilter Design for Control Loop 1 of MIMO System for a
+Magnetic Levitation System}
+
+To satisfy the tracking specifications of control loop 1, a
+pre-filter is designed using ICST based algorithm.
+
+The  initial search box $\mbox{\textbf{x}}=\left(\mathbf{ze},
+\mathbf{w_{n}}\right)$ is constructed as
+\[
+\mbox{\textbf{x}}=\left([0,2], [0,100]\right)
+\]
+\begin{equation}
+    F_{22}(s) =\frac{1}{\frac{s^2}{9.04^2}+\frac{(2*1.2)s}{9.04}+1}
+\end{equation}
+\end{frame}
+
+\begin{frame}
+\frametitle{The closed loop responses with setpoint change to
+control loop 1 only }
+\begin{figure}[tbp]
+\begin{center}
+\includegraphics[width=3.4in]{magnet1only.pdf}
+\end{center}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{The closed loop responses with setpoint change to
+control loop 1 only with disturbance}
+\begin{figure}[tbp]
+\begin{center}
+\includegraphics[width=3.4in]{magnet1onlywithdist.pdf}
+\end{center}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{The closed loop responses with setpoint change to
+control loop 1 only with uncertainty}
+\begin{figure}[tbp]
+\begin{center}
+\includegraphics[width=3.4in]{magnet1onlywithload.pdf}
+\end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{The closed loop responses with setpoint change to
+control loop 2 only}
+\begin{figure}[tbp]
+\begin{center}
+\includegraphics[width=3.4in]{magnet2only.pdf}
+\end{center}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{The closed loop responses with setpoint change to
+control loop 2 only with disturbance}
+\begin{figure}[tbp]
+\begin{center}
+\includegraphics[width=3.4in]{magnet2onlywithdist.pdf}
+\end{center}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{The closed loop responses with setpoint change to
+control loop 2 only with uncertainty}
+\begin{figure}[tbp]
+\begin{center}
+\includegraphics[width=3.4in]{magnet2onlywithload.pdf}
+\end{center}
+\end{figure}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{The closed loop responses for magnets moving in same
+direction }
+
+\begin{figure}[tbp]
+\begin{center}
+\includegraphics[width=3.4in]{bothsamedirection.pdf}
+\end{center}
+\caption{T} \label{both}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{The closed loop responses for magnets moving in same
+direction with disturbance to control loop 1 }
+
+\begin{figure}[tbp]
+\begin{center}
+\includegraphics[width=3.4in]{bothsamedirectionwithdistlower.pdf}
+\end{center}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{The closed loop responses for magnets moving in same
+direction with disturbance to control loop 2}
+
+\begin{figure}[tbp]
+\begin{center}
+\includegraphics[width=3.4in]{bothsamedirectionwithdistupper.pdf}
+\end{center}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{The closed loop responses for magnets moving in same
+direction with uncertainty in both control loops}
+\begin{figure}[tbp]
+\begin{center}
+\includegraphics[width=4in]{bothsamedirectionwithload.pdf}
+\end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{The closed loop responses for magnets moving in opposite
+direction}
+\begin{figure}[tbp]
+\begin{center}
+\includegraphics[width=4in]{bothoppositedirection.pdf}
+\end{center}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{The closed loop responses for magnets moving in opposite
+direction}
+\begin{figure}[tbp]
+\begin{center}
+\includegraphics[width=4in]{bothoppositedirectionupperdownonly.pdf}
+\end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{The closed loop responses for magnets moving in opposite
+direction with disturbance to both control loops}
+\begin{figure}[tbp]
+\begin{center}
+\includegraphics[width=4in]{bothoppositedirectionupperdownonly.pdf}
+\end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Discussion}
+\begin{itemize}
+\item {The proposed algorithm solves the QFT quadratic inequalities arising from robust
+stability and disturbance specifications.}
+\item {The interaction between the loops are within the limit specified.}
+\item {The results shows that the system can handle external disturbance.}
+\item {Robustness of controller is verified by putting extra weights
+  on the magnet.}
+\item {The designed controller and prefilter are successfully tested on the experimental setup of MIMO Maglev system.}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Conclusions}
+\begin{itemize}
+  \item {The proposed
+algorithm solves the QFT quadratic inequalities arising from robust
+stability, tracking and disturbance specifications.}
+\item {The issues of  absolute and relative robust stability are all taken into consideration in the
+proposed method.}
+ \item {The proposed algorithm uses box and hull consistency techniques for solving the
+QFT constraints.}
+ \item {The proposed algorithm deals directly with the numerical values of the possibly non-convex, nonlinear QFT
+bounds, thereby avoiding the overdesign arising from approximation
+in QFT bound representation.}
+\item {For a given structure of the controller and
+a given initial search domain, if no feasible controller exists,
+then the proposed algorithm is guaranteed to computationally verify
+this fact.}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Conclusions}
+\begin{itemize}
+  \item {The proposed algorithm is successfully applied to SISO and MIMO Maglev System.}
+  \item {The results shows that the desired specifications are achieved by the systems.}
+  \item {The robustness s of controller is also verified by putting
+  extra weights on the magnets.}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Future Work}
+\begin{itemize}
+\item {Extension of this method for control effort Input Constraints.}
+\item {Fractional order controller and prefilter using QFT for MIMO Maglev system}
+\item {Real time implementation of controller and prefilter for MIMO Maglev system.}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\centerline{\textbf{\begin{Huge}Thank You...\end{Huge}}}
+\end{frame}
+\end{document}

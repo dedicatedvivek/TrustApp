@@ -1,0 +1,43 @@
+\chapter{Introduction}
+\label{ChapterIntroduction}
+%\renewcommand{\baselinestretch}{1.5}\normalsize
+%
+In signal processing, the function of a filter is to remove unwanted
+parts of the signal, such as random noise, or to extract useful
+parts of the signal, such as the components lying within a certain
+frequency range \cite{kilbas_srivastava_trujillo}.
+
+
+
+\section{Introdution}
+
+Digital filters are typically used to modify or alter the attributes
+of a signal in the time or frequency domain. The most c
+
+
+
+\section{Organization of the report}
+Chapter 2 discusses the various ways of implementing the digital filter and tells that why fpga implementation is better compare to others.
+
+chapter 3 discusses design stage for digital filter, which includes specification of
+filter, calculation of filter coefficients, realization of filter structure, finite world length
+effect and the design using windowing techniques are given in this chapter.
+
+
+In Chapter 4, the Simulation and Synthesis tools which are used in implementation of
+FIR filter is discussed. This chapter also discusses the FPGAs architecture, FPGA Design
+Flow.
+
+
+Chapter 5 discusses about how FIR filter can be realized and the process of
+implementation of FIR filter. It also discusses restriction and assumption of filter,
+choosing the filter structure, because it is often important to choose a particular filter
+structure for a given transfer function H(z).This chapter also discusses Fixed Point
+Representation of data.
+
+
+
+Chapter 6 contains results of simulation using  XILINX ISE 10.1i of
+lowpass FIR filter.
+
+Chapter 7 concludes the project and also discusses future scope of work. 

@@ -1,0 +1,130 @@
+\chapter{Literature Survey}
+%
+The major contribution in the field of stereo matching using Random Markov field and inference algorithm like Belief Propagation\newline
+\textbf{[2003] Comparison of Graph cuts with Belief Propagation for stereo, Using Identical MRF Parameters:}\cite{r1}\newline
+The  disparity image can be achieved  by modelling Markov Random Field and by using optimization algorithm such as Graph cut and Belief Propagation. These two algorithm allow fast and approximate solution to MRF which are powerful tools for modelling vision problems.so one system improvement over the other be attributed to its choice of an inference algorithm.\newline
+The comparison between Graph cut algorithm with max product Belief Propagation algorithm shows that the solution for energy  by Graph cut and Belief Propagation  algorithm nearly equal although graph cut consistently returns smaller energy. The solutions produced by Graph cut  are smoother while accelerated Belief Propagation algorithm was faster.\newline
+Given this situation Improving formulation of MRF rather than improving solution (optimization algorithm) for MRF.
+The comparisons between inference algorithm such as Graph cut and Belief Propagation depends on the functions of MRF formulation.\newline
+The future research can be different functions such as truncated linear or quadratic  used for MRF optimizing with any one of the inference algorithm\cite{r1}\newline
+\textbf{[2004] Efficient Belief Propagation for Early Vision:}\cite{r2}
+
+The early vision problems such as stereo, optical flow and image restoration can be solved by MRF model by using inference algorithm based on Graph cut and Belief propagation In this paper new algorithm techniques improve the running time of the algorithm.
+The inference algorithm used is max product belief propagation.\newline
+The three techniques  substantially reduces time required to compute the message updates.
+\begin{enumerate}
+  \item In low level vision problems the label or hidden node is generally based on some difference between two labels rather than on particular pair of labels, this is known as distance transform technique. This technique reduces message computing time.
+  \item In new message update scheme, here nodes are split into two
+Messages are updated alternately ,so half of the messages only updated at each iteration.so memory required to store messages are reduced.
+\item The third technique uses hierarchical structure to reduce the number of message passing iterations to small constant rather depends on size of the image grid.
+\end{enumerate}
+\textbf{[2007]   Low Memory Cost Block Based Belief Propagation for Stereo Correspondence}\cite{r3}\newline
+The global approaches can handle the texture less and occluded regions well by formulating disparity inference as an energy minimization problem. The energy functions usually has smoothness constraint which represents a certain relationship between neighboring  pixel pair. This smoothness constraint enforces penalty on the energy function, if the labels (disparity or segments)of neighboring pixel are inconsistent.\newline
+ The 2D optimization algorithm such as graph cut and Belief Propagation have been applies successfully to optimize energy functions. The BP algorithms construct 2-D graph structures with nodes represent all pixels in the disparity image to find the disparity map with energy closer to the global minima. However, the vast number of nodes in 2-D graph result in extremely high computation complexity too difficulty in real time applications.\newline
+The proposed Block based Belief Propagation algorithm directly partitions image into separated independent blocks.so memory size reduces significantly due to block based computation. With block based design, the criterion of convergence becomes important for each block. \newline
+In general, the criterion of convergence in belief propagation is defined with the saturation of energy functions. The specific threshold is set to terminate the belief propagation process. However it is difficult to find a global threshold for each block. In proposed algorithm find the convergence according to the equivalence of all disparities for each node in a block over successive iterations.\newline
+\textbf{[2009]  Hardware-Efficient Belief Propagation}\cite{r4}\newline
+Loopy belief propagation is an effective solution for assigning labels to the nodes of a graphical model such as Markov Random Field, but requires high memory, bandwidth and computational costs.
+In this paper two techniques are proposed
+\begin{enumerate}
+  \item Tile based Belief propagation ,when message is updated data of nodes which are far away are not required, so MRF is divided into
+multiple regions known as tile and iterations are done on those regions. So memory required to store messages are reduced.
+\item Fast message construction:The cost functions serve for measuring the compatibility between the labels and the observations or prior knowledge.
+For example in stereo matching that the disparity values vary smoothly between neighboring pixels. However this assumption is valid only when corresponding pixels belong to the same object. otherwise the difference between their disparity values can be arbitrarily large resulting high cost value. In fast message construction using robust function is used as smmothness cost.
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%
+%
+%
+%%Traditiovnally, diggfital signal processing (DSP) algorithms are
+%%implemented using general-purpose (programmable) D
+%%in section \ref{organization},we haveeee further,subsection\ref{partt1}
+%%\begin{tabular}{|c|c|}
+%%                                                                         \hline
+%%                                                                         % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+%%                                                                         x & y \\
+%%                                                                         1 & 2 \\
+%%                                                                         \hline
+%%                                                                       \end{tabular}
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Comparison with IR communication}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%table
+\begin{table}[h]
+\caption{Optimization methods used for finding the disparity from various research papers}
+\centering
+The summary of literature survey is mentioned in table
+\begin{tabular}{|p{1in}|p{2in}|p{2in}|}
+%%\begin{tabular}{|c|c|c|}
+
+%\caption{Comparison of short-range wireless communication technologies (FIR fast infrared, VFIR very fast infrared).}
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  Research paper & Optimization Method & Scope for Research \\
+  \hline
+  Comparison of Graph cuts with Belief Propagation for stereo, Using Identical MRF Parameters
+[2003]
+ & Comparative study of Graph cut and Belief Propagation on same MRF Model& Further study of
+Improving formulation of MRF rather than improving solution for MRF
+ \\
+  \hline
+  Efficient Belief Propagation for Early Vision
+[2004]
+ &Three methods are used\begin{enumerate}
+     \item Distance transform technique(difference between two labels)
+     \item New message update scheme
+     \item Hierarchical structure
+   \end{enumerate}
+  & Further study can be:
+These optimization method can be
+applicable to a broad range of more sophisticated cost functions.
+ \\
+  \hline
+  Low Memory Cost Block Based Belief Propagation for Stereo Correspondence
+[2007]
+ & 2D BP Graph is divided into blocks. Optimize each block separately. & The information exchange between Neighboring finished processing block and unfinished processing block can be  further investigated \\
+ \hline
+ Hardware-Efficient Belief Propagation
+[2009]
+ & Efficiency of BP is improved by new message scheme known as Tile based BP and Fast message construction & The performance Tile based message passing scheme can be studied for different conditions  like different smoothness cost functions \\
+%  \hline
+%  Security & Good & Good \\
+%  \hline
+%  Carrier wavelength (frequency) & 380$~$780 nm visible light (multiple wavelengths) & 850 nm infrared \\
+%  \hline
+%  Services & Communication, illumination & Communication \\
+%  \hline
+%  Noise Source & Sun light, Other illumination & Ambient light \\
+%  \hline
+%  Environmental & Daily usage Eye safe (visible) & Eye safe for low power (invisible) \\
+%  \hline
+%  Applications & Indoor vehicular communication, Optical ID & Remote control, Point to point connection \\
+  \hline
+\end{tabular}
+\label{table:comp}
+\end{table}

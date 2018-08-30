@@ -1,0 +1,9 @@
+\chapter{Conclusion and Future work}
+\section{conclusion}
+\begin{itemize}
+  \item Understand the concept related to Markov Random Field and probability theory related to stereo matching algorithm
+  \item Done Literature survey on stereo matching algorithm using iterative Belief Propagation algorithm
+ \item Initial Depth map as a preprocessing stage is implemented using MATLAB in build command 'DisparityMap'
+\end{itemize}
+
+

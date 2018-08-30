@@ -1,0 +1,524 @@
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=latex 2014.12.5)  10 NOV 2016 15:23
+entering extended mode
+**C:/Users/anish/Desktop/aps_2/Template_EXTC/Template_stage1/RAIT_ME_Report.tex
+
+(C:/Users/anish/Desktop/aps_2/Template_EXTC/Template_stage1/RAIT_ME_Report.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+
+(C:\Users\anish\Desktop\aps_2\Template_EXTC\Template_stage1\final_raitreport.cl
+s
+
+LaTeX Warning: You have requested document class `final_raitreport',
+               but the document class provides `iitbaps'.
+
+Document Class: iitbaps 2007/06/25 IIT Bombay Annual Preogress Report Format
+Document Class `iitbaps' v0.5beta <13 August 07>
+(C:\miketext\tex\latex\base\report.cls
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+(C:\miketext\tex\latex\base\size12.clo
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+Two side is false
+) (C:\miketext\tex\latex\graphics\graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\miketext\tex\latex\graphics\keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(C:\miketext\tex\latex\graphics\graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\miketext\tex\latex\graphics\trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(C:\miketext\tex\latex\00miktex\graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: dvips.def on input line 91.
+
+(C:\miketext\tex\latex\graphics\dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(C:\Users\anish\Desktop\aps_2\Template_EXTC\Template_stage1\RAIT_ME_Report.aux
+(C:\Users\anish\Desktop\aps_2\Template_EXTC\Template_stage1\final_disser_prelud
+e.aux) (C:\Users\anish\Desktop\aps_2\Template_EXTC\Template_stage1\chap1.aux)
+(C:\Users\anish\Desktop\aps_2\Template_EXTC\Template_stage1\chap2.aux
+
+LaTeX Warning: Label `lined' multiply defined.
+
+
+LaTeX Warning: Label `lined' multiply defined.
+
+
+LaTeX Warning: Label `lined' multiply defined.
+
+
+LaTeX Warning: Label `lined' multiply defined.
+
+
+LaTeX Warning: Label `lined' multiply defined.
+
+
+LaTeX Warning: Label `lined' multiply defined.
+
+
+LaTeX Warning: Label `lined' multiply defined.
+
+) (C:\Users\anish\Desktop\aps_2\Template_EXTC\Template_stage1\chap3.aux)
+(C:\Users\anish\Desktop\aps_2\Template_EXTC\Template_stage1\chap4.aux
+
+LaTeX Warning: Label `lined' multiply defined.
+
+
+LaTeX Warning: Label `lined' multiply defined.
+
+
+LaTeX Warning: Label `lined' multiply defined.
+
+) (C:\Users\anish\Desktop\aps_2\Template_EXTC\Template_stage1\chap5.aux
+
+LaTeX Warning: Label `' multiply defined.
+
+) (C:\Users\anish\Desktop\aps_2\Template_EXTC\Template_stage1\chap6.aux))
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+
+(C:\Users\anish\Desktop\aps_2\Template_EXTC\Template_stage1\final_disser_prelud
+e.tex
+File: ./new_logo.eps Graphic file (type eps)
+ <./new_logo.eps> [1
+
+
+
+
+]
+File: new_logo.eps Graphic file (type eps)
+ <new_logo.eps>
+File: university.eps Graphic file (type eps)
+ <university.eps>
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 78.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 78.
+
+Overfull \hbox (12.73755pt too wide) in paragraph at lines 78--87
+ [][][] 
+ []
+
+[1
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 115--124
+
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 125.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 125.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 125.
+
+Overfull \hbox (0.82053pt too wide) in paragraph at lines 125--135
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--135
+
+ []
+
+
+Overfull \hbox (0.82053pt too wide) in paragraph at lines 136--145
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 136--145
+
+ []
+
+[2
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 178--182
+
+ []
+
+
+Overfull \hbox (0.82053pt too wide) in paragraph at lines 183--193
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--193
+
+ []
+
+[3
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 197--200
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 197--200
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 197--200
+
+ []
+
+[4
+
+]
+(C:\Users\anish\Desktop\aps_2\Template_EXTC\Template_stage1\RAIT_ME_Report.toc)
+\tf@toc=\write3
+[5
+
+]
+\c@theorem=\count88
+) (C:\Users\anish\Desktop\aps_2\Template_EXTC\Template_stage1\chap1.tex
+Chapter 1.
+[1
+
+
+
+
+
+]) [2] (C:\Users\anish\Desktop\aps_2\Template_EXTC\Template_stage1\chap2.tex
+Chapter 2.
+File: stereo.eps Graphic file (type eps)
+<stereo.eps>
+File: triangle.eps Graphic file (type eps)
+ <triangle.eps>
+File: 3d.eps Graphic file (type eps)
+ <3d.eps>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[3
+
+
+
+]
+File: epipolar.eps Graphic file (type eps)
+ <epipolar.eps>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: epipolar1.eps Graphic file (type eps)
+<epipolar1.eps>
+File: recti.eps Graphic file (type eps)
+ <recti.eps>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[4]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: disparity.eps Graphic file (type eps)
+<disparity.eps>
+File: stereomatching.eps Graphic file (type eps)
+ <stereomatching.eps>) [5] [6] [7]
+(C:\Users\anish\Desktop\aps_2\Template_EXTC\Template_stage1\chap3.tex
+Chapter 3.
+[8
+
+
+
+]
+Underfull \hbox (badness 3547) in paragraph at lines 89--89
+[][]\OT1/cmr/m/n/12 Research pa-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--93
+[][]\OT1/cmr/m/n/12 Comparison
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--93
+\OT1/cmr/m/n/12 with Be-lief
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--93
+\OT1/cmr/m/n/12 Prop-a-ga-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--93
+\OT1/cmr/m/n/12 for stereo,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--93
+\OT1/cmr/m/n/12 Us-ing Iden-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--93
+\OT1/cmr/m/n/12 ti-cal MRF
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--93
+\OT1/cmr/m/n/12 Pa-ram-e-ters
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--99
+[][]\OT1/cmr/m/n/12 Efficient
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--99
+\OT1/cmr/m/n/12 Be-lief Prop-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--99
+\OT1/cmr/m/n/12 a-ga-tion for
+ []
+
+
+Underfull \hbox (badness 6995) in paragraph at lines 97--99
+\OT1/cmr/m/n/12 Early Vi-sion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 100--101
+[][]\OT1/cmr/m/n/12 Distance trans-form
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 100--101
+\OT1/cmr/m/n/12 tech-nique(difference
+ []
+
+
+Underfull \hbox (badness 1253) in paragraph at lines 109--111
+[][]\OT1/cmr/m/n/12 Low Mem-ory
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 109--111
+\OT1/cmr/m/n/12 Cost Block
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 109--111
+\OT1/cmr/m/n/12 Based Be-lief
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 109--111
+\OT1/cmr/m/n/12 Prop-a-ga-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 109--111
+\OT1/cmr/m/n/12 for Stereo
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 109--111
+\OT1/cmr/m/n/12 Cor-re-spon-
+ []
+
+
+Underfull \hbox (badness 1867) in paragraph at lines 111--112
+[]\OT1/cmr/m/n/12 The in-for-ma-tion ex-change
+ []
+
+
+Underfull \hbox (badness 6741) in paragraph at lines 111--112
+\OT1/cmr/m/n/12 be-tween Neigh-bor-ing fin-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 113--115
+[][]\OT1/cmr/m/n/12 Hardware-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 113--115
+\OT1/cmr/m/n/12 Efficient
+ []
+
+
+Underfull \hbox (badness 1389) in paragraph at lines 113--115
+\OT1/cmr/m/n/12 Be-lief Prop-a-
+ []
+
+
+Underfull \hbox (badness 5681) in paragraph at lines 115--115
+\OT1/cmr/m/n/12 by new mes-sage scheme
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [9] [10]
+(C:\Users\anish\Desktop\aps_2\Template_EXTC\Template_stage1\chap4.tex
+Chapter 4.
+File: sa.eps Graphic file (type eps)
+<sa.eps>
+Underfull \hbox (badness 10000) in paragraph at lines 2--14
+
+ []
+
+[11
+
+
+
+]
+Overfull \hbox (0.42064pt too wide) in paragraph at lines 20--22
+[]\OT1/cmr/m/n/12 The be-lief prop-a-ga-tion al-go-rithm was pro-posed by Pearl
+ in 1988 for find-ing ex-act marginals
+ []
+
+File: bp.eps Graphic file (type eps)
+<bp.eps>
+File: lbp.eps Graphic file (type eps)
+ <lbp.eps>
+Underfull \hbox (badness 10000) in paragraph at lines 41--63
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--63
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--63
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--63
+
+ []
+
+[12] [13]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 72.
+ (C:\miketext\tex\latex\base\omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 72.
+) [14]
+(C:\Users\anish\Desktop\aps_2\Template_EXTC\Template_stage1\chap5.tex
+Chapter 5.
+File: tedy.eps Graphic file (type eps)
+<tedy.eps>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: tsuba.eps Graphic file (type eps)
+<tsuba.eps>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [15
+
+
+
+] [16]
+(C:\Users\anish\Desktop\aps_2\Template_EXTC\Template_stage1\chap6.tex
+Chapter 6.
+) [17
+
+
+
+]
+(C:\Users\anish\Desktop\aps_2\Template_EXTC\Template_stage1\bibliography.tex
+Underfull \hbox (badness 10000) in paragraph at lines 20--22
+[][]\OT1/cmr/m/n/12 http://nghiaho.com/notes/Markov Ran-dom Field,Loopy Be-lief
+ Prop-a-ga-
+ []
+
+[18
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 77--78
+[][]\OT1/cmr/m/n/12 https://github.com/daviddoria/Tutorials/blob/master/BeliefP
+ropagation/-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
+[][]\OT1/cmr/m/n/12 http://www.cedar.buffalo.edu/srihari/CSE574/Chap8/Ch8-
+ []
+
+) [19]
+(C:\Users\anish\Desktop\aps_2\Template_EXTC\Template_stage1\RAIT_ME_Report.aux
+(C:\Users\anish\Desktop\aps_2\Template_EXTC\Template_stage1\final_disser_prelud
+e.aux) (C:\Users\anish\Desktop\aps_2\Template_EXTC\Template_stage1\chap1.aux)
+(C:\Users\anish\Desktop\aps_2\Template_EXTC\Template_stage1\chap2.aux)
+(C:\Users\anish\Desktop\aps_2\Template_EXTC\Template_stage1\chap3.aux)
+(C:\Users\anish\Desktop\aps_2\Template_EXTC\Template_stage1\chap4.aux)
+(C:\Users\anish\Desktop\aps_2\Template_EXTC\Template_stage1\chap5.aux)
+(C:\Users\anish\Desktop\aps_2\Template_EXTC\Template_stage1\chap6.aux))
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 791 strings out of 493922
+ 12101 string characters out of 3147305
+ 64853 words of memory out of 3000000
+ 4064 multiletter control sequences out of 15000+200000
+ 10070 words of font info for 35 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 28i,10n,21p,751b,352s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on RAIT_ME_Report.dvi (25 pages, 58480 bytes).

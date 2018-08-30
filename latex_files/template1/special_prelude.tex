@@ -1,0 +1,115 @@
+%============================================================================
+% prelude.tex
+%   - titlepage
+%   - table of contents, list of tables and list of figures
+%   - abstract
+%============================================================================
+
+\clearpage%
+\pagenumbering{roman}  % This makes the page numbers Roman (i, ii, etc)
+%--------------------------------------------------------------------%
+% TITLE PAGE
+%   - define \title{} \author{} \date{}
+
+\title{Study on Fruit Quality Inspection Based on Color Image Processing}
+\author{Chitra Sures}
+
+\date{October 2011}
+
+\department{Department of Electronics Engineering}
+
+%    - Set the guide's name
+\setguide{Prof. M. D. Patil}
+%    - Set the coguide's name (if you have one)
+%%\setcoguide{Prof Amitabha Sanyal}
+
+%   - once the above are defined, use \maketitle to generate the titlepage
+\maketitle
+
+%--------------------------------------------------------------------
+\cleardoublepage \nonumber
+\begin{center}
+\includegraphics{raitlogo.eps}\\
+Ramrao Adik Education Society's\\
+\large {\textbf{Ramrao Adik Institute of Technology}}\\
+\small(Affiliated to the University of Mumbai)\\
+Dr. D. Y. Patil Vidyanagar,Sector 7, Nerul, Navi Mumbai 400
+706.\\\vspace{0.3in} \Large CERTIFICATE
+\end{center}
+\vspace{0.1in}
+\begin{center}
+\large This to certify that Special Topic Seminar entitled\\
+\textbf{\lq\lq Study on Fruit Quality Inspection Based on Color Image Processing\rq\rq} \\submitted by
+\begin{center}
+Hemlata Kadam (10EL2007)  \\
+\end{center}
+is approved for the degree of \\ \textbf {Master of Engineering}\\ in\\ \textbf {Electronics Engineering}.\\
+
+ %\vspace{0.5in}
+%-----------------------------------------------------------------
+%\begin{tabular}{ccc}
+%      \rule{6cm}{1sp}                &\rule{10mm}{0pt}& \rule{6cm}{1sp}
+%      \\
+%       Guide             &&Head of Department \\\\\
+%      \rule{6cm}{1sp}                && \rule{6cm}{1sp} \\
+%      Examiner 1                 && Examiner 2 \\\\\\
+%      Principal: \rule{4cm}{1sp} && \\ && \\
+%       &&
+%    \end{tabular}
+\vspace{1in}
+\begin{tabular}{ccc}
+      \rule{5cm}{1sp}                &\rule{10mm}{0pt}& \rule{5cm}{1sp}
+      \\\vspace{0.5in}
+      Examiner 1                 && Examiner 2 \\
+      \rule{5cm}{1sp}                && \rule{5cm}{1sp} \\ \vspace{0.5in}
+       Guide             && Project Coordinator \\
+      \rule{5cm}{1sp}                && \rule{5cm}{1sp} \\
+      Head of Department                && Principal \\\\
+        %&\rule{5cm}{1sp}& \\
+%       &Principal&
+    \end{tabular}
+\end{center}
+%-----------------------------------------------------------------
+\cleardoublepage
+%--------------------------------------------------------------------%
+
+
+% ABSTRACT
+\begin{abstract}
+%\input {abstract}
+In this paper, a new method of inspecting fruit
+quality is proposed based on color image processing. After an
+image of fruits is taken, white balance is performed.Then the
+image is transferred from the RGB color model to the HSI
+color model. Its simplified histograms of hue H and saturation
+S are calculated as the input of a designed BP network. The
+output of the BP network is the quality description of the
+inspected fruits.After training, the quality of fruits is inspected by the
+BP network according to the simplified histograms of H and S
+of their color image. Experiments are conducted with the
+quality inspection of bananas. Experiment results show the
+feasibility and reliability of proposed method.
+\end{abstract}
+
+%--------------------------------------------------------------------%
+% CONTENTS, TABLES, FIGURES
+\tableofcontents \listoftables \listoffigures
+
+%--------------------------------------------------------------------%
+%  Single counter for theorems and theorem-like environments:
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{assertion}[theorem]{Assertion}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{figger}[theorem]{Figure}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+
+%--------------------------------------------------------------------%
+% Make the page numbers Arabic (1, 2, etc)
+\cleardoublepage%
+\pagenumbering{arabic}

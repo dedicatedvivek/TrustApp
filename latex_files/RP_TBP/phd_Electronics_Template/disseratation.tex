@@ -1,0 +1,51 @@
+
+%=====================================================================
+% Document Style
+%=====================================================================
+% APS format: There is no prescribed format by IIT Bombay
+\documentclass{raitdisser}
+% To include optional packages, use the \usepackage command.
+% For e.g.:
+\usepackage{graphicx}
+%=======================================================================
+% End of Preamble, start of document
+%
+
+\begin{document}
+
+% Choose your bibliography style
+% plain is the basic style, others include ieeetr, siam, asm, etc
+\bibliographystyle{plain}
+
+%\include{defs}                   % Common definitions used throughout the thesis
+%\include{disser_prelude}
+              % Title page, abstract, table of contents, etc
+\include{chap1}            % Chapter 1: Introduction
+%\include{chap2}                   % Other chapters as required
+%\include{chap_conclusions}      % Finally the summary & conclusions
+
+%--------------------------------------------------------------------%
+% APPENDIX
+%  Appendices, if any, must precede the cited literatures.
+%  Appendices shall be numbered in Roman Capitals (e.g. Appendix IV)
+\appendix
+%\include{appendix_1}        % Appendices if any..
+
+%--------------------------------------------------------------------%
+% LITERATURE CITED
+%   This should follow the appendices, if any, otherwise summary and
+%   conclusions chapter.
+\bibliography{xyz}              % Make the bibliography
+
+%--------------------------------------------------------------------%
+% ACKNOWLEDGMENTS
+%   For APS, acknowledgements can be the first item after title page
+%      OR
+%   the very last item.
+%
+%\begin{acknowledgments}
+%I thank the many people who have done lots of nice things for me.
+%\end{acknowledgments}
+%
+
+\end{document}

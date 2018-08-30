@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!-- saved from url=(0079)http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node7.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Open problems</title>
+<meta name="description" content="Open problems">
+<meta name="keywords" content="lect11">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<link rel="STYLESHEET" href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/lect11.css">
+<link rel="next" href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node8.html">
+<link rel="previous" href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node6.html">
+<link rel="up" href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/lect11.html">
+<link rel="next" href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node8.html">
+</head>
+<body>
+<!--Navigation Panel-->
+<a name="tex2html129" href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node8.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="./Open problems_files/next_motif.gif"></a> 
+<a name="tex2html127" href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/lect11.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="./Open problems_files/up_motif.gif"></a> 
+<a name="tex2html121" href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node6.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="./Open problems_files/previous_motif.gif"></a>   
+<br>
+<b> Next:</b> <a name="tex2html130" href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node8.html">Reconstruction of 3-D coordinates</a>
+<b> Up:</b> <a name="tex2html128" href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/lect11.html">Computer Vision IT412</a>
+<b> Previous:</b> <a name="tex2html122" href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT11/node6.html">Some existing matching algorithms</a>
+<br>
+<br>
+<!--End of Navigation Panel-->
+<h1><a name="SECTION00070000000000000000">
+Open problems</a>
+</h1>
+The complexity of the correspondence problem depends on
+the complexity of the scene.  As described in the previous sections,
+there are constraints and schemes that can help
+reduce the number of false matches, but many unsolved problems
+still exist in stereo matching.  Some of these problems are:
+<ul>
+<li> <em>occlusion:</em> given a feature <i>m</i> in the first image
+	projected by a scene point <i>M</i>,
+	the ``corresponding'' feature of <i>m</i> may not exist
+	in the second image because from the second camera's
+	viewpoint, <i>M</i> may be occluded.
+</li><li> <em>discontinuity:</em> 
+	this is related to occlusion.  Most matching algorithms
+	use the continuity and/or relaxation as a
+	global constraint to reduce false matches.
+	This constraint works everywhere in the images
+	except at depth discontinuities.
+</li><li> <em>regularity and repetitivity:</em>
+	repetitive patterns in the scene cause ambiguity in matching.
+	Most existing matching algorithms are still not robust enough
+	to handle this.
+</li></ul>
+<br><hr>
+<address>
+<a href="mailto:robyn@cs.uwa.edu.au">Robyn Owens</a>
+<br> 
+<i>10/29/1997</i>
+</address>
+
+
+</body></html>

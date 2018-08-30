@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://nghiaho.com/?page_id=1366 -->
+<html lang="en-US"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>Loopy belief propagation, Markov Random Field, stereo vision | Nghia Ho</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="stylesheet" type="text/css" media="all" href="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/style.css">
+<link rel="pingback" href="http://nghiaho.com/xmlrpc.php">
+<!--[if lt IE 9]>
+<script src="http://nghiaho.com/wp-content/themes/twentyeleven/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+<link rel="alternate" type="application/rss+xml" title="Nghia Ho » Feed" href="http://nghiaho.com/?feed=rss2">
+<link rel="alternate" type="application/rss+xml" title="Nghia Ho » Comments Feed" href="http://nghiaho.com/?feed=comments-rss2">
+<link rel="alternate" type="application/rss+xml" title="Nghia Ho » Loopy belief propagation, Markov Random Field, stereo vision Comments Feed" href="http://nghiaho.com/?feed=rss2&page_id=1366">
+<link rel="stylesheet" id="wp-syntax-css-css" href="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/wp-syntax.css" type="text/css" media="all">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://nghiaho.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://nghiaho.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="NAR (Nghia’s Augmented Reality)" href="http://nghiaho.com/?page_id=1273">
+<link rel="next" title="TextureMesh" href="http://nghiaho.com/?page_id=1629">
+<meta name="generator" content="WordPress 3.9.3">
+<link rel="canonical" href="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho.html">
+<link rel="shortlink" href="http://nghiaho.com/?p=1366">
+
+<script type="text/javascript">var zoomImagesBase = '/wp-content/plugins/wp-fancyzoom/';</script>
+<script src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/FancyZoom.js" type="text/javascript"></script>
+<script src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/FancyZoomHTML.js" type="text/javascript"></script>
+<script src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/adddomloadevent.js" type="text/javascript"></script>
+<script type="text/javascript">addDOMLoadEvent(setupZoom);</script>
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<style type="text/css">
+/* <![CDATA[ */
+img.latex { vertical-align: middle; border: none; }
+/* ]]> */
+</style>
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+
+<body class="page page-id-1366 page-child parent-pageid-351 page-template-default single-author singular two-column right-sidebar"><div id="ZoomSpin" style="position: absolute; left: 10px; top: 10px; visibility: hidden; z-index: 525;"><img id="SpinImage" src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/zoom-spin-1.png"></div><div id="ZoomBox" style="position: absolute; left: 10px; top: 10px; visibility: hidden; z-index: 499;"><img src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/spacer.gif" id="ZoomImage" border="0" style="-webkit-box-shadow: rgba(0, 0, 0, 0) 0px 5px 25px; display: block; width: 10px; height: 10px; cursor: pointer;"><div id="ZoomClose" style="position: absolute; left: -15px; top: -15px; visibility: hidden;"><img src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/closebox.png" width="30" height="30" border="0" style="cursor: pointer;"></div></div><div id="ZoomCapDiv" style="position: absolute; visibility: hidden; margin-left: auto; margin-right: auto; z-index: 501;"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td align="right"><img src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/zoom-caption-l.png" width="13" height="26" style="display: block;"></td><td background="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/zoom-caption-fill.png" id="ZoomCaption" valign="middle" style="font-size: 14px; font-family: Helvetica; font-weight: bold; color: rgb(255, 255, 255); text-shadow: rgb(0, 0, 0) 0px 2px 4px; white-space: nowrap;"></td><td><img src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/zoom-caption-r.png" width="13" height="26" style="display: block;"></td></tr></tbody></table></div>
+<div id="page" class="hfeed">
+	<header id="branding" role="banner">
+			<hgroup>
+				<h1 id="site-title"><span><a href="http://nghiaho.com/" title="Nghia Ho" rel="home">Nghia Ho</a></span></h1>
+				<h2 id="site-description">Where boredom, free time, and curiosity meet together</h2>
+			</hgroup>
+
+						<a href="http://nghiaho.com/">
+									<img src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/copy-cropped-monash.jpg" width="940" height="198" alt="">
+							</a>
+			
+								<form method="get" id="searchform" action="http://nghiaho.com/">
+		<label for="s" class="assistive-text">Search</label>
+		<input type="text" class="field" name="s" id="s" placeholder="Search">
+		<input type="submit" class="submit" name="submit" id="searchsubmit" value="Search">
+	</form>
+			
+			<nav id="access" role="navigation">
+				<h3 class="assistive-text">Main menu</h3>
+								<div class="skip-link"><a class="assistive-text" href="http://nghiaho.com/?page_id=1366#content" title="Skip to primary content">Skip to primary content</a></div>
+				<div class="skip-link"><a class="assistive-text" href="http://nghiaho.com/?page_id=1366#secondary" title="Skip to secondary content">Skip to secondary content</a></div>
+								<div class="menu"><ul><li><a href="http://nghiaho.com/">Home</a></li><li class="page_item page-item-2"><a href="http://nghiaho.com/?page_id=2">About</a></li><li class="page_item page-item-56"><a href="http://nghiaho.com/?page_id=56">Camera Pan Tilt</a></li><li class="page_item page-item-52 page_item_has_children"><a href="http://nghiaho.com/?page_id=52">CNC Milling</a><ul class="children"><li class="page_item page-item-66"><a href="http://nghiaho.com/?page_id=66">1st CNC machine</a></li><li class="page_item page-item-54"><a href="http://nghiaho.com/?page_id=54">2nd CNC machine</a></li><li class="page_item page-item-61"><a href="http://nghiaho.com/?page_id=61">CNC Art Gallery</a></li></ul></li><li class="page_item page-item-48 page_item_has_children"><a href="http://nghiaho.com/?page_id=48">Computer Vision</a><ul class="children"><li class="page_item page-item-1011"><a href="http://nghiaho.com/?page_id=1011">CellCounter</a></li><li class="page_item page-item-611"><a href="http://nghiaho.com/?page_id=611">GPU RANSAC Homography</a></li><li class="page_item page-item-199"><a href="http://nghiaho.com/?page_id=199">Markerless Augmented Reality</a></li><li class="page_item page-item-1273"><a href="http://nghiaho.com/?page_id=1273">NAR (Nghia’s Augmented Reality)</a></li><li class="page_item page-item-189"><a href="http://nghiaho.com/?page_id=189">Optical flow on CUDA</a></li><li class="page_item page-item-576"><a href="http://nghiaho.com/?page_id=576">Pose Estimation For Planar Target</a></li><li class="page_item page-item-253"><a href="http://nghiaho.com/?page_id=253">RunSFM</a></li><li class="page_item page-item-1629"><a href="http://nghiaho.com/?page_id=1629">TextureMesh</a></li></ul></li><li class="page_item page-item-50 page_item_has_children"><a href="http://nghiaho.com/?page_id=50">Misc Projects</a><ul class="children"><li class="page_item page-item-242"><a href="http://nghiaho.com/?page_id=242">Distance Transform</a></li><li class="page_item page-item-236"><a href="http://nghiaho.com/?page_id=236">HokuyoGUI</a></li><li class="page_item page-item-227"><a href="http://nghiaho.com/?page_id=227">Register3D_wx</a></li></ul></li><li class="page_item page-item-351 current_page_ancestor current_page_parent"><a href="http://nghiaho.com/?page_id=351">Notes</a></li><li class="page_item page-item-4 page_item_has_children"><a href="http://nghiaho.com/?page_id=4">PhD research</a><ul class="children"><li class="page_item page-item-174"><a href="http://nghiaho.com/?page_id=174">Post PhD work</a></li></ul></li><li class="page_item page-item-46"><a href="http://nghiaho.com/?page_id=46">Publications</a></li><li class="page_item page-item-59 page_item_has_children"><a href="http://nghiaho.com/?page_id=59">Rat Trap</a><ul class="children"><li class="page_item page-item-137"><a href="http://nghiaho.com/?page_id=137">1st Rat Trap</a></li><li class="page_item page-item-155"><a href="http://nghiaho.com/?page_id=155">2nd Rat Trap (FAIL)</a></li></ul></li></ul></div>
+			</nav><!-- #access -->
+	</header><!-- #branding -->
+
+
+	<div id="main">
+
+		<div id="primary">
+			<div id="content" role="main">
+
+				
+					
+<article id="post-1366" class="post-1366 page type-page status-publish hentry">
+	<header class="entry-header">
+		<h1 class="entry-title">Loopy belief propagation, Markov Random Field, stereo vision</h1>
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p>In this tutorial I’ll be discussing how to use Markov Random Fields and Loopy Belief Propagation to solve for the stereo problem. I picked stereo vision because it seemed like a good example to begin with, but the technique is general and can be adapted to other vision problems easily.</p>
+<p>I try my best to make this topic as easy to understand as possible. Most resources on this topic are very heavy on the maths side, which makes it hard for those who aren’t maths buff to grasp. I on the other hand will try to keep the maths to the bare minimum.</p>
+<p>If you have any suggestions for improvement please leave a comment!</p>
+<p><strong>Table of contents</strong></p>
+<ol>
+<li><a href="http://nghiaho.com/?page_id=1366#stereo_vision_problem">Stereo vision problem</a></li>
+<li><a href="http://nghiaho.com/?page_id=1366#MRF">Markov Random Field</a></li>
+<li><a href="http://nghiaho.com/?page_id=1366#LBP">Loopy Belief Propagation</a></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://nghiaho.com/?page_id=1366#sum_product">Sum-Product algorithm</a></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://nghiaho.com/?page_id=1366#max_product">Max-Product algorithm</a></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://nghiaho.com/?page_id=1366#min_sum">Min-Sum algorithm</a></li>
+<li><a href="http://nghiaho.com/?page_id=1366#implementation">Implementation consideration</a></li>
+<li><a href="http://nghiaho.com/?page_id=1366#stereo_results">Stereo Results</a></li>
+<li><a href="http://nghiaho.com/?page_id=1366#download">Download</a></li>
+</ol>
+<h1><a name="stereo_vision_problem"></a>Stereo vision problem</h1>
+<p>The stereo problem asks given a stereo image pair, such as the one below, how can we recover the depth information. I’ve chosen the popular <a href="http://vision.middlebury.edu/MRF/results/">Tsukuba</a> stereo pair commonly used by academics to benchmark stereo algorithms.</p>
+<table border="1">
+<tbody>
+<tr>
+<td>
+<p></p><div id="attachment_1367" style="width: 280px" class="wp-caption aligncenter"><a href="http://nghiaho.com/?attachment_id=1367" rel="attachment wp-att-1367"><img class=" wp-image-1367 " title="tsukuba-imL" src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/tsukuba-imL-300x225.png" alt="" width="270" height="203"></a><p class="wp-caption-text">Left image</p></div></td>
+<td>
+<p></p><div id="attachment_1368" style="width: 280px" class="wp-caption aligncenter"><a href="http://nghiaho.com/?attachment_id=1368" rel="attachment wp-att-1368"><img class=" wp-image-1368 " title="tsukuba-imR" src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/tsukuba-imR-300x225.png" alt="" width="270" height="203"></a><p class="wp-caption-text">Right image</p></div></td>
+</tr>
+</tbody>
+</table>
+<p>The images are taken at slightly different view, similar to our eyes. We know from the <a href="http://en.wikipedia.org/wiki/Parallax">parallax</a> effect that objects closer to us will appear to move quicker than those further away. The same idea applies here. We expect the pixels on the statue to have a larger disparity than those in the background.</p>
+<p>The Tsukuba stereo pairs have been rectified such that each pixel row in the left image is perfectly corresponds to the right. Or in multi-view geometry speak, the scan lines are the epipolar lines. What this means is that a pixel in the left image has a matching correspondence in the right image somewhere along the same row (assuming it is not occluded). This greatly simplifies the problem because pixel matching just becomes a 1D horizontal line search. This is probably the simplest stereo vision setup you can work with.</p>
+<h2>Naive attempt at recovering disparity</h2>
+<p>Having explained the stereo problem, lets attempt to recover the disparity map using simple block matching with the following parameters:</p>
+<ul>
+<li>converted image to greyscale</li>
+<li>16 disparity levels (pixel search range)</li>
+<li>5×5 block</li>
+<li>sum of absolute difference (SAD) scoring</li>
+<li>16 pixel border</li>
+</ul>
+<p>This produces the following disparity map</p>
+<div id="attachment_1558" style="width: 394px" class="wp-caption aligncenter"><a href="http://nghiaho.com/?attachment_id=1558" rel="attachment wp-att-1558"><img class="size-full wp-image-1558" title="tsukuba-disparity1" src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/tsukuba-disparity1.png" alt="" width="384" height="288"></a><p class="wp-caption-text">Disparity map from matching using 5×5 block</p></div>
+<p>As you can see, the disparity map is rather noisy with holes here and there. Kind of ugly really. We can make out the statue, lamp, and maybe some of the background, with pixels closer to us being brighter. Compare this with the ground truth disparity map.</p>
+<div id="attachment_1557" style="width: 394px" class="wp-caption aligncenter"><a href="http://nghiaho.com/?attachment_id=1557" rel="attachment wp-att-1557"><img class="size-full wp-image-1557" title="tsukuba-truedispL" src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/tsukuba-truedispL.png" alt="" width="384" height="288"></a><p class="wp-caption-text">Ground truth disparity map</p></div>
+<p>We could improve the results with some post filtering …. or employ some fancy Markov Random Field (MRF). Lets choose the fancy route!</p>
+<h1><a name="MRF"></a>Markov Random Field</h1>
+<p>The problem with recovering the disparity map just by looking at each individual pixel and finding the best match is that it ignores neighbouring/context/spatial information. We expect pixels near each other to have similar disparity, unless there is a genuine boundary. This is where MRF are useful.</p>
+<p>MRF are undirected graphical models that can encode spatial dependencies. Like all graphical models, they consist of nodes and links. However, unlike some graphical model eg. Bayesian network, they can contain cycles/loops. The stereo problem can be modeled using an MRF as follows for a 3×3 image.</p>
+<div id="attachment_1378" style="width: 464px" class="wp-caption aligncenter"><a href="http://nghiaho.com/?attachment_id=1378" rel="attachment wp-att-1378"><img class=" wp-image-1378" title="MRF" src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/MRF.png" alt="" width="454" height="378"></a><p class="wp-caption-text">MRF for a 3×3 image</p></div>
+<p>The blue nodes are the <em><strong>observed</strong></em> variables, which in our case are the pixel intensity values. The pink nodes are the <em><strong>hidden</strong></em> variables, which represents the disparity values we are trying to find. The hidden variable values are more generally referred to as <strong><em>labels</em></strong>. I’ll use the term ‘labels’ here on for generality.</p>
+<p>The links between each node represents a dependency. So for example, the centre pixel’s hidden node depends ONLY on its 4 neighbouring hidden nodes + the observed node. This rather strong assumption that a node’s state depends only on its immediate neighours is called a Markov assumption. The beauty of this simple assumption is that it allows us to solve for the hidden variables in a reasonably efficient manner.</p>
+<h2>MRF formulation</h2>
+<p>We can formulate the stereo problem in terms of the MRF as the following energy function</p>
+<p style="text-align: center;"><img src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/latex.php" alt="energy(Y,X) = \sum\limits_{i} DataCost\left(y_i, x_i\right) \; + \sum\limits_{j = \mbox{neighbours of i}} SmoothnessCost\left(x_i,x_j\right) " title="energy(Y,X) = \sum\limits_{i} DataCost\left(y_i, x_i\right) \; + \sum\limits_{j = \mbox{neighbours of i}} SmoothnessCost\left(x_i,x_j\right) " class="latex"></p>
+<p style="text-align: left;">The variables Y and X are the observed and hidden node respectively, i is the pixel index, j are the neighbouring nodes of node <img src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/latex(1).php" alt="x_i " title="x_i " class="latex">. Refer to the MRF diagram above.</p>
+<p style="text-align: left;">The energy function basically sums up all the cost at each link given an image Y and some labeling X. The aim is to find a labeling for X (disparity map for stereo) that produces the lowest energy. The energy function contains two functions that we will now look at, DataCost and SmoothnessCost.</p>
+<h2 style="text-align: left;">DataCost</h2>
+<p style="text-align: left;">The DataCost function, or sometimes referred to as the <strong>unary</strong> energy/term/potential, returns the cost/penalty of assigning a label value of <img src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/latex(2).php" alt="x_i" title="x_i" class="latex">&nbsp; to data&nbsp; <img src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/latex(3).php" alt="y_i" title="y_i" class="latex">. This means we want a low cost for good matches and high value otherwise. An obvious choice is the sum of absolute difference mentioned earlier. There’s also sum of square difference (SSD) and a whole bunch of others out there.</p>
+<p style="text-align: left;">Here’s an example of a very simple DataCost function that only compares a single pixel (in practice you’d calculate it over a block). The pseudo code is:</p>
+
+<div class="wp_syntax"><table><tbody><tr><td class="code"><pre class="c" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">function</span> DataCost<span style="color: #009900;">(</span>i<span style="color: #339933;">,</span> label<span style="color: #009900;">)</span>
+    y <span style="color: #339933;">=</span> <span style="color: #009900;">(</span><span style="color: #993333;">int</span><span style="color: #009900;">)</span><span style="color: #009900;">(</span>i <span style="color: #339933;">/</span> imageWidth<span style="color: #009900;">)</span> <span style="color: #808080; font-style: italic;">/* integer round down */</span>
+    x <span style="color: #339933;">=</span> i <span style="color: #339933;">-</span> y<span style="color: #339933;">*</span>imageWidth
+&nbsp;
+    d <span style="color: #339933;">=</span> <span style="color: #000066;">abs</span><span style="color: #009900;">(</span>leftImage<span style="color: #009900;">(</span>x<span style="color: #339933;">,</span>y<span style="color: #009900;">)</span> <span style="color: #339933;">-</span> rightImage<span style="color: #009900;">(</span>x <span style="color: #339933;">-</span> label<span style="color: #339933;">,</span>y<span style="color: #009900;">)</span><span style="color: #009900;">)</span>
+&nbsp;
+&nbsp;   <span style="color: #b1b100;">return</span> d
+end</pre></td></tr></tbody></table></div>
+
+<p>The disparity direction taken on the rightImage is of course dependent on the stereo pair you are given.</p>
+<h2>SmoothnessCost</h2>
+<p>The SmoothnessCost function, or sometimes referred to as the <strong>pairwise</strong> energy/term/potential, enforces smooth labeling across adjacent hidden nodes. To do this we need a function that penalises adjacent labels that&nbsp; are different. Below is a table showing some commonly used cost functions.</p>
+<table border="1">
+<tbody>
+<tr>
+<td><a href="http://nghiaho.com/?attachment_id=1415" rel="attachment wp-att-1415"><img class="aligncenter size-full wp-image-1415" title="SmoothnessCost-Potts" src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/SmoothnessCost-Potts1.png" alt="" width="398" height="250"></a></td>
+<td valign="center"><img src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/latex(4).php" alt="f\left(n\right) = \begin{cases} 0 &amp; \mbox{if } n = 0 \\ \lambda &amp; \mbox{otherwise} \end{cases} " title="f\left(n\right) = \begin{cases} 0 &amp; \mbox{if } n = 0 \\ \lambda &amp; \mbox{otherwise} \end{cases} " class="latex">Also known as the Potts model.</td>
+</tr>
+<tr>
+<td><a href="http://nghiaho.com/?attachment_id=1416" rel="attachment wp-att-1416"><img class="aligncenter size-full wp-image-1416" title="SmoothnessCost-linear" src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/SmoothnessCost-linear.png" alt="" width="398" height="222"></a></td>
+<td><img src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/latex(5).php" alt="f\left(n\right) = \lambda\times\mbox{min}\left(\left|n\right|, K\right)" title="f\left(n\right) = \lambda\times\mbox{min}\left(\left|n\right|, K\right)" class="latex">Truncated linear model.</td>
+</tr>
+<tr>
+<td><a href="http://nghiaho.com/?attachment_id=1417" rel="attachment wp-att-1417"><img class="aligncenter size-full wp-image-1417" title="SmoothnessCost-quadratic" src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/SmoothnessCost-quadratic.png" alt="" width="398" height="222"></a></td>
+<td><img src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/latex(6).php" alt="f\left(n\right) = \lambda\times\mbox{min}\left(n^2, K\right)" title="f\left(n\right) = \lambda\times\mbox{min}\left(n^2, K\right)" class="latex">Truncated quadratic model.</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: left;">The Potts model is a binary penalising function with a single tunable <img src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/latex(7).php" alt="\lambda " title="\lambda " class="latex"> variable. This value controls how much smoothing is applied. The linear and quadratic models have an extra parameter K. K is a truncation value that caps the maximum penalty.</p>
+<p style="text-align: left;">Choosing a suitable DataCost and Smoothness function as well as the parameter seems like a black art, at least to me. The papers I’ve come across don’t talk about how they’ve chosen their parameters. My guess is through experimentation.</p>
+<h1 style="text-align: left;"><a name="LBP"></a>Loopy Belief Propagation</h1>
+<p>So we’ve got the MRF formulation patted down. Lets imagine we’ve gone ahead and chosen a DataCost and SmoothnesCost function as well as some parameters to experiment with. But exactly how do we solve the for the energy function? Can we brute force this and try all combinations? Lets see, for the Tsukuba image we’ve got 384×288 = 110592 pixel and 16 disparity levels, which gives us 16^110592 combinations … hmmm where’s my quantum computer. So finding an <em>exact</em> solution is a no go, but if we can settle for an approximate solution then we’re in luck. The loopy belief propagation (LBP) algorithm is one of many algorithms (Graph cut, ICM …) that can find an approximate solution for a MRF.</p>
+<p>The original belief propagation algorithm was proposed by <a href="https://www.aaai.org/Papers/AAAI/1982/AAAI82-032.pdf">Pearl in 1988</a>&nbsp; for finding exact marginals on <a href="http://en.wikipedia.org/wiki/Tree_%28graph_theory%29">trees</a>. Trees are graphs that contain no loops. It turns out the same algorithm can be applied to general graphs, those that can contain loops, hence the ‘loopy’ in the name. However there is no guarantee of convergence.</p>
+<p>LBP is a message passing algorithm. A node passes a message to an adjacent node only when it has received all incoming messages, excluding the message from the destination node to itself. Below shows an example of a message being passed from <img src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/latex(8).php" alt="x_1" title="x_1" class="latex"> to <img src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/latex(9).php" alt="x_2" title="x_2" class="latex">.</p>
+<div id="attachment_1519" style="width: 298px" class="wp-caption aligncenter"><a href="http://nghiaho.com/?attachment_id=1519" rel="attachment wp-att-1519"><img class="size-full wp-image-1519" title="LBP-message-passing" src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/LBP-message-passing.png" alt="" width="288" height="264"></a><p class="wp-caption-text">Message passing</p></div>
+<p>Node&nbsp; <img src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/latex(8).php" alt="x_1" title="x_1" class="latex">&nbsp; waits for messages from nodes A,B,C,D before sending its message to <img src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/latex(9).php" alt="x_2" title="x_2" class="latex">. As a reminder, it <strong>does not</strong> send the message from <img src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/latex(10).php" alt="x_2 \rightarrow x_1" title="x_2 \rightarrow x_1" class="latex"> back to <img src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/latex(9).php" alt="x_2" title="x_2" class="latex">.</p>
+<p>Lets define the message formally as:</p>
+<p style="text-align: center;"><img src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/latex(11).php" alt="msg_{i \rightarrow j}\left(l\right)" title="msg_{i \rightarrow j}\left(l\right)" class="latex"></p>
+<p>This is read as node i sends a message to node j about label l. It is node i’s belief about node j regarding label l. <strong>Message passing is only performed on the hidden nodes</strong>.</p>
+<p>A complete message includes all possible labels. For example you can think of node i’s message to node j along the lines of:</p>
+<p style="text-align: center;">“hey node j, I believe you have label 0 with cost/probability s0″</p>
+<p style="text-align: center;">“hey node j, I believe you have label 1 with cost/probability s1″</p>
+<p style="text-align: center;">…</p>
+<p style="text-align: center;">“hey node j, I believe you have label N with cost/probability sn”</p>
+<p>Node i maintains all possible beliefs about node j. The choice of using cost/penalty or probabilities is dependent on the choice of the MRF energy formulation.</p>
+<h2>LBP Algorithm</h2>
+<p>Putting together what has been discussed so far, below is one possible implementation of the LBP algorithm for computer vision.</p>
+<pre>function LoopyBeliefPropgation
+    initialise all messages
+
+    for t iterations
+        at every pixel pass messages right
+        at every pixel pass messages left
+        at every pixel pass messages up
+        at every pixel pass messages down
+    end for
+
+    find the best label at every pixel i by calculating belief
+end</pre>
+<p>The first step is an initialisation of the messages. Earlier on I mentioned that a node has to wait for all incoming messages before sending it off. This causes a bit of a chicken and egg problem on a graph with loops because technically every node would be waiting forever and nothing would get sent. To get around this we initialse all the messages to some constant, giving all the nodes the incoming messages they need to proceed. The initialisation constant is usually either 0 or 1 depending on the energy formuation chosen.</p>
+<p>The main part of LBP is iterative. As with most iterative algorithms we can choose to run it for a fixed number of iterations or terminate when the change in energy drops below a threshold, or any other suitable criteria.</p>
+<p>At each iteration messages are passed around the MRF. The choice of the message passing scheme is arbitrary. In this example I’ve chosen right, left, up down, but any other sequence is valid. Different sequences will generally produce different results.</p>
+<p>Once LBP iteration completes we can find the best label at every pixel by calculating its belief.</p>
+<p>We will now look at the three main parts of the LBP algorithm in detail:</p>
+<ol>
+<li><strong>message update</strong></li>
+<li><strong>message initialisation</strong></li>
+<li><strong>belief</strong></li>
+</ol>
+<p>for three different algorithms:</p>
+<ol>
+<li><strong>sum-product</strong></li>
+<li><strong>max-product</strong></li>
+<li><strong>min-sum</strong></li>
+</ol>
+<p>Each of these&nbsp; algorithms will directly minimise the energy function presented earlier on.</p>
+<h2><a name="sum_product"></a>Sum-Product – message update</h2>
+<p>The sum-product is usually the first algorithm people are taught in regards to belief propagation. It is formulated as:</p>
+<p style="text-align: center;"><img src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/latex(12).php" alt="msg_{i \rightarrow j}\left( l \right) = \sum\limits_{l&#39; \in \mbox{all labels}} \left[ \begin{array}{c} exp\left(-DataCost\left(y_i,l&#39;\right)\right) exp\left(-SmoothnessCost\left(l,l&#39;\right)\right) \times \\ \prod\limits_{k=\left( \begin{array}{c} \mbox{neighbours of i} \\ \mbox{except j} \end{array} \right)} msg_{k\rightarrow i}\left(l&#39;\right) \end{array} \right] " title="msg_{i \rightarrow j}\left( l \right) = \sum\limits_{l&#39; \in \mbox{all labels}} \left[ \begin{array}{c} exp\left(-DataCost\left(y_i,l&#39;\right)\right) exp\left(-SmoothnessCost\left(l,l&#39;\right)\right) \times \\ \prod\limits_{k=\left( \begin{array}{c} \mbox{neighbours of i} \\ \mbox{except j} \end{array} \right)} msg_{k\rightarrow i}\left(l&#39;\right) \end{array} \right] " class="latex"></p>
+<p>I’ve written the equation slightly more verbose than what you would typically see in an academic paper. It is split across two lines. As a reminder</p>
+<ul>
+<li><img src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/latex(13).php" alt="msg_{i \rightarrow j}\left( l \right) " title="msg_{i \rightarrow j}\left( l \right) " class="latex"> = message from node i to node j for label l</li>
+<li><img src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/latex(3).php" alt="y_i" title="y_i" class="latex"> = pixel intensity observed at pixel i</li>
+</ul>
+<p><img src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/latex(14).php" alt="\sum\limits_{l&#39; \in \mbox{all labels}} " title="\sum\limits_{l&#39; \in \mbox{all labels}} " class="latex"> means loops over all possible labels (eg. 0 to 15 disparity labels).</p>
+<p>This equation is called sum-product because of the outer summation and inner product.</p>
+<p>The sum-product algorithm is designed to operate on probability quantities. The exp() function converts the DataCost/SmoothnessCost penalty function into a valid probability value between 0 and , where 0 is “bad” and 1 is “good”.</p>
+<p>The inner products (terms inside the outer summation) is the <strong>joint probability</strong> of DataCost, SmoothnessCost and all the incoming messages for a given label l’.&nbsp; While the outer summation is a <strong>marginalisation</strong> over the variable l’.</p>
+<p>Remember that the complete message is a vector of messages eg.</p>
+<p style="text-align: center;"><img src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/latex(15).php" alt="msg_{i \rightarrow j} = \left[ \begin{array}{c} msg_{i \rightarrow j}\left(0\right) \\ msg_{i \rightarrow j}\left(1\right) \\ msg_{i \rightarrow j}\left(2\right) \\ ... \end{array} \right] " title="msg_{i \rightarrow j} = \left[ \begin{array}{c} msg_{i \rightarrow j}\left(0\right) \\ msg_{i \rightarrow j}\left(1\right) \\ msg_{i \rightarrow j}\left(2\right) \\ ... \end{array} \right] " class="latex"></p>
+<p>Just to clarify, when I write <img src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/latex(16).php" alt="msg_{i \rightarrow j} " title="msg_{i \rightarrow j} " class="latex">&nbsp; <strong>without the indexing</strong> it means the complete message vector.</p>
+<p>You might have noticed that for every label l we have to do a summation over l’. This operation is quadratic in complexity O(L^2), two for loops basically. This is important to keep in mind because increasing the number of labels will incur a quadratic penalty.</p>
+<h2>Sum-Product – normalisation</h2>
+<p>One issue arising from continuously multiplying probabilities is that it will tend towards zero and eventually hit floating point limits. To avoid this, the complete message vector needs to be normalised before sending:</p>
+<p style="text-align: center;"><img src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/latex(17).php" alt="msg_{i \rightarrow j} = \frac{msg_{i \rightarrow j}}{\sum\limits_{l}msg_{i \rightarrow j}\left(l\right)} " title="msg_{i \rightarrow j} = \frac{msg_{i \rightarrow j}}{\sum\limits_{l}msg_{i \rightarrow j}\left(l\right)} " class="latex"></p>
+<h2>Sum-Product – initialisation</h2>
+<p>Since we are dealing with probabilities all the nodes have their messages initialised to 1 before running LBP.</p>
+<h2>Sum-Product – belief</h2>
+<p>The belief at any given node is a product of all incoming messages:</p>
+<p style="text-align: center;"><img src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/latex(18).php" alt="Belief \left(x_i = l\right) = exp\left(-DataCost\left(y_i, l\right)\right) \times \prod\limits_{k=\mbox{neighbours of i}} msg_{k \rightarrow i}\left(l\right) " title="Belief \left(x_i = l\right) = exp\left(-DataCost\left(y_i, l\right)\right) \times \prod\limits_{k=\mbox{neighbours of i}} msg_{k \rightarrow i}\left(l\right) " class="latex"></p>
+<p>This is read as the belief that node i takes on label l. To find the best label you would go through all possible labels and see which one has the highest belief.</p>
+<h2><a name="max_product"></a>Max-Product – message update</h2>
+<p>The sum-product finds the best label individually at each node. But this may not actually be the best labeling as a whole! It might sound a bit counter intuitive, but here is a simple example using two binary variables x,y that illustrates this. Lets say x,y has the following probability table:</p>
+<table style="border: solid 0px; width: auto;">
+<tbody>
+<tr>
+<td style="border: solid 1px; text-align: center;">P(x,y)</td>
+<td style="border: solid 1px; text-align: center;">x=0</td>
+<td style="border: 1px solid; text-align: center;">x=1</td>
+<td style="border: 0px;"></td>
+</tr>
+<tr>
+<td style="border: solid 1px; text-align: center;">y=0</td>
+<td style="border: solid 1px; text-align: center;">0.5</td>
+<td style="border: 1px solid; text-align: center;">0.4</td>
+<td style="border: 0px;">P(y=0) = 0.9</td>
+</tr>
+<tr>
+<td style="border: solid 1px; text-align: center;">y=1</td>
+<td style="border: solid 1px; text-align: center;">0.1</td>
+<td style="border: solid 1px; text-align: center;">0.3</td>
+<td style="border: 0px; text-align: center;">P(y=1) = 0.4</td>
+</tr>
+<tr>
+<td style="border: 0px; text-align: center;"></td>
+<td style="border: 0px; text-align: center;">P(x=0) = 0.6</td>
+<td style="border: 0px; text-align: center;">P(x=1) = 0.7</td>
+<td style="border: 0px none; text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: left;">The marginals for each variable are on the outer edge of the table. If we were to pick the best configuration using only the individual marginals then we would pick x=1 (0.7) and y=0 (0.9), giving a probability of P(x=1, y=0) = 0.4.&nbsp; But the best configuration is when P(x=0, y=0) = 0.5. What we are really interested in is the max joint probability. This type of problem arises a lot in <strong><em>maximum a posteriori </em>(MAP) assignment</strong> problems, where we want to find the <strong>BEST</strong> assignment as a whole.&nbsp; The max-product algorithm addresses this issue with a slight modification to the sum-product message update equation:</p>
+<p style="text-align: center;"><img src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/latex(19).php" alt="msg_{i \rightarrow j}\left( l \right) = \max\limits_{l&#39; \in \mbox{all labels}} \left[ \begin{array}{c} exp\left(-DataCost\left(y_i,l&#39;\right)\right) exp\left(-SmoothnessCost\left(l,l&#39;\right)\right) \times \\ \prod\limits_{k=\left(\begin{array}{c} \mbox{neighours of i} \\ \mbox{except j} \end{array} \right)} msg_{k\rightarrow i}\left(l&#39;\right) \end{array} \right] " title="msg_{i \rightarrow j}\left( l \right) = \max\limits_{l&#39; \in \mbox{all labels}} \left[ \begin{array}{c} exp\left(-DataCost\left(y_i,l&#39;\right)\right) exp\left(-SmoothnessCost\left(l,l&#39;\right)\right) \times \\ \prod\limits_{k=\left(\begin{array}{c} \mbox{neighours of i} \\ \mbox{except j} \end{array} \right)} msg_{k\rightarrow i}\left(l&#39;\right) \end{array} \right] " class="latex"></p>
+<p>So instead of summing over all possible labels l’ (marginalisation) it keeps track of the largest marginal probability.</p>
+<p>The initialisation, normalisation and belief calculation remains the same. The belief at each node is the <strong>max-marginal</strong>.</p>
+<p>One important assumption of the algorithm is that the max-marginal values are unique at each node. When there are ties then it can complicate things. You can break ties by picking one randomly but this will no longer guarantee a MAP assignment. Or you can resolve systematically using something call <em>backtracking</em>, which I won’t dive into because I’m not familiar with it.</p>
+<h2><a name="min_sum"></a>Min-Sum – message update</h2>
+<p>The min-sum algorithm is similar to max-product, in that it finds the max-marginals at each node, but operates in log-space. The min-sum update is given as:</p>
+<p style="text-align: center;"><img src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/latex(20).php" alt="msg_{i \rightarrow j}\left( l \right) = \min\limits_{l&#39; \in \mbox{all labels}} \left[ \begin{array}{c} DataCost\left(y_i,l&#39;\right) + SmoothnessCost\left(l,l&#39;\right) + \\ \sum\limits_{k=\mbox{neighours of i except j}} msg_{k\rightarrow i}\left(l&#39;\right) \end{array} \right] " title="msg_{i \rightarrow j}\left( l \right) = \min\limits_{l&#39; \in \mbox{all labels}} \left[ \begin{array}{c} DataCost\left(y_i,l&#39;\right) + SmoothnessCost\left(l,l&#39;\right) + \\ \sum\limits_{k=\mbox{neighours of i except j}} msg_{k\rightarrow i}\left(l&#39;\right) \end{array} \right] " class="latex"></p>
+<p>Min-sum is a minimisation problem, because we are trying to find the lowest cost. If we include minus signs on DataCost and SmoothnessCost then it would be a max-sum.</p>
+<h2>Min-Sum -initialisation</h2>
+<p>All the messages are initialised to 0.</p>
+<h2>Min-Sum – normalisation</h2>
+<p>Normalisation is less straight forward in log-space, being</p>
+<p style="text-align: center;"><img src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/latex(21).php" alt="A = log\sum\limits_{l} exp\left(msg_{i \rightarrow j}\left(l \right) \right) " title="A = log\sum\limits_{l} exp\left(msg_{i \rightarrow j}\left(l \right) \right) " class="latex"></p>
+<p style="text-align: center;"><img src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/latex(22).php" alt="msg_{i \rightarrow j} = msg_{i \rightarrow j} - A " title="msg_{i \rightarrow j} = msg_{i \rightarrow j} - A " class="latex"></p>
+<p style="text-align: left;">In practice there’s a good chance you can skip the nornamlisation step. Min-sum operates in log-space so it’s harder to reach underflow/overflow limits, since it’s only doing additions. This is true if the DataCost and Smoothness function returns values that aren’t too large.</p>
+<h2>Min-Sum – belief</h2>
+<p>The belief for min-sum is</p>
+<p style="text-align: center;"><img src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/latex(23).php" alt="Belief \left(x_i = l\right) = DataCost\left(y_i, l\right) + \sum\limits_{k=neighbours of x_i} msg_{k \rightarrow i}\left(l\right) " title="Belief \left(x_i = l\right) = DataCost\left(y_i, l\right) + \sum\limits_{k=neighbours of x_i} msg_{k \rightarrow i}\left(l\right) " class="latex"></p>
+<p>The term <em>belief</em>&nbsp; here might be a bit misleading. We are actually looking for the belief with the smallest value, a better name might simply be <em>cost</em> to avoid confusion.</p>
+<h1><a name="implementation"></a>Implementation consideration</h1>
+<p>If possible, use the min-sum algorithm because it’s the most computationally efficient out of the three algorithms mentioned. It doesn’t have any expensive exp() functions and uses mainly addition operations. It is also easy to implement using only integer data types, which may give some performance boost.</p>
+<p>If you need to implement the sum-product for whatever reason then you will probably need to introduce a scaling constant when calculating exp() to avoid underflow eg. exp(-DataCost(…)*scaling) * exp(-SmoothnessCost(..)*scaling), where scaling is a value between 0 and 1.</p>
+<h1><a name="stereo_results"></a>Stereo results</h1>
+<p>Alright, we’ve gone through a fair bit of theory but now lets revisit the stereo vision problem! We’ll use the Tsukuba images again and run belief propagation with the following parameters:</p>
+<ul>
+<li>converted image to greyscale</li>
+<li>5×5 block</li>
+<li>16 disparity labels (ranging from 0 to 15)</li>
+<li>DataCost using <strong>linear model</strong></li>
+<li>SmoothnessCost using <strong>truncated linear model</strong>, truncated at 2, with <img src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/latex(24).php" alt="\lambda=20" title="\lambda=20" class="latex"></li>
+<li>Min-sum optimisation algorithm</li>
+<li>40 iterations of loopy belief propagation</li>
+</ul>
+<p>This gives us the following disparity map</p>
+<div id="attachment_1555" style="width: 394px" class="wp-caption aligncenter"><a href="http://nghiaho.com/?attachment_id=1555" rel="attachment wp-att-1555"><img class="size-full wp-image-1555" title="Tsukuba-LBP" src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/Tsukuba-LBP.png" alt="" width="384" height="288"></a><p class="wp-caption-text">Disparity map using loopy belief propagation</p></div>
+<p>which is a much nicer disparity map than on our first attempt! The disparities are much smoother. We can make out the individual objects much better than before, especially the camera on the tripod in the background. Below shows a plot of the energy for each iteration.</p>
+<p>There’s a slight increase in energy on the 10th iteration, but after that it monotonically decreases where it flattens off around the 25th iteration. Remember that the LBP algorithm is not guarantee to converge, which means there’s no guarantee that the energy will decrease at every iteration either.</p>
+<div id="attachment_1583" style="width: 586px" class="wp-caption aligncenter"><a href="http://nghiaho.com/?attachment_id=1583" rel="attachment wp-att-1583"><img class=" wp-image-1583 " title="LBP_convergence_graph" src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/LBP_convergence_graph2.png" alt="" width="576" height="346"></a><p class="wp-caption-text">LBP convergence graph</p></div>
+<p>What’s interesting to compare is the energy obtained from LBP and that from the ground truth image. Using the same energy function for generating the disparity map, the Tsukuba ground truth returns an energy of 717,701. This is actually higher than the final energy returned from LBP. So what can we say from this? This suggests our energy formulation doesn’t quite accurately model real life, in our case its quite an over simplification. The more recent algorithms take occlusion, and possibly more, into account. Have a look at <a href="http://vision.middlebury.edu/stereo/">http://vision.middlebury.edu/stereo</a> for the latest and greatest in stereo algorithms.<br>
+<a name="download"></a></p>
+<h1>Download</h1>
+<p>You can download my implementation of LBP here. It’ll generate the same results you see on this site.</p>
+<p style="text-align: left;"><a href="http://nghiaho.com/uploads/code/LoopyBP.tar.bz2">LoopyBP.tar.bz2</a></p>
+<p>It requires OpenCV 2.x installed.</p>
+<p>On Linux, type <strong>make</strong> to compile and run it via <strong>bin/Release/LoopyBP</strong>. It’ll read the two Tsukuba image files and output the disparity image as <strong>output.png</strong>. I’ve also included the ground truth image for reference.</p>
+<h1>License</h1>
+<p>The code is released under the simplified BSD license, see LICENSE.txt inside the package for more information.</p>
+<h1>Useful resources</h1>
+<p>Here are some resources that I found useful in creating this tutorial.</p>
+<ul>
+<li>General background knowledge on probabilistic graphical models was learnt from Coursera’s PGM class. This was a very challenging but rewarding course. <a href="https://www.coursera.org/course/pgm">https://www.coursera.org/course/pgm</a></li>
+<li>Diagram showing basic MRF model for image processing with some general description, <a href="http://classes.soe.ucsc.edu/cmps290c/Spring04/proj/BPApp.pdf">http://classes.soe.ucsc.edu/cmps290c/Spring04/proj/BPApp.pdf</a></li>
+<li>Parameters for the Tsukuba pair were obtained from <a href="http://vision.middlebury.edu/MRF/results/tsukuba/index.html">http://vision.middlebury.edu/MRF/results/tsukuba/index.html</a></li>
+<li>Good and concise reference on belief propagation, <a href="https://github.com/daviddoria/Tutorials/blob/master/BeliefPropagation/BeliefPropagation.pdf?raw=true">https://github.com/daviddoria/Tutorials/blob/master/BeliefPropagation/BeliefPropagation.pdf?raw=true</a></li>
+<li>Slides explaining subtleness of max-product vs sum-product, <a href="http://www.cedar.buffalo.edu/~srihari/CSE574/Chap8/Ch8-GraphicalModelInference/Ch8.3.3-Max-SumAlg.pdf">http://www.cedar.buffalo.edu/~srihari/CSE574/Chap8/Ch8-GraphicalModelInference/Ch8.3.3-Max-SumAlg.pdf</a></li>
+</ul>
+			</div><!-- .entry-content -->
+	<footer class="entry-meta">
+			</footer><!-- .entry-meta -->
+</article><!-- #post-1366 -->
+
+						<div id="comments">
+	
+	
+			<h2 id="comments-title">
+			49 thoughts on “<span>Loopy belief propagation, Markov Random Field, stereo vision</span>”		</h2>
+
+		
+		<ol class="commentlist">
+				<li class="comment even thread-even depth-1" id="li-comment-896">
+		<article id="comment-896" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn"><a href="http://jbarandiaran.googlepages.com/" rel="external nofollow" class="url">Javier</a></span> on <a href="http://nghiaho.com/?page_id=1366#comment-896"><time datetime="2012-07-10T16:38:41+00:00">July 10, 2012 at 4:38 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Great tutorial, thanks!</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=896#respond" onclick="return addComment.moveForm(&quot;comment-896&quot;, &quot;896&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-nghiaho12 bypostauthor odd alt depth-2" id="li-comment-898">
+		<article id="comment-898" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">nghiaho12</span> on <a href="http://nghiaho.com/?page_id=1366#comment-898"><time datetime="2012-07-11T05:08:40+00:00">July 11, 2012 at 5:08 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Thanks <img src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/icon_smile.gif" alt=":)" class="wp-smiley"> </p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=898#respond" onclick="return addComment.moveForm(&quot;comment-898&quot;, &quot;898&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-903">
+		<article id="comment-903" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">Tom</span> on <a href="http://nghiaho.com/?page_id=1366#comment-903"><time datetime="2012-07-13T01:22:23+00:00">July 13, 2012 at 1:22 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Nice tutorial !<br>
+One clarification : For your data function, we have<br>
+function DataCost(i, label)<br>
+    y = i / imageWidth<br>
+    x = i – y*imageWidth<br>
+…….<br>
+Clearly, while calculating x, if we replace “y” with its definition from above, we get<br>
+x = i – i = 0<br>
+Was there a typo somewhere ??<br>
+Also, this is more of a conceptual question : as far as i knw, a disparity image is just the “difference” of the left and right images. Now, I am wondering how the disparity image is almost similar to the actual image<br>
+thanks !</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=903#respond" onclick="return addComment.moveForm(&quot;comment-903&quot;, &quot;903&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-nghiaho12 bypostauthor odd alt depth-2" id="li-comment-904">
+		<article id="comment-904" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">nghiaho12</span> on <a href="http://nghiaho.com/?page_id=1366#comment-904"><time datetime="2012-07-13T06:54:29+00:00">July 13, 2012 at 6:54 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>The formula is correct, but I forgot to mention they’re integer operations. It should be</p>
+<p>y = (int)(i / imageWidth)</p>
+<p>For example, if we have an image that is 640×480, and look at the pixel at (200,100), then </p>
+<p>    i = 100*imageWidth + 200<br>
+    i = 100*640 + 200<br>
+    i = 64200</p>
+<p>Using the equation to decompose back to (x,y) we get</p>
+<p>y = (int)(64200/640) = 100 (rounded down)<br>
+x = 64200 – 10*640 = 200</p>
+<p>which confirms it is correct.</p>
+<p>The disparity image indicates the ‘depth’ of each pixel. If you were to manually do it by looking at each pixel in the left image and finding where it appears in the right image, find the absolute difference in x values, you’ll get the disparity map. It’s basically like a 3D image, that’s why it looks somewhat similar to the original image.</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=904#respond" onclick="return addComment.moveForm(&quot;comment-904&quot;, &quot;904&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="post pingback">
+		<p>Pingback: <a href="http://zhechen.wordpress.com/2012/10/23/loopy-belief-propagation/" rel="external nofollow" class="url">loopy belief propagation | Shirley's Blog</a></p>
+	</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-17374">
+		<article id="comment-17374" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">Moritz</span> on <a href="http://nghiaho.com/?page_id=1366#comment-17374"><time datetime="2013-04-10T10:30:22+00:00">April 10, 2013 at 10:30 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Hi,</p>
+<p>nice description of LBP!</p>
+<p>One minor issue though:<br>
+In section “Min-Sum – normalisation”, the equation for A seems to be incorrect:<br>
+I think it should be A = – log( SUM(  exp( – msg) ) )<br>
+That’s the equivalent of “Sum-Product – normalisation” in log-space.</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=17374#respond" onclick="return addComment.moveForm(&quot;comment-17374&quot;, &quot;17374&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-nghiaho12 bypostauthor odd alt depth-2" id="li-comment-17428">
+		<article id="comment-17428" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">nghiaho12</span> on <a href="http://nghiaho.com/?page_id=1366#comment-17428"><time datetime="2013-04-11T04:53:49+00:00">April 11, 2013 at 4:53 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>This is how I did it in my head:</p>
+<p>Let M = [0.1 0.2 0.3], a message vector that needs to be normalised. Assume M is in normal probability space eg. [0,1], then</p>
+<p>M_norm = M / sum(M) —&gt; [0.16667   0.33333   0.50000]</p>
+<p>Now let’s see if we can derive the same result above in log space. </p>
+<p>B = log(M) —&gt; [-2.3026  -1.6094  -1.2040]<br>
+A = log(sum(exp(B))) —&gt; -0.51083<br>
+B_norm = (B – A) —&gt; [-1.79176  -1.09861  -0.69315]</p>
+<p>Verifying the results.<br>
+exp(B_norm) —&gt; [0.16667   0.33333   0.50000]</p>
+<p>Same as M_norm.<br>
+which is the same as M_norm.</p>
+<p>Did I do something wrong?</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=17428#respond" onclick="return addComment.moveForm(&quot;comment-17428&quot;, &quot;17428&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-30184">
+		<article id="comment-30184" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">Viky</span> on <a href="http://nghiaho.com/?page_id=1366#comment-30184"><time datetime="2013-08-30T15:05:15+00:00">August 30, 2013 at 3:05 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Hi, </p>
+<p>Nice tutorial! It helps me a lot.</p>
+<p>A small concern: for your data term.</p>
+<p>function DataCost(i, label)<br>
+    d = abs(leftImage(x,y) – rightImage(x – label),y)<br>
+end</p>
+<p>I just do not quite understand why there is a ”-lable” in “rightImage(x – label,y)”,</p>
+<p>Can you simply explain?</p>
+<p>Many thanks</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=30184#respond" onclick="return addComment.moveForm(&quot;comment-30184&quot;, &quot;30184&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-nghiaho12 bypostauthor odd alt depth-2" id="li-comment-30200">
+		<article id="comment-30200" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">nghiaho12</span> on <a href="http://nghiaho.com/?page_id=1366#comment-30200"><time datetime="2013-08-30T18:53:28+00:00">August 30, 2013 at 6:53 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Hi,</p>
+<p>You can think of the variable “label” as “disparity in pixels”. This cost function was designed for the stereo image I used in this tutorial.<br>
+I’m basically doing, for a given pixel in the left image at (x,y) look at other possible pixels in the right image along the x-axis, in the range [x - MAX_DISPARITY, x].<br>
+I’m exploiting the fact that a pixel in the left image cannot have a matching pixel greater than position ‘x’ in the right image.</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=30200#respond" onclick="return addComment.moveForm(&quot;comment-30200&quot;, &quot;30200&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment even depth-3" id="li-comment-30206">
+		<article id="comment-30206" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">Viky</span> on <a href="http://nghiaho.com/?page_id=1366#comment-30206"><time datetime="2013-08-30T21:02:48+00:00">August 30, 2013 at 9:02 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Thanks very much for your help. I will read your code and the tutorial carefully. It really helps. Thanks  a lot for sharing.</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=30206#respond" onclick="return addComment.moveForm(&quot;comment-30206&quot;, &quot;30206&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-30288">
+		<article id="comment-30288" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">Ricky</span> on <a href="http://nghiaho.com/?page_id=1366#comment-30288"><time datetime="2013-08-31T16:37:54+00:00">August 31, 2013 at 4:37 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Hello,<br>
+very nice tutorial.<br>
+I was trying to implement the code in MATLAB.<br>
+You have not done any normalisation, so most of the values are reaching 255 after first iteration.<br>
+what should be the normalisation.<br>
+Should there be any data truncation for data cost.</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=30288#respond" onclick="return addComment.moveForm(&quot;comment-30288&quot;, &quot;30288&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-nghiaho12 bypostauthor even depth-2" id="li-comment-30293">
+		<article id="comment-30293" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">nghiaho12</span> on <a href="http://nghiaho.com/?page_id=1366#comment-30293"><time datetime="2013-08-31T18:38:19+00:00">August 31, 2013 at 6:38 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>You shouldn’t need any normalisation. If you’re seeing 255 in the disparity map then something is wrong because I’ve set the limit to 16.</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=30293#respond" onclick="return addComment.moveForm(&quot;comment-30293&quot;, &quot;30293&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment odd alt depth-3" id="li-comment-30312">
+		<article id="comment-30312" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">Ricky</span> on <a href="http://nghiaho.com/?page_id=1366#comment-30312"><time datetime="2013-09-01T00:57:13+00:00">September 1, 2013 at 12:57 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Hello,<br>
+Lets say the direction is Right,<br>
+then the message mrf.grid(y,x).msg(2,label) increases as x increases in the right direction, the message finally reach 255.<br>
+For finding the MAP assignment, cost should adds up to greater than 255,<br>
+but since cost is uint8, it also remain 255.<br>
+Please help</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=30312#respond" onclick="return addComment.moveForm(&quot;comment-30312&quot;, &quot;30312&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-nghiaho12 bypostauthor even depth-4" id="li-comment-30313">
+		<article id="comment-30313" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">nghiaho12</span> on <a href="http://nghiaho.com/?page_id=1366#comment-30313"><time datetime="2013-09-01T01:08:46+00:00">September 1, 2013 at 1:08 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>This is possible. That’s why you see in my code I use an unsigned int in the Pixel struct.</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=30313#respond" onclick="return addComment.moveForm(&quot;comment-30313&quot;, &quot;30313&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-31318">
+		<article id="comment-31318" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">Viky</span> on <a href="http://nghiaho.com/?page_id=1366#comment-31318"><time datetime="2013-09-09T19:26:42+00:00">September 9, 2013 at 7:26 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Hi Nghia,<br>
+I just noticed that, to find the minimum cost of assigning two labels (say label size is L) to two adjacent grids, we need to do O(L^2) message updates, right? It’s computationally expensive.</p>
+<p>I also noticed that someone has new methods like min-convolution that can reduce the complexity to o(L), are you familiar with that? I hope can talk with you further.</p>
+<p>Sincerely,<br>
+Viky</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=31318#respond" onclick="return addComment.moveForm(&quot;comment-31318&quot;, &quot;31318&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-nghiaho12 bypostauthor even depth-2" id="li-comment-31354">
+		<article id="comment-31354" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">nghiaho12</span> on <a href="http://nghiaho.com/?page_id=1366#comment-31354"><time datetime="2013-09-10T06:39:22+00:00">September 10, 2013 at 6:39 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Yep it’s O(L^2), if you look in my code in the function SendMsg, there’s 2 nested for loops over the number of labels (L). It’s only expensive if you have an expensive cost function. For my stereo example the cost is extremely cheap, so the computation cost is irrelevant. But if you have an expensive cost function it might be possible to cache the results if you have enough memory.</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=31354#respond" onclick="return addComment.moveForm(&quot;comment-31354&quot;, &quot;31354&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-nghiaho12 bypostauthor odd alt depth-2" id="li-comment-31355">
+		<article id="comment-31355" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">nghiaho12</span> on <a href="http://nghiaho.com/?page_id=1366#comment-31355"><time datetime="2013-09-10T06:40:03+00:00">September 10, 2013 at 6:40 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>I’m not familiar with the newer methods. I haven’t put more time into belief propagation than what is already presented in my blog.</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=31355#respond" onclick="return addComment.moveForm(&quot;comment-31355&quot;, &quot;31355&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-31369">
+		<article id="comment-31369" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">Viky</span> on <a href="http://nghiaho.com/?page_id=1366#comment-31369"><time datetime="2013-09-10T13:52:41+00:00">September 10, 2013 at 1:52 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Thank you very much for your reply~</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=31369#respond" onclick="return addComment.moveForm(&quot;comment-31369&quot;, &quot;31369&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-77507">
+		<article id="comment-77507" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">xu xu</span> on <a href="http://nghiaho.com/?page_id=1366#comment-77507"><time datetime="2014-02-09T03:44:23+00:00">February 9, 2014 at 3:44 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>several formulas can not be seen in website, would you email a pdf version for me? thank you!</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=77507#respond" onclick="return addComment.moveForm(&quot;comment-77507&quot;, &quot;77507&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-nghiaho12 bypostauthor even depth-2" id="li-comment-77524">
+		<article id="comment-77524" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">nghiaho12</span> on <a href="http://nghiaho.com/?page_id=1366#comment-77524"><time datetime="2014-02-09T06:18:21+00:00">February 9, 2014 at 6:18 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Try this <a href="http://nghiaho.com/uploads/loopyBP.pdf" rel="nofollow">http://nghiaho.com/uploads/loopyBP.pdf</a></p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=77524#respond" onclick="return addComment.moveForm(&quot;comment-77524&quot;, &quot;77524&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-98941">
+		<article id="comment-98941" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">Ron Bjork</span> on <a href="http://nghiaho.com/?page_id=1366#comment-98941"><time datetime="2014-03-21T14:11:41+00:00">March 21, 2014 at 2:11 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>I’ve taken the coursera PGM and Artificial Vision courses.  Have you looked at the using the FastPD MRF for this or other computer vision tasks. I appears that much of the development happened at Ecole Centrale Paris:<br>
+<a href="http://vision.mas.ecp.fr/" rel="nofollow">http://vision.mas.ecp.fr/</a><br>
+Code: <a href="http://www.csd.uoc.gr/~komod/FastPD/" rel="nofollow">http://www.csd.uoc.gr/~komod/FastPD/</a></p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=98941#respond" onclick="return addComment.moveForm(&quot;comment-98941&quot;, &quot;98941&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-nghiaho12 bypostauthor even depth-2" id="li-comment-99005">
+		<article id="comment-99005" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">nghiaho12</span> on <a href="http://nghiaho.com/?page_id=1366#comment-99005"><time datetime="2014-03-21T17:42:23+00:00">March 21, 2014 at 5:42 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>I haven’t investigate beyond the basic MRF presented in the PGM course. My interest for them kind of just stopped there.</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=99005#respond" onclick="return addComment.moveForm(&quot;comment-99005&quot;, &quot;99005&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-98978">
+		<article id="comment-98978" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">Ron Bjork</span> on <a href="http://nghiaho.com/?page_id=1366#comment-98978"><time datetime="2014-03-21T16:08:19+00:00">March 21, 2014 at 4:08 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>DD-MRF appear to be a better algorithm for stereo matching.</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=98978#respond" onclick="return addComment.moveForm(&quot;comment-98978&quot;, &quot;98978&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-108598">
+		<article id="comment-108598" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">Seth</span> on <a href="http://nghiaho.com/?page_id=1366#comment-108598"><time datetime="2014-04-14T09:43:49+00:00">April 14, 2014 at 9:43 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Awesome post. I have one single doubt in your code<br>
+In the function SendMsg, after computing the min for all the labels you have a for loop which goes like this</p>
+<p>for(int i=0; i &lt; LABELS; i++) {<br>
+        switch(direction) {<br>
+            case LEFT:<br>
+            mrf.grid[y*width + x-1].msg[RIGHT][i] = new_msg[i];<br>
+            break;</p>
+<p>            case RIGHT:<br>
+            mrf.grid[y*width + x+1].msg[LEFT][i] = new_msg[i];<br>
+            break;</p>
+<p>            case UP:<br>
+            mrf.grid[(y-1)*width + x].msg[DOWN][i] = new_msg[i];<br>
+            break;</p>
+<p>            case DOWN:<br>
+            mrf.grid[(y+1)*width + x].msg[UP][i] = new_msg[i];<br>
+            break;</p>
+<p>            default:<br>
+            assert(0);<br>
+            break;<br>
+        }<br>
+    }</p>
+<p>I am not sure as to why have do you update the array of the opposite direction<br>
+for example if the parameter to the function is RIGHT,<br>
+this will update values for LEFT?<br>
+I am confused.</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=108598#respond" onclick="return addComment.moveForm(&quot;comment-108598&quot;, &quot;108598&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-nghiaho12 bypostauthor odd alt depth-2" id="li-comment-108766">
+		<article id="comment-108766" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">nghiaho12</span> on <a href="http://nghiaho.com/?page_id=1366#comment-108766"><time datetime="2014-04-14T19:23:27+00:00">April 14, 2014 at 7:23 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>It is a little confusing. But this is how it works. Say I am at pixel (100,100) and I want to send my message LEFT to pixel (99,100). Now pixel (99,100) has 5 message boxes. In this case it puts the message received from (100,100) into its “RIGHT” message box, because (100,100) is to the right of it.</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=108766#respond" onclick="return addComment.moveForm(&quot;comment-108766&quot;, &quot;108766&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-109753">
+		<article id="comment-109753" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">super_Seth</span> on <a href="http://nghiaho.com/?page_id=1366#comment-109753"><time datetime="2014-04-17T22:32:45+00:00">April 17, 2014 at 10:32 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Hi,<br>
+Thanks again for the awesome tutorial. Can you explain your MAP function? It’s confusing as to what are you doing there? I am not sure what did you perfrom after all the messages have been passed, how do you reduce your energy?</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=109753#respond" onclick="return addComment.moveForm(&quot;comment-109753&quot;, &quot;109753&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-nghiaho12 bypostauthor odd alt depth-2" id="li-comment-109794">
+		<article id="comment-109794" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">nghiaho12</span> on <a href="http://nghiaho.com/?page_id=1366#comment-109794"><time datetime="2014-04-18T01:25:20+00:00">April 18, 2014 at 1:25 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>The MAP finds the “best” label for the given node according to the energy function. Have a look at the C++ code for the MAP function. It might be simpler to read than the maths equation.</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=109794#respond" onclick="return addComment.moveForm(&quot;comment-109794&quot;, &quot;109794&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-109894">
+		<article id="comment-109894" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">Seth</span> on <a href="http://nghiaho.com/?page_id=1366#comment-109894"><time datetime="2014-04-18T08:57:40+00:00">April 18, 2014 at 8:57 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Why have you considered the SmoothnesCost in the MAP function? The formula for Belief does not include any such thing.</p>
+<p>            if(x-1 &gt;= 0)     energy += SmoothnessCost(cur_label, mrf.grid[y*width+x-1].best_assignment);<br>
+            if(x+1 = 0)     energy += SmoothnessCost(cur_label, mrf.grid[(y-1)*width+x].best_assignment);<br>
+            if(y+1 &lt; height) energy += SmoothnessCost(cur_label, mrf.grid[(y+1)*width+x].best_assignment);</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=109894#respond" onclick="return addComment.moveForm(&quot;comment-109894&quot;, &quot;109894&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-nghiaho12 bypostauthor odd alt depth-2" id="li-comment-109933">
+		<article id="comment-109933" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">nghiaho12</span> on <a href="http://nghiaho.com/?page_id=1366#comment-109933"><time datetime="2014-04-18T10:02:54+00:00">April 18, 2014 at 10:02 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>The comment for the MAP function is </p>
+<p>// Finds the MAP assignment as well as calculating the energy</p>
+<p>So it calculates the MAP and the energy, separately.</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=109933#respond" onclick="return addComment.moveForm(&quot;comment-109933&quot;, &quot;109933&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-148099">
+		<article id="comment-148099" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">Yanan Qian</span> on <a href="http://nghiaho.com/?page_id=1366#comment-148099"><time datetime="2014-06-23T01:56:17+00:00">June 23, 2014 at 1:56 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Some of the equations which are images can not be shown, really want to read this article…</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=148099#respond" onclick="return addComment.moveForm(&quot;comment-148099&quot;, &quot;148099&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-nghiaho12 bypostauthor odd alt depth-2" id="li-comment-148131">
+		<article id="comment-148131" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">nghiaho12</span> on <a href="http://nghiaho.com/?page_id=1366#comment-148131"><time datetime="2014-06-23T02:56:13+00:00">June 23, 2014 at 2:56 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>There’s a PDF link</p>
+<p><a href="http://nghiaho.com/uploads/loopyBP.pdf" rel="nofollow">http://nghiaho.com/uploads/loopyBP.pdf</a></p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=148131#respond" onclick="return addComment.moveForm(&quot;comment-148131&quot;, &quot;148131&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-225988">
+		<article id="comment-225988" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">lucy</span> on <a href="http://nghiaho.com/?page_id=1366#comment-225988"><time datetime="2014-10-07T04:53:45+00:00">October 7, 2014 at 4:53 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Thanks great explanation.<br>
+I found the CPP code really good and I want to run it in java. Do you have a java implementation of it? Or recommend an easy way to use it in java?</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=225988#respond" onclick="return addComment.moveForm(&quot;comment-225988&quot;, &quot;225988&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-nghiaho12 bypostauthor odd alt depth-2" id="li-comment-226671">
+		<article id="comment-226671" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">nghiaho12</span> on <a href="http://nghiaho.com/?page_id=1366#comment-226671"><time datetime="2014-10-07T22:13:20+00:00">October 7, 2014 at 10:13 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>I don’t have a java implementation, nor do I use it. So unfortunately you’ll have to translate it yourself line by line <img src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/icon_neutral.gif" alt=":|" class="wp-smiley"> </p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=226671#respond" onclick="return addComment.moveForm(&quot;comment-226671&quot;, &quot;226671&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment even depth-3" id="li-comment-226718">
+		<article id="comment-226718" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">lucy</span> on <a href="http://nghiaho.com/?page_id=1366#comment-226718"><time datetime="2014-10-07T23:04:08+00:00">October 7, 2014 at 11:04 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Yes thats fine <img src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/icon_smile.gif" alt=":)" class="wp-smiley">  I can do it. Thanks.</p>
+<p>Furthermore, I am adopting this implementation of the loopy belief algorithm to solve a different problem altogether. It is to solve a jigsaw puzzle. So I have couple of question..if u have an idea and can help with them it is much appreciated. </p>
+<p>1. If i understood ur algorithm correctly…you are are saving the probabilities for each layer u want to compare with..thats why the number 16.Is my understanding correct?<br>
+2.If yes to 1,  in a jigsaw puzzle this means saving the probability for each piece..thats a bit too intensive i feel. So will it be a good idea to eliminated the pieces already considered so that the amount of probabilities saved will reduce over time?<br>
+3.If I choose to go down that path I feel that the output will be a local minimum..but is there any other way to solve it?</p>
+<p>Hope I did not ask too many unrelated questions…Thanks for your help.</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=226718#respond" onclick="return addComment.moveForm(&quot;comment-226718&quot;, &quot;226718&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-nghiaho12 bypostauthor odd alt depth-4" id="li-comment-226791">
+		<article id="comment-226791" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">nghiaho12</span> on <a href="http://nghiaho.com/?page_id=1366#comment-226791"><time datetime="2014-10-08T00:53:43+00:00">October 8, 2014 at 12:53 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>16 is the total number of possible “labels” each pixel can take, and the algorithm keeps track of all 16*16 = 256 pair probablities. I’m not familiar with applying LBP to your jigsaw problem so I am of no help there.</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=226791#respond" onclick="return addComment.moveForm(&quot;comment-226791&quot;, &quot;226791&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-263715">
+		<article id="comment-263715" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">Robst</span> on <a href="http://nghiaho.com/?page_id=1366#comment-263715"><time datetime="2014-11-05T19:44:19+00:00">November 5, 2014 at 7:44 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Hello, nice tutorial, thanks for taking the time to create it. </p>
+<p>I have a little doubt. In the message update equations,  you have considered the DataCost calculation as follows:  “exp( -DataCost ( yi , l ) )” . I think it should be “exp( -DataCost ( yi , l’ ) )”,  i.e. exchange ” l ” by ”  l’  ” (l prime) . I checked your 4th reference to confirm. Please let me know if I’m right or wrong.</p>
+<p>Best regards.</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=263715#respond" onclick="return addComment.moveForm(&quot;comment-263715&quot;, &quot;263715&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-nghiaho12 bypostauthor odd alt depth-2" id="li-comment-264150">
+		<article id="comment-264150" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">nghiaho12</span> on <a href="http://nghiaho.com/?page_id=1366#comment-264150"><time datetime="2014-11-06T03:52:33+00:00">November 6, 2014 at 3:52 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>I think you’re right. Mistake on my part.</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=264150#respond" onclick="return addComment.moveForm(&quot;comment-264150&quot;, &quot;264150&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-284393">
+		<article id="comment-284393" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">Michael</span> on <a href="http://nghiaho.com/?page_id=1366#comment-284393"><time datetime="2014-11-18T17:52:04+00:00">November 18, 2014 at 5:52 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Thanks, big help!</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=284393#respond" onclick="return addComment.moveForm(&quot;comment-284393&quot;, &quot;284393&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-286247">
+		<article id="comment-286247" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">vidhya</span> on <a href="http://nghiaho.com/?page_id=1366#comment-286247"><time datetime="2014-11-20T01:41:33+00:00">November 20, 2014 at 1:41 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>i need how to determined the structure from the motion in image i need matlab coding plz..sir/mam help me…</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=286247#respond" onclick="return addComment.moveForm(&quot;comment-286247&quot;, &quot;286247&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-nghiaho12 bypostauthor even depth-2" id="li-comment-286256">
+		<article id="comment-286256" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">nghiaho12</span> on <a href="http://nghiaho.com/?page_id=1366#comment-286256"><time datetime="2014-11-20T01:50:12+00:00">November 20, 2014 at 1:50 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>wrong place</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=286256#respond" onclick="return addComment.moveForm(&quot;comment-286256&quot;, &quot;286256&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-310651">
+		<article id="comment-310651" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">tony B</span> on <a href="http://nghiaho.com/?page_id=1366#comment-310651"><time datetime="2014-12-04T18:37:46+00:00">December 4, 2014 at 6:37 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Hi, thanks for the article.  IYou have a typo.  Instead of `d = abs(leftImage(x,y) – rightImage(x – label),y)` it should be `d = abs(leftImage(x,y) – rightImage(x – label,y))`</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=310651#respond" onclick="return addComment.moveForm(&quot;comment-310651&quot;, &quot;310651&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-nghiaho12 bypostauthor even depth-2" id="li-comment-311418">
+		<article id="comment-311418" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">nghiaho12</span> on <a href="http://nghiaho.com/?page_id=1366#comment-311418"><time datetime="2014-12-05T03:39:24+00:00">December 5, 2014 at 3:39 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Well spotted!</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=311418#respond" onclick="return addComment.moveForm(&quot;comment-311418&quot;, &quot;311418&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-320124">
+		<article id="comment-320124" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">Ayush Rai</span> on <a href="http://nghiaho.com/?page_id=1366#comment-320124"><time datetime="2014-12-12T05:37:42+00:00">December 12, 2014 at 5:37 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>I found this tutorial very interesting. Do you have any other links from I can study about GraphCuts method?</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=320124#respond" onclick="return addComment.moveForm(&quot;comment-320124&quot;, &quot;320124&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-nghiaho12 bypostauthor even depth-2" id="li-comment-321311">
+		<article id="comment-321311" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">nghiaho12</span> on <a href="http://nghiaho.com/?page_id=1366#comment-321311"><time datetime="2014-12-13T03:14:58+00:00">December 13, 2014 at 3:14 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Glad you found it useful. I don’t have any other links on top of my head.</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=321311#respond" onclick="return addComment.moveForm(&quot;comment-321311&quot;, &quot;321311&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-332731">
+		<article id="comment-332731" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">Manohar Kuse</span> on <a href="http://nghiaho.com/?page_id=1366#comment-332731"><time datetime="2014-12-27T05:07:58+00:00">December 27, 2014 at 5:07 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Hey, about the section “Min-Sum – message update”. When you say neighbors of i expect j, does it mean that the observed nodes are to be taken?</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=332731#respond" onclick="return addComment.moveForm(&quot;comment-332731&quot;, &quot;332731&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment even depth-2" id="li-comment-332827">
+		<article id="comment-332827" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">Manohar Kuse</span> on <a href="http://nghiaho.com/?page_id=1366#comment-332827"><time datetime="2014-12-27T09:54:07+00:00">December 27, 2014 at 9:54 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Made a spell error. Should be `except` instead of expect. Sorry about that.</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=332827#respond" onclick="return addComment.moveForm(&quot;comment-332827&quot;, &quot;332827&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-nghiaho12 bypostauthor odd alt depth-2" id="li-comment-334228">
+		<article id="comment-334228" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">nghiaho12</span> on <a href="http://nghiaho.com/?page_id=1366#comment-334228"><time datetime="2014-12-29T19:44:24+00:00">December 29, 2014 at 7:44 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>In the stereo example, a pixel is surrounded by 4 other pixels (up, down, left, right). The “except” part means you only consider 3 of the pixels and exclude the other one. The other one being “j”.</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=334228#respond" onclick="return addComment.moveForm(&quot;comment-334228&quot;, &quot;334228&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-345598">
+		<article id="comment-345598" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">Amy</span> on <a href="http://nghiaho.com/?page_id=1366#comment-345598"><time datetime="2015-01-20T02:32:12+00:00">January 20, 2015 at 2:32 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Can you tell me how to determine the order of each node to update its message while applying loopy belief propagation, can you give me an example?</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=345598#respond" onclick="return addComment.moveForm(&quot;comment-345598&quot;, &quot;345598&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-nghiaho12 bypostauthor odd alt depth-2" id="li-comment-345601">
+		<article id="comment-345601" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<span class="fn">nghiaho12</span> on <a href="http://nghiaho.com/?page_id=1366#comment-345601"><time datetime="2015-01-20T02:35:47+00:00">January 20, 2015 at 2:35 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>There’s no correct order, I just picked mine arbitrarily. As long as you pass left/right/up/down then it should be fine.</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://nghiaho.com/?page_id=1366&replytocom=345601#respond" onclick="return addComment.moveForm(&quot;comment-345601&quot;, &quot;345601&quot;, &quot;respond&quot;, &quot;1366&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		</ol>
+
+		
+		
+	
+									<div id="respond" class="comment-respond">
+				<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://nghiaho.com/?page_id=1366#respond" style="display:none;">Cancel reply</a></small></h3>
+									<form action="http://nghiaho.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+																			<p class="comment-notes">Your email address will not be published. Required fields are marked <span class="required">*</span></p>							<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" aria-required="true"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" aria-required="true"></p>
+												<p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>						<p class="form-allowed-tags">You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:  <code>&lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;strike&gt; &lt;strong&gt; </code></p>						<p class="form-submit">
+							<input name="submit" type="submit" id="submit" value="Post Comment">
+							<input type="hidden" name="comment_post_ID" value="1366" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+						</p>
+						<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="24e2d01e66"></p><p style="display: none;"></p>					<input type="hidden" id="ak_js" name="ak_js" value="1422026572632"></form>
+							</div><!-- #respond -->
+			
+</div><!-- #comments -->
+
+				
+			</div><!-- #content -->
+		</div><!-- #primary -->
+
+
+	</div><!-- #main -->
+
+	<footer id="colophon" role="contentinfo">
+
+			
+
+			<div id="site-generator">
+								<a href="http://wordpress.org/" title="Semantic Personal Publishing Platform">Proudly powered by WordPress</a>
+			</div>
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<script type="text/javascript" src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/form.js"></script>
+<script type="text/javascript" src="./Loopy belief propagation, Markov Random Field, stereo vision   Nghia Ho_files/comment-reply.min.js"></script>
+
+
+</body></html>

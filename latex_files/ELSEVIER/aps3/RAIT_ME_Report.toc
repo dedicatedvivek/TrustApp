@@ -1,0 +1,11 @@
+\contentsline {chapter}{Abstract}{iv}
+\contentsline {chapter}{\numberline {1}Introduction}{1}
+\contentsline {chapter}{\numberline {2}Introduction to Stereo matching}{3}
+\contentsline {section}{\numberline {2.1}Disparity and Disparity map}{5}
+\contentsline {chapter}{\numberline {3}Literature Survey}{8}
+\contentsline {chapter}{\numberline {4}Research Methodology}{11}
+\contentsline {section}{\numberline {4.1}MRF formation for stereo image}{12}
+\contentsline {section}{\numberline {4.2}Belief Propagation}{12}
+\contentsline {chapter}{\numberline {5}MRF Implementation}{15}
+\contentsline {chapter}{\numberline {6}Conclusion}{17}
+\contentsline {chapter}{Bibliography}{18}

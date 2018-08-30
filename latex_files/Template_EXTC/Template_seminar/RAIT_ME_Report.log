@@ -1,0 +1,387 @@
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.12.5)  24 MAR 2016 15:56
+entering extended mode
+**C:/Users/anish/Desktop/latex_files/Template_EXTC/Template_seminar/RAIT_ME_Rep
+ort.tex
+
+(C:/Users/anish/Desktop/latex_files/Template_EXTC/Template_seminar/RAIT_ME_Repo
+rt.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+
+(C:\Users\anish\Desktop\latex_files\Template_EXTC\Template_seminar\final_raitre
+port.cls
+
+LaTeX Warning: You have requested document class `final_raitreport',
+               but the document class provides `iitbaps'.
+
+Document Class: iitbaps 2007/06/25 IIT Bombay Annual Preogress Report Format
+Document Class `iitbaps' v0.5beta <13 August 07>
+(C:\miketext\tex\latex\base\report.cls
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+(C:\miketext\tex\latex\base\size12.clo
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+Two side is false
+) (C:\miketext\tex\latex\graphics\graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\miketext\tex\latex\graphics\keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(C:\miketext\tex\latex\graphics\graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\miketext\tex\latex\graphics\trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(C:\miketext\tex\latex\00miktex\graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(C:\miketext\tex\latex\pdftex-def\pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(C:\miketext\tex\generic\oberdiek\infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(C:\miketext\tex\generic\oberdiek\ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count88
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(C:\Users\anish\Desktop\latex_files\Template_EXTC\Template_seminar\RAIT_ME_Repo
+rt.aux
+(C:\Users\anish\Desktop\latex_files\Template_EXTC\Template_seminar\final_report
+_prelude.aux)
+(C:\Users\anish\Desktop\latex_files\Template_EXTC\Template_seminar\chap1.aux))
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+
+(C:\miketext\tex\context\base\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count89
+\scratchdimen=\dimen105
+\scratchbox=\box26
+\nofMPsegments=\count90
+\nofMParguments=\count91
+\everyMPshowfont=\toks15
+\MPscratchCnt=\count92
+\MPscratchDim=\dimen106
+\MPnumerator=\count93
+\makeMPintoPDFobject=\count94
+\everyMPtoPDFconversion=\toks16
+)
+(C:\Users\anish\Desktop\latex_files\Template_EXTC\Template_seminar\final_report
+_prelude.tex
+
+! LaTeX Error: Unknown graphics extension: .eps.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.26 \maketitle
+               
+? h
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+? 
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.26 \maketitle
+               
+? 
+[1
+
+
+
+{C:/Users/anish/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+
+! LaTeX Error: Unknown graphics extension: .eps.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.31 \includegraphics{raitlogo.eps}
+                                   \\
+? 
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.31 \includegraphics{raitlogo.eps}\\
+                                     
+? 
+
+! LaTeX Error: Unknown graphics extension: .eps.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.52 \includegraphics{university.eps}
+                                     
+? 
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 67.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 67.
+
+Overfull \hbox (23.66826pt too wide) in paragraph at lines 67--76
+ [][] 
+ []
+
+[1
+
+] [2
+
+
+] [3
+
+]
+(C:\Users\anish\Desktop\latex_files\Template_EXTC\Template_seminar\RAIT_ME_Repo
+rt.lot
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 2.
+)
+\tf@lot=\write3
+ [4
+
+]
+(C:\Users\anish\Desktop\latex_files\Template_EXTC\Template_seminar\RAIT_ME_Repo
+rt.lof)
+\tf@lof=\write4
+ [5
+
+]
+(C:\Users\anish\Desktop\latex_files\Template_EXTC\Template_seminar\RAIT_ME_Repo
+rt.toc)
+\tf@toc=\write5
+\c@theorem=\count95
+ [6
+
+])
+(C:\Users\anish\Desktop\latex_files\Template_EXTC\Template_seminar\chap1.tex
+Chapter 1.
+[1
+
+
+
+
+]
+
+! LaTeX Error: Unknown graphics extension: .eps.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.19 \includegraphics[width=4.5in]{basic1.eps}
+                                              
+? 
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ú in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ù in font cmr12!
+
+! LaTeX Error: Unknown graphics extension: .eps.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.41 \includegraphics[width=3.0in]{heliograph.eps}
+                                                  
+? 
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ú in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ù in font cmr12!
+
+! LaTeX Error: Unknown graphics extension: .eps.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.52 \includegraphics[width=4.0in]{sunlight.eps}
+                                                
+? 
+[2]
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ì in font cmr12!
+
+
+LaTeX Warning: Reference `mux' on page 3 undefined on input line 144.
+
+[3]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 166.
+
+ (C:\miketext\tex\latex\base\omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 166.
+
+Overfull \hbox (6.84358pt too wide) in paragraph at lines 337--337
+[]\OT1/cmr/bx/n/17.28 Comparison With Other Com-muica-tion Tech-nolo-
+ []
+
+
+Underfull \hbox (badness 1430) in paragraph at lines 355--355
+[]\OT1/cmr/m/n/12 Visible Light Com-mu-ni-ca-
+ []
+
+
+Underfull \hbox (badness 3635) in paragraph at lines 357--357
+[]$\OML/cmm/m/it/12 >$\OT1/cmr/m/n/12 100Mb/s pos-si-ble (LED
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 357--358
+[]\OT1/cmr/m/n/12 4Mb/s(FIR),16 Mb/s
+ []
+
+
+Underfull \hbox (badness 1132) in paragraph at lines 359--359
+[]\OT1/cmr/m/n/12 Research and stan-dard-iza-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 367--367
+\OT1/cmr/m/n/12 length (fre-
+ []
+
+
+Underfull \hbox (badness 2134) in paragraph at lines 367--367
+[]\OT1/cmr/m/n/12 380$ []$780 nm vis-i-ble light
+ []
+
+
+Underfull \hbox (badness 7649) in paragraph at lines 369--369
+[]\OT1/cmr/m/n/12 Communication, il-lu-mi-na-
+ []
+
+
+Overfull \hbox (3.28618pt too wide) in paragraph at lines 373--373
+[]\OT1/cmr/m/n/12 Environmental| 
+ []
+
+
+Underfull \hbox (badness 1769) in paragraph at lines 375--376
+[]\OT1/cmr/m/n/12 Remote con-trol, Point to
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ô in font cmr12!
+[4]
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ô in font cmr12!
+ [5]) [6]
+(C:\Users\anish\Desktop\latex_files\Template_EXTC\Template_seminar\bibliography
+.tex
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ô in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ò in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ô in font cmr12!
+ [7
+
+
+
+]) [8]
+(C:\Users\anish\Desktop\latex_files\Template_EXTC\Template_seminar\RAIT_ME_Repo
+rt.aux
+(C:\Users\anish\Desktop\latex_files\Template_EXTC\Template_seminar\final_report
+_prelude.aux)
+(C:\Users\anish\Desktop\latex_files\Template_EXTC\Template_seminar\chap1.aux))
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 1323 strings out of 493921
+ 18323 string characters out of 3147282
+ 75294 words of memory out of 3000000
+ 4619 multiletter control sequences out of 15000+200000
+ 10377 words of font info for 36 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 28i,11n,21p,959b,215s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/miketext/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/miketext/fonts/typ
+e1/public/amsfonts/cm/cmmi12.pfb><C:/miketext/fonts/type1/public/amsfonts/cm/cm
+r10.pfb><C:/miketext/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/miketext/font
+s/type1/public/amsfonts/cm/cmsy10.pfb><C:/miketext/fonts/type1/public/amsfonts/
+cm/cmti12.pfb>
+Output written on RAIT_ME_Report.pdf (15 pages, 119420 bytes).
+PDF statistics:
+ 75 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

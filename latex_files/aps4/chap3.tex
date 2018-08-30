@@ -1,0 +1,49 @@
+\chapter{Overview of Global Stereo  Algorithm}
+
+Stereo matching means The images are taken at slightly different view similar to our eyes  ie. parallax effect that the object closer to us will appear to move quicker than those further away. The concept applies to stereo matching expect that the pixels on the near image to have a larger disparity than those in far away.
+
+According to [1]Most stereo algorithm performs 4 basic steps to find disparity map from stereo pair image. Theses 4  steps are
+
+There are four steps in stereo algorithm
+\begin{enumerate}
+  \item Match cost computation
+  \item Cost Aggregation
+  \item Disparity Optimization
+  \item Disparity refinement
+
+\end{enumerate}
+
+\begin{enumerate}
+  \item \textbf{Step1:Match cost computation}
+
+ The Actual disparity of each pixel in the disparity image is a random variable, denoted $X_{p}$ the variable at pixel location p. Each variable can take one of N discrete states, which represent the possible disparities at that point. For each possible disparity value, there is a cost associated with matching the pixel to the corresponding pixel in the other stereo image at that disparity value. Typically, this cost is based on the intensity differences between the two pixels $ P_{Y}$. This cost is reflected in the compatibility function( $ X_{p} , Y_{p}$) which relates how compatible a disparity value is with the intensity differences observed in the image. Smaller intensity differences will correspond to higher compatibilities and vice-versa.
+  \item \textbf{Step2:Cost Aggregation}
+
+A pair wise MRF uses another compatibility function$(.)$ which denotes compatibility between neighboring variables known as smoothing function[comparative study].The pixels in disparity image forms 2D grid ,so that  p can also written in terms of its coordinates p(i,j) considering standard 4-connected neighborhood system, so that smoothness function is  the sum of spatially varying horizontal and vertical nearest neighbors. Therefore every $\Psi(.)$ is in the form of $  \Psi (X_{p},X_{n} )  $ Where location n is adjacent to p.
+
+    \item \textbf{Step3:Disparity Optimization}
+
+  The joint probability between two compatibility function as defined in above which  optimize the disparity.[pearl]The product rule or chain rule formula states than for set of events ,then the probability of joint event can be written as a product of number of conditional probabilities.
+According to Bayesian technique[pearl book]
+\begin{equation}\label{}
+    P(X/Y)=\{P(Y/X)\star P(X)\} \div P(Y)
+\end{equation}
+    where
+    \begin{itemize}
+      \item {P(X/Y) is posterior  probability }
+      \item {P(Y/X) is likelihood probability}
+      \item {P(X) is priori probability}
+      \item {P(Y)   is normalization can be considered as 1.}
+    \end{itemize}
+
+\item \textbf{Step4:Disparity refinement}
+
+The  disparity image for stereo pair image can be obtained by maximize the posterior probability. The disparity Refinement is done by Maximum A Posterior (MAP) estimation .
+
+
+ %These functions are energy functions.
+  %The function used for datacost is the sum  of  absolute  difference  between label value $x_{p}$ to data value $y_{p}$
+
+
+
+\end{enumerate}

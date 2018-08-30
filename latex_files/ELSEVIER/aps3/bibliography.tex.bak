@@ -1,0 +1,85 @@
+\begin{thebibliography}{1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{r1}  Tappen,M.F. and Freeman,W.T., `` Comparision of graph cuts with BP for stereo,using identical MRF parameters '', \emph{In IEEE International conference on computer vision}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{r2} Pedro F. Felzenszwalb,Daniel P.Huttenlocher, ``A Efficient Belief Propagation For Early Vision'', \emph{International Journal Of  Computer Science  }, Vol. 41-54, No.2, February, pp, 2006.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{r3} Yu-Chang Andnelson Chang, ``Low Memory Cost Block-Based Belief Propagation For Stereo Correspondence'', \emph{IEEE Transisition}, 1-4244-1017-7187
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{r4} Chia-Kai Liang,Chao-Chung Cheng,Yen-Cheieh Lai, ``A Hardware-Efficient Belief Propagation'', \emph{IEEE Transactions On Circuits And Systems For Video Technology }, Vol;21,No.5,May,pp, 2011.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{r5} Li Zhou, Tao Sun, Yuanzhi Zhan and Jia Wang, ``Software and Hardware Implementations of Stereo Matching,
+'', \emph{International Journal of Electronics and Informatics}, Vol.7, No.4 (2014), pp.37-562, No.1, 2014.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{r6} http://nghiaho.com/notes/Markov Random Field,Loopy Belief Propagation,stereovision.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{r7} Anders Olofsson,''Modern Stereo Correspondence Algorithms:Investigation and evalution'',\emph{Department of Electrocal Engineering,Linkoping University,s-581 83 Linkoping,Sweden},17 June 2010
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\bibitem{r8}J. Sun, N. N. Zheng and H. Y. Shum,"Stereo Matching Using Belief Propagation", IEEE Trans. Pattern Analysis and Machine Intelligence, vol. 7, no. 25, (2003), pp. 787-800. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\bibitem{r9} Erik.B.Sudderth And William T.Freeman , ``Signal And Image Processing With Belief Propagation '', \emph{Accepted To Appear In IEEE Signal Processing Magazine},
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{r10} W Freeman,E.C.,Pasztor and O.T.Carmichal, `` Learning Low level Vision '', \emph{In International  journel of computer vision},40(1);25-47,2000
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{r11}Jianguo Ding,`` Probabilistic Inferences In Bayesian Networks'', \emph{International Journal Of Computer Science, Arxiv:1011.0935V2,}, 5 November 2010
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{r12} Dan Yuan, ``Understanding Belief Propagation And Its Applicatons'', \emph{Department Of Computer Engineering,University Of California}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\bibitem{r13} Sridhar Rajagopal, Richard D. Roberts, Sang-Kyu Lim, ``IEEE 802.15.7 visible light communication: modulation schemes and dimming support'', \emph{Communications Magazine, IEEE}, Vol. 50, No.3, pp. 72-82, March, 2012.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\bibitem{r14} Hany Elgala, Raed Mesleh and Harald Haas , ``Indoor Optical Wireless Communication:Potential and state of the art '', \emph{Communications Magazine, IEEE}, Vol. 49, No.9, September, pp. 56-62, 2011.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\bibitem{r15} Dr. Mutamed Khatib, ``Advanced Trends in Wireless Communications'', \emph{InTech}, February, 2011.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{r16}
+http://www.aoki.ecei.tohoku.ac.jp/arith/mg/algorithm.html.
+%http://www.visiblelightcomm.com.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{r17}
+http://en.wikipedia.org/wiki/Carry-select-adder.
+%http://www.wikipedia.com
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\bibitem{r18}
+% Dr. Sarika Agarwal, Himanshu Sharma and Gaurav Rathee, ``LI-FI(Light Fidelity) Technology '', \emph{International Journal of Engineering Research and Technology (IJERT)}, Vol. 2, No.11, November, pp. 1609-1612, 2013.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\bibitem{r19}
+%http://www.mondoarc.com.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\bibitem{r20}
+%http://nextgenlite.com/images/VisibleLightSpectrumGradientForWeb.jpg
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\bibitem{r21}
+%http://spie.org/x104653.xml
+%%http://spie.org/Images/Graphics/Newsroom/Imported-2013/005196/005196_10_fig1.jpg
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%\bibitem{r10} h, ``Advanced Trends in Wireless Communications'', \emph{IE},February, 2011.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%\bibitem{r12} Jong-Ho Yoo and Sung-Yoon Jung, ``Modeling and analysis of variable PPM for visible light communications'', \emph{Springer }, May, 2013.
+%    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%\bibitem{r14} Rakesh Gupta and Amit Sharma, ``Vehicle-To-Vehicle Data Broadcasting Through Visible Light Communication'', \emph{IOSR Journal of Electronics and Communication Engineering (IOSR-JECE)}, Vol. 9, No.2, April, pp. 90-95, 2014.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%\bibitem{r15}
+%%http://www.visiblelightcomm.com.
+\end{thebibliography} 

@@ -1,0 +1,175 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Style file for preparing slides with IISc and CSA logo
+%%  Prepared by the CSA Showcase team
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Modified by Abhijit Das (Barda) [abhij@csa.iisc.ernet.in]
+%%  Date: Sat July 18 1998
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Usage:
+%%
+%%  With LaTeX 2.09 one should use this style file as
+%%
+%%  \documentstyle[12pt,csaslide]{article}
+%%  \begin{document}
+%%  \author{Name of the author}
+%%  \topic{A short phrase describing the topic}
+%%  \slidepage{Contents of page 1}
+%%  \slidepage{Contents of page 2}
+%%    ...
+%%  \slidepage{Contents of last page}
+%%  \end{documnet}
+%%
+%%  The same can be done using LaTeX2e as
+%%
+%%  \documentclass[12pt]{article}
+%%  \usepackage{csaslide}
+%%  \begin{document}
+%%  ...
+%%  \end{document}
+%%
+%%  Almost anything can be put in a slide including several paragraphs,
+%%  mathematical formulas, tables and figures.
+%%
+%%  The status line at the bottom of the slide looks like:
+%%
+%%  Name of the author       A short phrase describing the topic       Page No
+%%
+%%  Text appearing in this status line can be controlled by invoking the
+%%  commands \author, \topic and \version. For example, if you want a status
+%%  line that looks like
+%%
+%%  About IIScians                  -- 13 --                   Version: 1.0.31
+%%
+%%  with the page numbering at the center, you should specify the following:
+%%
+%%  \author{About IIScians}
+%%  \topic{-- \arabic{page} --}
+%%  \version{Version: 1.0.31}
+%%
+%%  If you don't want the status line at all, call these commands as
+%%
+%%  \author{}
+%%  \topic{}
+%%  \version{}
+%%
+%%  The default page numbering comes at the lower right corner of the page as
+%%  `Page 1', `Page 2' etc. If you want to put the total page number at that
+%%  place, you must do two things:
+%%
+%%  \total{total number of pages}
+%%  \showtotalpagenotrue
+%%
+%%  With these two commands, the page numbering looks like: `Page 1 of 18',
+%%  `Page 2 of 18', ..., `Page 19 of 18', ..., (if you have set \total{18}).
+%%
+%%  If you want the csa logo at the top right corner of the page to be a
+%%  color logo, you must set
+%%
+%%  \colorlogotrue
+%%
+%%  You may optionally specify the department name by the command
+%%
+%%  \dept{Your department name}
+%%
+%%  By default, it is set to the string `Dept. of Computer Science & Automation,
+%%  IISc'. This text is printed in an fbox at the bottom of the frame
+%%  surrounding the slide material. This text should not be too long (say, more
+%%  than 75 characters wide), so that it can fit nicely in the space provided.
+%%
+%%  If you want wide slides (for example, for printing the slides in the
+%%  landscape mode), you should specify
+%%
+%%  \landscapetrue
+%%
+%%  By default, \slidepage calls the routine \longslide. With this directive,
+%%  however, another routine called \wideslide is called. Instead, of calling
+%%  \slidepage, you may call these routines explicitly as well. The syntax
+%%  for calling each of these three routines is the same, namely
+%%
+%%  \slidepage{Argument}
+%%  \longslide{Argument}
+%%  \wideslide{Argument}
+%%
+%%  All these routines assume that the target paper size is that of a
+%%  standard A4 size paper. If you want to take printouts in papers of other
+%%  sizes, you might face problems with exact alignment of the slides.
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Associated files: iisclogo.ps, csalogo.ps, csalogo-col.ps
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input epsf.sty
+\newif\ifshowtotalpageno\showtotalpagenofalse
+\newif\ifcolorlogo\colorlogofalse
+\def\@author{\typeout{Warning: No author given}}
+\def\topic#1{\gdef\@topic{#1}}\def\@topic{\typeout{Warning: No topic given}}
+\def\total#1{\gdef\@total{#1}}\def\@total{?}
+\def\dept#1{\gdef\@dept{#1}}\def\@dept{P.E.G., Dept. of Electrical Engineering, IISc}
+\def\version#1{\gdef\@version{#1}}              
+\def\@version{\ifshowtotalpageno Page \arabic{page} of \@total\else Page \arabic{page}\fi}
+\newif\iflandscape\landscapefalse
+\long\def\longslide#1{
+\pagebreak
+\oddsidemargin=0.6in
+\evensidemargin=0.6in
+\topmargin=0.26in
+\thispagestyle{empty}
+\typeout{Typesetting slide page \arabic{page} ...}
+\setlength{\unitlength}{1in}
+\begin{picture}(0,0)(1.07,8.1)
+\thicklines
+\put(0,-0.25){\line(0,1){9.2}}
+\put(6.8,-0.25){\line(0,1){9.2}}
+\put(0.25,-0.5){\line(1,0){1.05}}
+\put(5.5,-0.5){\line(1,0){1.05}}
+\put(0.25,9.2){\line(1,0){6.30}}
+\put(6.55,-0.25){\oval(0.5,0.5)[br]}
+\put(6.55,8.95){\oval(0.5,0.5)[tr]}
+\put(0.25,-0.25){\oval(0.5,0.5)[bl]}
+\put(0.25,8.95){\oval(0.5,0.5)[tl]}
+\put(1.3,-0.625){\framebox(4.2,0.25)[c]{\scriptsize\sf \@dept}}
+\put(0,-0.9){\makebox(6.8,0)[l]{\normalsize\sf\rlap{\@author}\hfill\@topic\hfill\llap{\@version}}}
+%\put(-0.10,8.4){\makebox(2,1){\parbox{2.0in}{\epsfysize=1in\epsfbox{iisclogo.ps}}}}% The IISc logo
+\ifcolorlogo
+%\put(5.0,8.6){\makebox(2,1){\parbox{2.0in}{\epsfysize=1in\epsfbox{csalogo-col.ps}}}}% The CSA logo
+%\else
+%\put(5.0,8.6){\makebox(2,1){\parbox{2.0in}{\epsfysize=1in\epsfbox{csalogo.ps}}}}% The CSA logo
+\fi
+\put(0.38,0.0){\makebox(6.1,8.5){\parbox{6.0in}{\parskip=0.2cm\vfill\LARGE #1\par\vfill}}}% The slide material
+\end{picture}
+\typeout{... done}
+\pagebreak\par
+}
+\long\def\wideslide#1{
+\pagebreak
+\oddsidemargin=0.6in
+\evensidemargin=0.6in
+\topmargin=0.26in
+\thispagestyle{empty}
+\typeout{Typesetting slide page \arabic{page} ...}
+\setlength{\unitlength}{1in}
+\begin{picture}(0,0)(1.25,5.55)
+\thicklines
+\put(0,0.25){\line(0,1){6.25}}
+\put(10.5,0.25){\line(0,1){6.25}}
+\put(0.25,0){\line(1,0){2.9}}
+\put(7.35,0){\line(1,0){2.9}}
+\put(0.25,6.75){\line(1,0){10.0}}
+\put(0.25,0.25){\oval(0.5,0.5)[bl]}
+\put(0.25,6.50){\oval(0.5,0.5)[tl]}
+\put(10.25,0.25){\oval(0.5,0.5)[br]}
+\put(10.25,6.50){\oval(0.5,0.5)[tr]}
+\put(3.15,-0.12){\framebox(4.2,0.25)[c]{\scriptsize\sf \@dept}}
+\put(0,-0.3){\makebox(10.5,0)[l]{\normalsize\sf\rlap{\@author}\hfill\@topic\hfill\llap{\@version}}}
+%\put(0.0,6.2){\makebox(2,1){\parbox{8in}{\epsfysize=1in\epsfbox{iisclogo.ps}}}}% The IISc logo
+\ifcolorlogo
+\put(8.53,6.3){\makebox(2,1){\parbox{2.0in}{\epsfysize=1in\epsfbox{csalogo-col.ps}}}}% The CSA logo
+\else
+%\put(8.53,6.3){\makebox(2,1){\parbox{2.0in}{\epsfysize=1in\epsfbox{csalogo.ps}}}}% The CSA logo
+\fi
+\put(0.76,0){\makebox(9,6.65){\parbox{9.8in}{\parskip=0.2cm\vfill\LARGE #1\par\vfill}}}% The slide material
+\end{picture}
+\typeout{... done}
+\pagebreak\par
+}
+\long\def\slidepage#1{\iflandscape\wideslide{#1}\else\longslide{#1}\fi}
+%% End of csaslide.sty

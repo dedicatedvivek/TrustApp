@@ -1,0 +1,60 @@
+\chapter{Literature Survey}
+[1] One of the prime concern of our project is to handle SMS in an
+Application Server. For this purpose we use GSM modem which will be
+connected through DKU-5 data cable. For handling SMS we needed to
+learn how to do processing of SMS. For SMS processing we referred
+following website link : http://www.developershome.com/sms/ [2] As
+JSP is used in our project for interaction web browser application
+with database stored in Railway Database server. We referred
+following website for description of JSP.
+http://java.sun.com/products/jsp/ [3] As we are using MS Access 2000
+for storing all the databases. As a database is a vital component,
+database has to be managed efficiently. Also we have to consider the
+security of the database as primary concern . For Database
+management and Database Security, we referred Microsoft's online
+Help for MS Access $<$
+2000.http://office.microsoft.com/en-us/access/FX100646941033.aspx
+\section{Previous work}
+\textbf{Previous work}\\
+Mobile ticketing technology, implemented by the APT SKIDATA and
+SMARTMACHINES systems [4]  in the United Kingdom. The technology
+enables consumers to buy tickets for major events such as rock
+concerts; football matches etc. through their mobile phones. The
+ticketing technology was successfully tried for the first time at
+the Aston Villa v West Bromwich Albion match on April 10th, 2005.
+With the help of this technology, consumers can send an SMS to order
+their tickets via mobile phone. They then receive a return SMS which
+has an image with a 2-dimenstional matric-code. This SMS contains
+details such as the ticket number, the mobile phone number and the
+seat number. On entering the stadium, the consumers have to hold
+their mobile phone with this image SMS open, in front of the
+scanners installed by Smartmachine systems at the venue of the
+event. These scanners validate the users and allow them to enter
+inside the venue. The consumers are charged for their tickets by the
+mobile service provider once the 2-D code is scanned at the scanning
+machines.
+
+%to insert figure
+\begin{figure}
+\centering
+\includegraphics[width=4in]{temp.eps}
+\caption{Structure of PSS.} \label{xyz}
+\end{figure}
+
+%to insert equation
+\begin{equation}\label{eq1}
+    m=\frac{1}{M}\displaystyle\sum_{n=1}^{M}
+\end{equation}
+It is given in \ref{eq1}.\\ $< \mbox{form id=\lq\lq form\rq\rq}>$
+mm@gmail.com \cite{aps}
+
+%to insert equation array
+\begin{eqnarray*}
+% \nonumber to remove numbering (before each equation)
+  a &=& \frac{\sqrt{s}}{c+d} \\
+  c &=& \begin{pmatrix}
+           1& 3 \\
+           1 & 3 \\
+         \end{pmatrix}
+
+\end{eqnarray*}

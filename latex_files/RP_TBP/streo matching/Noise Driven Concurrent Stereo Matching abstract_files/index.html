@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0069)https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!-- InstanceBegin template="/Templates/sms_template.dwt" codeOutsideHTMLIsLocked="false" -->
+  <title>Noise-driven Concurrent Stereo Matching (NCSM)</title>
+
+
+  
+
+<!-- CONFL-BEGIN standardHeader -->
+  <meta http-equiv="Pragma" content="no-cache">
+
+  <meta http-equiv="Expires" content="-1">
+
+  <link href="main-action.css" type="text/css" rel="stylesheet">
+
+  <link href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/images/favicon.ico" rel="shortcut icon">
+
+  <link href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/images/favicon.png" type="image/png" rel="icon">
+
+  <script src="effects.js">
+  </script>
+  <meta content="MSHTML 6.00.2800.1498" name="GENERATOR">
+
+  <style type="text/css">
+<!--
+.style4 {color: #3C78B5}
+-->
+  </style>
+</head>
+
+
+<body onload="placeFocus()">
+
+<div id="Content">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+  <tbody>
+
+    <tr>
+
+      <td class="logocell" rowspan="2" width="60%">
+      <div class="spacenametitle"><a href="index.html"><img src="mylogo.gif" align="bottom" border="0" height="35" width="35"></a> <a href="index.html" class="spacenametitle"><strong><span class="style4">&nbsp;&nbsp;&nbsp;N</span>oise-driven</strong>
+      <span class="style4">C</span>oncurrent <span class="style4">S</span>tereo <span class="style4">M</span>atching
+      </a></div>
+
+      </td>
+
+      <td align="right" valign="top" width="40%">
+      <table align="right" bgcolor="#ffffff" border="0" cellpadding="2" cellspacing="1">
+
+        <tbody>
+
+          <tr>
+
+            <td class="navItem" onmouseover="this.className=&#39;navItemOver&#39;" onclick="window.document.location=&#39;index.html&#39;" onmouseout="this.className=&#39;navItem&#39;" align="center" nowrap="nowrap" valign="center">&nbsp;&nbsp;<a title="Go to the homepage" accesskey="h" onclick="return true" href="index.html"><u>H</u>OME</a>
+&nbsp;&nbsp;</td>
+
+          </tr>
+
+        </tbody>
+      </table>
+
+      </td>
+
+    </tr>
+
+    <tr>
+
+      <td align="right" valign="bottom">&nbsp;</td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<div class="breadcrumbs" width="100%">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+  <tbody>
+
+    <tr>
+
+      <td>&nbsp;<!-- InstanceBeginEditable name="EditRegion2" -->
+Location: <a href="index.html">NCSM</a>
+&gt;Abstract<!-- InstanceEndEditable --></td>
+
+      <td align="right" valign="bottom" width="200"></td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+</div>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+  <tbody>
+
+    <tr>
+
+      <td>
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+        <tbody>
+
+          <tr>
+
+            <td class="pagebody" valign="top">
+            <div style="padding-top: 5px;">
+            <ul id="foldertab">
+
+<!-- InstanceBeginEditable name="EditRegion3" --> <li><a id="current" href="index.html">Abstract</a></li>
+
+              <li><a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_intr.html">Introduction</a></li>
+
+              <li><a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_sury.html">Concurrent
+Vs. Conventional</a></li>
+
+              <li><a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_ncsm.html">Noise-driven
+CSM</a></li>
+
+              <li><a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_expt.html">Experimental
+Results</a></li>
+
+              <li><a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_conl.html">Conclusions</a></li>
+
+              <li><a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_bibo.html">Bibliography</a></li>
+
+              <li><a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_appx.html">Appendices</a></li>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li><a href="https://www.cs.auckland.ac.nz/~georgy/research/stereo/NCSM/ncsm_publ.html">Publications&amp;Thesis PDF</a></li>
+
+<!-- InstanceEndEditable -->
+            </ul>
+
+            </div>
+
+            <table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+              <tbody>
+
+                <tr>
+
+                  <td valign="top">
+                  <div class="greybox" style="padding: 0px;">Reconstruction
+of 3D scenes from stereo pairs is based on matching of corresponding
+points in the left and right images. Generally, reconstruction is an
+ill-posed inverse optical problem because many optical surfaces may
+produce the same stereo image pair due to homogeneous texture, partial
+occlusions and optical distortions. To regularise the problem in order
+to obtain a unique solution close to human visual perception, specific
+constraints on surfaces need to be imposed. Almost all existing stereo
+reconstruction algorithms search for a single optical surface yielding
+the best correspondence between the images under constrained surface
+continuity, smoothness, and visibility conditions. Typically, most of
+the constraints are ‘soft’, i.e. allow for
+deviations, and the matching score is an <em>ad hoc</em>
+linear
+combination of
+individual criteria of signal similarity, surface smoothness, and
+surface visibility (or occlusions) with empirically chosen weights for
+each criterion. The resulting complex optimisation problem is solved
+using different exact or approximate techniques, e.g. dynamic
+programming, belief propagation or graph min-cut algorithms. However,
+the heuristic choice of the weights in the matching score strongly
+influences the reconstruction accuracy. In addition, natural stereo
+pairs contain many admissible matches, so that the
+‘best’ matching that optimises the score may not
+lead to correct decisions. Moreover, real scenes very rarely consist of
+a single surface, so this assumption is also too restrictive. <br>
+
+                  <p>The thesis develops an alternative approach
+to 3D stereo reconstruction
+called Noise-driven Concurrent Stereo Matching (NCSM). The family of
+algorithms that implement the NCSM paradigm clearly separate image
+matching from a subsequent search for optical surfaces. First, a hidden
+noise model which allows for mutual photometric distortions of images
+and matching outliers is estimated and then used to search for the
+candidate volumes by detecting all likely image matches. The selection
+of the 3D candidate volumes performed by image-to-image matching at a
+set of fixed depth, or disparity, values abandons the conventional
+assumption that a single best match has to be found. Then, the
+reconstruction proceeds from most likely foreground surfaces to the
+background ones (accounting for occlusions in the process), enlarging
+corresponding background volumes at the expense of occluded portions
+and selecting consistent optical surfaces that exhibit high point-wise
+signal similarity. A family of the NCSM based algorithms demonstrates
+high quality 3D reconstruction from various stereo pairs. Detailed
+analyses and comparisons show that the NCSM framework yields results
+competitive with those from the best-performing conventional algorithms
+on test stereo pairs with no contrast deviations but notably
+outperforms these algorithms in the presence of large contrast
+deviations. </p>
+
+                  <p style="font-weight: bold; color: rgb(0, 0, 204);">Acknowledgments</p>
+
+                  <p>First of all I would like to express my
+gratitude to my supervisor,
+Associate Professor Georgy Gimel'farb, for all the invaluable help,
+support, commitment and enthusiasm he has given me throughout my PhD
+study. I have learned much about computer vision from his vast
+knowledge of the field. Without his support the completion of this
+project would not have been possible and it would certainly have
+been less enjoyable. </p>
+
+                  <p>I would like to thank Associate Professor
+John Morris and Dr.
+Patrice Jean Delmas for sharing their expertise and always being
+available to discuss our results and providing interesting
+suggestions. </p>
+
+                  <p>Thanks must also go to my family and my wife
+Jingyi Li. They have
+provided unconditional support and encouragement during the last few
+years. </p>
+
+                  <p>I would like to thank all my friends and
+fellow students for their
+help, input and motivation. </p>
+
+                  <p> </p>
+
+                  <div style="padding: 8px;"></div>
+
+                  </div>
+
+                  </td>
+
+                </tr>
+
+              </tbody>
+            </table>
+
+<!-- InstanceEndEditable --> </td>
+
+          </tr>
+
+        </tbody>
+      </table>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+</div>
+
+<div class="license-nonprofit"></div>
+
+<div class="bottomshadow">
+</div>
+
+<div class="smalltext" id="poweredby">@Copyright by
+Jiang Liu <a href="mailto:jliu001@ec.auckland.ac.nz">Contact
+Administrator </a><a class="smalltext" href="mailto:jliu001@gmail.com">jliu001@gmail.com</a><br>
+
+</div>
+
+<!-- InstanceEnd -->
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=2778750; 
+var sc_invisible=0; 
+var sc_partition=28; 
+var sc_security="8a8849b5"; 
+</script>
+
+<script type="text/javascript" src="counter_xhtml.js"></script><noscript>&lt;div class="statcounter"&gt;&lt;a class="statcounter" href="http://www.statcounter.com/"&gt;&lt;img class="statcounter" src="http://c29.statcounter.com/2778750/0/8a8849b5/0/" alt="blog counter" /&gt;&lt;/a&gt;&lt;/div&gt;</noscript>
+<!-- End of StatCounter Code -->
+
+
+</body></html>

@@ -1,0 +1,111 @@
+%============================================================================
+% prelude.tex
+%   - titlepage
+%   - table of contents, list of tables and list of figures
+%   - abstract
+%============================================================================
+\clearpage%
+\pagenumbering{roman}  % This makes the page numbers Roman (i, ii, etc)
+%--------------------------------------------------------------------%
+% TITLE PAGE
+%   - define \title{} \author{} \date{}
+
+\title{Sample copy of the report for special topic seminar}
+\author{Hemant Kumar (09EL2009)}
+
+\date{October 2010}
+
+\department{Department of Electronics Engineering}
+
+%    - Set the guide's name
+\setguide{Prof. M. D. Patil}
+%    - Set the coguide's name (if you have one)
+%%\setcoguide{Prof Amitabha Sanyal}
+
+%   - once the above are defined, use \maketitle to generate the titlepage
+\maketitle
+
+%--------------------------------------------------------------------
+\cleardoublepage \nonumber
+\begin{center}
+\includegraphics{raitlogo.eps}\\
+Ramrao Adik Education Society's\\
+\large {\textbf{Ramrao Adik Institute of Technology}}\\
+\small(Affiliated to the University of Mumbai)\\
+Dr. D. Y. Patil Vidyanagar,Sector 7, Nerul, Navi Mumbai 400
+706.\\\vspace{0.3in} \Large CERTIFICATE
+\end{center}
+\vspace{0.1in}
+\begin{center}
+\large This to certify that Special Topic Seminar entitled\\
+\textbf{\lq\lq On Scheduling in WiMAX\rq\rq} \\submitted by
+\begin{center}
+ w (09)\\
+\end{center}
+is approved for the degree of \\ \textbf {Master of Engineering}\\ in\\ \textbf {Electronics Engineering}.\\
+
+ %\vspace{0.5in}
+%-----------------------------------------------------------------
+%\begin{tabular}{ccc}
+%      \rule{6cm}{1sp}                &\rule{10mm}{0pt}& \rule{6cm}{1sp}
+%      \\
+%       Guide             &&Head of Department \\\\\
+%      \rule{6cm}{1sp}                && \rule{6cm}{1sp} \\
+%      Examiner 1                 && Examiner 2 \\\\\\
+%      Principal: \rule{4cm}{1sp} && \\ && \\
+%       &&
+%    \end{tabular}
+\vspace{1in}
+\begin{tabular}{ccc}
+      \rule{5cm}{1sp}                &\rule{10mm}{0pt}& \rule{5cm}{1sp}
+      \\\vspace{0.5in}
+      Examiner 1                 && Examiner 2 \\
+      \rule{5cm}{1sp}                && \rule{5cm}{1sp} \\ \vspace{0.5in}
+       Guide             && Project Coordinator \\
+      \rule{5cm}{1sp}                && \rule{5cm}{1sp} \\
+      Head of Department                && Principal \\\\
+        %&\rule{5cm}{1sp}& \\
+%       &Principal&
+    \end{tabular}
+\end{center}
+%-----------------------------------------------------------------
+\cleardoublepage
+%--------------------------------------------------------------------%
+
+
+% ABSTRACT
+\begin{abstract}
+%\input {abstract}
+Mobile ticketing technology, implemented by the APT SKIDATA and
+SMART MACHINES systems in the United Kingdom. The technology enables
+consumers to buy tickets for major events such as rock concerts;
+football matches etc. through their mobile phones. The ticketing
+technology was successfully tried for the first time at the Aston
+Villa v West Bromwich Albion match on April 10th, 2005. With the
+help of this technology, consumers can send an SMS to order their
+tickets via mobile phone. They then receive a return SMS which has
+an image with a 2-dimenstional matric-code.
+\end{abstract}
+
+%--------------------------------------------------------------------%
+% CONTENTS, TABLES, FIGURES
+\tableofcontents \listoftables \listoffigures
+
+%--------------------------------------------------------------------%
+%  Single counter for theorems and theorem-like environments:
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{assertion}[theorem]{Assertion}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{figger}[theorem]{Figure}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+
+%--------------------------------------------------------------------%
+% Make the page numbers Arabic (1, 2, etc)
+\cleardoublepage%
+\pagenumbering{arabic}

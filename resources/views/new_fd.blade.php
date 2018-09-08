@@ -41,47 +41,7 @@ table,th,td,input{
 
 
 </style>
-<script type="text/javascript">
-    function validation(){
-        if (document.appl.deposit_date.value=="" )
-        {
-            alert("Kindly Provide Valid deposit date!!!");
-            document.appl.deposit_date.focus();  
-            return false;
 
-        }
-        if (document.appl.rate_of_interest.value=="" ||
-        isNaN(document.appl.rate_of_interest.value)) {
-            alert("Kindly Provide Valid rate of interest!!!");
-            document.appl.rate_of_interest.focus();
-            return false;
-
-        }
-        if (document.appl.maturity_amount.value=="" ||
-           isNaN(document.appl.maturity_amount.value) ) {
-            alert("Kindly Specify the Amount!!");    
-            document.appl.maturity_amount.focus();
-            return false;
-
-        }
-        if (document.appl.maturity_date.value=="" ||
-        !isNaN(document.appl.maturity_date.value)) {
-            alert("Kindly Specify Valid maturity date!!!");
-            document.appl.maturity_date.focus();
-            return false;
-
-        }
-        if (document.appl.maturity_transfer_acc.value=="" ||
-        isNaN(document.appl.maturity_transfer_acc.value) ||
-        document.appl.maturity_transfer_acc.value.length !=6) {
-            alert(" Transfer Acoount is either empty or inappropriate!!!");
-            document.appl.maturity_transfer_acc.focus();
-            return false;
-
-        }
-        
-
-</script>
 </head>
 
 <body>

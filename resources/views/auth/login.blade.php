@@ -3,6 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
+        <img src="login_pic.png">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
@@ -55,8 +56,8 @@
                                     {{ __('Login') }}
                                 </button>
 
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
+                                <a class="btn btn-link" href="{{ route('password.request') }}" style="color: #23A2DA">
+                                    <b>{{ __('Forgot Your Password?') }}</b>
                                 </a>
                             </div>
                         </div>

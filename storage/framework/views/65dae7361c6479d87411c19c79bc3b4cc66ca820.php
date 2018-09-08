@@ -1,6 +1,7 @@
 <?php $__env->startSection('content'); ?>
 <div class="container">
     <div class="row justify-content-center">
+        <img src="login_pic.png">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header"><?php echo e(__('Login')); ?></div>
@@ -55,9 +56,8 @@
 
                                 </button>
 
-                                <a class="btn btn-link" href="<?php echo e(route('password.request')); ?>">
-                                    <?php echo e(__('Forgot Your Password?')); ?>
-
+                                <a class="btn btn-link" href="<?php echo e(route('password.request')); ?>" style="color: #23A2DA">
+                                    <b><?php echo e(__('Forgot Your Password?')); ?></b>
                                 </a>
                             </div>
                         </div>

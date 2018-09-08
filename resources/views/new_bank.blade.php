@@ -41,36 +41,7 @@ table,th,td,input{
 
 
 </style>
-<script type="text/javascript">
-	function validation(){
-		if (document.appl.b_name.value=="" ||
-			!isNaN(document.appl.b_name.value)){
-			alert("Kindly Provide Valid Bank Name!!!");
-			document.appl.b_name.focus();  
-			return false;
 
-		}
-		if (document.appl.b_city.value=="" ||
-		!isNaN(document.appl.b_city.value)) {
-			alert("Kindly Provide Valid Bank City!!!");
-			document.appl.b_city.focus();
-			return false;
-
-		}
-		if (document.appl.b_branch.value=="" || 
-		!isNaN(document.appl.b_branch.value)) {
-			alert("Kindly Specify Bank Branch!!!");    
-			document.appl.b_branch.focus();
-			return false;
-
-		}
-		    
-
-	}
-
-		
-
-</script>
 </head>
 
 <body>
@@ -79,7 +50,7 @@ table,th,td,input{
 
 <center>
 
-<form action="/insertbank" method="post" name="appl" onsubmit="return validation()"> 
+<form action="/insertbank" method="post" name="appl"> 
 
 	{{ csrf_field() }}
 <table id="formtable">

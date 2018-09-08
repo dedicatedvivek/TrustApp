@@ -7,24 +7,28 @@
 <style>
 
 body{
-	background-image: url("formback.png");
+	background-image: url("bgpic2.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+
 }
 
 #formtable{
-	background-image: url("table.png");
-	border:2px solid black;
+	background-image: url("bgpic2.png");
+	background-size: cover;
+    background-repeat: no-repeat;
+	border:2px #19303A;
 	width: 45%;
 
 }
 
 table,th,td
 {
-	border: 2px dotted black;
+	border: 2px solid black;
 	padding: 2px;
-	color: white;
 	font-family: monospace;
 	font-size: 24px;
-	color: #fefe70;
+	color: #19303A;
 	font-weight: bold;
 	font-style: italic;
 
@@ -34,11 +38,26 @@ table,th,td
 
 table,th,td,input{
 	width: 270px;
+	
+
 
 }
-
-
-
+input {
+	padding: 1px;
+	color: #19303A;
+	border: 2px solid #19303A;
+}
+textarea {
+	color: #19303A;
+}
+option{
+	color: #19303A;
+	border: 2px solid #19303A;
+	padding: 1px;
+}
+.one {
+	width: 100px;
+}
 
 </style>
 <script type="text/javascript">
@@ -99,19 +118,14 @@ table,th,td,input{
   }
     alert("You have entered an invalid email address!");
     return (false);
-
-    
-
-	}
-
-		
+}
 
 </script>
 </head>
 
 <body>
 
-<h2 align="center" style="color: #fefe70">APPLICANT REGISTRATION</h2>
+<h2 align="center" style="color: #19303A">APPLICANT REGISTRATION</h2>
 
 <center>
 
@@ -136,7 +150,7 @@ table,th,td,input{
 	</td>
    
     <td>    
-	    <input type="text" name="firstname"  />
+	    <input type="text" name="firstname" />
     </td>
 </tr>
 <tr>
@@ -515,24 +529,17 @@ table,th,td,input{
 	</td>
 </tr>
 
-
-
- 
-
 </table>
 
 <br> 
 
-<input type="submit" name="submit" value="SUBMIT"> 
-
-
-
-<input type="button" value="BACK" onclick="window.location='/'" / ><br />
 
 </form>
+<input class="one" type="submit" name="submit" value="SUBMIT" style="color: #19303A" >
+&nbsp &nbsp &nbsp 
+<input class="one"  style="color: #19303A" type="button" value="BACK" onclick="window.location='/'" / ><br />
+
 </center>
-
-
 
 </body>
 

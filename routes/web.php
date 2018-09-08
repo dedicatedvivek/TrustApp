@@ -27,10 +27,6 @@ Route::get("listapplicant",function(){
 
 	return view ('list_applicant');
 });
-Route::post("listapplicant",function(){
-
-	return view ('list_applicant');
-});
 Route::get("bank",function(){
 
 	return view ('bank');
@@ -60,16 +56,14 @@ Route::get("expense",function(){
 
 	return view ('new_expense');
 });
-Route::get("updateapplicant",function(){
 
-	return view ('updateapplicant');
-});
 
 
 
 Route::post("store",'application@store');
 
 Route::post("/insert","Controller@insert");
+
 
 
 Route::post("/update","UpdateController@update");

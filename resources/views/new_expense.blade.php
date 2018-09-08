@@ -41,17 +41,7 @@ table,th,td,input{
 
 
 </style>
-<script type="text/javascript">
-    function validation(){
-        if (document.appl.expense_amount.value=="" ||
-        isNaN(document.appl.rate_of_interest.value))
-        {
-            alert("Kindly Provide Valid Amount!!!");
-            document.appl.expense_amount.focus();  
-            return false;
 
-        }
-</script>
 </head>
 
 <body>

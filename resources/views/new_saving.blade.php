@@ -41,38 +41,7 @@ table,th,td,input{
 
 
 </style>
-<script type="text/javascript">
-	function validation(){
-		if (document.appl.acc_holder.value=="" ||
-			!isNaN(document.appl.acc_holder.value)){
-			alert("Kindly Provide Valid account Holder Name!!!");
-			document.appl.acc_holder.focus();  
-			return false;
 
-		}
-		
-		if (document.appl.acc_number.value=="")
-		
-		 {
-			alert("Account Number is either empty or inappropriate!!!");
-			document.appl.acc_number.focus();
-			return false;
-
-		}
-		
-
-		if (document.appl.acc_balance.value=="" ||
-			isNaN(document.appl.acc_balance.value)) 
-		 {
-	alert("Please enter a valid account balance !!!");
-	document.appl.acc_balance.focus();
-		return false;
-	}
-
-		
-		
-
-</script>
 </head>
 
 <body>

@@ -22,9 +22,9 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+        <nav class="navbar navbar-expand-md navbar-light navbar-laravel" style="background-color: #23A2DA">
             <div class="container">
-                <a class="navbar-brand" href="<?php echo e(url('/')); ?>">
+                <a class="navbar-brand" href="<?php echo e(url('/')); ?>" style="color: #FFF">
                     <?php echo e(config('app.name', 'Laravel')); ?>
 
                 </a>
@@ -32,7 +32,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" >
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
 
@@ -42,11 +42,9 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         <?php if(auth()->guard()->guest()): ?>
-                            <li class="nav-item">
-                                <a class="nav-link" href="<?php echo e(route('login')); ?>"><?php echo e(__('Login')); ?></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="<?php echo e(route('register')); ?>"><?php echo e(__('Register')); ?></a>
+                                <a class="nav-link" href="<?php echo e(route('register')); ?>" style="color: #FFF"><?php echo e(__('REGISTER')); ?></a>
                             </li>
                         <?php else: ?>
                             <li class="nav-item dropdown">

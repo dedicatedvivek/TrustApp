@@ -27,6 +27,10 @@ Route::get("listapplicant",function(){
 
 	return view ('list_applicant');
 });
+Route::post("listapplicant",function(){
+
+	return view ('list_applicant');
+});
 Route::get("bank",function(){
 
 	return view ('bank');

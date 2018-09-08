@@ -12,7 +12,7 @@ table{
 table, th, td {
     border: 2px dotted black;
 	padding: 2px;
-	color: white;
+	color: cyan;
 	font-family: monospace;
 	font-size: 14px;
 	
@@ -62,12 +62,12 @@ echo"</center>";
 $conn->close();
 ?>
 <center>
-<form id='form1' action='/update' method='post'>
+<form id='form1' action='listapplicant' method='post'>
 	<?php echo e(csrf_field()); ?>
 
 	<table id='table_form'>
 		<tr>
-			<td>id</td> <td><input type="number" id="id" name="id" disabled></td>
+			<td>id</td> <td><input type="number" id="id" name="id" ></td>
 		</tr>
 	
 		<tr>
@@ -119,7 +119,7 @@ $conn->close();
 			<td>doc2</td> <td><input type="file" id="doc2" name="doc2" ></td>
 		</tr>
 		<tr>
-		<td><input type="submit" name="submit" value="SUBMIT" onclick="/update"></td>
+		<td><input type="submit" onclick="listapplicant"/></td>
 		</tr>
 
 	</table>
@@ -153,7 +153,22 @@ $conn->close();
 </script>
 <br /><br />
 <center>
+
 <input type="button" value="BACK" style="width: 5%" align="center" onclick="window.location='/'" />
 </center>
+
+<?php	
+echo "hi";
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $servername = "localhost";
+	$username = "root";
+	$password = "";
+	$dbname = "auth";
+		$db = new mysqli($servername, $username, $password, $dbname);
+		$query = "UPDATE applicants set formnum = '$_POST[formnum]', firstname = '$_POST[firstname]', lastname = 'BABA', age = $_POST[age] gender = '$_POST[gender]', nationality = $_POST[nationality], address = '$_POST[address]', city =' $_POST[city]', pincode = '$_POST[pincode]', category = '$_POST[category]', email = '$_POST[email]', phone = $_POST[phone] where formnum = '$_POST[formnum]'";
+		$result = $db->query($query); 
+	}
+?>
 </body>
 </html>

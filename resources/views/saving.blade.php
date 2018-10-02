@@ -1,23 +1,29 @@
 <html>
 
 <center>
-<h2 style="color: fefe70">SAVINGS</h2>
+<h2 style="color:#19303A">SAVINGS</h2>
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <style>
 
 body{
-	background-image: url("formback.png");
+	background-image: url("abc.png");
+	font-size: 1.2vw;
 }
 
-#lav{
+button {
 
-	border: 0.8px solid black;
-	font-family: sans-serif;
-	font-size: 20px;
+	border: 2px solid #19303A;	
 	padding: 2px;
 	font-style: bold;
-	color: #11111;
+	color: #19303A;
+	width: auto;
+	
 }
 
 
@@ -31,8 +37,9 @@ body{
 &nbsp &nbsp &nbsp &nbsp
 <button name="NEW SAVINGS ACCOUNT" onclick="window.location='/new_saving'">NEW SAVINGS ACCOUNT</button>	
 &nbsp &nbsp &nbsp &nbsp
-<button name="SAVINGS ACCCOUNT LIST" onclick="window.location='/list_bank'">SAVINGS ACCOUNT LIST</button>
-
+<button name="SAVINGS ACCCOUNT LIST" onclick="window.location='/list_savings'"> ACCOUNT DETAILS</button>
+<br><br><br>
+<button name="BACK" onclick="window.location='/'" >BACK</button>
 
 </center>
 </body>

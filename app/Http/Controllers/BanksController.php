@@ -32,7 +32,7 @@ class BanksController extends Controller
         window.alert('RECORD SUBMITTED SUCCESSFULLY');
         </script>";
         
-        return view('welcome');
+        return view('new_bank');
     }
 }
 

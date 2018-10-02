@@ -1,18 +1,27 @@
 <html>
 <head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
 <style>
 body{
-	background-image: url("bgpic2.png");
+	background-image: url("abc.png");
 	background-repeat: no-repeat;
 	background-size:cover;
 }
 
 table{
-	background-image: url("bgpic2.png");
+	background-image: url("abc.png");
 	border:2px solid black;
-	width: 45%;
+	width: 20%;
 	background-repeat: no-repeat;
 	background-size: cover;
+	font-size: 1.2vw;
 
 }
 table,th,td
@@ -20,7 +29,7 @@ table,th,td
 	border: 2px solid black;
 	padding: 2px;
 	font-family: monospace;
-	font-size: 20px;
+	font-size: 1.2vw;
 	color: #19303A;
 	font-weight: bold;
 	font-style: italic;
@@ -30,6 +39,7 @@ input {
 	padding: 1px;
 	color: #19303A;
 	border: 2px solid #19303A;
+	
 }
 .one {
 	width: 100px;
@@ -37,14 +47,11 @@ input {
 
 </style>
 
-<script type="text/javascript">
+
 	
 </script>
 
-
-
-
-<h2 style="color: white" align="center">LIST OF APPLICANTS</h2>
+<h2 style="color: #19303A" align="center">LIST OF APPLICANTS</h2>
 
 </head>
 <body>
@@ -56,10 +63,10 @@ $password = "";
 $dbname = "auth";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
 } 
 
 $sql = "SELECT id,formnum,firstname, lastname,age,gender,nationality,address,city,pincode,category,email,phone FROM applicants";
@@ -78,16 +85,16 @@ if ($result->num_rows > 0) {
 } 
 
 echo"</center>";
-$conn->close();
+
 ?>
 
 <center> <br>
-<form id='form1' action="/update" method='post'>
+<form id='form1' action="/update" method='POST'>
 	<?php echo e(csrf_field()); ?>
 
 	<table id='table_form'>
 		<tr>
-			<td>id</td> <td><input type="number" id="id" name="id" disabled></td>
+			<td>id</td> <td><input type="number" id="id" name="id" readonly></td>
 		</tr>
 	
 		<tr>
@@ -127,7 +134,11 @@ $conn->close();
 			<td>Phone</td> <td><input type="text" id="phone" name="phone"></td>
 		</tr>
 		
-</table>
+</table> <br>
+         <input class="one" type="submit" name="submit" value="SUBMIT" style="font-size: 1.2vw; width: auto">
+         &nbsp &nbsp &nbsp &nbsp
+         <input class="one" type="button" value="BACK"  align="center" onclick="window.location='/'" style="font-size: 1.2vw; width: auto" > 
+
 </form>
 </center>
      		
@@ -137,6 +148,7 @@ $conn->close();
 	for(let i=0; i<table.rows.length; i++){
 		table.rows[i].onclick= function(){
 			rIndex=this.rowIndex;
+			
 			document.getElementById('id').value=this.cells[0].innerHTML;
 			document.getElementById('formnum').value=this.cells[1].innerHTML;
 			document.getElementById('firstname').value=this.cells[2].innerHTML;
@@ -154,12 +166,6 @@ $conn->close();
 		}
 	}
 </script>
-<br>
-<center>
 
-<input class="one" type="submit" name="submit" value="SUBMIT" >
-<input class="one" type="button" value="BACK"  align="center" onclick="window.location='/'" /> 
-
-</center>
 </body>
 </html>

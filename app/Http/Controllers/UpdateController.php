@@ -1,6 +1,8 @@
 <?php
-namespace App\Http\Controllers;
 
+
+namespace App\Http\Controllers;
+use App\Update;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -12,51 +14,37 @@ class UpdateController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    function update()
-    {
-        
+    function update(Request $req1)
+  {
 
-       if ($_SERVER["REQUEST_METHOD"] == "POST") 
-    {
-        $formnum = clean_input($_POST["formnum"]);
-        $firstname = clean_input($_POST["firstname"]);
-        $lastname = clean_input($_POST["lastname"]);
-        $age = clean_input($_POST["age"]);
-        $gender = clean_input($_POST["gender"]);
-        $nationality = clean_input($_POST["nationality"]);
-        $address = clean_input($_POST["address"]);
-        $city = clean_input($_POST["city"]);
-        $pincode = clean_input($_POST["pincode"]);
-        $category = clean_input($_POST["category"]);
-        $email = clean_input($_POST["email"]);
-        $phone = clean_input($_POST["phone"]);
+        $id= $req1->input('id');
+        $formnum= $req1->input('formnum');
+        $firstname= $req1->input('firstname');
+        $lastname= $req1->input('lastname');
+        $age= $req1->input('age');
+        $gender= $req1->input('gender');
+        $nationality= $req1->input('nationality');
+        $address= $req1->input('address');
+        $city= $req1->input('city');
+        $pincode= $req1->input('pincode');
+        $category= $req1->input('category');
+        $email= $req1->input('email');
+        $phone=$req1->input('phone');
 
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "auth";
 
-        $conn = mysqli_connect($servername, $username, $password, $dbname);
-        if (!$conn) {
-            die("Connection failed: " . mysqli_connect_error());
-        }
-        
-        if(isset($_POST['Update'])) {
-            $stmt = $conn->prepare("UPDATE applicants set formnum = ?, firstname = ?, lastname = ?, age = ?, gender = ?, nationality = ?, address = ?, city = ?, pincode = ?, category = ?, email = ?, phone = ? where id = ?");
-            $stmt->bind_param("ississssissii", $formnum, $firstname, $lastname, $age, $gender, $nationality, $address, $city, $pincode, $category, $email, $phone , $id);    
-            $stmt->execute();
-        } 
-        $conn->close();
-        }
-    }
-     function clean_input($data) 
-    {
-      $data = trim($data);
-      $data = stripslashes($data);
-      $data = htmlspecialchars($data);
-      return $data;
-    }          
-        
-    }  
+        $data1=$arrayName = array('formnum' =>$formnum ,'firstname' =>$firstname ,'lastname' =>$lastname , 'age' =>$age , 'gender' =>$gender , 'nationality' =>$nationality , 'address' =>$address , 'city' =>$city , 'pincode' =>$pincode ,'category' =>$category ,'email' =>$email,'phone' =>$phone);
+         
+         $applicants = \App\Update::where('id',$id)
+                       ->update($data1);
+
+                       
+
+         return view('list_applicant');     
+
+     }
+     
+}     
+    
 ?>
 
+    

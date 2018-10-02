@@ -1,24 +1,31 @@
 <html>
 
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <title>APPLICANT REGISTRATION</title>
 
 <style>
 
 body{
-	background-image: url("bgpic2.png");
+	background-image: url("abc.png");
 	background-size: cover;
 	background-repeat: no-repeat;
 
 }
 
 #formtable{
-	background-image: url("bgpic2.png");
+	background-image: url("abc.png");
 	background-size: cover;
     background-repeat: no-repeat;
 	border:2px #19303A;
-	width: 45%;
+	width: auto;
+	max-width: 970px;
+	font-size: 1.2vw;
 
 }
 
@@ -27,36 +34,36 @@ table,th,td
 	border: 2px solid black;
 	padding: 2px;
 	font-family: monospace;
-	font-size: 24px;
+	font-size: 1.2vw;
 	color: #19303A;
 	font-weight: bold;
 	font-style: italic;
+	width: auto;
 
-
-    
 }
 
 table,th,td,input{
-	width: 270px;
+	width: auto;
 	
-
-
 }
+
 input {
 	padding: 1px;
 	color: #19303A;
 	border: 2px solid #19303A;
 }
+
 textarea {
 	color: #19303A;
 }
+
 option{
 	color: #19303A;
 	border: 2px solid #19303A;
 	padding: 1px;
 }
 .one {
-	width: 100px;
+	width: auto;
 }
 
 </style>
@@ -535,9 +542,9 @@ option{
 
 
 </form>
-<input class="one" type="submit" name="submit" value="SUBMIT" style="color: #19303A" >
+<input class="one" type="submit" name="submit" value="SUBMIT" style="color: #19303A;font-size: 1.2vw" >
 &nbsp &nbsp &nbsp 
-<input class="one"  style="color: #19303A" type="button" value="BACK" onclick="window.location='/'" / ><br />
+<input class="one"  style="color: #19303A;font-size: 1.2vw" type="button" value="BACK" onclick="window.location='/'" / ><br />
 
 </center>
 

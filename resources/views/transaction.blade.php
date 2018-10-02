@@ -1,23 +1,28 @@
 <html>
 
 <center>
-<h2 style="color: fefe70">TRANSACTIONS</h2>
+<h2 style="color:#19303A">TRANSACTIONS</h2>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
 <style>
 
 body{
-	background-image: url("formback.png");
+	background-image: url("abc.png");
+	font-size: 1.2vw;
 }
 
-#lavda{
+button {
 
-	border: 0.8px solid black;
-	font-family: sans-serif;
-	font-size: 20px;
+	border: 2px solid #19303A;
 	padding: 2px;
 	font-style: bold;
-	color: #11111;
+	color: #19303A;
+	width: auto;
 }
 
 
@@ -29,11 +34,11 @@ body{
 
  
 &nbsp &nbsp &nbsp &nbsp
-<button name="FIXED DEPOSITS" onclick="window.location='/new_fd'" style="width: 10%">FIXED DEPOSITS</button>	
-&nbsp &nbsp &nbsp &nbsp
+<button name="FIXED DEPOSITS" onclick="window.location='/new_fd'" >FIXED DEPOSITS</button>	
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
 <button name="ADMININSTRATION EXPENSES" onclick="window.location='/expense'"">ADMININSTRATION EXPENSES</button>
-<br><br><br><br><br><br>
-<button name="BACK" onclick="window.location='/'" style="width: 10%">BACK</button>
+<br><br><br><br>
+<button name="BACK" onclick="window.location='/'" >BACK</button>
 
 </center>
 </body>

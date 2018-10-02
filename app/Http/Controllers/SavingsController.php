@@ -35,7 +35,7 @@ class SavingsController extends Controller
         </script>";
 
         
-        return view('welcome');
+        return view('new_saving');
     }
 }
 

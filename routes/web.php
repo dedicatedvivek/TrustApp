@@ -13,10 +13,17 @@
 Route::middleware(['auth'])->group(function () 
 {
 	Route::get('/', function () {
-    return view('welcome');
+    return view('test');
 
 });
 });
+
+Route::get("home",function(){
+
+	return view ('home');
+});
+
+
 
 Route::get("newapplicant",function(){
 
@@ -58,13 +65,9 @@ Route::get("expense",function(){
 });
 
 
-
-
 Route::post("store",'application@store');
 
 Route::post("/insert","Controller@insert");
-
-
 
 Route::post("/update","UpdateController@update");
 
@@ -74,6 +77,21 @@ Route::post("/insertsaving","SavingsController@insertsaving");
 
 Route::post("/insertfd","FDController@insertfd");
 
+Route::get("list_bank",function(){
+
+	return view ('list_bank');
+});
+
+Route::get("list_savings",function(){
+
+	 return view ('list_savings');
+ });
+
+
+Route::get("ajax",function(){
+
+	 return view ('ajax');
+ });
 
 
 Route::post("/insertexpense","ExpenseController@insertexpense");
@@ -81,4 +99,4 @@ Route::post("/insertexpense","ExpenseController@insertexpense");
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+#Route::get('/home', 'HomeController@index')->name('home');

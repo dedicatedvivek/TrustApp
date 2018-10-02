@@ -47,8 +47,4 @@ class Controller extends BaseController
     }
 }
 
-function UpdateApplicant(){
-    return view('welcome');
-}
-
 

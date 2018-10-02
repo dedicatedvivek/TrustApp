@@ -1,39 +1,48 @@
 <html>
 
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <title>BANK MASTER</title>
 
 <style>
 
 body{
-	background-image: url("formback.png");
+	background-image: url("abc.png");
+    font-size: 1.2vw;
 }
 
 #formtable{
-	background-image: url("table.png");
+	background-image: url("abc.png");
 	border:2px solid black;
-	width: 45%;
+	width: auto;
+    font-size: 1.2vw;
 
 }
 
 table,th,td
 {
-	border: 2px dotted black;
+	border: 2px solid black;
 	padding: 2px;
 	color: white;
 	font-family: monospace;
-	font-size: 24px;
-	color: #fefe70;
+	font-size: 1.2vw;
+	color: #19303A;
 	font-weight: bold;
 	font-style: italic;
+    width: auto;
 
 
     
 }
 
 table,th,td,input{
-	width: 270px;
+	width: auto;
+    border: 2px solid #19303A;
 
 }
 
@@ -41,16 +50,45 @@ table,th,td,input{
 
 
 </style>
+<script type="text/javascript">
+    function validation(){
+        if (document.appl.deposit_date.value==""){
+            alert("Kindly Provide Deposit Date!!!");
+            document.appl.deposit_date.focus();  
+            return false;
+        
+        if (document.appl.maturity_date.value==""){
+            alert("Kindly Provide Maturity Date!!!");
+            document.appl.maturity_date.focus();  
+            return false;
+        
+        if (document.appl.rate_of_interest.value=="" ||
+            isNaN(document.appl.rate_of_interest.value)){
+            alert("Kindly Provide Valid Interest Rate!!!");
+            document.appl.rate_of_interest.focus();  
+            return false;
 
+         if (document.appl.maturity_amount.value=="" ||
+            isNaN(document.appl.maturity_amount.value)){
+            alert("Kindly Provide Valid Amount!!!");
+            document.appl.maturity_amount.focus();  
+            return false;
+         
+         if (document.appl.maturity_transfer_acc.value==""){
+            alert("Kindly Provide Account Number!!!");
+            document.appl.maturity_transfer_acc.focus();  
+            return false;
+        }
+</script>
 </head>
 
 <body>
 
-<h2 align="center" style="color: #fefe70">ADD A NEW SAVINGS ACCOUNT</h2>
+<h2 align="center" style="color: #19303A">FIXED DATE</h2>
 
 <center>
 
-<form action="/insertfd" method="post" name="appl"> 
+<form action="/insertfd" method="post" name="appl" onsubmit="return validation()"> 
 
 	{{ csrf_field() }}
 <table id="formtable">
@@ -62,7 +100,7 @@ table,th,td,input{
         <label for="DEPOSIT DATE">DEPOSIT DATE:</label>
     </td>
     <td>   
-    	<input type="date" name="deposit_date" placeholder="DEPOSIT DATE"  />
+    	<input type="date" name="deposit_date" >
     </td>
 </tr>
 <tr>
@@ -72,7 +110,7 @@ table,th,td,input{
         <label for="INTEREST RATE">INTEREST RATE:</label>
     </td>
     <td>   
-    	<input type="text" name="rate_of_interest" placeholder="DONT ADD SPECIAL CHARACTER"  />
+    	<input type="text" name="rate_of_interest" placeholder="ENTER NUMBER ONLY">
     </td>
 </tr>
 <tr>
@@ -96,16 +134,16 @@ table,th,td,input{
         <label for="MATURITY TRANSFER ACCOUNT ">MATURITY TRANSFER ACCOUNT:</label> 
     </td>
     <td>    
-    	<input type="text" name="maturity_transfer_acc" placeholder="ENTER THE SAVINGS ACCOUNT NUMBER TO WHICH THE MATURITY IS TO BE TRANSFERRED"  />
+    	<input type="text" name="maturity_transfer_acc">
     </td> 
 </tr>
 </table>
 
 <br> 
 
-<input type="submit" name="submit" value="SUBMIT"> 
-
-<input type="button" value="BACK" onclick="window.location='/'" / ><br />
+<input type="submit" name="submit" value="SUBMIT" style="font-size: 1.2vw"> 
+&nbsp &nbsp &nbsp
+<input type="button" value="BACK" onclick="window.location='/transaction'" style="font-size: 1.2vw" ><br />
 
 </form>
 </center>

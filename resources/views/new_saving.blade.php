@@ -43,6 +43,45 @@ table,th,td,input{
 
 }
 
+.dropdown .dropbtn {
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 
 
 
@@ -71,7 +110,7 @@ table,th,td,input{
 </head>
 
 <body>
-
+@include('mynav')
 <h2 align="center" style="color: #19303A;font-size: 2vw">ADD A NEW SAVINGS ACCOUNT</h2>
 
 <center>
@@ -81,7 +120,17 @@ table,th,td,input{
 	{{ csrf_field() }}
 <table id="formtable">
 
-
+<tr>
+	<td>
+        <label for="BANK CODE">BANK CODE:</label>
+    </td>
+    <td>   
+    	<input type="text" name="fo_b_code" >
+    </td>
+    <td>
+    	<input type ="button" name="show_b_code" value="SHOW BANK CODES">
+    <td>
+</tr>
 
 <tr>
 	<td>
@@ -91,7 +140,7 @@ table,th,td,input{
     	<input type="text" name="acc_holder" >
     </td>
 </tr>
-<tr>
+
     
 <tr>
 	<td>

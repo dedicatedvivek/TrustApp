@@ -59,7 +59,7 @@ Route::get("new_fd",function(){
 
 	return view ('new_fd');
 });
-Route::get("expense",function(){
+Route::get("new_expense",function(){
 
 	return view ('new_expense');
 });
@@ -92,6 +92,8 @@ Route::get("ajax",function(){
 
 	 return view ('ajax');
  });
+
+
 
 
 Route::post("/insertexpense","ExpenseController@insertexpense");

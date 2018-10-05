@@ -18,6 +18,7 @@ class SavingsController extends Controller
     function insertsaving(Request $req)
 
     {
+        $fo_b_code= $req->input('fo_b_code');
     	$acc_holder= $req->input('acc_holder');
     	$acc_number= $req->input('acc_number');
     	$acc_balance= $req->input('acc_balance');
@@ -26,7 +27,7 @@ class SavingsController extends Controller
     	
     	
 
-        $data=$arrayName = array('acc_holder' =>$acc_holder ,'acc_number' =>$acc_number ,'acc_balance' =>$acc_balance);
+        $data=$arrayName = array('fo_b_code' =>$fo_b_code ,'acc_holder' =>$acc_holder ,'acc_number' =>$acc_number ,'acc_balance' =>$acc_balance);
 
         DB::table('savings_master')->insert($data);
 

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,6 +32,46 @@
       display: none; 
     }
   }
+  .dropdown .dropbtn {
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
   </style>
 </head>
 <body>
@@ -49,9 +90,36 @@
       <ul class="nav navbar-nav">
         <li><a href="{{ url('/newapplicant') }}" target="iframe" style="color: white">New Applicant</a></li>
         <li><a href="{{ url('/listapplicant') }}" target="iframe" style="color: white">Applicants List</a></li>
-        <li><a href="{{ url('/bank') }}" target="iframe" style="color: white">Banks</a></li>
-        <li><a href="{{ url('/saving') }}" target="iframe" style="color: white">Savings</a></li>
-        <li><a href="{{ url('/transaction') }}" target="iframe" style="color: white">Transaction</a></li>
+        <li>
+           <div class="dropdown">
+             <button class="dropbtn">Banks
+               <i class="fa fa-caret-down"></i>
+             </button>
+              <div class="dropdown-content">
+                 <a href="{{ url('/new_bank') }}">New Bank</a>
+                 <a href="{{ url('/list_bank') }}">Bank Detail</a>
+                 <a href="#">Ajax</a>
+              </div>
+          </div> 
+        </li>
+        <li><div class="dropdown">
+             <button class="dropbtn">Savings
+               <i class="fa fa-caret-down"></i>
+             </button>
+              <div class="dropdown-content">
+                 <a href="{{ url('/new_saving') }}">ADD A SAVINGS ACCOUNT</a>
+                 <a href="{{ url('/list_savings') }}">ACCOUNTS' DETAILS</a>
+                 <a href="#">Ajax</a>
+              </div></li>
+        <li><div class="dropdown">
+             <button class="dropbtn">Transactions
+               <i class="fa fa-caret-down"></i>
+             </button>
+              <div class="dropdown-content">
+                 <a href="{{ url('/new_fd') }}">ADD FD ACCOUNT</a>
+                 <a href="{{ url('/new_expense') }}">LOCAL EXPENSE</a>
+                 
+              </div></li>
         <li><a href="/" target="iframe" style="color: white">Available funds</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -60,6 +128,7 @@
     </div>
   </div>
 </nav>
+
 
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -99,12 +168,16 @@
   <h3>What We Do</h3><br>
   <div class="row">
     <div class="col-sm-4">
+      <center>
       <img src="medical_aid.png" class="img-responsive"  style="max-width:35%; height:auto;"  alt="Image">
       <p>Medical Aid</p>
+      </center>
     </div>
     <div class="col-sm-4"> 
+      <center>
       <img src="edu.png" class="img-responsive"  style="max-width:35%; height:auto;"  alt="Image">
       <p>Support Education</p>    
+      </center>
     </div>
     <div class="col-sm-4">
       <div class="well">
@@ -117,8 +190,11 @@
   </div>
 </div><br>
 
-<footer class="container-fluid text-center">
-  <p>Footer Text</p>
+<footer class="container-fluid text-center" style="background-color:rgb(35,162,218);">
+ <marquee> <div style="font-weight: bold; font-size: 20px">
+ BAI MOTIBAI KASARA BAUG BORIVALI CHARITABLE TRUST
+</div>
+</marquee>
 </footer>
 
 </body>

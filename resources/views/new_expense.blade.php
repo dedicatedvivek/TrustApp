@@ -40,6 +40,51 @@ table,th,td,input{
     border: 2px solid #19303A;
 }
 
+.dropdown .dropbtn {
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.expense_options{
+    font-variant: sans-serif;
+    font-weight: bold;
+}
+
 </style>
 <script type="text/javascript">
     function validation(){
@@ -56,6 +101,7 @@ table,th,td,input{
 
 <body>
 
+@include('mynav')
 <h2 align="center" style="color: #19303A">ADMINISTRATION EXPENSES</h2>
 
 <center>
@@ -73,14 +119,14 @@ table,th,td,input{
     </td>
     <td>   
     	<SELECT name="expense_type">
-         <option name="expense_type">SALARY</option>
-         <option name="expense_type">ELECTRICITY BILL</option>
-         <option name="expense_type">WATER BILL</option>
-         <option name="expense_type">MUNICIPAL TAXES</option>
-         <option name="expense_type">TELEPHONE EXPENSE</option>
-         <option name="expense_type">CONVEYANCE</option>   
-         <option name="expense_type">STAFF WELFARE</option>
-         <option name="expense_type">MISCELLANEOUS</option>
+         <option  class="expense_options" name="expense_type">SALARY</option>
+         <option class="expense_options" name="expense_type">ELECTRICITY BILL</option>
+         <option class="expense_options" name="expense_type">WATER BILL</option>
+         <option class="expense_options" name="expense_type">MUNICIPAL TAXES</option>
+         <option class="expense_options" name="expense_type">TELEPHONE EXPENSE</option>
+         <option class="expense_options" name="expense_type">CONVEYANCE</option>   
+         <option class="expense_options" name="expense_type">STAFF WELFARE</option>
+         <option class="expense_options" name="expense_type">MISCELLANEOUS</option>
         </SELECT>
     </td>
 </tr>

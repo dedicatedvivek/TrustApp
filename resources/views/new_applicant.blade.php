@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
 
 <title>APPLICANT REGISTRATION</title>
 
@@ -104,6 +105,126 @@ option{
 .dropdown:hover .dropdown-content {
     display: block;
 }
+<style type="text/css">
+.form-style-10{
+    width:450px;
+    padding:30px;
+    margin:40px auto;
+    background: #FFF;
+    border-radius: 10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+    -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+    -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+}
+.form-style-10 .inner-wrap{
+    padding: 30px;
+    background: #F8F8F8;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+.form-style-10 h1{
+    background: #2A88AD;
+    padding: 20px 30px 15px 30px;
+    margin: -30px -30px 30px -30px;
+    border-radius: 10px 10px 0 0;
+    -webkit-border-radius: 10px 10px 0 0;
+    -moz-border-radius: 10px 10px 0 0;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+    font: normal 30px 'Bitter', serif;
+    -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    border: 1px solid #257C9E;
+}
+.form-style-10 h1 > span{
+    display: block;
+    margin-top: 2px;
+    font: 13px Arial, Helvetica, sans-serif;
+}
+.form-style-10 label{
+    display: block;
+    font: 13px Arial, Helvetica, sans-serif;
+    color: #888;
+    margin-bottom: 15px;
+}
+.form-style-10 input[type="text"],
+.form-style-10 input[type="date"],
+.form-style-10 input[type="datetime"],
+.form-style-10 input[type="email"],
+.form-style-10 input[type="number"],
+.form-style-10 input[type="search"],
+.form-style-10 input[type="time"],
+.form-style-10 input[type="url"],
+.form-style-10 input[type="password"],
+.form-style-10 textarea,
+.form-style-10 select {
+    display: block;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    -webkit-border-radius:6px;
+    -moz-border-radius:6px;
+    border: 2px solid #fff;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+    -moz-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+    -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+}
+
+.form-style-10 .section{
+    font: normal 20px 'Bitter', serif;
+    color: #2A88AD;
+    margin-bottom: 5px;
+}
+.form-style-10 .section span {
+    background: #2A88AD;
+    padding: 5px 10px 5px 10px;
+    position: absolute;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border: 4px solid #fff;
+    font-size: 14px;
+    margin-left: -45px;
+    color: #fff;
+    margin-top: -3px;
+}
+.form-style-10 input[type="button"], 
+.form-style-10 input[type="submit"]{
+    background: #2A88AD;
+    padding: 8px 20px 8px 20px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+    font: normal 30px 'Bitter', serif;
+    -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    border: 1px solid #257C9E;
+    font-size: 15px;
+}
+.form-style-10 input[type="button"]:hover, 
+.form-style-10 input[type="submit"]:hover{
+    background: #2A6881;
+    -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+    -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+}
+.form-style-10 .privacy-policy{
+    float: right;
+    width: 250px;
+    font: 12px Arial, Helvetica, sans-serif;
+    color: #4D4D4D;
+    margin-top: 10px;
+    text-align: right;
+}
 
 </style>
 <script type="text/javascript">
@@ -171,70 +292,47 @@ option{
 
 <body>
 @include('mynav')
-<h2 align="center" style="color: #19303A">APPLICANT REGISTRATION</h2>
 
-<center>
+
+<div class= "form-style-10">
+
+<h1>ADD A NEW APPLICANT<span>Fill in the details carefully</span></h1>
 
 <form action="/insert" method="post" name="appl" onsubmit="return validation()"> 
 
 	{{ csrf_field() }}
-<table id="formtable">
-<tr>
-    <td>
-	    <label for="Form Number">Form Number:</label> 
-	</td>
-   
-    <td>    
-	    <input type="text" name="formnum"  />
-    </td>
-</tr>
-<tr>
 
-<tr>
-    <td>
-	    <label for="First Name">First Name:</label> 
-	</td>
-   
-    <td>    
-	    <input type="text" name="firstname" />
-    </td>
-</tr>
-<tr>
-	<td>
-        <label for="Last Name">Last Name:</label>
-    </td>
-    <td>   
-    	<input type="text" name="lastname"  />
-    </td>
-</tr>
-<tr>
-	<td>
-        <label for="Age">Age:</label> 
-    </td>
-    <td>    
-    	<input type="number" name="age"  />
-    </td> 
-</tr>
+<div class = "section"><span>1</span>FORM NUMBER</div>
+<div class = "inner-wrap">
+	<label for="Form Number">UNIQUE FORM NUMBER <input type="text" name="formnum"  /></label>
+</div>
 
-<tr>
-	<td> 
+    
 
-        <label for="Gender">Gender: </label>
-    </td>
-    <td>    
+
+<div class = "section"><span>2</span>NAME &amp; PERSONAL DETAILS</div>
+<div class = "inner-wrap">
+
+    
+	    <label for="First Name">First Name <input type="text" name="firstname" /></label>
+   		<label for="Last Name">Last Name <input type="text" name="lastname"  /></label>
+   		<label for="Age">Age <input type="number" name="age" /></label>
+        <label for="Gender">Gender 
+       
               <select name="gender"> 
         	<option name="gender" value="male" >Male</option>
         	<option name="gender" value="female" >Female</option>
         	<option name="gender" value="other" >Other</option>
         </select>
+       </label>
+ </div>
 
-    </td>
-</tr>
-<tr>
-	<td>
-        <label for="Nationality">Nationality: </label>
-    </td>
-    <td>      
+
+<div class = "section"><span>3</span>NATIONALITY &amp; ADDRESS</div>
+<div class = "inner-wrap">
+ 
+        <label for="Nationality">Nationality 
+        
      <select name="nationality">
 
 	<option value="United States">United States</option> 
@@ -479,105 +577,56 @@ option{
 	<option value="Zambia">Zambia</option> 
 <option value="Zimbabwe">Zimbabwe</option>
      </select>
-    </td>
-</tr>
+ </label>
+	
 
-<tr>
-	<td>
+        <label for="Address">Address <input type="text" name="address"  /></label>
 
-        <label for="Address">Address: </label> 
-    </td>
-    <td>   
-     <input type="text" name="address"  />
+ 
 
-    </td>
-</tr>
 
-<tr>
-	<td> 
 
-        <label for="City">City: </label> 
-    </td>
-    <td>   
-    	<input type="text" name="city"  />
-    </td>
-</tr>
-<tr>
-	<td>
+        <label for="City">City <input type="text" name="city"  /></label>
+ 
 
-        <label for="Pincode">Pincode: </label>
-    </td>
-    <td>      
-    	<input type="text" name="pincode"  /> 
-    </td>
-</tr>
-<tr>
-	<td>
-        <label for="Purpose">Purpose: </label>  
-    </td>
-    <td>    
+        <label for="Pincode">Pincode <input type="text" name="pincode"  /></label> 
+   </div>
+   <div class = "section"><span>4</span>PURPOSE</div>
+   <div class = "inner-wrap">
+        <label for="Purpose">ADD THE PURPOSE  
+       
     	<select name="category" >
     		<option value="educational">Educational</option>
     		<option value="medical">Medical</option>
     		<option value="Financial">Financial</option>
     		<option value="other">Other</option>
     	</select>
-    </td>
-</tr>
- 
-<tr>
-	<td>
-        <label for="E-mail Address">E-mail Address: </label>  
-    </td>
-    <td>    
-    	<input type="text" name="email"  />
-    </td>
-</tr>
+    </label>
 
-<tr>
-	<td>
+ </div>
+    <div class = "section"><span>5</span>CONTACT DETAILS</div>
+    <div class = "inner-wrap">
 
-        <label for="Phone Number">Phone Number: </label>  
-    </td>
-    <td>    
-    	<input type="text" name="phone"  />
-    </td>
-</tr>
-
-<tr>
-	<td>
-		<label for="image">Add Profile Image: </label>
-	</td>
-
-	<td>
-		<input type="file" name="image" />
-	</td>
-</tr>
-
-<tr>
-	<td>
-		<label for="image">Document 1(Aadhar Card): </label>
-	</td>
-
-	<td>
-		<input type="file" name="doc1" />
-	</td>
-</tr>
+        <label for="E-mail Address">E-mail Address <input type="text" name="email"  /></label>
 
 
-<tr>
-	<td>
-		<label for="image">Document 2(Salary Certificate/Letter): </label>
-	</td>
 
-	<td>
-		<input type="file" name="doc2" />
-	</td>
-</tr>
+        <label for="Phone Number">Phone Number <input type="text" name="phone"  /></label>
+ </div>
+ <div class = "section"><span>6</span>REQUIRED DOCUMENTS</div>
+    <div class = "inner-wrap">
 
-</table>
+		<label for="image">Add Profile Image <input type="file" name="image" /></label>
 
-<br> 
+		<label for="image">Document 1(Aadhar Card)	<input type="file" name="doc1" /></label>
+
+		<label for="image">Document 2(Salary Certificate/Letter) <input type="file" name="doc2" /></label>
+
+</div>
+</form>
+</div>
+
+
 
 
 </form>
@@ -585,7 +634,7 @@ option{
 &nbsp &nbsp &nbsp 
 <input class="one"  style="color: #19303A;font-size: 1.2vw" type="button" value="BACK" onclick="window.location='/'" / ><br />
 
-</center>
+
 
 </body>
 

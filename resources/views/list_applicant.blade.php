@@ -11,13 +11,13 @@
 
 <style>
 body{
-	background-image: url("abc.png");
+	background-color: #f4f2ef;
 	background-repeat: no-repeat;
 	background-size:cover;
 }
 
 table{
-	background-image: url("abc.png");
+	background-color: #f4f2ef;
 	border:2px solid black;
 	width: 20%;
 	background-repeat: no-repeat;

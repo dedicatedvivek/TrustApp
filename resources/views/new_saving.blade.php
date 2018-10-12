@@ -127,9 +127,7 @@ table,th,td,input{
     <td>   
     	<input type="text" name="fo_b_code" >
     </td>
-    <td>
-    	<input type ="button" name="show_b_code" value="SHOW BANK CODES">
-    <td>
+    
 </tr>
 
 <tr>

@@ -12,14 +12,14 @@
 <style>
 
 body{
-	background-image: url("abc.png");
+	background-color:#f4f2ef;
 	background-size: cover;
 	background-repeat: no-repeat;
 
 }
 
 #formtable{
-	background-image: url("abc.png");
+	background-color:#f4f2ef;
 	background-size: cover;
     background-repeat: no-repeat;
 	border:2px #19303A;

@@ -16,16 +16,13 @@ body{
 	background-size:cover;
 }
 
-table{
-	background-color: #f4f2ef;
-	border:2px solid black;
-	width: 20%;
-	background-repeat: no-repeat;
-	background-size: cover;
-	font-size: 1.2vw;
+#table1{
+	 font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
 
 }
-table,th,td
+#table1 td, #table1 th
 {
 	border: 2px solid black;
 	padding: 2px;
@@ -34,6 +31,26 @@ table,th,td
 	color: #19303A;
 	font-weight: bold;
 	font-style: italic;
+}
+
+#table1 tr:nth-child(odd):hover{background-color: green;
+transform: scaleY(1.1);}
+
+#table1 tr:nth-child(even):hover{background-color: red;
+transform: scaleY(1.1);}
+
+
+
+#table1 tr{
+	cursor: pointer;
+}
+
+#table1 th {
+	 padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #2A88AD;
+    color: white;
 }
 
 input {
@@ -118,10 +135,10 @@ echo"<center>";
 if ($result->num_rows > 0) {
 
 
-    echo "<table id='table1'><tr><th>id</th><th>Form Number</th><th>First Name</th><th>Last Name</th><th>Age</th><th>Gender</th><th>Nationality</th><th>Address</th><th>City</th><th>Pincode</th><th>Category</th><th>Email id</th><th>Phone Number</th></tr>";
+    echo "<table class='appl-list-table' id='table1'><tr><th>id</th><th>Form Number</th><th>First Name</th><th>Last Name</th><th>Age</th><th>Gender</th><th>Nationality</th><th>Address</th><th>City</th><th>Pincode</th><th>Category</th><th>Email id</th><th>Phone Number</th></tr>";
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "<tr><td>".$row["id"]."</td><td>".$row["formnum"]."</td><td>".$row["firstname"]."</td><td>".$row["lastname"]."</td><td>".$row["age"]."</td><td>".$row["gender"]."</td><td>".$row["nationality"]."</td><td>".$row["address"]."</td><td>".$row["city"]."</td><td>".$row["pincode"]."</td><td>".$row["category"]."</td><td>".$row["email"]."</td><td>".$row["phone"]."</td></tr>";
+        echo "<tr><td>".$row["id"]."</td><td contenteditable='Trebuchet'>".$row["formnum"]."</td><td>".$row["firstname"]."</td><td>".$row["lastname"]."</td><td>".$row["age"]."</td><td>".$row["gender"]."</td><td>".$row["nationality"]."</td><td>".$row["address"]."</td><td>".$row["city"]."</td><td>".$row["pincode"]."</td><td>".$row["category"]."</td><td>".$row["email"]."</td><td>".$row["phone"]."</td></tr>";
     }
 
         echo "</table>";

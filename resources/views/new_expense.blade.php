@@ -101,6 +101,12 @@ table,th,td,input{
 
 <body>
 
+ 
+
+
+
+
+
 @include('mynav')
 <h2 align="center" style="color: #19303A">ADMINISTRATION EXPENSES</h2>
 
@@ -135,11 +141,25 @@ table,th,td,input{
 <tr>
 	<td>
         <label for="EXPENSE AMOUNT">EXPENSE AMOUNT:</label>
-    </td>
+    </td> 
     <td>   
     	<input type="float" name="expense_amount">
     </td>
 </tr>
+
+<tr>
+  <td>
+        <label for="SAVINGS ACCOUNT">SAVINGS ACCOUNT:</label>
+    </td>
+    <td>   
+      <select id="saving_select">
+        <option id="abc"></option>
+      </select>
+       
+      
+    </td>
+</tr>
+
 </table>
 
 <br> 
@@ -150,6 +170,60 @@ table,th,td,input{
 
 </form>
 </center>
+
+<?php
+
+use App\Expense;
+
+
+$savings= Expense::select('acc_code','acc_number')
+          ->get();
+
+$length= count($savings);
+
+?>
+
+
+ <script>
+  var savings = '<?php echo $savings ?>';
+   
+   window.alert(savings);
+  var length = '<?php echo $length ?>';
+  var select= document.getElementById('saving_select');
+ 
+ 
+
+for(var x in savings) {
+   var array = savings[x].acc_number;
+   // array.push(savings[x].acc_number);
+  // var val =  (savings[x]);
+  window.alert(array);
+  // window.alert(val);
+  acc_num = val["acc_number"];
+  
+
+  
+ 
+
+
+ 
+ var opt = document.createElement('option')
+  opt.value = acc_num;
+  opt.innerHTML= acc_num;
+  select.appendChild(opt);
+}
+ </script>
+ 
+  
+
+
+
+
+
+
+
+
+
 
 
 

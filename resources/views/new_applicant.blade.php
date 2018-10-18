@@ -8,6 +8,16 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+
+<script type="text/javascript">
+	$(window).load(function() {
+		$(".main-body").fadeIn(4000);
+		$(".se-pre-con").fadeOut(800);
+	});
+</script>
+
 <title>APPLICANT REGISTRATION</title>
 
 <style>
@@ -18,50 +28,18 @@ body{
 	background-repeat: no-repeat;
 
 }
-
-#formtable{
-	background-color:#f4f2ef;
-	background-size: cover;
-    background-repeat: no-repeat;
-	border:2px #19303A;
-	width: auto;
-	max-width: 970px;
-	font-size: 1.2vw;
-
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: center;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url("spinner-animation.gif") center no-repeat #fff;
 }
 
-table,th,td
-{
-	border: 2px solid black;
-	padding: 2px;
-	font-family: monospace;
-	font-size: 1.2vw;
-	color: #19303A;
-	font-weight: bold;
-	font-style: italic;
-	width: auto;
-
-}
-
-table,th,td,input{
-	width: auto;
-	
-}
-
-input {
-	padding: 1px;
-	color: #19303A;
-	border: 2px solid #19303A;
-}
-
-textarea {
-	color: #19303A;
-}
-
-option{
-	color: #19303A;
-	border: 2px solid #19303A;
-	padding: 1px;
 }
 .one {
 	width: auto;
@@ -105,9 +83,9 @@ option{
 .dropdown:hover .dropdown-content {
     display: block;
 }
-<style type="text/css">
+
 .form-style-10{
-    width:450px;
+    width:80%;
     padding:30px;
     margin:40px auto;
     background: #FFF;
@@ -225,6 +203,11 @@ option{
     margin-top: 10px;
     text-align: right;
 }
+.file-upload{
+	
+
+}
+
 
 </style>
 <script type="text/javascript">
@@ -290,7 +273,9 @@ option{
 </script>
 </head>
 
-<body>
+<body class="main-body">
+
+<div class="se-pre-con"></div>
 @include('mynav')
 
 
@@ -334,7 +319,7 @@ option{
         <label for="Nationality">Nationality 
         
      <select name="nationality">
-
+    <option value="India">India</option>
 	<option value="United States">United States</option> 
 	<option value="United Kingdom">United Kingdom</option> 
 	<option value="Afghanistan">Afghanistan</option> 
@@ -616,7 +601,7 @@ option{
  <div class = "section"><span>6</span>REQUIRED DOCUMENTS</div>
     <div class = "inner-wrap">
 
-		<label for="image">Add Profile Image <input type="file" name="image" /></label>
+		<label class="file-upload" for="image">Add Profile Image <input class="file-upload" type="file" name="image" /></label>
 
 		<label for="image">Document 1(Aadhar Card)	<input type="file" name="doc1" /></label>
 
@@ -624,15 +609,18 @@ option{
 
 </div>
 </form>
+<center>
+<input class="one" type="submit" name="submit" value="SUBMIT" style="color: #19303A;font-size: 1.2vw" >
+&nbsp &nbsp &nbsp 
+<input class="one"  style="color: #19303A;font-size: 1.2vw" type="button" value="BACK" onclick="window.location='/'" / ><br />
+</center>
 </div>
 
 
 
 
 </form>
-<input class="one" type="submit" name="submit" value="SUBMIT" style="color: #19303A;font-size: 1.2vw" >
-&nbsp &nbsp &nbsp 
-<input class="one"  style="color: #19303A;font-size: 1.2vw" type="button" value="BACK" onclick="window.location='/'" / ><br />
+
 
 
 

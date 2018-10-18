@@ -609,24 +609,15 @@ body{
 		<label for="image">Document 2(Salary Certificate/Letter) <input type="file" name="doc2" /></label>
 
 </div>
-</form>
 <center>
-<input class="one" type="submit" name="submit" value="SUBMIT" style="color: #19303A;font-size: 1.2vw" >
-&nbsp &nbsp &nbsp 
-<input class="one"  style="color: #19303A;font-size: 1.2vw" type="button" value="BACK" onclick="window.location='/'" / ><br />
+<input class="one" type="submit" name="submit" value="SUBMIT" style="color:white;font-size: 1.2vw" >
 </center>
+
+</form>
 </div>
 
-
-
-
 </form>
-
-
-
-
 </body>
-
 </html>
 
 

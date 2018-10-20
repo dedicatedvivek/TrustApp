@@ -33,11 +33,12 @@ body{
 	font-style: italic;
 }
 
-#table1 tr:nth-child(odd):hover{background-color: green;
+#table1 tr:nth-child(odd):hover{background-color: red;
 transform: scaleY(1.1);}
 
-#table1 tr:nth-child(even):hover{background-color: red;
-transform: scaleY(1.1);}
+#table1 tr:nth-child(even):hover{background-color: green;
+transform: scaleY(1.8);}
+
 
 
 
@@ -235,9 +236,9 @@ echo"</center>";
 		</tr>
 		
 </table> <br>
-         <input class="one" type="submit" name="submit" value="SUBMIT" style="font-size: 1.2vw; width: auto">
+         <input class="one" type="submit" name="submit" value="UPDATE" style="font-size: 1.2vw; width: auto">
          &nbsp &nbsp &nbsp &nbsp
-         <input class="one" type="button" value="BACK"  align="center" onclick="window.location='/'" style="font-size: 1.2vw; width: auto" > 
+         
 
 </form>
 </center>

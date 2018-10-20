@@ -103,7 +103,19 @@ table,th,td,input{
 
  
 
+<?php
 
+use App\Expense;
+
+
+$savings= Expense::select('acc_code','acc_number')
+          ->get();
+
+$length= count($savings);
+
+
+
+?>
 
 
 
@@ -152,8 +164,15 @@ table,th,td,input{
         <label for="SAVINGS ACCOUNT">SAVINGS ACCOUNT:</label>
     </td>
     <td>   
-      <select id="saving_select">
-        <option id="abc"></option>
+      <select id="saving_select" name= "acc_number">
+        <?php
+        for ($i=0; $i <$length ; $i++) { 
+           $list_elem = $savings[$i];
+           echo "<option>";
+           echo $list_elem["acc_number"];
+           echo "</option>";
+         } 
+        ?>
       </select>
        
       
@@ -170,36 +189,16 @@ table,th,td,input{
 
 </form>
 </center>
+ 
 
-<?php
-
-use App\Expense;
-
-
-$savings= Expense::select('acc_code','acc_number')
-          ->get();
-
-$length= count($savings);
-
-?>
-
-
- <script>
-  var savings = '<?php echo $savings ?>';
-   
-   window.alert(savings);
-  var length = '<?php echo $length ?>';
+<!-- <script type="text/javascript">
+  var savings ='<?php echo $savings; ?>';
+  var length = '<?php echo  $length ?>';
   var select= document.getElementById('saving_select');
- 
+  
+
  
 
-for(var x in savings) {
-   var array = savings[x].acc_number;
-   // array.push(savings[x].acc_number);
-  // var val =  (savings[x]);
-  window.alert(array);
-  // window.alert(val);
-  acc_num = val["acc_number"];
   
 
   
@@ -211,8 +210,11 @@ for(var x in savings) {
   opt.value = acc_num;
   opt.innerHTML= acc_num;
   select.appendChild(opt);
-}
- </script>
+
+ </script> -->
+
+
+
  
   
 

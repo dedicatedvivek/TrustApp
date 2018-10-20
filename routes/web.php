@@ -64,6 +64,13 @@ Route::get("new_expense",function(){
 	return view ('new_expense');
 });
 
+Route::get("calci",function(){
+
+	return view ('calci');
+});
+
+
+
 
 Route::post("store",'application@store');
 
@@ -74,6 +81,8 @@ Route::post("/update","UpdateController@update");
 Route::post("/insertbank","BanksController@insertbank");
 
 Route::post("/insertsaving","SavingsController@insertsaving");
+
+Route::post("/calculatorfunction","calcical@calculatorfunction");
 
 Route::post("/insertfd","FDController@insertfd");
 

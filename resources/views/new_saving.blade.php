@@ -207,6 +207,70 @@ body{
     
 
 }
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    font-weight: bold;
+}
+
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+   }
+  .close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+#table_bank_codes{
+     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+
+}
+#table_bank_codes td, #table_bank_codes th
+{
+    border: 2px solid black;
+    padding: 2px;
+    font-family: monospace;
+    font-size: 1.2vw;
+    color: #19303A;
+    font-weight: bold;
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+#table_bank_codes tr:nth-child(odd):hover{background-color: #ddd;
+transform: scaleY(1);}
+
+#table_bank_codes tr:nth-child(even):hover{background-color: #ddd;
+transform: scaleY(1);}
+
+
+
 
 
 </style>
@@ -244,17 +308,99 @@ body{
 	{{ csrf_field() }}
 <div class = "section"><span>1</span>ACCOUNT DETAILS</div>
 <div class = "inner-wrap">
-    <label >BANK CODE<input type="text" name="b_code"  /></label>
+    <label >BANK CODE<input type="text" name="fo_b_code"  /></label>
     <label >ACCOUNT HOLDER <input type="text" name="acc_holder"  /></label>
     <label >ACCOUNT NUMBER<input type="text" name="acc_number"  /></label>
     <label >ACCOUNT BALANCE<input type="text" name="acc_balance"  /></label>
 </div>
+
+
 
 <center>
 <input class="one" type="submit" name="submit" value="SUBMIT" style="color: white;font-size: 1.2vw" >
 </center>
 
 </form>
+
+<?php
+
+use App\Bank;
+$banks= Bank::select('b_code','b_name')
+          ->get();
+$list_length = count($banks);
+
+
+?>
+<!-- The Modal -->
+<button id="myBtn">VIEW BANK CODES</button>
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <?php
+    echo "<table id=table_bank_codes>";
+    echo "<th>Bank-Code</th>";
+    echo "<th>Bank-Name</th>"; 
+            for ($i=0; $i < $list_length ; $i++) { 
+                $list_elem= $banks[$i];
+                echo "<tr>";
+                echo "<td>";
+                echo $list_elem["b_code"];
+                echo "</td>";
+                echo "<td>";
+                echo $list_elem["b_name"];
+                echo "</td>";
+                echo "</tr>";
+               
+
+                
+            }
+    echo "</table>";
+
+       ?>
+           
+    </p>
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+
+    
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+
+
+
+
 
 
 

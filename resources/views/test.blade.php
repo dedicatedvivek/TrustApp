@@ -72,7 +72,15 @@
 .dropdown:hover .dropdown-content {
     display: block;
 }
+.image-desc{
+
+font-weight: bolder;
+background-color: white;
+font-family: sans-serif;
+font-size:1.4vw; 
+  }
   </style>
+
 </head>
 <body>
 
@@ -109,7 +117,7 @@
               <div class="dropdown-content">
                  <a href="{{ url('/new_saving') }}">ADD A SAVINGS ACCOUNT</a>
                  <a href="{{ url('/list_savings') }}">ACCOUNTS' DETAILS</a>
-                 <a href="#">Ajax</a>
+                 
               </div></li>
         <li><div class="dropdown">
              <button class="dropbtn">Transactions
@@ -118,6 +126,8 @@
               <div class="dropdown-content">
                  <a href="{{ url('/new_fd') }}">ADD FD ACCOUNT</a>
                  <a href="{{ url('/new_expense') }}">LOCAL EXPENSE</a>
+                 <a href="{{ url('/list_disbursements') }}">SANCTION DETAILS</a>
+                 <a href="{{ url('/fd_list') }}">FD LIST</a>
                  
               </div></li>
         <li><a href="/" target="iframe" style="color: white">Available funds</a></li>
@@ -169,23 +179,24 @@
   <div class="row">
     <div class="col-sm-4">
       <center>
-      <img src="medical_aid.png" class="img-responsive"  style="max-width:35%; height:auto;"  alt="Image">
-      <p>Medical Aid</p>
+      <img src="medical_aid.png" class="img-responsive"  style="max-width:35%; height:9.9vw;"  alt="Image">
+      <p class="image-desc"> MEDICAL AID</p>
       </center>
     </div>
     <div class="col-sm-4"> 
       <center>
-      <img src="edu.png" class="img-responsive"  style="max-width:35%; height:auto;"  alt="Image">
-      <p>Support Education</p>    
+      <img src="edu.png" class="img-responsive"  style="max-width:35%; height:9.9vw;"  alt="Image">
+      <p class="image-desc">SUPPORT EDUCATION</p>    
       </center>
     </div>
     <div class="col-sm-4">
-      <div class="well">
-       <p>Some text..</p>
-      </div>
-      <div class="well">
-       <p>Some text..</p>
-      </div>
+
+      <center>
+        
+      <img src="rupeetrans.png" class="img-responsive"  style="max-width:35%; height:9.9vw;"  alt="Image">
+
+      <p class="image-desc">FINANCIAL AID</p>    
+      </center>
     </div>
   </div>
 </div><br>

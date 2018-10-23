@@ -68,7 +68,15 @@ Route::get("calci",function(){
 
 	return view ('calci');
 });
+Route::get("list_disbursements",function(){
 
+	return view ('list_disbursements');
+});
+
+Route::get("fd_list",function(){
+
+	return view ('fd_list');
+});
 
 
 
@@ -85,6 +93,7 @@ Route::post("/insertsaving","SavingsController@insertsaving");
 Route::post("/calculatorfunction","calcical@calculatorfunction");
 
 Route::post("/insertfd","FDController@insertfd");
+Route::post("/sanction_amount","DisbursementController@sanction_amount");
 
 Route::get("list_bank",function(){
 

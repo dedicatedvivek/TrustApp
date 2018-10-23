@@ -1,3 +1,7 @@
+<html>
+<head>
+
+
 @extends('layouts.app')
 
 @section('content')

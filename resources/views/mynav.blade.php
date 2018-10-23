@@ -40,7 +40,7 @@
               <div class="dropdown-content">
                  <a href="{{ url('/new_saving') }}">ADD A SAVINGS ACCOUNT</a>
                  <a href="{{ url('/list_savings') }}">ACCOUNTS' DETAILS</a>
-                 <a href="#">Ajax</a>
+                 
               </div>
         </li>
         <li><div class="dropdown">
@@ -50,6 +50,8 @@
               <div class="dropdown-content">
                  <a href="{{ url('/new_fd') }}">ADD FD ACCOUNT</a>
                  <a href="{{ url('/new_expense') }}">LOCAL EXPENSE</a>
+                 <a href="{{ url('/list_disbursements') }}">SANCTION DETAILS</a>
+                 <a href="{{ url('/fd_list') }}">FD LIST</a>
                  
               </div></li>
         <li><a href="/" target="iframe" style="color: white">Available funds</a></li>

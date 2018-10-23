@@ -42,6 +42,7 @@ class UpdateController extends BaseController
          return view('list_applicant');     
 
      }
+     	
      
 }     
     

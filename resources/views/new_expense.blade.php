@@ -6,40 +6,44 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+
+<script type="text/javascript">
+    $(window).load(function() {
+        $(".main-body").fadeIn(4000);
+        $(".se-pre-con").fadeOut(800);
+    });
+</script>
 
 <title>BANK MASTER</title>
 
 <style>
 
 body{
-	background-image: url("abc.png");
-    font-size: 1.2vw;
-}
-
-#formtable{
-	background-image: url("abc.png");
-	border:2px solid black;
-	width: auto;
+    background-color:#f4f2ef;
+    background-size: cover;
+    background-repeat: no-repeat;
 
 }
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+    position: center;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url("spinner-animation.gif") center no-repeat #fff;
+}
 
-table,th,td
-{
-	border: 2px solid #19303A;
-	padding: 2px;
-	font-family: monospace;
-	font-size: 1.2vw;
-	color: #19303A;
-	font-weight: bold;
-	font-style: italic;
+}
+.one {
     width: auto;
 }
-
-table,th,td,input{
-	width: auto;
-    border: 2px solid #19303A;
-}
-
 .dropdown .dropbtn {
     font-size: 16px;    
     border: none;
@@ -80,12 +84,131 @@ table,th,td,input{
     display: block;
 }
 
-.expense_options{
-    font-variant: sans-serif;
-    font-weight: bold;
+.form-style-10{
+    width:80%;
+    padding:30px;
+    margin:40px auto;
+    background: #FFF;
+    border-radius: 10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+    -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+    -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+}
+.form-style-10 .inner-wrap{
+    padding: 30px;
+    background: #F8F8F8;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+.form-style-10 h1{
+    background: #2A88AD;
+    padding: 20px 30px 15px 30px;
+    margin: -30px -30px 30px -30px;
+    border-radius: 10px 10px 0 0;
+    -webkit-border-radius: 10px 10px 0 0;
+    -moz-border-radius: 10px 10px 0 0;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+    font: normal 30px 'Bitter', serif;
+    -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    border: 1px solid #257C9E;
+}
+.form-style-10 h1 > span{
+    display: block;
+    margin-top: 2px;
+    font: 13px Arial, Helvetica, sans-serif;
+}
+.form-style-10 label{
+    display: block;
+    font: 13px Arial, Helvetica, sans-serif;
+    color: #888;
+    margin-bottom: 15px;
+}
+.form-style-10 input[type="text"],
+.form-style-10 input[type="date"],
+.form-style-10 input[type="datetime"],
+.form-style-10 input[type="email"],
+.form-style-10 input[type="number"],
+.form-style-10 input[type="search"],
+.form-style-10 input[type="time"],
+.form-style-10 input[type="url"],
+.form-style-10 input[type="password"],
+.form-style-10 textarea,
+.form-style-10 select {
+    display: block;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    -webkit-border-radius:6px;
+    -moz-border-radius:6px;
+    border: 2px solid #fff;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+    -moz-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+    -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+}
+
+.form-style-10 .section{
+    font: normal 20px 'Bitter', serif;
+    color: #2A88AD;
+    margin-bottom: 5px;
+}
+.form-style-10 .section span {
+    background: #2A88AD;
+    padding: 5px 10px 5px 10px;
+    position: absolute;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border: 4px solid #fff;
+    font-size: 14px;
+    margin-left: -45px;
+    color: #fff;
+    margin-top: -3px;
+}
+.form-style-10 input[type="button"], 
+.form-style-10 input[type="submit"]{
+    background: #2A88AD;
+    padding: 8px 20px 8px 20px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+    font: normal 30px 'Bitter', serif;
+    -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    border: 1px solid #257C9E;
+    font-size: 15px;
+}
+.form-style-10 input[type="button"]:hover, 
+.form-style-10 input[type="submit"]:hover{
+    background: #2A6881;
+    -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+    -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+}
+.form-style-10 .privacy-policy{
+    float: right;
+    width: 250px;
+    font: 12px Arial, Helvetica, sans-serif;
+    color: #4D4D4D;
+    margin-top: 10px;
+    text-align: right;
+}
+.file-upload{
+    
 }
 
 </style>
+
 <script type="text/javascript">
     function validation(){
         
@@ -94,6 +217,12 @@ table,th,td,input{
             alert("Kindly Provide Valid Amount!!!");
             document.appl.expense_amount.focus();  
             return false;
+
+          if (document.appl.date_of_transfer.value==""){
+            alert("Kindly Provide Transfer Date!!!");
+            document.appl.date_of_transfer.focus();  
+            return false;
+           
          
          }
 </script>
@@ -119,23 +248,19 @@ $length= count($savings);
 
 
 
+<body class="main-body">
+<div class="se-pre-con"></div>
 @include('mynav')
-<h2 align="center" style="color: #19303A">ADMINISTRATION EXPENSES</h2>
-
-<center>
+<div class= "form-style-10">
+<h1>ADMINISTRATION EXPENSES<span>Fill in the details carefully</span></h1>
 
 <form action="/insertexpense" method="post" name="appl" onsubmit="return validation()"> 
 
 	{{ csrf_field() }}
-<table id="formtable">
 
-
-
-<tr>
-	<td>
-        <label for="EXPENSE TYPE">EXPENSE TYPE:</label>
-    </td>
-    <td>   
+<div class = "section"><span>1</span>EXPENSES</div>
+<div class = "inner-wrap">
+<label for="EXPENSE TYPE">EXPENSE TYPE</label>
     	<SELECT name="expense_type">
          <option  class="expense_options" name="expense_type">SALARY</option>
          <option class="expense_options" name="expense_type">ELECTRICITY BILL</option>
@@ -145,25 +270,8 @@ $length= count($savings);
          <option class="expense_options" name="expense_type">CONVEYANCE</option>   
          <option class="expense_options" name="expense_type">STAFF WELFARE</option>
          <option class="expense_options" name="expense_type">MISCELLANEOUS</option>
-        </SELECT>
-    </td>
-</tr>
-<tr>
-    
-<tr>
-	<td>
-        <label for="EXPENSE AMOUNT">EXPENSE AMOUNT:</label>
-    </td> 
-    <td>   
-    	<input type="float" name="expense_amount">
-    </td>
-</tr>
-
-<tr>
-  <td>
-        <label for="SAVINGS ACCOUNT">SAVINGS ACCOUNT:</label>
-    </td>
-    <td>   
+        </SELECT> <br>
+<label for="SAVINGS ACCOUNT">SAVINGS ACCOUNT</label>
       <select id="saving_select" name= "acc_number">
         <?php
         for ($i=0; $i <$length ; $i++) { 
@@ -173,61 +281,16 @@ $length= count($savings);
            echo "</option>";
          } 
         ?>
-      </select>
-       
-      
-    </td>
-</tr>
+      </select><br>
+<label >EXPENSE AMOUNT <input type="text" name="expense_amount"  /></label>
+<label >DATE OF TRANSFER <input type="date" name="date_of_transfer"  /></label>
 
-</table>
-
-<br> 
-
-<input  type="submit" name="submit" value="SUBMIT"> 
-&nbsp &nbsp &nbsp &nbsp
-<input  type="button" value="BACK" onclick="window.location='/transaction'" / ><br />
+</div>
+<center>
+<input class="one" type="submit" name="submit" value="SUBMIT" style="color: white;font-size: 1.2vw" >
+</center>
 
 </form>
-</center>
- 
-
-<!-- <script type="text/javascript">
-  var savings ='<?php echo $savings; ?>';
-  var length = '<?php echo  $length ?>';
-  var select= document.getElementById('saving_select');
-  
-
- 
-
-  
-
-  
- 
-
-
- 
- var opt = document.createElement('option')
-  opt.value = acc_num;
-  opt.innerHTML= acc_num;
-  select.appendChild(opt);
-
- </script> -->
-
-
-
- 
-  
-
-
-
-
-
-
-
-
-
-
-
 
 </body>
 

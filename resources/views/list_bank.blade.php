@@ -10,13 +10,13 @@
 
 <style>
 body{
-	background-image: url("abc.png");
+	background-color: #f4f2ef;
 	background-repeat: no-repeat;
 	background-size:cover;
 }
 
 table{
-	background-image: url("abc.png");
+	
 	border:2px solid black;
 	width: auto;
 	background-repeat: no-repeat;
@@ -84,6 +84,11 @@ input {
     display: block;
 }
 
+#table1 th {
+    background-color: #2A88AD;
+    color: white;
+}
+
 
 </style>
 
@@ -132,9 +137,6 @@ echo"</center>";
 $conn->close();
 ?>
 <br><br>
-<center>
-<input class="one" type="button" value="BACK" onclick="window.location='/bank'" /> 
-</center>
 
 </center>
 </body>

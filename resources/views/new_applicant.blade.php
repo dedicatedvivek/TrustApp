@@ -41,9 +41,7 @@ body{
 }
 
 }
-.one {
-	width: auto;
-}
+
 .dropdown .dropbtn {
     font-size: 16px;    
     border: none;
